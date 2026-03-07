@@ -158,18 +158,12 @@ function renderQuestion(state) {
    QUIZ — Maneja la selección de una alternativa
    ---------------------------------------------------------- */
 function handleAnswer(selectedAlt, pregunta, state) {
-  /* Deshabilitar todos los botones */
+  /* Deshabilitar todos los botones y marcar solo la seleccionada */
   const allBtns = document.querySelectorAll('.alternative');
   allBtns.forEach(btn => {
     btn.disabled = true;
-    const id = btn.dataset.id;
-    const altData = pregunta.alternativas.find(a => a.id === id);
-
-    if (id === selectedAlt.id) {
+    if (btn.dataset.id === selectedAlt.id) {
       btn.classList.add(selectedAlt.esCorrecta ? 'alternative--correct' : 'alternative--incorrect');
-    } else if (altData && altData.esCorrecta) {
-      /* Mostrar cuál era la correcta cuando se elige incorrecta */
-      btn.classList.add('alternative--correct-hint');
     }
   });
 
