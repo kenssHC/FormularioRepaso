@@ -1,0 +1,366 @@
+{
+  "titulo": "Repaso de Channels, Cells, Glomo y Bridge",
+  "descripcion": "Banco de preguntas de opción múltiple basado únicamente en la información trabajada en este chat.",
+  "preguntas": [
+    {
+      "id": 1,
+      "pregunta": "¿Qué es un channel en Cells?",
+      "alternativas": [
+        { "id": "A", "texto": "Un bus de datos con nombre que permite comunicar componentes de forma desacoplada.", "esCorrecta": true, "retroalimentacion": "Correcto. Un channel es un bus de datos con nombre por donde los componentes publican y reciben información sin depender directamente entre sí." },
+        { "id": "B", "texto": "Una función exclusiva para renderizar HTML en Lit.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Renderizar HTML corresponde al proceso de renderizado del componente, no a la definición de un channel." },
+        { "id": "C", "texto": "Un archivo CSS global de la aplicación.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un channel no es una hoja de estilos ni algo relacionado con CSS." },
+        { "id": "D", "texto": "Una base de datos local del navegador.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un channel no almacena datos como una base de datos; sirve para comunicación entre componentes." }
+      ]
+    },
+    {
+      "id": 2,
+      "pregunta": "En el patrón Pub/Sub, ¿qué hace un publisher?",
+      "alternativas": [
+        { "id": "A", "texto": "Escucha cambios del canal y reacciona.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Escuchar cambios corresponde al subscriber, no al publisher." },
+        { "id": "B", "texto": "Publica o envía datos al channel.", "esCorrecta": true, "retroalimentacion": "Correcto. El publisher es el componente que envía información al channel." },
+        { "id": "C", "texto": "Elimina automáticamente los componentes registrados.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El publisher no administra registros de componentes." },
+        { "id": "D", "texto": "Convierte canales privados en públicos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un publisher no cambia la naturaleza de los canales." }
+      ]
+    },
+    {
+      "id": 3,
+      "pregunta": "¿Qué hace un subscriber en un channel?",
+      "alternativas": [
+        { "id": "A", "texto": "Escucha el channel y ejecuta lógica cuando llega un nuevo valor.", "esCorrecta": true, "retroalimentacion": "Correcto. Un subscriber se suscribe al channel y reacciona cuando recibe datos." },
+        { "id": "B", "texto": "Crea automáticamente todos los DataManagers de la app.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso no corresponde al rol de subscriber." },
+        { "id": "C", "texto": "Transforma un evento DOM en una clase CSS.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un subscriber no convierte eventos en estilos." },
+        { "id": "D", "texto": "Publica configuraciones del Bridge sin recibir datos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Publicar es función del publisher; el subscriber recibe." }
+      ]
+    },
+    {
+      "id": 4,
+      "pregunta": "Cuando se dijo que un channel tiene 'capacidad de 1 valor', ¿qué significa?",
+      "alternativas": [
+        { "id": "A", "texto": "Que solo puede ser usado por un componente a la vez.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Sí puede haber varios componentes publicando o suscribiéndose." },
+        { "id": "B", "texto": "Que solo mantiene el último valor publicado.", "esCorrecta": true, "retroalimentacion": "Correcto. El channel conserva el último dato enviado, como parte de un comportamiento reactivo." },
+        { "id": "C", "texto": "Que solo sirve para valores booleanos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Puede transportar objetos, strings, arrays, booleanos, etc." },
+        { "id": "D", "texto": "Que solo puede existir un channel por aplicación.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Una aplicación puede tener muchos channels." }
+      ]
+    },
+    {
+      "id": 5,
+      "pregunta": "¿Cuál de estos nombres sigue una convención correcta para un channel?",
+      "alternativas": [
+        { "id": "A", "texto": "userData", "esCorrecta": false, "retroalimentacion": "Incorrecto. No deja claro que sea un channel y no sigue la convención mostrada." },
+        { "id": "B", "texto": "x", "esCorrecta": false, "retroalimentacion": "Incorrecto. Es un nombre demasiado corto y nada descriptivo." },
+        { "id": "C", "texto": "ch_user_data", "esCorrecta": true, "retroalimentacion": "Correcto. Se recomendó usar prefijo ch_ o sufijo _channel y separar palabras con underscore." },
+        { "id": "D", "texto": "myChannel", "esCorrecta": false, "retroalimentacion": "Incorrecto. No usa prefijo o sufijo recomendado y además mezcla estilo camelCase no sugerido para estos channels." }
+      ]
+    },
+    {
+      "id": 6,
+      "pregunta": "¿Qué se recomendó evitar al nombrar channels?",
+      "alternativas": [
+        { "id": "A", "texto": "Usar nombres descriptivos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Precisamente se recomendó usar nombres descriptivos." },
+        { "id": "B", "texto": "Separar palabras con underscore.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Separar con underscore fue parte de la convención correcta." },
+        { "id": "C", "texto": "Usar nombres genéricos o ambiguos como data o x.", "esCorrecta": true, "retroalimentacion": "Correcto. Se indicó expresamente evitar nombres como userData, myChannel, data o x por ser poco claros o ambiguos." },
+        { "id": "D", "texto": "Indicar que se trata de un canal con prefijo o sufijo.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Identificar claramente que es un channel sí era recomendable." }
+      ]
+    },
+    {
+      "id": 7,
+      "pregunta": "En CellsPage, ¿cuándo se crean automáticamente los channels?",
+      "alternativas": [
+        { "id": "A", "texto": "Solo al declarar una clase que extiende LitElement.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Extender una clase no crea el channel por sí mismo." },
+        { "id": "B", "texto": "Cuando se usa publish, publishOn o subscribe.", "esCorrecta": true, "retroalimentacion": "Correcto. Los channels se crean automáticamente al usar publish, publishOn o subscribe." },
+        { "id": "C", "texto": "Solo al ejecutar render().", "esCorrecta": false, "retroalimentacion": "Incorrecto. render() no es lo que crea los channels." },
+        { "id": "D", "texto": "Cuando se importa RxJS manualmente.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No se indicó que debas importar RxJS manualmente para eso." }
+      ]
+    },
+    {
+      "id": 8,
+      "pregunta": "¿Qué hace publish()?",
+      "alternativas": [
+        { "id": "A", "texto": "Publica datos manualmente en un channel desde el código.", "esCorrecta": true, "retroalimentacion": "Correcto. publish() se explicó como la forma directa y manual de enviar datos a un channel." },
+        { "id": "B", "texto": "Se suscribe a un canal y actualiza una propiedad.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso corresponde a subscribe o a una conexión in en JSON." },
+        { "id": "C", "texto": "Publica solamente cuando el componente dispara un evento.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa descripción corresponde mejor a publishOn()." },
+        { "id": "D", "texto": "Elimina un valor del canal actual.", "esCorrecta": false, "retroalimentacion": "Incorrecto. publish() no elimina valores; publica uno nuevo." }
+      ]
+    },
+    {
+      "id": 9,
+      "pregunta": "¿Qué hace publishOn()?",
+      "alternativas": [
+        { "id": "A", "texto": "Escucha un channel y ejecuta un callback.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso es subscribe(), no publishOn()." },
+        { "id": "B", "texto": "Publica automáticamente en un channel cuando un componente emite un evento específico.", "esCorrecta": true, "retroalimentacion": "Correcto. publishOn() conecta un evento emitido por un componente con la publicación automática en un channel." },
+        { "id": "C", "texto": "Renderiza un template HTML al cargar la página.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Renderizar templates no es la función de publishOn()." },
+        { "id": "D", "texto": "Asigna un channel a una clase CSS.", "esCorrecta": false, "retroalimentacion": "Incorrecto. publishOn() no trabaja con estilos." }
+      ]
+    },
+    {
+      "id": 10,
+      "pregunta": "¿Cuál es la diferencia principal entre publish() y publishOn()?",
+      "alternativas": [
+        { "id": "A", "texto": "publish() funciona en JavaScript y publishOn() solo en CSS.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ninguno trabaja en CSS." },
+        { "id": "B", "texto": "publish() publica manualmente; publishOn() publica al ocurrir un evento.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la diferencia central explicada en el chat." },
+        { "id": "C", "texto": "publish() solo sirve para canales privados y publishOn() solo para públicos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La diferencia no está en si el canal es privado o público." },
+        { "id": "D", "texto": "No hay diferencia real entre ambos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Sí hay una diferencia clara en el modo de disparo." }
+      ]
+    },
+    {
+      "id": 11,
+      "pregunta": "En Glomo, ¿para qué sirve cellsConnections.in?",
+      "alternativas": [
+        { "id": "A", "texto": "Para declarar estilos globales del componente.", "esCorrecta": false, "retroalimentacion": "Incorrecto. cellsConnections no es una configuración de estilos." },
+        { "id": "B", "texto": "Para recibir datos del channel y asignarlos a una propiedad o handler.", "esCorrecta": true, "retroalimentacion": "Correcto. in representa la parte subscriber de cellsConnections: recibe datos del canal y los enlaza con bind." },
+        { "id": "C", "texto": "Para publicar eventos hacia el Bridge.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Publicar corresponde a out." },
+        { "id": "D", "texto": "Para crear automáticamente DataManagers.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No se usa para crear DataManagers." }
+      ]
+    },
+    {
+      "id": 12,
+      "pregunta": "En Glomo, ¿para qué sirve cellsConnections.out?",
+      "alternativas": [
+        { "id": "A", "texto": "Para enviar datos o acciones a un channel cuando ocurre un evento enlazado.", "esCorrecta": true, "retroalimentacion": "Correcto. out representa la parte publisher: cuando ocurre el evento definido en bind, publica en el channel." },
+        { "id": "B", "texto": "Para leer el contexto global de la aplicación.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Leer contexto sería más bien por suscripción con in o subscribe." },
+        { "id": "C", "texto": "Para definir el renderizado condicional.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Renderizado condicional pertenece a la lógica de UI, no a out." },
+        { "id": "D", "texto": "Para evitar el uso de callbacks.", "esCorrecta": false, "retroalimentacion": "Incorrecto. out no existe para eliminar callbacks." }
+      ]
+    },
+    {
+      "id": 13,
+      "pregunta": "¿Qué representa el flujo del gráfico del botón con out, canal_de_salida_1 y un componente con in?",
+      "alternativas": [
+        { "id": "A", "texto": "Que un componente dispara un evento, este publica en un channel y otro componente lo recibe.", "esCorrecta": true, "retroalimentacion": "Correcto. Ese gráfico representa el flujo: evento -> out -> channel -> in -> función o propiedad en otro componente." },
+        { "id": "B", "texto": "Que el botón modifica directamente el DOM del otro componente sin canal.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Justamente el canal evita la comunicación directa." },
+        { "id": "C", "texto": "Que el subscriber obliga al publisher a cambiar de estado.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El subscriber recibe; no obliga al publisher." },
+        { "id": "D", "texto": "Que un channel siempre solo puede ser usado por una sola clase.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Sí pueden participar varios componentes." }
+      ]
+    },
+    {
+      "id": 14,
+      "pregunta": "¿Qué son los componentes globales?",
+      "alternativas": [
+        { "id": "A", "texto": "Componentes exclusivos de una única página y no reutilizables.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un componente global no está limitado a una sola página." },
+        { "id": "B", "texto": "Componentes disponibles en toda la aplicación y reutilizables en varias vistas o features.", "esCorrecta": true, "retroalimentacion": "Correcto. Los componentes globales pueden usarse en cualquier parte de la app, como header, footer, spinner o modal." },
+        { "id": "C", "texto": "Solo los DataManagers del sistema.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Globales no significa exclusivamente DataManagers." },
+        { "id": "D", "texto": "Canales privados del Bridge.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un componente y un channel no son lo mismo." }
+      ]
+    },
+    {
+      "id": 15,
+      "pregunta": "¿Qué diferencia principal tienen los componentes cross respecto a los globales?",
+      "alternativas": [
+        { "id": "A", "texto": "Los cross son globales y además pueden compartirse entre varios módulos o aplicaciones.", "esCorrecta": true, "retroalimentacion": "Correcto. cross = global + reutilizable entre proyectos, módulos o apps." },
+        { "id": "B", "texto": "Los cross solo funcionan en una vista actual.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso se parece más a currentview, no a cross." },
+        { "id": "C", "texto": "Los cross no se pueden reutilizar.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Precisamente se caracterizan por alta reutilización." },
+        { "id": "D", "texto": "Los cross son canales de acción del Bridge.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un componente cross no es un channel de Bridge." }
+      ]
+    },
+    {
+      "id": 16,
+      "pregunta": "Según el esquema mostrado, ¿qué significa '1 publicador - N suscriptores'?",
+      "alternativas": [
+        { "id": "A", "texto": "Un único canal puede ser creado una sola vez.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La frase habla de cantidad de participantes, no de creación del canal." },
+        { "id": "B", "texto": "Un componente publica y varios componentes escuchan el mismo channel.", "esCorrecta": true, "retroalimentacion": "Correcto. Es el caso típico de un publisher emitiendo hacia varios subscribers al mismo tiempo." },
+        { "id": "C", "texto": "Muchos publishers publican en canales distintos a un único subscriber.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa descripción corresponde más al patrón N publishers - 1 subscriber." },
+        { "id": "D", "texto": "Un subscriber puede publicar de vuelta de forma obligatoria.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El subscriber no tiene obligación de publicar." }
+      ]
+    },
+    {
+      "id": 17,
+      "pregunta": "¿Qué significa el patrón 'N publicadores - 1 suscriptor (globales)'?",
+      "alternativas": [
+        { "id": "A", "texto": "Muchos componentes publican en el mismo channel y un componente global escucha todo.", "esCorrecta": true, "retroalimentacion": "Correcto. Es el caso típico de errores, loader o notificaciones globales donde varios componentes publican y uno global recibe." },
+        { "id": "B", "texto": "Un solo componente escucha varios canales privados de página.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La idea central es muchos publishers hacia un subscriber, no solo un listener de canales privados." },
+        { "id": "C", "texto": "Cada publisher debe tener su propio channel independiente.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Varios publishers sí pueden usar el mismo channel." },
+        { "id": "D", "texto": "El componente global deja de escuchar cuando cambia la vista.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Al ser global justamente puede mantenerse escuchando." }
+      ]
+    },
+    {
+      "id": 18,
+      "pregunta": "¿Qué característica general tienen la mayoría de canales privados de Cells Bridge según la explicación dada?",
+      "alternativas": [
+        { "id": "A", "texto": "Son principalmente de solo lectura: te suscribes pero no publicas.", "esCorrecta": true, "retroalimentacion": "Correcto. Los canales privados del núcleo o core services son más que nada de lectura, es decir, para suscribirse." },
+        { "id": "B", "texto": "Siempre debes publicar manualmente en ellos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Justamente se remarcó que normalmente no puedes publicar en ellos." },
+        { "id": "C", "texto": "Solo sirven para estilos globales.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No están relacionados con estilos." },
+        { "id": "D", "texto": "Solo pueden existir dentro de render().", "esCorrecta": false, "retroalimentacion": "Incorrecto. No dependen de render()." }
+      ]
+    },
+    {
+      "id": 19,
+      "pregunta": "¿Cómo se construye el nombre de un Private Page Channel?",
+      "alternativas": [
+        { "id": "A", "texto": "__bridge_ch_ + actionName", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa estructura corresponde a Action Channels." },
+        { "id": "B", "texto": "__bridge_page_ + pageName", "esCorrecta": true, "retroalimentacion": "Correcto. La convención exacta para Private Page Channels es __bridge_page_ + pageName." },
+        { "id": "C", "texto": "ch_ + currentPage + _bridge", "esCorrecta": false, "retroalimentacion": "Incorrecto. No fue la convención mostrada." },
+        { "id": "D", "texto": "__bridge_app_ + route", "esCorrecta": false, "retroalimentacion": "Incorrecto. __bridge_app es otro canal, no la fórmula para page channels." }
+      ]
+    },
+    {
+      "id": 20,
+      "pregunta": "¿Qué advertencia se dio respecto al prefijo __bridge_page_?",
+      "alternativas": [
+        { "id": "A", "texto": "Debe usarse para todos los channels normales.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ese prefijo no es para channels normales." },
+        { "id": "B", "texto": "No debes crear tus propios channels con ese prefijo.", "esCorrecta": true, "retroalimentacion": "Correcto. Ese prefijo está reservado para channels privados creados por el Core/Bridge." },
+        { "id": "C", "texto": "Solo puede usarse dentro de CSS.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No se habló de CSS." },
+        { "id": "D", "texto": "Debe reemplazarse por ch_page_.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No se propuso ese reemplazo como regla." }
+      ]
+    },
+    {
+      "id": 21,
+      "pregunta": "¿Qué información transporta el Application Context Channel __bridge_app en el ejemplo mostrado?",
+      "alternativas": [
+        { "id": "A", "texto": "Solo el idioma actual de la app.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El idioma se mostró en otro contexto, no como contenido central de __bridge_app." },
+        { "id": "B", "texto": "El estado del carrito de compras.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El carrito se manejó con ch_cart_items." },
+        { "id": "C", "texto": "Información como currentPage y fromPage, actualizada en cada navegación.", "esCorrecta": true, "retroalimentacion": "Correcto. El slide mostró currentPage y fromPage y se explicó que se actualiza con cada navegación." },
+        { "id": "D", "texto": "Únicamente eventos de logout.", "esCorrecta": false, "retroalimentacion": "Incorrecto. logout corresponde a un Action Channel." }
+      ]
+    },
+    {
+      "id": 22,
+      "pregunta": "¿Qué propiedad de uso tiene __bridge_app?",
+      "alternativas": [
+        { "id": "A", "texto": "Es read-only y no debes crear channels con ese prefijo.", "esCorrecta": true, "retroalimentacion": "Correcto. Es read-only y no se deben crear channels con el prefijo __bridge_app." },
+        { "id": "B", "texto": "Es exclusivamente para publicar acciones de logout.", "esCorrecta": false, "retroalimentacion": "Incorrecto. logout pertenece a __bridge_ch_logout." },
+        { "id": "C", "texto": "Se usa solo con publish() y nunca con subscribe().", "esCorrecta": false, "retroalimentacion": "Incorrecto. Justamente se consume por subscribe o cellsConnections.in." },
+        { "id": "D", "texto": "Solo existe si usas currentview.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No depende de ese binding type." }
+      ]
+    },
+    {
+      "id": 23,
+      "pregunta": "¿Cuál de estos es un Action Channel del Bridge?",
+      "alternativas": [
+        { "id": "A", "texto": "__bridge_page_home", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ese es un Private Page Channel." },
+        { "id": "B", "texto": "__bridge_app", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ese es el canal de contexto de aplicación." },
+        { "id": "C", "texto": "__bridge_ch_logout", "esCorrecta": true, "retroalimentacion": "Correcto. Los Action Channels usan el prefijo __bridge_ch_ y uno de los ejemplos mostrados fue __bridge_ch_logout." },
+        { "id": "D", "texto": "ch_user_data", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ese es un channel normal del ejemplo Login -> Dashboard." }
+      ]
+    },
+    {
+      "id": 24,
+      "pregunta": "¿Para qué sirve __bridge_ch_locales?",
+      "alternativas": [
+        { "id": "A", "texto": "Para cambiar el idioma de la aplicación.", "esCorrecta": true, "retroalimentacion": "Correcto. __bridge_ch_locales cambia el idioma de la aplicación." },
+        { "id": "B", "texto": "Para indicar la página anterior.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso se relaciona más con __bridge_app." },
+        { "id": "C", "texto": "Para actualizar el contador del carrito.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El carrito se manejó con ch_cart_items." },
+        { "id": "D", "texto": "Para crear channels privados de página.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los canales privados de página usan __bridge_page_." }
+      ]
+    },
+    {
+      "id": 25,
+      "pregunta": "¿Para qué sirve __bridge_ch_config?",
+      "alternativas": [
+        { "id": "A", "texto": "Para cambiar la configuración del Bridge, como rutas u otros parámetros.", "esCorrecta": true, "retroalimentacion": "Correcto. __bridge_ch_config cambia la configuración del bridge." },
+        { "id": "B", "texto": "Para almacenar el último login exitoso.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El login exitoso se trabajó con ch_user_data." },
+        { "id": "C", "texto": "Para escuchar siempre el estado de una página.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso se relaciona con __bridge_page_*." },
+        { "id": "D", "texto": "Para registrar componentes UI y cross.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso se relaciona más con el binding type ui." }
+      ]
+    },
+    {
+      "id": 26,
+      "pregunta": "En el ejemplo de Action Channels en JSON para Glomo, ¿qué hace el bind 'logout-requested' sobre __bridge_ch_logout?",
+      "alternativas": [
+        { "id": "A", "texto": "Suscribe el componente al estado del logout.", "esCorrecta": false, "retroalimentacion": "Incorrecto. out no suscribe; publica." },
+        { "id": "B", "texto": "Hace que cuando el componente emita ese evento se publique la acción de logout al Bridge.", "esCorrecta": true, "retroalimentacion": "Correcto. cellsConnections.out con bind conecta el evento del componente con la publicación en el Action Channel." },
+        { "id": "C", "texto": "Convierte logout-requested en una propiedad reactiva de Lit.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No convierte el evento en una propiedad de Lit." },
+        { "id": "D", "texto": "Evita que el Bridge reciba eventos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Justamente sirve para enviar la acción al Bridge." }
+      ]
+    },
+    {
+      "id": 27,
+      "pregunta": "¿Qué controla un Binding Type en Cells?",
+      "alternativas": [
+        { "id": "A", "texto": "El color del theme del componente.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No gestiona estilos." },
+        { "id": "B", "texto": "Cuándo se registran los componentes en el channel.", "esCorrecta": true, "retroalimentacion": "Correcto. El Binding Type controla cuándo se registran los componentes en el channel." },
+        { "id": "C", "texto": "La cantidad máxima de channels privados.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No define cantidad de channels." },
+        { "id": "D", "texto": "Qué prefijo deben llevar los eventos DOM.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No trata sobre nombres de eventos DOM." }
+      ]
+    },
+    {
+      "id": 28,
+      "pregunta": "¿Qué caracteriza al binding type always?",
+      "alternativas": [
+        { "id": "A", "texto": "Registra todos los componentes de todas las vistas y nunca los desregistra.", "esCorrecta": true, "retroalimentacion": "Correcto. always fue presentado como el comportamiento por defecto que registra todo y no desregistra." },
+        { "id": "B", "texto": "Solo registra componentes de la vista actual.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso corresponde a currentview." },
+        { "id": "C", "texto": "Solo registra cuando todos los componentes estén cargados y luego los elimina.", "esCorrecta": false, "retroalimentacion": "Incorrecto. delayed espera la carga, pero no esa descripción exacta." },
+        { "id": "D", "texto": "Solo se aplica a channels privados de Bridge.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No está limitado a Bridge." }
+      ]
+    },
+    {
+      "id": 29,
+      "pregunta": "¿Qué caracteriza al binding type delayed?",
+      "alternativas": [
+        { "id": "A", "texto": "Registra solo una parte del componente después del render.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No se explicó así." },
+        { "id": "B", "texto": "Funciona como always, pero espera a que todos los componentes estén cargados.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la definición dada." },
+        { "id": "C", "texto": "Solo registra DataManagers.", "esCorrecta": false, "retroalimentacion": "Incorrecto. delayed no se limita a DataManagers." },
+        { "id": "D", "texto": "Desregistra cada vez que cambia el valor del channel.", "esCorrecta": false, "retroalimentacion": "Incorrecto. delayed no trata de desregistrar por cambio de valor." }
+      ]
+    },
+    {
+      "id": 30,
+      "pregunta": "¿Qué describe mejor al binding type ui?",
+      "alternativas": [
+        { "id": "A", "texto": "Registra UI y cross components; los DataManagers solo cuando la página actual está ready.", "esCorrecta": true, "retroalimentacion": "Correcto. Así se describió el binding type ui." },
+        { "id": "B", "texto": "Registra solo componentes de la vista actual.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso corresponde a currentview." },
+        { "id": "C", "texto": "Registra todo y nunca desregistra.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso corresponde a always." },
+        { "id": "D", "texto": "Publica automáticamente en __bridge_app.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un binding type no publica en un canal específico." }
+      ]
+    },
+    {
+      "id": 31,
+      "pregunta": "¿Qué describe mejor al binding type currentview?",
+      "alternativas": [
+        { "id": "A", "texto": "Registra componentes solo de la vista actual cuando la página está ready.", "esCorrecta": true, "retroalimentacion": "Correcto. currentview registra componentes solo de la vista actual." },
+        { "id": "B", "texto": "Registra todos los componentes para siempre.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso define a always." },
+        { "id": "C", "texto": "Solo sirve en páginas con login.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No está limitado al login." },
+        { "id": "D", "texto": "Solo afecta canales privados del Bridge.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Puede afectar el registro a channels en general." }
+      ]
+    },
+    {
+      "id": 32,
+      "pregunta": "En el ejemplo Login -> Dashboard, ¿qué channel transporta la información del usuario?",
+      "alternativas": [
+        { "id": "A", "texto": "__bridge_app", "esCorrecta": false, "retroalimentacion": "Incorrecto. __bridge_app es el contexto de aplicación." },
+        { "id": "B", "texto": "ch_cart_items", "esCorrecta": false, "retroalimentacion": "Incorrecto. ch_cart_items se usó en el ejemplo del carrito." },
+        { "id": "C", "texto": "ch_user_data", "esCorrecta": true, "retroalimentacion": "Correcto. ch_user_data fue el channel mostrado entre LoginPage y DashboardPage." },
+        { "id": "D", "texto": "__bridge_ch_config", "esCorrecta": false, "retroalimentacion": "Incorrecto. __bridge_ch_config es un Action Channel." }
+      ]
+    },
+    {
+      "id": 33,
+      "pregunta": "En el ejemplo Login -> Dashboard, ¿qué evento del DataManager dispara la publicación con publishOn()?",
+      "alternativas": [
+        { "id": "A", "texto": "value-changed", "esCorrecta": false, "retroalimentacion": "Incorrecto. value-changed apareció en otro ejemplo de configuración." },
+        { "id": "B", "texto": "logout-requested", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso se relacionó con logout en Action Channels." },
+        { "id": "C", "texto": "customer-loaded", "esCorrecta": false, "retroalimentacion": "Incorrecto. customer-loaded apareció en otro ejemplo con customerDM." },
+        { "id": "D", "texto": "login-success", "esCorrecta": true, "retroalimentacion": "Correcto. El ejemplo mostró publishOn('ch_user_data', this.$.loginDM, 'login-success')." }
+      ]
+    },
+    {
+      "id": 34,
+      "pregunta": "En el ejemplo del carrito de compras, ¿qué publica ProductPage en ch_cart_items?",
+      "alternativas": [
+        { "id": "A", "texto": "Solo el último producto agregado como string.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No publica solo un string del último producto." },
+        { "id": "B", "texto": "Un objeto con items y total del carrito.", "esCorrecta": true, "retroalimentacion": "Correcto. El ejemplo mostró publish('ch_cart_items', { items: this.cartItems, total: this.cartItems.length })." },
+        { "id": "C", "texto": "Únicamente el ID del usuario.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El canal del carrito no transporta ID de usuario." },
+        { "id": "D", "texto": "El estado de navegación de la aplicación.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La navegación corresponde a __bridge_app." }
+      ]
+    },
+    {
+      "id": 35,
+      "pregunta": "En el ejemplo del carrito, ¿qué demuestra que ch_cart_items es un caso de multi subscriber?",
+      "alternativas": [
+        { "id": "A", "texto": "Que varios componentes como HeaderComponent, CartSidebar y CartBadge escuchan el mismo channel.", "esCorrecta": true, "retroalimentacion": "Correcto. El ejemplo mostraba un publicador y tres suscriptores reaccionando al mismo cambio del carrito." },
+        { "id": "B", "texto": "Que solo ProductPage puede escuchar el canal.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Justamente no era un caso de único listener." },
+        { "id": "C", "texto": "Que el channel pertenece al Bridge.", "esCorrecta": false, "retroalimentacion": "Incorrecto. ch_cart_items es un channel normal, no uno del Bridge." },
+        { "id": "D", "texto": "Que el carrito no puede usar publish().", "esCorrecta": false, "retroalimentacion": "Incorrecto. En el ejemplo sí se usó publish()." }
+      ]
+    },
+    {
+      "id": 36,
+      "pregunta": "¿Cuál de estas afirmaciones resume mejor la arquitectura general trabajada en el chat sobre channels?",
+      "alternativas": [
+        { "id": "A", "texto": "Los componentes deben llamarse directamente entre sí para mantener control total.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Justamente se explicó que los channels evitan el acoplamiento directo." },
+        { "id": "B", "texto": "Los channels permiten comunicación desacoplada entre componentes, páginas y en algunos casos con el Core/Bridge.", "esCorrecta": true, "retroalimentacion": "Correcto. Comunicación desacoplada entre componentes usando channels normales, privados y action channels." },
+        { "id": "C", "texto": "Los channels solo sirven en páginas de login y carrito.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Se mostraron esos como ejemplos, no como límite de uso." },
+        { "id": "D", "texto": "Los channels reemplazan completamente render(), Lit y los componentes.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los channels complementan la arquitectura, no reemplazan render() ni los componentes." }
+      ]
+    }
+  ]
+}

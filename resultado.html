@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resultado - Entelgy</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="page page--result">
+    <header class="header">
+      <h1 class="header__title" id="resultSessionTitle">Resultado</h1>
+    </header>
+
+    <main class="main main--result">
+      <div class="result-card">
+        <div class="result-card__score-wrap">
+          <span class="result-card__emoji" id="resultEmoji">🎉</span>
+          <p class="result-card__score" id="resultScore">0 / 0</p>
+          <p class="result-card__label">Respuestas correctas</p>
+        </div>
+
+        <div class="result-card__bar-wrap">
+          <div class="result-card__bar">
+            <div class="result-card__bar-fill" id="resultBar"></div>
+          </div>
+          <p class="result-card__percent" id="resultPercent">0%</p>
+        </div>
+
+        <p class="result-card__message" id="resultMessage">¡Buen trabajo!</p>
+      </div>
+
+      <div class="result-actions">
+        <button class="btn btn--primary" id="retryBtn">Intentar de nuevo</button>
+        <a href="index.html" class="btn btn--secondary">Elegir otra sesión</a>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script>
+    renderResult();
+  </script>
+</body>
+</html>

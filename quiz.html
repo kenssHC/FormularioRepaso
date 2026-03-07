@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz - Entelgy</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="page page--quiz">
+    <header class="header">
+      <a href="index.html" class="header__back" id="backBtn">← Volver al inicio</a>
+      <div class="header__info">
+        <h1 class="header__title" id="quizTitle">Cargando...</h1>
+        <p class="header__progress" id="progressText">Pregunta 1 de N</p>
+      </div>
+    </header>
+
+    <div class="progress-bar">
+      <div class="progress-bar__fill" id="progressBar"></div>
+    </div>
+
+    <main class="main main--quiz">
+      <div class="question-card" id="questionCard">
+        <p class="question-card__number" id="questionNumber">Pregunta 1</p>
+        <h2 class="question-card__text" id="questionText">Cargando pregunta...</h2>
+
+        <div class="alternatives" id="alternativesContainer">
+          <!-- Las alternativas se generan dinámicamente -->
+        </div>
+
+        <div class="feedback" id="feedbackBox" style="display:none">
+          <p class="feedback__text" id="feedbackText"></p>
+        </div>
+      </div>
+
+      <div class="quiz-nav">
+        <button class="btn btn--primary" id="nextBtn" style="display:none">
+          Siguiente pregunta →
+        </button>
+        <button class="btn btn--finish" id="finishBtn" style="display:none">
+          Ver resultado
+        </button>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script>
+    initQuiz();
+  </script>
+</body>
+</html>

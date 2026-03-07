@@ -1,0 +1,556 @@
+{
+  "titulo": "Repaso de JavaScript - Preguntas de este chat",
+  "descripcion": "Banco de preguntas de opción múltiple basado únicamente en los temas trabajados en este chat.",
+  "preguntas": [
+    {
+      "id": 1,
+      "pregunta": "¿Qué es una función en JavaScript?",
+      "alternativas": [
+        { "id": "A", "texto": "Un bloque de código reutilizable que realiza una tarea específica", "esCorrecta": true, "retroalimentacion": "Correcto. Una función en JavaScript es un bloque de código reutilizable que puede ejecutarse cuando se llama." },
+        { "id": "B", "texto": "Una variable que solo guarda texto", "esCorrecta": false, "retroalimentacion": "Incorrecto. Una función no es una variable de texto; puede recibir parámetros, ejecutar lógica y devolver resultados." },
+        { "id": "C", "texto": "Un tipo de comentario especial", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los comentarios sirven para documentar el código, no para ejecutar lógica." },
+        { "id": "D", "texto": "Un objeto que siempre devuelve true", "esCorrecta": false, "retroalimentacion": "Incorrecto. Una función no siempre devuelve true; puede devolver cualquier valor o incluso no devolver nada." }
+      ]
+    },
+    {
+      "id": 2,
+      "pregunta": "¿Cuál de las siguientes es una function declaration?",
+      "alternativas": [
+        { "id": "A", "texto": "function saludar() { return 'hola'; }", "esCorrecta": true, "retroalimentacion": "Correcto. Esa es la sintaxis clásica de una declaración de función." },
+        { "id": "B", "texto": "const saludar = function() { return 'hola'; }", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa es una function expression porque la función está asignada a una variable." },
+        { "id": "C", "texto": "const saludar = () => 'hola';", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa es una arrow function." },
+        { "id": "D", "texto": "saludar => 'hola'", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa sintaxis no corresponde a una declaración válida de función." }
+      ]
+    },
+    {
+      "id": 3,
+      "pregunta": "¿Cuál es una function expression?",
+      "alternativas": [
+        { "id": "A", "texto": "const saludar = function() { return 'hola'; }", "esCorrecta": true, "retroalimentacion": "Correcto. Una function expression es una función almacenada en una variable." },
+        { "id": "B", "texto": "function saludar() { return 'hola'; }", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa es una function declaration." },
+        { "id": "C", "texto": "if (saludar) { return 'hola'; }", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso es una estructura condicional, no una función." },
+        { "id": "D", "texto": "const saludar = 'hola';", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa línea define una variable string, no una función." }
+      ]
+    },
+    {
+      "id": 4,
+      "pregunta": "¿Cuál es una arrow function?",
+      "alternativas": [
+        { "id": "A", "texto": "const saludar = () => 'hola';", "esCorrecta": true, "retroalimentacion": "Correcto. Esa es la sintaxis moderna de una función flecha." },
+        { "id": "B", "texto": "function saludar() => 'hola';", "esCorrecta": false, "retroalimentacion": "Incorrecto. No se mezcla function con la flecha => de esa manera." },
+        { "id": "C", "texto": "const saludar = function => 'hola';", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa sintaxis no es válida." },
+        { "id": "D", "texto": "saludar() { return 'hola'; }", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa forma no representa una arrow function." }
+      ]
+    },
+    {
+      "id": 5,
+      "pregunta": "¿Por qué la arrow function está relacionada con this?",
+      "alternativas": [
+        { "id": "A", "texto": "Porque no crea su propio this, sino que hereda el del contexto externo", "esCorrecta": true, "retroalimentacion": "Correcto. Las arrow functions usan lexical this, es decir, toman el this del entorno donde fueron creadas." },
+        { "id": "B", "texto": "Porque siempre cambia el this al objeto window", "esCorrecta": false, "retroalimentacion": "Incorrecto. No siempre apunta a window; hereda el this del contexto exterior." },
+        { "id": "C", "texto": "Porque obliga a usar bind() en todos los casos", "esCorrecta": false, "retroalimentacion": "Incorrecto. Justamente muchas veces evita la necesidad de usar bind()." },
+        { "id": "D", "texto": "Porque no puede usarse dentro de callbacks", "esCorrecta": false, "retroalimentacion": "Incorrecto. De hecho, las arrow functions se usan mucho en callbacks." }
+      ]
+    },
+    {
+      "id": 6,
+      "pregunta": "En el código if (0) { console.log('Hola Mundo'); }, ¿qué sucede?",
+      "alternativas": [
+        { "id": "A", "texto": "No imprime nada porque 0 es falsy", "esCorrecta": true, "retroalimentacion": "Correcto. En JavaScript, 0 es un valor falsy, por eso el bloque if no se ejecuta." },
+        { "id": "B", "texto": "Imprime Hola Mundo porque 0 es truthy", "esCorrecta": false, "retroalimentacion": "Incorrecto. 0 no es truthy; es uno de los valores falsy de JavaScript." },
+        { "id": "C", "texto": "Da error de sintaxis", "esCorrecta": false, "retroalimentacion": "Incorrecto. La sintaxis es válida; simplemente la condición no entra." },
+        { "id": "D", "texto": "Imprime undefined", "esCorrecta": false, "retroalimentacion": "Incorrecto. No se imprime nada porque el console.log ni siquiera se ejecuta." }
+      ]
+    },
+    {
+      "id": 7,
+      "pregunta": "En el código if (1) { console.log('Hola Mundo'); }, ¿qué sucede?",
+      "alternativas": [
+        { "id": "A", "texto": "Imprime Hola Mundo porque 1 es truthy", "esCorrecta": true, "retroalimentacion": "Correcto. En JavaScript, cualquier número distinto de 0 es truthy." },
+        { "id": "B", "texto": "No imprime nada porque 1 es falsy", "esCorrecta": false, "retroalimentacion": "Incorrecto. 1 es truthy, así que el bloque sí se ejecuta." },
+        { "id": "C", "texto": "Da error porque if solo acepta booleanos", "esCorrecta": false, "retroalimentacion": "Incorrecto. JavaScript permite evaluar muchos tipos en condiciones, no solo booleanos." },
+        { "id": "D", "texto": "Imprime 1", "esCorrecta": false, "retroalimentacion": "Incorrecto. El console.log imprime el string 'Hola Mundo', no el número 1." }
+      ]
+    },
+    {
+      "id": 8,
+      "pregunta": "En el código if ('') { console.log('Hola Mundo'); }, ¿qué sucede?",
+      "alternativas": [
+        { "id": "A", "texto": "No imprime nada porque la cadena vacía es falsy", "esCorrecta": true, "retroalimentacion": "Correcto. El string vacío '' es un valor falsy en JavaScript." },
+        { "id": "B", "texto": "Imprime Hola Mundo porque todo string es truthy", "esCorrecta": false, "retroalimentacion": "Incorrecto. No todo string es truthy; el string vacío es falsy." },
+        { "id": "C", "texto": "Imprime una cadena vacía", "esCorrecta": false, "retroalimentacion": "Incorrecto. No se imprime nada porque la condición no entra." },
+        { "id": "D", "texto": "Da error porque falta un valor numérico", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un if puede evaluar strings sin problema." }
+      ]
+    },
+    {
+      "id": 9,
+      "pregunta": "¿Qué sucede en if ([]) { console.log('Hola Mundo'); }?",
+      "alternativas": [
+        { "id": "A", "texto": "Imprime Hola Mundo porque [] es truthy", "esCorrecta": true, "retroalimentacion": "Correcto. Aunque esté vacío, un array es un objeto y los objetos son truthy." },
+        { "id": "B", "texto": "No imprime nada porque [] es falsy", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un array vacío no es falsy; sigue siendo truthy." },
+        { "id": "C", "texto": "Da error por ser un array vacío", "esCorrecta": false, "retroalimentacion": "Incorrecto. No hay error por evaluar un array en un if." },
+        { "id": "D", "texto": "Imprime []", "esCorrecta": false, "retroalimentacion": "Incorrecto. El console.log imprime 'Hola Mundo', no el valor de la condición." }
+      ]
+    },
+    {
+      "id": 10,
+      "pregunta": "¿Cuál de los siguientes valores es falsy en JavaScript?",
+      "alternativas": [
+        { "id": "A", "texto": "undefined", "esCorrecta": true, "retroalimentacion": "Correcto. undefined es uno de los valores falsy en JavaScript." },
+        { "id": "B", "texto": "[]", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un array vacío es truthy." },
+        { "id": "C", "texto": "{}", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un objeto vacío es truthy." },
+        { "id": "D", "texto": "'hola'", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un string no vacío es truthy." }
+      ]
+    },
+    {
+      "id": 11,
+      "pregunta": "En let c; if (!c) { console.log('Hola Mundo'); }, ¿qué ocurre?",
+      "alternativas": [
+        { "id": "A", "texto": "Imprime Hola Mundo porque c es undefined y !undefined es true", "esCorrecta": true, "retroalimentacion": "Correcto. c vale undefined, que es falsy, y al negarlo con ! se convierte en true." },
+        { "id": "B", "texto": "No imprime nada porque c no existe", "esCorrecta": false, "retroalimentacion": "Incorrecto. c sí existe; solo está declarada sin valor, por eso vale undefined." },
+        { "id": "C", "texto": "Da error porque no se puede usar ! con variables", "esCorrecta": false, "retroalimentacion": "Incorrecto. El operador ! sí puede usarse con variables." },
+        { "id": "D", "texto": "Imprime undefined", "esCorrecta": false, "retroalimentacion": "Incorrecto. Lo que se imprime es 'Hola Mundo', no el valor de c." }
+      ]
+    },
+    {
+      "id": 12,
+      "pregunta": "¿Qué hace el doble signo de exclamación en !!d?",
+      "alternativas": [
+        { "id": "A", "texto": "Convierte cualquier valor a booleano", "esCorrecta": true, "retroalimentacion": "Correcto. !! se usa para transformar un valor truthy o falsy en true o false explícito." },
+        { "id": "B", "texto": "Duplica el valor de la variable", "esCorrecta": false, "retroalimentacion": "Incorrecto. !! no multiplica ni duplica; solo convierte a booleano." },
+        { "id": "C", "texto": "Convierte el valor en string", "esCorrecta": false, "retroalimentacion": "Incorrecto. Para string existen otras conversiones, no el operador !!." },
+        { "id": "D", "texto": "Invierte dos veces el orden del código", "esCorrecta": false, "retroalimentacion": "Incorrecto. No afecta el orden del código; solo la evaluación booleana." }
+      ]
+    },
+    {
+      "id": 13,
+      "pregunta": "En let d = 'a'; if (!!d) { console.log(!!d); }, ¿qué se imprime?",
+      "alternativas": [
+        { "id": "A", "texto": "true", "esCorrecta": true, "retroalimentacion": "Correcto. 'a' es un string no vacío, por lo tanto es truthy, y !!'a' devuelve true." },
+        { "id": "B", "texto": "false", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un string no vacío no se convierte en false." },
+        { "id": "C", "texto": "'a'", "esCorrecta": false, "retroalimentacion": "Incorrecto. Se imprime el resultado de !!d, no el valor original de d." },
+        { "id": "D", "texto": "undefined", "esCorrecta": false, "retroalimentacion": "Incorrecto. La variable sí tiene valor y la expresión produce true." }
+      ]
+    },
+    {
+      "id": 14,
+      "pregunta": "En let e; if (!!e) { console.log(!!e); }, ¿qué ocurre?",
+      "alternativas": [
+        { "id": "A", "texto": "No imprime nada porque !!undefined es false", "esCorrecta": true, "retroalimentacion": "Correcto. e vale undefined y al convertirlo con !! el resultado es false." },
+        { "id": "B", "texto": "Imprime true", "esCorrecta": false, "retroalimentacion": "Incorrecto. undefined no se convierte en true." },
+        { "id": "C", "texto": "Imprime false", "esCorrecta": false, "retroalimentacion": "Incorrecto. Aunque !!e sea false, no se imprime porque la condición del if no entra." },
+        { "id": "D", "texto": "Da error porque e no tiene valor", "esCorrecta": false, "retroalimentacion": "Incorrecto. Tener undefined no genera error en esta condición." }
+      ]
+    },
+    {
+      "id": 15,
+      "pregunta": "¿Qué hace el operador AND (&&)?",
+      "alternativas": [
+        { "id": "A", "texto": "Devuelve true solo si ambas condiciones son verdaderas", "esCorrecta": true, "retroalimentacion": "Correcto. El operador AND exige que ambas partes sean verdaderas para dar true." },
+        { "id": "B", "texto": "Devuelve true si una de las condiciones es verdadera", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa definición corresponde al operador OR." },
+        { "id": "C", "texto": "Invierte el valor lógico", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa es la función del operador NOT." },
+        { "id": "D", "texto": "Compara si dos valores son idénticos", "esCorrecta": false, "retroalimentacion": "Incorrecto. Para eso se usa ===, no &&." }
+      ]
+    },
+    {
+      "id": 16,
+      "pregunta": "¿Qué hace el operador OR (||)?",
+      "alternativas": [
+        { "id": "A", "texto": "Devuelve true si al menos una condición es verdadera", "esCorrecta": true, "retroalimentacion": "Correcto. OR solo necesita una condición verdadera para devolver true." },
+        { "id": "B", "texto": "Devuelve true solo si ambas condiciones son verdaderas", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa es la lógica del operador AND." },
+        { "id": "C", "texto": "Siempre devuelve false si hay strings", "esCorrecta": false, "retroalimentacion": "Incorrecto. OR puede trabajar con muchos tipos y no depende de que haya strings." },
+        { "id": "D", "texto": "Solo funciona con números", "esCorrecta": false, "retroalimentacion": "Incorrecto. OR también funciona con strings, objetos, undefined, etc." }
+      ]
+    },
+    {
+      "id": 17,
+      "pregunta": "¿Qué hace el operador NOT (!)?",
+      "alternativas": [
+        { "id": "A", "texto": "Invierte el valor lógico", "esCorrecta": true, "retroalimentacion": "Correcto. !true da false y !false da true." },
+        { "id": "B", "texto": "Compara dos valores", "esCorrecta": false, "retroalimentacion": "Incorrecto. Para comparar se usan operadores como == o ===." },
+        { "id": "C", "texto": "Suma dos números", "esCorrecta": false, "retroalimentacion": "Incorrecto. NOT no realiza operaciones aritméticas." },
+        { "id": "D", "texto": "Detiene la ejecución del programa", "esCorrecta": false, "retroalimentacion": "Incorrecto. ! solo niega una condición." }
+      ]
+    },
+    {
+      "id": 18,
+      "pregunta": "¿Cuál de estos valores fue mencionado como falsy en el chat?",
+      "alternativas": [
+        { "id": "A", "texto": "null", "esCorrecta": true, "retroalimentacion": "Correcto. null fue mencionado como valor falsy y además como parte de los valores nullish." },
+        { "id": "B", "texto": "[]", "esCorrecta": false, "retroalimentacion": "Incorrecto. [] es truthy." },
+        { "id": "C", "texto": "{}", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un objeto vacío es truthy." },
+        { "id": "D", "texto": "'0'", "esCorrecta": false, "retroalimentacion": "Incorrecto. El string '0' es truthy porque es un string no vacío." }
+      ]
+    },
+    {
+      "id": 19,
+      "pregunta": "¿Cómo se comparan los arrays y objetos en JavaScript?",
+      "alternativas": [
+        { "id": "A", "texto": "Por referencia en memoria, no por contenido", "esCorrecta": true, "retroalimentacion": "Correcto. Dos arrays con el mismo contenido no son iguales si no apuntan al mismo lugar en memoria." },
+        { "id": "B", "texto": "Siempre por contenido", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa comparación no es automática en arrays y objetos." },
+        { "id": "C", "texto": "Solo por tamaño", "esCorrecta": false, "retroalimentacion": "Incorrecto. El tamaño no determina la igualdad de arrays u objetos." },
+        { "id": "D", "texto": "Solo por tipo de dato", "esCorrecta": false, "retroalimentacion": "Incorrecto. El tipo importa, pero en objetos y arrays la comparación real es por referencia." }
+      ]
+    },
+    {
+      "id": 20,
+      "pregunta": "Si array1 = [1,2,3] y array2 = [1,2,3], ¿qué da array1 === array2?",
+      "alternativas": [
+        { "id": "A", "texto": "false", "esCorrecta": true, "retroalimentacion": "Correcto. Aunque tengan el mismo contenido, son dos arrays distintos en memoria." },
+        { "id": "B", "texto": "true", "esCorrecta": false, "retroalimentacion": "Incorrecto. Para que dé true deberían ser la misma referencia." },
+        { "id": "C", "texto": "undefined", "esCorrecta": false, "retroalimentacion": "Incorrecto. La comparación devuelve un booleano, no undefined." },
+        { "id": "D", "texto": "Da error", "esCorrecta": false, "retroalimentacion": "Incorrecto. Comparar arrays con === es válido, solo que el resultado es false." }
+      ]
+    },
+    {
+      "id": 21,
+      "pregunta": "Si let array3 = array1;, ¿qué da array1 === array3?",
+      "alternativas": [
+        { "id": "A", "texto": "true", "esCorrecta": true, "retroalimentacion": "Correcto. array3 apunta a la misma referencia que array1." },
+        { "id": "B", "texto": "false", "esCorrecta": false, "retroalimentacion": "Incorrecto. No son arrays distintos; array3 es una referencia a array1." },
+        { "id": "C", "texto": "null", "esCorrecta": false, "retroalimentacion": "Incorrecto. La comparación no devuelve null." },
+        { "id": "D", "texto": "Depende del navegador", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ese comportamiento es propio del lenguaje, no del navegador." }
+      ]
+    },
+    {
+      "id": 22,
+      "pregunta": "¿Qué operador permite recibir una cantidad indeterminada de parámetros en una función?",
+      "alternativas": [
+        { "id": "A", "texto": "Rest parameter (...)", "esCorrecta": true, "retroalimentacion": "Correcto. El operador ... permite agrupar una cantidad variable de argumentos en un array." },
+        { "id": "B", "texto": "Spread en un objeto", "esCorrecta": false, "retroalimentacion": "Incorrecto. El spread y el rest usan la misma sintaxis, pero aquí se habla de parámetros de función." },
+        { "id": "C", "texto": "Hoisting", "esCorrecta": false, "retroalimentacion": "Incorrecto. Hoisting es otro concepto distinto." },
+        { "id": "D", "texto": "this", "esCorrecta": false, "retroalimentacion": "Incorrecto. this no sirve para capturar parámetros indefinidos." }
+      ]
+    },
+    {
+      "id": 23,
+      "pregunta": "¿Qué devuelve la función sumar(...nums) cuando usa reduce para sumar todos los números?",
+      "alternativas": [
+        { "id": "A", "texto": "La suma total de todos los argumentos recibidos", "esCorrecta": true, "retroalimentacion": "Correcto. reduce puede acumular todos los valores del array generado por ...nums." },
+        { "id": "B", "texto": "Solo el último número", "esCorrecta": false, "retroalimentacion": "Incorrecto. reduce recorre todos los elementos, no solo el último." },
+        { "id": "C", "texto": "Un objeto con los números", "esCorrecta": false, "retroalimentacion": "Incorrecto. La función de ejemplo devuelve un valor numérico, no un objeto." },
+        { "id": "D", "texto": "Siempre 0", "esCorrecta": false, "retroalimentacion": "Incorrecto. Solo sería 0 si no hubiera elementos o si todos sumaran 0." }
+      ]
+    },
+    {
+      "id": 24,
+      "pregunta": "En el ejercicio de análisis de números, ¿qué debía devolver la función además de la suma?",
+      "alternativas": [
+        { "id": "A", "texto": "Mayor, menor, promedio y cantidad de elementos", "esCorrecta": true, "retroalimentacion": "Correcto. Eso fue exactamente lo pedido en el ejercicio más trabajado del chat." },
+        { "id": "B", "texto": "Solo el mayor y el menor", "esCorrecta": false, "retroalimentacion": "Incorrecto. También se pedían suma, promedio y cantidad." },
+        { "id": "C", "texto": "El producto y la raíz cuadrada", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esos cálculos no fueron parte del requerimiento." },
+        { "id": "D", "texto": "Solo un mensaje de éxito", "esCorrecta": false, "retroalimentacion": "Incorrecto. La función debía devolver información numérica concreta." }
+      ]
+    },
+    {
+      "id": 25,
+      "pregunta": "En el mismo ejercicio, ¿qué debía pasar si no se recibe ningún número?",
+      "alternativas": [
+        { "id": "A", "texto": "Devolver un mensaje indicando que el arreglo o entrada está vacía", "esCorrecta": true, "retroalimentacion": "Correcto. Se pidió manejar explícitamente el caso vacío." },
+        { "id": "B", "texto": "Devolver 0 automáticamente", "esCorrecta": false, "retroalimentacion": "Incorrecto. El requerimiento pedía un mensaje, no asumir un resultado numérico." },
+        { "id": "C", "texto": "Lanzar un error obligatorio", "esCorrecta": false, "retroalimentacion": "Incorrecto. No se pidió obligatoriamente lanzar error, sino devolver un mensaje." },
+        { "id": "D", "texto": "Imprimir undefined", "esCorrecta": false, "retroalimentacion": "Incorrecto. El comportamiento esperado era un mensaje claro, no undefined." }
+      ]
+    },
+    {
+      "id": 26,
+      "pregunta": "¿Qué debía pasar si la función recibe solo un número en ese ejercicio?",
+      "alternativas": [
+        { "id": "A", "texto": "Devolver un mensaje como 'Se necesita al menos dos números'", "esCorrecta": true, "retroalimentacion": "Correcto. Ese fue uno de los casos especiales solicitados." },
+        { "id": "B", "texto": "Devolver el mismo número como promedio", "esCorrecta": false, "retroalimentacion": "Incorrecto. Aunque matemáticamente se podría, el requisito pedía un mensaje." },
+        { "id": "C", "texto": "Duplicar el número", "esCorrecta": false, "retroalimentacion": "Incorrecto. Nunca se pidió duplicarlo." },
+        { "id": "D", "texto": "Devolver null obligatoriamente", "esCorrecta": false, "retroalimentacion": "Incorrecto. El requerimiento hablaba de un mensaje, no de null." }
+      ]
+    },
+    {
+      "id": 27,
+      "pregunta": "¿Qué método se recomendó para filtrar personas que cumplan ciertas condiciones?",
+      "alternativas": [
+        { "id": "A", "texto": "filter()", "esCorrecta": true, "retroalimentacion": "Correcto. filter() devuelve un nuevo arreglo con los elementos que cumplen la condición." },
+        { "id": "B", "texto": "find()", "esCorrecta": false, "retroalimentacion": "Incorrecto. find() devuelve solo el primer elemento, no todos los que cumplen." },
+        { "id": "C", "texto": "push()", "esCorrecta": false, "retroalimentacion": "Incorrecto. push() agrega elementos a un array, no filtra." },
+        { "id": "D", "texto": "concat()", "esCorrecta": false, "retroalimentacion": "Incorrecto. concat() une arreglos, no filtra por condición." }
+      ]
+    },
+    {
+      "id": 28,
+      "pregunta": "En el ejercicio de personas, ¿qué condiciones debían cumplirse?",
+      "alternativas": [
+        { "id": "A", "texto": "Ser de género femenino, ser mayor de edad y tener crédito mayor a 700", "esCorrecta": true, "retroalimentacion": "Correcto. Esas fueron exactamente las tres condiciones del filtro." },
+        { "id": "B", "texto": "Ser masculino, menor de edad y crédito menor a 700", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esas condiciones no corresponden al problema planteado." },
+        { "id": "C", "texto": "Solo tener crédito mayor a 700", "esCorrecta": false, "retroalimentacion": "Incorrecto. Faltan las condiciones de género y mayoría de edad." },
+        { "id": "D", "texto": "Solo ser mujer", "esCorrecta": false, "retroalimentacion": "Incorrecto. La condición era más específica que solo el género." }
+      ]
+    },
+    {
+      "id": 29,
+      "pregunta": "Según el ejemplo trabajado, ¿qué personas pasaban correctamente el filtro?",
+      "alternativas": [
+        { "id": "A", "texto": "Ana y Laura", "esCorrecta": true, "retroalimentacion": "Correcto. Ambas eran femeninas, mayores de edad y con crédito superior a 700." },
+        { "id": "B", "texto": "Luis y María", "esCorrecta": false, "retroalimentacion": "Incorrecto. Luis no cumple por género y María no cumple por ser menor de edad." },
+        { "id": "C", "texto": "Sofía y María", "esCorrecta": false, "retroalimentacion": "Incorrecto. Sofía no cumple por crédito y María no cumple por edad." },
+        { "id": "D", "texto": "Solo Ana", "esCorrecta": false, "retroalimentacion": "Incorrecto. También Laura cumplía todas las condiciones." }
+      ]
+    },
+    {
+      "id": 30,
+      "pregunta": "¿Qué es el hoisting en JavaScript?",
+      "alternativas": [
+        { "id": "A", "texto": "El comportamiento por el cual declaraciones de variables y funciones se registran antes de ejecutar el código", "esCorrecta": true, "retroalimentacion": "Correcto. JavaScript procesa primero declaraciones y luego ejecuta el programa." },
+        { "id": "B", "texto": "Una técnica para ordenar arrays automáticamente", "esCorrecta": false, "retroalimentacion": "Incorrecto. Hoisting no tiene relación con ordenar arrays." },
+        { "id": "C", "texto": "Una forma de usar async sin await", "esCorrecta": false, "retroalimentacion": "Incorrecto. Son conceptos distintos." },
+        { "id": "D", "texto": "Un método exclusivo de los objetos", "esCorrecta": false, "retroalimentacion": "Incorrecto. Hoisting es un comportamiento del lenguaje, no un método." }
+      ]
+    },
+    {
+      "id": 31,
+      "pregunta": "¿Qué ocurre con una function declaration respecto al hoisting?",
+      "alternativas": [
+        { "id": "A", "texto": "Puede llamarse antes de su declaración", "esCorrecta": true, "retroalimentacion": "Correcto. Las function declarations se elevan completas en su contexto." },
+        { "id": "B", "texto": "Siempre da error si se llama antes", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso no pasa con function declarations." },
+        { "id": "C", "texto": "Solo funciona dentro de clases", "esCorrecta": false, "retroalimentacion": "Incorrecto. No depende de estar dentro de clases." },
+        { "id": "D", "texto": "Se ejecuta automáticamente apenas se declara", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ser elevada no significa ejecutarse sola." }
+      ]
+    },
+    {
+      "id": 32,
+      "pregunta": "¿Qué pasa con una variable declarada con var si se usa antes de asignarle valor?",
+      "alternativas": [
+        { "id": "A", "texto": "Su valor es undefined", "esCorrecta": true, "retroalimentacion": "Correcto. var se eleva, pero la asignación no; por eso primero aparece como undefined." },
+        { "id": "B", "texto": "Da ReferenceError siempre", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso ocurre más con let o const antes de su declaración." },
+        { "id": "C", "texto": "Toma automáticamente el valor 0", "esCorrecta": false, "retroalimentacion": "Incorrecto. JavaScript no asigna 0 por defecto a var." },
+        { "id": "D", "texto": "Se convierte en null", "esCorrecta": false, "retroalimentacion": "Incorrecto. El valor por defecto es undefined, no null." }
+      ]
+    },
+    {
+      "id": 33,
+      "pregunta": "¿Qué ocurre con let y const si se usan antes de declararse?",
+      "alternativas": [
+        { "id": "A", "texto": "Generan error por la Temporal Dead Zone", "esCorrecta": true, "retroalimentacion": "Correcto. let y const sí existen en hoisting, pero no pueden usarse antes de declararse." },
+        { "id": "B", "texto": "Se vuelven undefined como var", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ese comportamiento corresponde a var, no a let ni const." },
+        { "id": "C", "texto": "Se convierten en false", "esCorrecta": false, "retroalimentacion": "Incorrecto. No hay una conversión automática a false." },
+        { "id": "D", "texto": "Siempre se ejecutan solo dentro de funciones", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso no describe su relación con hoisting." }
+      ]
+    },
+    {
+      "id": 34,
+      "pregunta": "¿Qué es un CustomEvent en JavaScript?",
+      "alternativas": [
+        { "id": "A", "texto": "Un evento personalizado creado por el desarrollador", "esCorrecta": true, "retroalimentacion": "Correcto. Permite crear y disparar eventos propios para comunicar partes de la aplicación." },
+        { "id": "B", "texto": "Un evento exclusivo del navegador para clicks", "esCorrecta": false, "retroalimentacion": "Incorrecto. click es un evento nativo, no un CustomEvent." },
+        { "id": "C", "texto": "Una función que reemplaza addEventListener", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un CustomEvent no reemplaza al listener; ambos trabajan juntos." },
+        { "id": "D", "texto": "Un tipo de variable especial", "esCorrecta": false, "retroalimentacion": "Incorrecto. Es un evento, no una variable." }
+      ]
+    },
+    {
+      "id": 35,
+      "pregunta": "¿Qué propiedad se usa para enviar datos dentro de un CustomEvent?",
+      "alternativas": [
+        { "id": "A", "texto": "detail", "esCorrecta": true, "retroalimentacion": "Correcto. detail es la propiedad donde se suelen adjuntar datos personalizados del evento." },
+        { "id": "B", "texto": "value", "esCorrecta": false, "retroalimentacion": "Incorrecto. value no es la propiedad estándar para datos en CustomEvent." },
+        { "id": "C", "texto": "payloadData", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa no es una propiedad nativa de CustomEvent." },
+        { "id": "D", "texto": "context", "esCorrecta": false, "retroalimentacion": "Incorrecto. context no es la propiedad usada en CustomEvent." }
+      ]
+    },
+    {
+      "id": 36,
+      "pregunta": "¿Qué significa bubbles: true en un CustomEvent?",
+      "alternativas": [
+        { "id": "A", "texto": "Que el evento puede propagarse hacia arriba por el DOM", "esCorrecta": true, "retroalimentacion": "Correcto. bubbles permite que el evento suba a elementos padres, body, document, etc." },
+        { "id": "B", "texto": "Que el evento se ejecuta dos veces", "esCorrecta": false, "retroalimentacion": "Incorrecto. bubbles no duplica la ejecución; solo permite propagación." },
+        { "id": "C", "texto": "Que el evento puede modificar variables globales", "esCorrecta": false, "retroalimentacion": "Incorrecto. bubbles no tiene relación con variables globales." },
+        { "id": "D", "texto": "Que el evento solo ocurre dentro del mismo elemento", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso sería lo contrario de usar bubbles." }
+      ]
+    },
+    {
+      "id": 37,
+      "pregunta": "¿Qué significa composed: true en un CustomEvent?",
+      "alternativas": [
+        { "id": "A", "texto": "Que el evento puede atravesar el Shadow DOM", "esCorrecta": true, "retroalimentacion": "Correcto. composed permite que el evento salga del Shadow DOM hacia el DOM exterior." },
+        { "id": "B", "texto": "Que el evento solo funciona dentro de una función async", "esCorrecta": false, "retroalimentacion": "Incorrecto. composed no tiene relación con async/await." },
+        { "id": "C", "texto": "Que el evento siempre lleva detail", "esCorrecta": false, "retroalimentacion": "Incorrecto. detail y composed son cosas distintas." },
+        { "id": "D", "texto": "Que el evento deja de hacer bubbling", "esCorrecta": false, "retroalimentacion": "Incorrecto. composed no anula bubbles." }
+      ]
+    },
+    {
+      "id": 38,
+      "pregunta": "¿Qué sucede si se crea un objeto con const y luego se modifica una de sus propiedades?",
+      "alternativas": [
+        { "id": "A", "texto": "Sí se puede modificar la propiedad, porque const protege la referencia, no vuelve inmutable al objeto", "esCorrecta": true, "retroalimentacion": "Correcto. const impide reasignar la variable, pero no evita cambiar propiedades internas del objeto." },
+        { "id": "B", "texto": "Da error siempre porque const hace el objeto totalmente inmutable", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso solo ocurriría con mecanismos como Object.freeze(), no por usar const." },
+        { "id": "C", "texto": "La propiedad cambia y const se convierte en let", "esCorrecta": false, "retroalimentacion": "Incorrecto. const nunca se convierte en let." },
+        { "id": "D", "texto": "El objeto se borra automáticamente", "esCorrecta": false, "retroalimentacion": "Incorrecto. Modificar una propiedad no borra el objeto." }
+      ]
+    },
+    {
+      "id": 39,
+      "pregunta": "En el ejemplo donde personas.name pasa de 'Juan' a { name: 'Pedro' }, ¿qué ocurre realmente?",
+      "alternativas": [
+        { "id": "A", "texto": "Se reemplaza el valor de la propiedad name por un nuevo objeto", "esCorrecta": true, "retroalimentacion": "Correcto. La propiedad antes era un string y después pasa a contener un objeto." },
+        { "id": "B", "texto": "Se cambia el nombre de la variable personas", "esCorrecta": false, "retroalimentacion": "Incorrecto. La variable personas sigue llamándose igual." },
+        { "id": "C", "texto": "const impide ese cambio y da error siempre", "esCorrecta": false, "retroalimentacion": "Incorrecto. const no impide modificar propiedades internas del objeto." },
+        { "id": "D", "texto": "La propiedad name se elimina", "esCorrecta": false, "retroalimentacion": "Incorrecto. No se elimina; se reasigna con otro valor." }
+      ]
+    },
+    {
+      "id": 40,
+      "pregunta": "¿Qué hace Object.freeze()?",
+      "alternativas": [
+        { "id": "A", "texto": "Congela el objeto para que no se puedan modificar, agregar o eliminar propiedades", "esCorrecta": true, "retroalimentacion": "Correcto. Object.freeze() vuelve el objeto de solo lectura a nivel superficial." },
+        { "id": "B", "texto": "Convierte el objeto en array", "esCorrecta": false, "retroalimentacion": "Incorrecto. freeze no cambia el tipo del dato." },
+        { "id": "C", "texto": "Elimina todas las propiedades del objeto", "esCorrecta": false, "retroalimentacion": "Incorrecto. freeze no elimina propiedades; las conserva pero bloquea cambios." },
+        { "id": "D", "texto": "Hace que el objeto sea null", "esCorrecta": false, "retroalimentacion": "Incorrecto. No convierte el objeto a null." }
+      ]
+    },
+    {
+      "id": 41,
+      "pregunta": "Si un objeto está congelado con Object.freeze(), ¿qué pasa al intentar cambiar freezePersona.edad = 31 en modo normal?",
+      "alternativas": [
+        { "id": "A", "texto": "El cambio se ignora y el valor original se mantiene", "esCorrecta": true, "retroalimentacion": "Correcto. En modo no estricto, el intento de modificación suele ser ignorado silenciosamente." },
+        { "id": "B", "texto": "La edad sí cambia a 31", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un objeto congelado no permite ese cambio." },
+        { "id": "C", "texto": "El objeto desaparece", "esCorrecta": false, "retroalimentacion": "Incorrecto. freeze no elimina el objeto." },
+        { "id": "D", "texto": "Se convierte automáticamente en string", "esCorrecta": false, "retroalimentacion": "Incorrecto. No hay ninguna conversión a string." }
+      ]
+    },
+    {
+      "id": 42,
+      "pregunta": "¿Qué limitación importante tiene Object.freeze() según lo explicado?",
+      "alternativas": [
+        { "id": "A", "texto": "Es superficial; los objetos internos pueden seguir cambiando si no se congelan también", "esCorrecta": true, "retroalimentacion": "Correcto. Object.freeze() no hace deep freeze automáticamente." },
+        { "id": "B", "texto": "Solo funciona con arrays", "esCorrecta": false, "retroalimentacion": "Incorrecto. También funciona con objetos normales." },
+        { "id": "C", "texto": "Solo funciona en navegadores viejos", "esCorrecta": false, "retroalimentacion": "Incorrecto. No se presentó esa limitación." },
+        { "id": "D", "texto": "No funciona con propiedades numéricas", "esCorrecta": false, "retroalimentacion": "Incorrecto. Sí funciona con propiedades numéricas." }
+      ]
+    },
+    {
+      "id": 43,
+      "pregunta": "En el ejemplo de async/await, ¿qué hace fakeFetchData()?",
+      "alternativas": [
+        { "id": "A", "texto": "Devuelve una Promise que se resuelve después de 2 segundos con un objeto de datos", "esCorrecta": true, "retroalimentacion": "Correcto. fakeFetchData simula una petición asincrónica usando Promise y setTimeout." },
+        { "id": "B", "texto": "Devuelve inmediatamente el número 8", "esCorrecta": false, "retroalimentacion": "Incorrecto. El 8 venía de la función suma, no de fakeFetchData." },
+        { "id": "C", "texto": "Da error siempre porque reject no se usa", "esCorrecta": false, "retroalimentacion": "Incorrecto. No usar reject no hace que la función falle automáticamente." },
+        { "id": "D", "texto": "Bloquea todo JavaScript durante 2 segundos", "esCorrecta": false, "retroalimentacion": "Incorrecto. La espera es asincrónica, no bloqueante." }
+      ]
+    },
+    {
+      "id": 44,
+      "pregunta": "En el ejemplo trabajado, ¿qué se imprime primero: suma(5,3) o el resultado de fakeFetchData()?",
+      "alternativas": [
+        { "id": "A", "texto": "Primero se imprime 8 y luego el objeto resuelto por la promesa", "esCorrecta": true, "retroalimentacion": "Correcto. La suma es síncrona y se ejecuta antes de que la promesa se resuelva tras 2 segundos." },
+        { "id": "B", "texto": "Primero el objeto y luego 8", "esCorrecta": false, "retroalimentacion": "Incorrecto. El await pausa solo la función async, no detiene el resto del programa." },
+        { "id": "C", "texto": "Se imprimen al mismo tiempo", "esCorrecta": false, "retroalimentacion": "Incorrecto. Hay una diferencia temporal clara por el setTimeout de 2 segundos." },
+        { "id": "D", "texto": "No se imprime nada", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ambas partes del código sí producen salida." }
+      ]
+    },
+    {
+      "id": 45,
+      "pregunta": "¿Qué hace await dentro de una función async?",
+      "alternativas": [
+        { "id": "A", "texto": "Espera la resolución de una Promise dentro de esa función", "esCorrecta": true, "retroalimentacion": "Correcto. await pausa la ejecución local de la función async hasta obtener el resultado." },
+        { "id": "B", "texto": "Detiene todo el programa JavaScript", "esCorrecta": false, "retroalimentacion": "Incorrecto. await no bloquea todo el programa; solo la función async actual." },
+        { "id": "C", "texto": "Convierte cualquier valor en Promise automáticamente y lo imprime", "esCorrecta": false, "retroalimentacion": "Incorrecto. await espera, no imprime por sí mismo." },
+        { "id": "D", "texto": "Hace innecesario el try/catch", "esCorrecta": false, "retroalimentacion": "Incorrecto. Con async/await sigue siendo útil usar try/catch para manejar errores." }
+      ]
+    },
+    {
+      "id": 46,
+      "pregunta": "¿Qué es el operador ?? en JavaScript?",
+      "alternativas": [
+        { "id": "A", "texto": "El operador nullish coalescing, que usa el valor de la derecha si el de la izquierda es null o undefined", "esCorrecta": true, "retroalimentacion": "Correcto. ?? solo considera null y undefined para usar el valor alternativo." },
+        { "id": "B", "texto": "Un operador para comparar arrays", "esCorrecta": false, "retroalimentacion": "Incorrecto. ?? no compara arrays." },
+        { "id": "C", "texto": "Una forma abreviada de AND", "esCorrecta": false, "retroalimentacion": "Incorrecto. AND es &&." },
+        { "id": "D", "texto": "Un operador exclusivo para funciones async", "esCorrecta": false, "retroalimentacion": "Incorrecto. No tiene relación exclusiva con async." }
+      ]
+    },
+    {
+      "id": 47,
+      "pregunta": "En console.log(user1 ?? user2), si user1 es undefined y user2 es un objeto con datos, ¿qué se imprime?",
+      "alternativas": [
+        { "id": "A", "texto": "Se imprime user2", "esCorrecta": true, "retroalimentacion": "Correcto. Como user1 es undefined, ?? toma el valor de la derecha." },
+        { "id": "B", "texto": "Se imprime undefined", "esCorrecta": false, "retroalimentacion": "Incorrecto. Con ??, undefined hace que se use el valor de la derecha." },
+        { "id": "C", "texto": "Da error por usar objetos", "esCorrecta": false, "retroalimentacion": "Incorrecto. No hay problema en devolver un objeto con ??." },
+        { "id": "D", "texto": "Se imprime null", "esCorrecta": false, "retroalimentacion": "Incorrecto. El valor alternativo en el ejemplo es user2, no null." }
+      ]
+    },
+    {
+      "id": 48,
+      "pregunta": "¿Cuál es una diferencia importante entre || y ?? según lo trabajado?",
+      "alternativas": [
+        { "id": "A", "texto": "|| reemplaza valores falsy; ?? solo reemplaza null o undefined", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la diferencia clave explicada con ejemplos como 0 || 100 y 0 ?? 100." },
+        { "id": "B", "texto": "No hay ninguna diferencia; hacen exactamente lo mismo", "esCorrecta": false, "retroalimentacion": "Incorrecto. Sí hay diferencias importantes en cómo evalúan los valores." },
+        { "id": "C", "texto": "?? solo sirve con strings", "esCorrecta": false, "retroalimentacion": "Incorrecto. ?? sirve con cualquier tipo de dato." },
+        { "id": "D", "texto": "|| solo sirve dentro de if", "esCorrecta": false, "retroalimentacion": "Incorrecto. || se usa también en expresiones generales." }
+      ]
+    },
+    {
+      "id": 49,
+      "pregunta": "En la función function bar(foo){ return foo && foo * 3 || null; }, si foo vale 5, ¿qué devuelve?",
+      "alternativas": [
+        { "id": "A", "texto": "15", "esCorrecta": true, "retroalimentacion": "Correcto. 5 es truthy, así que foo * 3 da 15 y 15 || null devuelve 15." },
+        { "id": "B", "texto": "5", "esCorrecta": false, "retroalimentacion": "Incorrecto. La función no devuelve foo directamente, sino foo * 3." },
+        { "id": "C", "texto": "null", "esCorrecta": false, "retroalimentacion": "Incorrecto. null solo aparece si la parte izquierda resulta falsy." },
+        { "id": "D", "texto": "true", "esCorrecta": false, "retroalimentacion": "Incorrecto. Aunque hay una evaluación lógica, el resultado final es numérico." }
+      ]
+    },
+    {
+      "id": 50,
+      "pregunta": "En esa misma función bar(foo), si foo vale 0, ¿qué devuelve?",
+      "alternativas": [
+        { "id": "A", "texto": "null", "esCorrecta": true, "retroalimentacion": "Correcto. 0 es falsy, entonces foo && foo*3 produce 0 y luego 0 || null devuelve null." },
+        { "id": "B", "texto": "0", "esCorrecta": false, "retroalimentacion": "Incorrecto. El OR final reemplaza ese 0 por null porque 0 es falsy." },
+        { "id": "C", "texto": "3", "esCorrecta": false, "retroalimentacion": "Incorrecto. 0 * 3 es 0, no 3." },
+        { "id": "D", "texto": "false", "esCorrecta": false, "retroalimentacion": "Incorrecto. El resultado final definido por la expresión es null." }
+      ]
+    },
+    {
+      "id": 51,
+      "pregunta": "¿Qué significa 'short-circuit evaluation' en expresiones como foo && foo * 3 || null?",
+      "alternativas": [
+        { "id": "A", "texto": "Que JavaScript puede detener la evaluación antes de revisar toda la expresión si ya sabe el resultado", "esCorrecta": true, "retroalimentacion": "Correcto. Con && y || muchas veces no hace falta evaluar todo para saber qué devolver." },
+        { "id": "B", "texto": "Que JavaScript ejecuta la expresión dos veces", "esCorrecta": false, "retroalimentacion": "Incorrecto. No la ejecuta dos veces; simplemente puede cortar antes." },
+        { "id": "C", "texto": "Que siempre convierte el resultado a string", "esCorrecta": false, "retroalimentacion": "Incorrecto. No hay una conversión obligatoria a string." },
+        { "id": "D", "texto": "Que solo funciona con null", "esCorrecta": false, "retroalimentacion": "Incorrecto. Short-circuit aplica a operadores lógicos en general." }
+      ]
+    },
+    {
+      "id": 52,
+      "pregunta": "¿Qué tipo de función es la que se pasa dentro de setTimeout(function(){ ... }, 1000)?",
+      "alternativas": [
+        { "id": "A", "texto": "Una callback", "esCorrecta": true, "retroalimentacion": "Correcto. Es una función que se pasa como argumento para ejecutarse después." },
+        { "id": "B", "texto": "Una clase", "esCorrecta": false, "retroalimentacion": "Incorrecto. No es una clase, sino una función." },
+        { "id": "C", "texto": "Un objeto inmutable", "esCorrecta": false, "retroalimentacion": "Incorrecto. No es un objeto, menos uno inmutable." },
+        { "id": "D", "texto": "Una promesa", "esCorrecta": false, "retroalimentacion": "Incorrecto. setTimeout recibe una función callback, no una promesa." }
+      ]
+    },
+    {
+      "id": 53,
+      "pregunta": "¿Para qué se usan mucho los Custom Events según lo conversado?",
+      "alternativas": [
+        { "id": "A", "texto": "Para la comunicación entre componentes o partes desacopladas de una aplicación", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la idea central al explicar CustomEvent." },
+        { "id": "B", "texto": "Para reemplazar completamente a las funciones", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los eventos no reemplazan la necesidad de funciones." },
+        { "id": "C", "texto": "Para comparar arrays", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso no tiene relación con eventos." },
+        { "id": "D", "texto": "Para congelar objetos", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso corresponde a Object.freeze()." }
+      ]
+    },
+    {
+      "id": 54,
+      "pregunta": "¿Qué afirmación es correcta sobre inmutabilidad y React/arquitectura frontend?",
+      "alternativas": [
+        { "id": "A", "texto": "La inmutabilidad es importante porque ayuda a evitar efectos secundarios y a manejar mejor el estado", "esCorrecta": true, "retroalimentacion": "Correcto. Se comentó que este concepto es muy usado en React, Redux y arquitectura frontend." },
+        { "id": "B", "texto": "La inmutabilidad solo sirve para imprimir datos", "esCorrecta": false, "retroalimentacion": "Incorrecto. Su utilidad es mucho más amplia que imprimir." },
+        { "id": "C", "texto": "La inmutabilidad solo se logra con const", "esCorrecta": false, "retroalimentacion": "Incorrecto. const no basta para garantizar inmutabilidad real." },
+        { "id": "D", "texto": "La inmutabilidad impide usar funciones", "esCorrecta": false, "retroalimentacion": "Incorrecto. No impide usar funciones en absoluto." }
+      ]
+    },
+    {
+      "id": 55,
+      "pregunta": "¿Qué se recomendó para crear una nueva versión de un objeto sin modificar el original?",
+      "alternativas": [
+        { "id": "A", "texto": "Usar spread, por ejemplo: const nuevo = { ...obj, propiedad: valor }", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la forma propuesta para mantener inmutabilidad creando un objeto nuevo." },
+        { "id": "B", "texto": "Usar delete y volver a crear el mismo objeto", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso muta el objeto original y no es la recomendación principal." },
+        { "id": "C", "texto": "Usar !!obj", "esCorrecta": false, "retroalimentacion": "Incorrecto. !! solo convierte a booleano." },
+        { "id": "D", "texto": "Usar == en lugar de =", "esCorrecta": false, "retroalimentacion": "Incorrecto. == es comparación, no creación de objetos." }
+      ]
+    }
+  ]
+}

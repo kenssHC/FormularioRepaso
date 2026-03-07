@@ -1,0 +1,186 @@
+{
+  "titulo": "Cuestionario de repaso sobre proyectos, arquitectura y conceptos del chat",
+  "descripcion": "Banco de preguntas de opción múltiple basado únicamente en la información trabajada en este chat.",
+  "preguntas": [
+    {
+      "id": 1,
+      "pregunta": "¿Cuál es el nombre correcto del proyecto principal mencionado en el chat?",
+      "alternativas": [
+        { "id": "A", "texto": "Glombo", "esCorrecta": false, "retroalimentacion": "Incorrecto. Se hizo una corrección explícita en el chat: el nombre correcto no es Glombo, sino Glomo." },
+        { "id": "B", "texto": "Glomo", "esCorrecta": true, "retroalimentacion": "Correcto. El usuario corrigió el nombre y dejó claro que el proyecto correcto se llama Glomo." },
+        { "id": "C", "texto": "Glemo", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ese nombre no fue mencionado como proyecto válido en el chat." },
+        { "id": "D", "texto": "Glama", "esCorrecta": false, "retroalimentacion": "Incorrecto. No corresponde a ninguno de los proyectos explicados." }
+      ]
+    },
+    {
+      "id": 2,
+      "pregunta": "¿Qué se explicó sobre Ether dentro del ecosistema de proyectos?",
+      "alternativas": [
+        { "id": "A", "texto": "Es un proyecto único y cerrado, sin subtipos ni otros sistemas dentro.", "esCorrecta": false, "retroalimentacion": "Incorrecto. En el chat se explicó que Ether no es un proyecto único, sino un tipo de proyecto o plataforma donde existen otros sistemas." },
+        { "id": "B", "texto": "Es una base de datos usada solo para guardar usuarios.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ether no fue definido como base de datos, sino como un tipo de proyecto o plataforma." },
+        { "id": "C", "texto": "Es un tipo de proyecto o plataforma donde se despliegan otros proyectos, como IVR y algunos simuladores.", "esCorrecta": true, "retroalimentacion": "Correcto. Ether no se trató como un proyecto específico, sino como un entorno donde viven otros proyectos." },
+        { "id": "D", "texto": "Es el nombre antiguo de Gema.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Gema y Ether se presentaron como cosas distintas dentro del ecosistema." }
+      ]
+    },
+    {
+      "id": 3,
+      "pregunta": "¿Qué es un IVR según lo trabajado en el chat?",
+      "alternativas": [
+        { "id": "A", "texto": "Un sistema telefónico automatizado que interactúa con el usuario por voz o teclado.", "esCorrecta": true, "retroalimentacion": "Correcto. IVR se explicó como el sistema de atención telefónica automática del tipo 'presione 1, presione 2'." },
+        { "id": "B", "texto": "Un lenguaje de programación usado en Glomo.", "esCorrecta": false, "retroalimentacion": "Incorrecto. IVR no es un lenguaje, sino un sistema de respuesta automática." },
+        { "id": "C", "texto": "Un tipo de base de datos corporativa.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa definición no apareció en el chat." },
+        { "id": "D", "texto": "Un framework moderno que reemplaza a Lit.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Lit y IVR pertenecen a contextos diferentes: Lit es librería de frontend; IVR es sistema de atención automática." }
+      ]
+    },
+    {
+      "id": 4,
+      "pregunta": "¿Cómo se describió a Gema en relación con Glomo y Ether?",
+      "alternativas": [
+        { "id": "A", "texto": "Es parte del universo Ether y está enfocado solo en llamadas.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Se explicó que Gema no está dentro del universo Ether." },
+        { "id": "B", "texto": "Es un proyecto independiente, como un 'hermanito menor' de Glomo, orientado a empresas.", "esCorrecta": true, "retroalimentacion": "Correcto. Así se presentó: fuera de Ether, relacionado con Glomo y enfocado en empresas." },
+        { "id": "C", "texto": "Es el nuevo nombre de Banca por Internet.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Banca por Internet y Gema fueron tratados como proyectos distintos." },
+        { "id": "D", "texto": "Es un gestor de dependencias anterior a npm.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso corresponde a Bower, no a Gema." }
+      ]
+    },
+    {
+      "id": 5,
+      "pregunta": "¿Qué se dijo sobre Banca por Internet?",
+      "alternativas": [
+        { "id": "A", "texto": "No es un proyecto, solo es un nombre comercial.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El chat dejó claro que Banca por Internet sí es un proyecto." },
+        { "id": "B", "texto": "Es un proyecto del banco que también se maneja y al que acceden los usuarios desde la web.", "esCorrecta": true, "retroalimentacion": "Correcto. Cuando el usuario entra a la página y ve 'Banca por Internet', está entrando a un proyecto." },
+        { "id": "C", "texto": "Es una herramienta solo para desarrolladores internos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Se asoció con el acceso de los clientes por la página web." },
+        { "id": "D", "texto": "Es otro nombre para Ether.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ether y Banca por Internet son conceptos separados." }
+      ]
+    },
+    {
+      "id": 6,
+      "pregunta": "¿Qué idea se destacó sobre la cantidad de proyectos en el banco?",
+      "alternativas": [
+        { "id": "A", "texto": "Solo existen Glomo, Ether y Gema.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Se dijo claramente que hay muchos más proyectos, incluso pequeños simuladores." },
+        { "id": "B", "texto": "Hay muchos proyectos, grandes y pequeños, y ni siquiera todos son conocidos por una sola persona.", "esCorrecta": true, "retroalimentacion": "Correcto. El banco tiene un montón de proyectos y que incluso no todos son conocidos por todos." },
+        { "id": "C", "texto": "Todos los proyectos son públicos y fáciles de conocer.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Se habló de permisos, rotación y documentación interna." },
+        { "id": "D", "texto": "Todos los proyectos son simuladores de préstamos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los simuladores fueron solo un ejemplo de proyectos pequeños." }
+      ]
+    },
+    {
+      "id": 7,
+      "pregunta": "Cuando un desarrollador entra a un proyecto nuevo, ¿qué se recomendó hacer primero?",
+      "alternativas": [
+        { "id": "A", "texto": "Eliminar la configuración anterior y comenzar desde cero.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso no fue lo recomendado ni es una práctica razonable para onboarding." },
+        { "id": "B", "texto": "Preguntar a alguien del equipo que ya haya pasado por el proyecto o revisar la documentación con ayuda del lead o Scrum.", "esCorrecta": true, "retroalimentacion": "Correcto. Lo primero es apoyarse en el equipo y en la documentación del proyecto." },
+        { "id": "C", "texto": "Cambiar el framework principal del proyecto.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Primero se debe entender el proyecto, no modificar su base tecnológica." },
+        { "id": "D", "texto": "Publicar directamente en producción para ver cómo funciona.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso sería una mala práctica, especialmente en banca." }
+      ]
+    },
+    {
+      "id": 8,
+      "pregunta": "¿Qué es Bower según lo trabajado en el chat?",
+      "alternativas": [
+        { "id": "A", "texto": "Un gestor antiguo de dependencias frontend.", "esCorrecta": true, "retroalimentacion": "Correcto. Bower se explicó como una herramienta antigua para manejar dependencias en frontend." },
+        { "id": "B", "texto": "Un sistema de atención telefónica automática.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso corresponde a IVR." },
+        { "id": "C", "texto": "Un framework actual que reemplaza a Lit.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Bower no es framework de componentes, sino gestor de dependencias." },
+        { "id": "D", "texto": "Una metodología de pruebas end to end.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Bower no pertenece al área de testing." }
+      ]
+    },
+    {
+      "id": 9,
+      "pregunta": "¿Qué es Polymer en este contexto?",
+      "alternativas": [
+        { "id": "A", "texto": "Una librería creada por Google para construir Web Components.", "esCorrecta": true, "retroalimentacion": "Correcto. Polymer se explicó como una librería usada antes para crear Web Components." },
+        { "id": "B", "texto": "Una base de datos usada por Gema.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Polymer no se presentó como base de datos." },
+        { "id": "C", "texto": "El reemplazo de Ether en proyectos modernos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Polymer y Ether pertenecen a categorías distintas." },
+        { "id": "D", "texto": "Una técnica para documentación de proyectos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No fue definido así en ningún momento." }
+      ]
+    },
+    {
+      "id": 10,
+      "pregunta": "¿Por qué se dijo que en Glomo existen componentes antiguos y actuales?",
+      "alternativas": [
+        { "id": "A", "texto": "Porque Glomo se divide entre backend en Java y frontend en PHP.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa división no se mencionó en el chat." },
+        { "id": "B", "texto": "Porque conviven componentes antiguos hechos con Bower/Polymer y componentes más actuales hechos con Lit.", "esCorrecta": true, "retroalimentacion": "Correcto. Glomo tiene legacy y componentes modernos en migración." },
+        { "id": "C", "texto": "Porque algunos componentes usan bases de datos distintas.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La diferencia explicada fue tecnológica, no por base de datos." },
+        { "id": "D", "texto": "Porque todos los componentes antiguos ya fueron eliminados.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Justamente se explicó que siguen existiendo y van migrando poco a poco." }
+      ]
+    },
+    {
+      "id": 11,
+      "pregunta": "¿Qué significa que los componentes antiguos 'van migrando a Lit'?",
+      "alternativas": [
+        { "id": "A", "texto": "Que se van eliminando y reescribiendo o adaptando a una tecnología más moderna.", "esCorrecta": true, "retroalimentacion": "Correcto. Migrar se explicó como reescribir o adaptar componentes antiguos hacia Lit." },
+        { "id": "B", "texto": "Que Lit deja de usarse y se vuelve a Bower.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El sentido de la migración es de lo antiguo a lo moderno, no al revés." },
+        { "id": "C", "texto": "Que se convierten automáticamente sin tocar código.", "esCorrecta": false, "retroalimentacion": "Incorrecto. En la práctica migrar implica trabajo de adaptación o reescritura." },
+        { "id": "D", "texto": "Que pasan de frontend a backend.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La migración descrita fue entre tecnologías frontend." }
+      ]
+    },
+    {
+      "id": 12,
+      "pregunta": "¿Qué es un test E2E?",
+      "alternativas": [
+        { "id": "A", "texto": "Una prueba que verifica una sola función aislada.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso corresponde más a un test unitario." },
+        { "id": "B", "texto": "Una prueba que simula el flujo completo del usuario de extremo a extremo.", "esCorrecta": true, "retroalimentacion": "Correcto. E2E significa End-to-End y prueba todo el flujo real de la aplicación." },
+        { "id": "C", "texto": "Una documentación del proyecto escrita por el Scrum.", "esCorrecta": false, "retroalimentacion": "Incorrecto. E2E pertenece al ámbito de testing, no de documentación." },
+        { "id": "D", "texto": "Un canal privado del sistema.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No tiene relación con canales." }
+      ]
+    },
+    {
+      "id": 13,
+      "pregunta": "¿Cuál es la diferencia principal entre test unitarios y tests E2E?",
+      "alternativas": [
+        { "id": "A", "texto": "Los unitarios prueban una parte pequeña del código y los E2E prueban el flujo completo del sistema.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la diferencia central explicada en el chat." },
+        { "id": "B", "texto": "Los unitarios siempre son manuales y los E2E siempre son en papel.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa clasificación no fue explicada y no describe correctamente estos tipos de prueba." },
+        { "id": "C", "texto": "Los E2E solo sirven para bases de datos y los unitarios solo para diseño.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No se definieron así." },
+        { "id": "D", "texto": "No hay diferencia real, son lo mismo.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El chat sí distinguió claramente ambos tipos de prueba." }
+      ]
+    },
+    {
+      "id": 14,
+      "pregunta": "¿Qué es una página dentro de una aplicación como Glomo o Banca por Internet?",
+      "alternativas": [
+        { "id": "A", "texto": "Una pantalla completa que el usuario puede ver, como login o transferencias.", "esCorrecta": true, "retroalimentacion": "Correcto. Una página es una vista completa dentro de la aplicación." },
+        { "id": "B", "texto": "Solo un botón reutilizable.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un botón sería un componente, no una página." },
+        { "id": "C", "texto": "Un tipo de canal privado.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Página y canal son conceptos distintos." },
+        { "id": "D", "texto": "Una prueba automática del sistema.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Página no pertenece al ámbito de testing." }
+      ]
+    },
+    {
+      "id": 15,
+      "pregunta": "¿Qué es una feature en este contexto?",
+      "alternativas": [
+        { "id": "A", "texto": "Una funcionalidad específica dentro de la aplicación.", "esCorrecta": true, "retroalimentacion": "Correcto. Una feature se definió como una característica o funcionalidad concreta del sistema." },
+        { "id": "B", "texto": "Una persona del equipo Scrum.", "esCorrecta": false, "retroalimentacion": "Incorrecto. feature no es un rol." },
+        { "id": "C", "texto": "Un archivo para instalar dependencias con Bower.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso se relacionaría más con configuración, no con funcionalidad." },
+        { "id": "D", "texto": "Un error de producción.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Una feature no es un fallo, sino una capacidad del sistema." }
+      ]
+    },
+    {
+      "id": 16,
+      "pregunta": "¿Qué son los canales según lo explicado en el chat?",
+      "alternativas": [
+        { "id": "A", "texto": "Medios de comunicación entre componentes para compartir información.", "esCorrecta": true, "retroalimentacion": "Correcto. Los canales sirven para comunicar componentes desacoplados." },
+        { "id": "B", "texto": "Pantallas principales del sistema.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso corresponde a páginas." },
+        { "id": "C", "texto": "Tipos de usuarios dentro del banco.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No se definieron como perfiles o roles." },
+        { "id": "D", "texto": "Herramientas de diseño visual.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los canales pertenecen a la comunicación entre componentes." }
+      ]
+    },
+    {
+      "id": 17,
+      "pregunta": "¿Qué es la gobernanza en proyectos tecnológicos como los del banco?",
+      "alternativas": [
+        { "id": "A", "texto": "El conjunto de reglas, procesos y controles que definen cómo se desarrollan y gestionan los proyectos.", "esCorrecta": true, "retroalimentacion": "Correcto. La gobernanza marca estándares, controles y formas de trabajo." },
+        { "id": "B", "texto": "Un canal reservado para componentes privados.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Gobernanza no es un canal." },
+        { "id": "C", "texto": "El nombre del flujo de login del usuario.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso se acerca más a flujo funcional, no a gobernanza." },
+        { "id": "D", "texto": "Una herramienta antigua reemplazada por Lit.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso se relaciona con Bower o Polymer, no con gobernanza." }
+      ]
+    },
+    {
+      "id": 18,
+      "pregunta": "¿Qué es el flujo de un proyecto?",
+      "alternativas": [
+        { "id": "A", "texto": "La secuencia de pasos que sigue un proyecto desde el requerimiento hasta producción y mantenimiento.", "esCorrecta": true, "retroalimentacion": "Correcto. El flujo del proyecto: idea, análisis, diseño, desarrollo, pruebas, despliegue y mantenimiento." },
+        { "id": "B", "texto": "Solo la forma en que se comunica un componente con otro por canales.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso sería una parte del flujo de datos o comunicación, no del proyecto completo." },
+        { "id": "C", "texto": "El listado de librerías del archivo bower.json.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso es configuración de dependencias, no flujo de proyecto." },
+        { "id": "D", "texto": "El nombre de una feature de transferencias.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El flujo es un proceso general del proyecto, no una sola feature." }
+      ]
+    }
+  ]
+}

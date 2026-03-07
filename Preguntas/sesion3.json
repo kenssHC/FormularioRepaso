@@ -1,0 +1,286 @@
+{
+  "titulo": "Quiz - Sesión 3 Accesibilidad",
+  "descripcion": "Preguntas de repaso sobre accesibilidad web basadas en todo el contenido tratado en este chat.",
+  "preguntas": [
+    {
+      "id": 1,
+      "pregunta": "¿Qué es la accesibilidad en productos digitales?",
+      "alternativas": [
+        { "id": "A", "texto": "La práctica de diseñar y desarrollar productos digitales para que todas las personas puedan usarlos, incluyendo personas con discapacidad.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa es la idea central de la accesibilidad: eliminar barreras y permitir que más personas puedan percibir, entender y usar una interfaz." },
+        { "id": "B", "texto": "Una técnica para hacer páginas más rápidas visualmente.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La accesibilidad no se limita a velocidad o apariencia; se enfoca en que el producto pueda ser usado por todas las personas." },
+        { "id": "C", "texto": "Un conjunto de estilos para que una web se vea moderna.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La accesibilidad no es solo diseño visual; incluye estructura, semántica, navegación, contraste, etiquetas y compatibilidad con tecnologías de apoyo." },
+        { "id": "D", "texto": "Un sistema para posicionar mejor una página en Google sin cambiar el código.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Aunque la accesibilidad puede mejorar el SEO, no se trata de eso ni ocurre sin trabajar el código y la estructura." }
+      ]
+    },
+    {
+      "id": 2,
+      "pregunta": "¿Cuál es el objetivo principal de la accesibilidad?",
+      "alternativas": [
+        { "id": "A", "texto": "Hacer que una web tenga más animaciones.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Las animaciones no son el objetivo principal de la accesibilidad." },
+        { "id": "B", "texto": "Lograr que una página sea más llamativa para el cliente.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Una interfaz atractiva no garantiza que sea accesible." },
+        { "id": "C", "texto": "Permitir que la página sea percibida, entendida, navegada e interactuada por la mayor cantidad de usuarios posible.", "esCorrecta": true, "retroalimentacion": "Correcto. Ese es el objetivo central: que el contenido y las funciones sean utilizables por más personas, incluyendo quienes tienen discapacidad." },
+        { "id": "D", "texto": "Reducir la cantidad de botones dentro del sistema.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La accesibilidad no consiste en quitar elementos, sino en hacerlos comprensibles y usables." }
+      ]
+    },
+    {
+      "id": 3,
+      "pregunta": "¿Por qué la accesibilidad es importante?",
+      "alternativas": [
+        { "id": "A", "texto": "Porque solo beneficia a personas con discapacidad visual.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La accesibilidad beneficia a muchas personas: usuarios con discapacidad visual, auditiva, motora, cognitiva, personas mayores o incluso usuarios en contextos difíciles." },
+        { "id": "B", "texto": "Porque mejora la experiencia de todos, favorece la inclusión digital y ayuda a cumplir buenas prácticas y estándares.", "esCorrecta": true, "retroalimentacion": "Correcto. La accesibilidad no solo apoya a un grupo específico, sino que mejora la calidad general de la experiencia para todos los usuarios." },
+        { "id": "C", "texto": "Porque reemplaza completamente al diseño UX.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La accesibilidad no reemplaza UX; más bien forma parte de una buena experiencia de usuario." },
+        { "id": "D", "texto": "Porque evita escribir HTML.", "esCorrecta": false, "retroalimentacion": "Incorrecto. De hecho, la accesibilidad requiere usar mejor HTML, especialmente HTML semántico." }
+      ]
+    },
+    {
+      "id": 4,
+      "pregunta": "¿Qué son las barreras de accesibilidad?",
+      "alternativas": [
+        { "id": "A", "texto": "Opciones avanzadas de personalización visual.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Las barreras no son mejoras; son obstáculos que dificultan o impiden el uso de la interfaz." },
+        { "id": "B", "texto": "Obstáculos que impiden o dificultan el uso correcto de una interfaz, como bajo contraste, imágenes sin descripción o navegación no accesible.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa definición resume bien qué son las barreras de accesibilidad." },
+        { "id": "C", "texto": "Efectos visuales que se usan en marketing digital.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No tiene relación con el concepto de barreras de accesibilidad." },
+        { "id": "D", "texto": "Reglas que obligan a usar colores oscuros en todos los sistemas.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La accesibilidad no obliga a usar un único tipo de color, sino a mantener contraste y legibilidad." }
+      ]
+    },
+    {
+      "id": 5,
+      "pregunta": "¿Qué significa WCAG?",
+      "alternativas": [
+        { "id": "A", "texto": "Web Content Accessibility Guidelines.", "esCorrecta": true, "retroalimentacion": "Correcto. WCAG significa Web Content Accessibility Guidelines, las guías internacionales de accesibilidad web." },
+        { "id": "B", "texto": "World Code Access General.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ese nombre no corresponde a las siglas WCAG." },
+        { "id": "C", "texto": "Web Configuration and Graphic Alignment.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa expansión es inventada y no corresponde al estándar real." },
+        { "id": "D", "texto": "Wide Content Accessibility Group.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Aunque suena parecido, no es el significado correcto de WCAG." }
+      ]
+    },
+    {
+      "id": 6,
+      "pregunta": "¿Cuál de los siguientes NO es uno de los principios fundamentales de WCAG mencionados en el chat?",
+      "alternativas": [
+        { "id": "A", "texto": "Perceptible", "esCorrecta": false, "retroalimentacion": "Incorrecto. Perceptible sí es uno de los principios fundamentales." },
+        { "id": "B", "texto": "Operable", "esCorrecta": false, "retroalimentacion": "Incorrecto. Operable sí forma parte de los principios de accesibilidad." },
+        { "id": "C", "texto": "Comprensible", "esCorrecta": false, "retroalimentacion": "Incorrecto. Comprensible también es uno de los principios." },
+        { "id": "D", "texto": "Decorativo", "esCorrecta": true, "retroalimentacion": "Correcto. Los principios mencionados fueron perceptible, operable, comprensible y robusto; 'decorativo' no forma parte de ellos." }
+      ]
+    },
+    {
+      "id": 7,
+      "pregunta": "En el ejemplo visto, ¿por qué es una mala práctica usar un div con role=\"button\" para 'Guardar'?",
+      "alternativas": [
+        { "id": "A", "texto": "Porque los div no pueden tener clases CSS.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los div sí pueden tener clases CSS; el problema no es ese." },
+        { "id": "B", "texto": "Porque se simula un botón visual, pero no se aprovecha el comportamiento semántico y accesible de un botón real.", "esCorrecta": true, "retroalimentacion": "Correcto. Un div puede parecer botón, pero no ofrece por defecto la semántica ni la interacción accesible de un button real." },
+        { "id": "C", "texto": "Porque un div no puede tener eventos click.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un div sí puede responder a click, pero eso no lo convierte en un control accesible." },
+        { "id": "D", "texto": "Porque HTML prohíbe usar div dentro de render().", "esCorrecta": false, "retroalimentacion": "Incorrecto. HTML no prohíbe eso; el problema es de accesibilidad y semántica." }
+      ]
+    },
+    {
+      "id": 8,
+      "pregunta": "¿Cuál fue la buena práctica mostrada para el caso del botón 'Guardar'?",
+      "alternativas": [
+        { "id": "A", "texto": "Usar un span con color verde.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un span no reemplaza la semántica de un botón." },
+        { "id": "B", "texto": "Usar un button con aria-label y mantener un texto claro para la acción.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la práctica correcta mostrada: usar un botón real y complementarlo con aria-label cuando aporta contexto." },
+        { "id": "C", "texto": "Usar un div con más estilos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Más estilos no solucionan el problema de semántica ni accesibilidad." },
+        { "id": "D", "texto": "Quitar el texto y dejar solo el ícono.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Quitar el texto suele empeorar la claridad y accesibilidad si no se etiqueta correctamente." }
+      ]
+    },
+    {
+      "id": 9,
+      "pregunta": "¿Para qué sirve aria-label en el botón del ejemplo 'Guardar cambios del perfil'?",
+      "alternativas": [
+        { "id": "A", "texto": "Para cambiar automáticamente el color del botón.", "esCorrecta": false, "retroalimentacion": "Incorrecto. aria-label no modifica estilos visuales." },
+        { "id": "B", "texto": "Para ocultar el botón al lector de pantalla.", "esCorrecta": false, "retroalimentacion": "Incorrecto. aria-label no oculta el elemento; lo describe." },
+        { "id": "C", "texto": "Para proporcionar una descripción accesible del botón a tecnologías de asistencia.", "esCorrecta": true, "retroalimentacion": "Correcto. aria-label aporta una etiqueta accesible que ayuda a lectores de pantalla a anunciar mejor la función del botón." },
+        { "id": "D", "texto": "Para reemplazar el evento click.", "esCorrecta": false, "retroalimentacion": "Incorrecto. aria-label no reemplaza la funcionalidad del botón, solo aporta información accesible." }
+      ]
+    },
+    {
+      "id": 10,
+      "pregunta": "¿Por qué fue incorrecto el uso de una imagen sin atributo alt?",
+      "alternativas": [
+        { "id": "A", "texto": "Porque una imagen sin alt no puede cargarse en el navegador.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La imagen sí puede cargar; el problema es que no queda descrita para tecnologías de asistencia." },
+        { "id": "B", "texto": "Porque el atributo alt describe la imagen para usuarios que no pueden verla directamente, como quienes usan lectores de pantalla.", "esCorrecta": true, "retroalimentacion": "Correcto. Sin alt, una persona con discapacidad visual puede perder el significado de esa imagen." },
+        { "id": "C", "texto": "Porque alt sirve para agrandar el tamaño de la imagen.", "esCorrecta": false, "retroalimentacion": "Incorrecto. alt no controla tamaño ni estilo." },
+        { "id": "D", "texto": "Porque las imágenes PNG no son compatibles con accesibilidad.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El formato PNG no es el problema; lo importante es el texto alternativo." }
+      ]
+    },
+    {
+      "id": 11,
+      "pregunta": "En formularios, ¿por qué es una mala práctica usar solo un span como etiqueta y placeholder para describir el campo?",
+      "alternativas": [
+        { "id": "A", "texto": "Porque el placeholder desaparece al escribir y no reemplaza una etiqueta semántica asociada al campo.", "esCorrecta": true, "retroalimentacion": "Correcto. El placeholder no debe reemplazar la etiqueta del campo, y un span no establece la relación semántica que sí da un label." },
+        { "id": "B", "texto": "Porque el input type='text' no acepta placeholder.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los inputs de texto sí aceptan placeholder." },
+        { "id": "C", "texto": "Porque un span es un error de sintaxis en HTML.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un span es válido en HTML; el problema es que no funciona como etiqueta asociada al input." },
+        { "id": "D", "texto": "Porque placeholder solo se puede usar en botones.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Placeholder se usa en campos de entrada, no en botones." }
+      ]
+    },
+    {
+      "id": 12,
+      "pregunta": "¿Cuál fue la buena práctica de accesibilidad mostrada para el campo 'Nombre'?",
+      "alternativas": [
+        { "id": "A", "texto": "Usar label for='username' junto con input id='username'.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa relación entre label y input mediante for e id es la forma correcta de etiquetar un campo." },
+        { "id": "B", "texto": "Usar un div encima del input con el texto 'Nombre'.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Visualmente puede parecer suficiente, pero no establece la asociación accesible entre etiqueta y campo." },
+        { "id": "C", "texto": "Dejar solo el placeholder porque el usuario ya entiende.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El placeholder no reemplaza un label y puede desaparecer al escribir." },
+        { "id": "D", "texto": "Quitar el texto del campo para que se vea más limpio.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Quitar la etiqueta empeora la comprensión y la accesibilidad del formulario." }
+      ]
+    },
+    {
+      "id": 13,
+      "pregunta": "¿Para qué sirve aria-required='true' en el input del ejemplo?",
+      "alternativas": [
+        { "id": "A", "texto": "Para indicar a tecnologías de asistencia que el campo es obligatorio.", "esCorrecta": true, "retroalimentacion": "Correcto. aria-required comunica a lectores de pantalla que ese campo debe completarse." },
+        { "id": "B", "texto": "Para cambiar el placeholder automáticamente.", "esCorrecta": false, "retroalimentacion": "Incorrecto. aria-required no cambia el placeholder." },
+        { "id": "C", "texto": "Para convertir el input en botón.", "esCorrecta": false, "retroalimentacion": "Incorrecto. aria-required no cambia el tipo de elemento." },
+        { "id": "D", "texto": "Para ocultar el valor del input.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No tiene relación con ocultar texto o valores." }
+      ]
+    },
+    {
+      "id": 14,
+      "pregunta": "¿Qué es el contraste de color en accesibilidad?",
+      "alternativas": [
+        { "id": "A", "texto": "La diferencia visual entre el color del texto y el color del fondo.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa diferencia visual permite que el contenido sea más o menos legible." },
+        { "id": "B", "texto": "La cantidad de imágenes que tiene una página.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso no tiene relación con el contraste." },
+        { "id": "C", "texto": "Una técnica para ordenar capas en CSS.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El contraste no trata sobre capas ni z-index." },
+        { "id": "D", "texto": "El cambio entre modo claro y oscuro.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Aunque puede influir visualmente, contraste no significa cambiar entre temas." }
+      ]
+    },
+    {
+      "id": 15,
+      "pregunta": "En el ejemplo del botón 'Compartir', ¿qué hacía que el primer caso fuera una mala práctica?",
+      "alternativas": [
+        { "id": "A", "texto": "El botón tenía demasiadas letras.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El texto 'Compartir' no era el problema." },
+        { "id": "B", "texto": "El texto y el fondo tenían poco contraste, por lo que la legibilidad era deficiente.", "esCorrecta": true, "retroalimentacion": "Correcto. Ese fue el problema principal: el texto era difícil de leer sobre el fondo." },
+        { "id": "C", "texto": "El botón no tenía borde.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La falta de borde no era el tema central en ese ejemplo." },
+        { "id": "D", "texto": "El fondo era rosado, y los botones no deben ser rosados.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El color rosado no es un error por sí mismo; el problema es la relación de contraste." }
+      ]
+    },
+    {
+      "id": 16,
+      "pregunta": "¿Qué recomendación de WCAG se mencionó respecto al contraste?",
+      "alternativas": [
+        { "id": "A", "texto": "Mínimo 4.5:1 para texto normal y 3:1 para texto grande.", "esCorrecta": true, "retroalimentacion": "Correcto. Esos valores se mencionaron como referencia para mantener buena legibilidad." },
+        { "id": "B", "texto": "Mínimo 1:1 para texto normal y 2:1 para texto grande.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esos valores son demasiado bajos y no aseguran legibilidad." },
+        { "id": "C", "texto": "Mínimo 10:1 para todo tipo de texto.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ese no fue el estándar mencionado en el chat." },
+        { "id": "D", "texto": "No existe una recomendación de contraste en accesibilidad.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Sí existen recomendaciones claras sobre contraste." }
+      ]
+    },
+    {
+      "id": 17,
+      "pregunta": "¿Cuál de los siguientes fue mencionado como uno de los principales pilares de la accesibilidad?",
+      "alternativas": [
+        { "id": "A", "texto": "Calidad de ingeniería.", "esCorrecta": true, "retroalimentacion": "Correcto. Se mencionó como uno de los pilares porque una aplicación accesible suele tener mejor estructura y calidad técnica." },
+        { "id": "B", "texto": "Mayor cantidad de animaciones.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso no fue señalado como pilar de la accesibilidad." },
+        { "id": "C", "texto": "Uso obligatorio de frameworks específicos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La accesibilidad no depende de usar un framework concreto." },
+        { "id": "D", "texto": "Eliminar formularios complejos del sistema.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La accesibilidad no consiste en eliminar funcionalidades, sino en diseñarlas correctamente." }
+      ]
+    },
+    {
+      "id": 18,
+      "pregunta": "¿Qué pilar de la accesibilidad se relaciona con permitir que todas las personas puedan usar una aplicación?",
+      "alternativas": [
+        { "id": "A", "texto": "Inclusión universal.", "esCorrecta": true, "retroalimentacion": "Correcto. Ese pilar apunta directamente a que nadie quede excluido del uso del producto digital." },
+        { "id": "B", "texto": "Ocultamiento visual.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ese concepto no fue presentado como pilar." },
+        { "id": "C", "texto": "Compresión binaria.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No tiene relación con accesibilidad." },
+        { "id": "D", "texto": "Automatización comercial.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No corresponde a los pilares estudiados." }
+      ]
+    },
+    {
+      "id": 19,
+      "pregunta": "¿Qué norma técnica peruana relacionada con accesibilidad se mencionó en el chat?",
+      "alternativas": [
+        { "id": "A", "texto": "NTP ISO/IEC 40500.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la norma técnica peruana mencionada, basada en WCAG 2.0." },
+        { "id": "B", "texto": "ISO 9001 Accesible.", "esCorrecta": false, "retroalimentacion": "Incorrecto. ISO 9001 trata sobre gestión de calidad, no fue la norma indicada en el chat." },
+        { "id": "C", "texto": "Ley HTML 5.0 Perú.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa norma no fue mencionada ni corresponde a una norma técnica real de accesibilidad." },
+        { "id": "D", "texto": "NTP UI/UX 3000.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa denominación no fue parte del contenido revisado." }
+      ]
+    },
+    {
+      "id": 20,
+      "pregunta": "Según lo visto, la NTP ISO/IEC 40500 es básicamente:",
+      "alternativas": [
+        { "id": "A", "texto": "La versión peruana o adopción técnica basada en las WCAG 2.0.", "esCorrecta": true, "retroalimentacion": "Correcto. En el chat se explicó como la norma técnica peruana basada en las WCAG 2.0." },
+        { "id": "B", "texto": "Un navegador web creado en Perú.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No es un navegador, sino una norma técnica." },
+        { "id": "C", "texto": "Una librería de JavaScript para formularios.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No es una librería ni una herramienta de programación." },
+        { "id": "D", "texto": "Una extensión de Chrome DevTools.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No es una extensión, sino una norma técnica." }
+      ]
+    },
+    {
+      "id": 21,
+      "pregunta": "¿Qué establece la Ley N.° 29973 según lo trabajado?",
+      "alternativas": [
+        { "id": "A", "texto": "Que todos los botones deben tener borde.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa no es la finalidad de la ley." },
+        { "id": "B", "texto": "Que los canales y servicios digitales deben ser accesibles, respetando los derechos de las personas con discapacidad.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la idea central explicada: garantizar accesibilidad e igualdad de acceso." },
+        { "id": "C", "texto": "Que toda página debe tener modo oscuro.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso no fue parte de la ley mencionada." },
+        { "id": "D", "texto": "Que solo las páginas privadas deben ser accesibles.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La accesibilidad no se limita a páginas privadas." }
+      ]
+    },
+    {
+      "id": 22,
+      "pregunta": "¿Qué entidad se mencionó como la que supervisa que se respeten los derechos de accesibilidad?",
+      "alternativas": [
+        { "id": "A", "texto": "CONADIS.", "esCorrecta": true, "retroalimentacion": "Correcto. Se explicó que CONADIS supervisa el respeto de los derechos de accesibilidad y de las personas con discapacidad." },
+        { "id": "B", "texto": "Lighthouse.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Lighthouse es una herramienta de auditoría, no una entidad reguladora." },
+        { "id": "C", "texto": "Chrome DevTools.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Chrome DevTools es una herramienta del navegador, no una institución." },
+        { "id": "D", "texto": "WCAG.", "esCorrecta": false, "retroalimentacion": "Incorrecto. WCAG es un conjunto de guías, no una entidad." }
+      ]
+    },
+    {
+      "id": 23,
+      "pregunta": "¿Qué función se atribuyó a SeGDI en el chat?",
+      "alternativas": [
+        { "id": "A", "texto": "Crear navegadores web accesibles.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa no fue la función mencionada." },
+        { "id": "B", "texto": "Dictar pautas técnicas para que las páginas y servicios digitales del Estado sean accesibles para todos los ciudadanos.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue precisamente la descripción dada en el contenido." },
+        { "id": "C", "texto": "Diseñar logos accesibles para páginas públicas.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa no es la función señalada." },
+        { "id": "D", "texto": "Administrar los lectores de pantalla del gobierno.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No fue eso lo que se explicó sobre SeGDI." }
+      ]
+    },
+    {
+      "id": 24,
+      "pregunta": "¿Para qué sirve Chrome DevTools en el contexto de accesibilidad?",
+      "alternativas": [
+        { "id": "A", "texto": "Para convertir automáticamente una web en accesible con un solo clic.", "esCorrecta": false, "retroalimentacion": "Incorrecto. DevTools ayuda a analizar e inspeccionar, pero no arregla automáticamente todos los problemas." },
+        { "id": "B", "texto": "Para revisar estructura HTML, contraste, legibilidad y elementos accesibles de una página.", "esCorrecta": true, "retroalimentacion": "Correcto. En el chat se explicó justamente ese uso de DevTools para analizar accesibilidad." },
+        { "id": "C", "texto": "Solo para cambiar colores en tiempo real.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Puede hacer mucho más que cambiar colores." },
+        { "id": "D", "texto": "Solo para medir velocidad de internet.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No es una herramienta de velocidad de internet." }
+      ]
+    },
+    {
+      "id": 25,
+      "pregunta": "¿Qué es el árbol de accesibilidad?",
+      "alternativas": [
+        { "id": "A", "texto": "Una representación de cómo tecnologías de asistencia, como lectores de pantalla, interpretan la página.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la explicación dada: permite ver cómo la interfaz será comprendida por herramientas de accesibilidad." },
+        { "id": "B", "texto": "Un mapa visual del hosting del proyecto.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No tiene relación con hosting." },
+        { "id": "C", "texto": "El árbol de carpetas del proyecto en VS Code.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No se refiere a archivos del proyecto." },
+        { "id": "D", "texto": "Una gráfica de rendimiento del navegador.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso corresponde a otras herramientas, no al árbol de accesibilidad." }
+      ]
+    },
+    {
+      "id": 26,
+      "pregunta": "¿Qué hace Lighthouse respecto a accesibilidad?",
+      "alternativas": [
+        { "id": "A", "texto": "Ejecuta una auditoría automática y entrega un puntaje con recomendaciones de mejora.", "esCorrecta": true, "retroalimentacion": "Correcto. Lighthouse analiza la página y reporta problemas y oportunidades de mejora en accesibilidad." },
+        { "id": "B", "texto": "Reemplaza el HTML por ARIA automáticamente.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Lighthouse no reescribe la página ni reemplaza etiquetas automáticamente." },
+        { "id": "C", "texto": "Solo sirve para ver imágenes de la web.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Su función es auditar calidad, rendimiento, SEO, accesibilidad y más." },
+        { "id": "D", "texto": "Es una ley internacional.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Lighthouse es una herramienta, no una norma legal." }
+      ]
+    },
+    {
+      "id": 27,
+      "pregunta": "¿Qué permite hacer el panel Elements de Chrome DevTools según lo visto?",
+      "alternativas": [
+        { "id": "A", "texto": "Inspeccionar el HTML y CSS, revisar etiquetas semánticas y analizar atributos de accesibilidad.", "esCorrecta": true, "retroalimentacion": "Correcto. Elements sirve justamente para inspeccionar la estructura y detectar problemas en el código." },
+        { "id": "B", "texto": "Traducir automáticamente la web a otro idioma.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa no es la función del panel Elements." },
+        { "id": "C", "texto": "Crear leyes de accesibilidad para el Estado.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Elements es una herramienta técnica, no normativa." },
+        { "id": "D", "texto": "Aumentar el SEO sin revisar el código.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Elements no mejora SEO por sí solo; ayuda a inspeccionar el código." }
+      ]
+    },
+    {
+      "id": 28,
+      "pregunta": "¿Cuál de las siguientes afirmaciones resume mejor lo trabajado en toda la sesión?",
+      "alternativas": [
+        { "id": "A", "texto": "La accesibilidad solo trata de personas ciegas y lectores de pantalla.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa visión es muy limitada; la accesibilidad abarca contraste, formularios, semántica, teclado, leyes, herramientas y más." },
+        { "id": "B", "texto": "La accesibilidad es un conjunto de buenas prácticas técnicas, de diseño y legales que buscan que los productos digitales sean usables por todos.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa opción integra bien todo lo trabajado: inclusión, buenas prácticas, estándares, normas y herramientas." },
+        { "id": "C", "texto": "La accesibilidad se resuelve solo usando aria-label en todos los elementos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. ARIA ayuda en casos concretos, pero no reemplaza HTML semántico ni resuelve por sí sola toda la accesibilidad." },
+        { "id": "D", "texto": "La accesibilidad es únicamente una obligación legal para páginas del Estado.", "esCorrecta": false, "retroalimentacion": "Incorrecto. También es una buena práctica de ingeniería, inclusión universal, mejora UX y SEO." }
+      ]
+    }
+  ]
+}

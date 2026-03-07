@@ -1,0 +1,206 @@
+{
+  "titulo": "Cuestionario de repaso - Web Components, DOM y BEM",
+  "descripcion": "Preguntas de opción múltiple basadas únicamente en el contenido trabajado en este chat.",
+  "preguntas": [
+    {
+      "id": 1,
+      "pregunta": "¿Qué es un Web Component?",
+      "alternativas": [
+        { "id": "A", "texto": "Una librería exclusiva de React para crear interfaces", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un Web Component no pertenece a React ni a un framework específico. Es una tecnología basada en estándares nativos del navegador." },
+        { "id": "B", "texto": "Una tecnología del navegador para crear componentes reutilizables y encapsulados usando estándares web", "esCorrecta": true, "retroalimentacion": "Correcto. Un Web Component permite crear componentes reutilizables, encapsulados y definidos como etiquetas personalizadas usando tecnologías estándar del navegador." },
+        { "id": "C", "texto": "Un archivo CSS que sirve para dar estilos globales", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un Web Component no es solo un archivo CSS; integra estructura, lógica y, muchas veces, estilos encapsulados." },
+        { "id": "D", "texto": "Un tipo de base de datos para guardar componentes web", "esCorrecta": false, "retroalimentacion": "Incorrecto. No tiene relación con bases de datos. Un Web Component es un componente de interfaz en la web." }
+      ]
+    },
+    {
+      "id": 2,
+      "pregunta": "¿Cuál es una característica clave de un Web Component?",
+      "alternativas": [
+        { "id": "A", "texto": "Solo puede usarse una vez por proyecto", "esCorrecta": false, "retroalimentacion": "Incorrecto. Justamente una de sus ventajas es la reutilización en varias partes de una aplicación o incluso en distintos proyectos." },
+        { "id": "B", "texto": "Depende obligatoriamente de Angular o Vue", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un Web Component es agnóstico de framework y no depende de Angular, Vue ni React." },
+        { "id": "C", "texto": "Es reutilizable y encapsulado", "esCorrecta": true, "retroalimentacion": "Correcto. El componente puede reutilizarse varias veces y su estructura/estilos pueden mantenerse aislados del resto de la página." },
+        { "id": "D", "texto": "Solo sirve para crear estilos CSS", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un Web Component no se limita a estilos; puede incluir HTML, CSS y JavaScript." }
+      ]
+    },
+    {
+      "id": 3,
+      "pregunta": "Cuando se dice que un Web Component es agnóstico, significa que:",
+      "alternativas": [
+        { "id": "A", "texto": "No depende de un framework específico y puede usarse en distintas tecnologías", "esCorrecta": true, "retroalimentacion": "Correcto. 'Agnóstico' significa que no está atado a React, Angular, Vue u otro framework concreto." },
+        { "id": "B", "texto": "No puede ejecutarse en navegadores", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los Web Components justamente se ejecutan en el navegador." },
+        { "id": "C", "texto": "Solo funciona en proyectos sin JavaScript", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los Web Components suelen usar JavaScript para definir comportamiento." },
+        { "id": "D", "texto": "No tiene relación con HTML", "esCorrecta": false, "retroalimentacion": "Incorrecto. Sí tiene relación con HTML: se usan como etiquetas personalizadas." }
+      ]
+    },
+    {
+      "id": 4,
+      "pregunta": "¿Cómo se relacionan los Web Components con la W3C?",
+      "alternativas": [
+        { "id": "A", "texto": "La W3C los reemplazó por React", "esCorrecta": false, "retroalimentacion": "Incorrecto. React no reemplaza el estándar de Web Components. Son cosas distintas." },
+        { "id": "B", "texto": "La W3C define el estándar y las reglas que siguen los navegadores para soportarlos", "esCorrecta": true, "retroalimentacion": "Correcto. La W3C establece especificaciones para que navegadores como Chrome, Firefox, Safari o Edge implementen estos estándares." },
+        { "id": "C", "texto": "La W3C es una librería para compilar componentes", "esCorrecta": false, "retroalimentacion": "Incorrecto. La W3C no es una librería; es un organismo que define estándares web." },
+        { "id": "D", "texto": "La W3C obliga a escribir componentes solo en mayúsculas", "esCorrecta": false, "retroalimentacion": "Incorrecto. Al contrario, los nombres válidos de Custom Elements van en minúsculas." }
+      ]
+    },
+    {
+      "id": 5,
+      "pregunta": "¿Por qué se dice que un Web Component es reutilizable?",
+      "alternativas": [
+        { "id": "A", "texto": "Porque puede usarse varias veces como una etiqueta personalizada en diferentes partes de una aplicación", "esCorrecta": true, "retroalimentacion": "Correcto. Un mismo componente puede insertarse repetidas veces sin volver a programarlo desde cero." },
+        { "id": "B", "texto": "Porque se destruye automáticamente luego de usarse una vez", "esCorrecta": false, "retroalimentacion": "Incorrecto. Reutilizable significa lo contrario: puede volver a usarse múltiples veces." },
+        { "id": "C", "texto": "Porque solo se reutiliza en bases de datos", "esCorrecta": false, "retroalimentacion": "Incorrecto. La reutilización ocurre en la interfaz y en proyectos web, no en bases de datos." },
+        { "id": "D", "texto": "Porque no necesita HTML para mostrarse", "esCorrecta": false, "retroalimentacion": "Incorrecto. Sí se relaciona con HTML, ya que se usa como etiqueta personalizada." }
+      ]
+    },
+    {
+      "id": 6,
+      "pregunta": "¿Cuál de las siguientes opciones sí forma parte de la anatomía de un Web Component según lo visto en el chat?",
+      "alternativas": [
+        { "id": "A", "texto": "Shadow DOM, Custom Elements, HTML Templates y Modules", "esCorrecta": true, "retroalimentacion": "Correcto. Esos son los elementos mencionados como base de la anatomía y funcionamiento de los Web Components." },
+        { "id": "B", "texto": "Solo React Hooks, Redux y JSX", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esos conceptos pertenecen al ecosistema de React, no a la anatomía estándar de Web Components." },
+        { "id": "C", "texto": "Solo CSS global y base de datos SQL", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ni CSS global ni SQL describen la anatomía de un Web Component." },
+        { "id": "D", "texto": "PHP, Laravel y Blade", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esas tecnologías no forman parte de la anatomía estándar de los Web Components." }
+      ]
+    },
+    {
+      "id": 7,
+      "pregunta": "¿Qué función cumple el Shadow DOM?",
+      "alternativas": [
+        { "id": "A", "texto": "Guardar información en la nube", "esCorrecta": false, "retroalimentacion": "Incorrecto. El Shadow DOM no sirve para almacenamiento; sirve para encapsular la estructura y estilos del componente." },
+        { "id": "B", "texto": "Encapsular el HTML y CSS del componente para evitar interferencias con el resto de la página", "esCorrecta": true, "retroalimentacion": "Correcto. El Shadow DOM crea un DOM aislado, ayudando a evitar conflictos de estilos o estructura." },
+        { "id": "C", "texto": "Reemplazar por completo el DOM del navegador", "esCorrecta": false, "retroalimentacion": "Incorrecto. No reemplaza el DOM completo; crea una parte encapsulada dentro de un componente." },
+        { "id": "D", "texto": "Crear rutas de navegación en una aplicación", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa es otra responsabilidad; el Shadow DOM se enfoca en encapsulamiento." }
+      ]
+    },
+    {
+      "id": 8,
+      "pregunta": "¿Qué permiten hacer los Custom Elements?",
+      "alternativas": [
+        { "id": "A", "texto": "Crear nuevas etiquetas HTML personalizadas", "esCorrecta": true, "retroalimentacion": "Correcto. Los Custom Elements permiten definir etiquetas propias, como user-card o app-component." },
+        { "id": "B", "texto": "Crear únicamente funciones matemáticas", "esCorrecta": false, "retroalimentacion": "Incorrecto. Su propósito no es matemático, sino estructural y de interfaz." },
+        { "id": "C", "texto": "Cambiar el nombre de etiquetas nativas como div o span permanentemente", "esCorrecta": false, "retroalimentacion": "Incorrecto. No renombra etiquetas HTML nativas; crea etiquetas nuevas." },
+        { "id": "D", "texto": "Eliminar la necesidad de JavaScript en toda la aplicación", "esCorrecta": false, "retroalimentacion": "Incorrecto. Normalmente se definen con JavaScript." }
+      ]
+    },
+    {
+      "id": 9,
+      "pregunta": "¿Qué son los HTML Templates dentro del contexto de Web Components?",
+      "alternativas": [
+        { "id": "A", "texto": "Estructuras HTML reutilizables que no se renderizan hasta ser usadas", "esCorrecta": true, "retroalimentacion": "Correcto. Los templates permiten definir una estructura reutilizable que se activa o inserta cuando se necesita." },
+        { "id": "B", "texto": "Archivos para conectarse a una API REST", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los templates no son para conectarse a APIs; son para definir estructura HTML." },
+        { "id": "C", "texto": "Una base de datos visual para guardar etiquetas", "esCorrecta": false, "retroalimentacion": "Incorrecto. No es una base de datos." },
+        { "id": "D", "texto": "Un framework de estilos para botones", "esCorrecta": false, "retroalimentacion": "Incorrecto. Tampoco es un framework de estilos." }
+      ]
+    },
+    {
+      "id": 10,
+      "pregunta": "¿Qué ventaja ofrecen los Modules en un Web Component?",
+      "alternativas": [
+        { "id": "A", "texto": "Permiten organizar y separar archivos como HTML, CSS, JavaScript o incluso datos como JSON", "esCorrecta": true, "retroalimentacion": "Correcto. Los módulos ayudan a estructurar mejor el código y a importar piezas reutilizables." },
+        { "id": "B", "texto": "Sirven solo para cambiar colores automáticamente", "esCorrecta": false, "retroalimentacion": "Incorrecto. Su función principal es modularizar y organizar código, no solo cambiar colores." },
+        { "id": "C", "texto": "Reemplazan completamente al navegador", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un módulo es solo una forma de organizar código." },
+        { "id": "D", "texto": "Evitan usar HTML y CSS en un proyecto", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los módulos pueden justamente contener o importar HTML y CSS." }
+      ]
+    },
+    {
+      "id": 11,
+      "pregunta": "¿Qué es el DOM?",
+      "alternativas": [
+        { "id": "A", "texto": "Una representación del documento HTML como objetos que JavaScript puede manipular", "esCorrecta": true, "retroalimentacion": "Correcto. El DOM convierte el HTML en una estructura manipulable por JavaScript." },
+        { "id": "B", "texto": "Un servidor para almacenar sitios web", "esCorrecta": false, "retroalimentacion": "Incorrecto. El DOM no es un servidor." },
+        { "id": "C", "texto": "Una librería de diseño gráfico", "esCorrecta": false, "retroalimentacion": "Incorrecto. No es una librería gráfica." },
+        { "id": "D", "texto": "Un lenguaje de programación distinto a JavaScript", "esCorrecta": false, "retroalimentacion": "Incorrecto. El DOM no es un lenguaje, sino un modelo de documento." }
+      ]
+    },
+    {
+      "id": 12,
+      "pregunta": "¿Qué es el árbol DOM?",
+      "alternativas": [
+        { "id": "A", "texto": "La estructura jerárquica del DOM donde cada elemento HTML es un nodo", "esCorrecta": true, "retroalimentacion": "Correcto. El árbol DOM representa la relación jerárquica entre document, html, body y sus elementos hijos." },
+        { "id": "B", "texto": "Una carpeta del sistema operativo donde se guardan páginas web", "esCorrecta": false, "retroalimentacion": "Incorrecto. El árbol DOM no es una carpeta física." },
+        { "id": "C", "texto": "Un patrón de diseño exclusivo de Java", "esCorrecta": false, "retroalimentacion": "Incorrecto. No es un patrón exclusivo de Java." },
+        { "id": "D", "texto": "Una técnica de compresión de imágenes", "esCorrecta": false, "retroalimentacion": "Incorrecto. No tiene relación con compresión de imágenes." }
+      ]
+    },
+    {
+      "id": 13,
+      "pregunta": "¿Qué es el Light DOM?",
+      "alternativas": [
+        { "id": "A", "texto": "El DOM normal de la página, es decir, el contenido fuera del Shadow DOM", "esCorrecta": true, "retroalimentacion": "Correcto. El Light DOM es el HTML normal que existe en la página principal y fuera del encapsulamiento del Shadow DOM." },
+        { "id": "B", "texto": "Un DOM que solo aparece cuando la página está en modo claro", "esCorrecta": false, "retroalimentacion": "Incorrecto. 'Light DOM' no se refiere al tema visual claro/oscuro." },
+        { "id": "C", "texto": "Un DOM desactivado que no puede leerse", "esCorrecta": false, "retroalimentacion": "Incorrecto. El Light DOM sí forma parte normal del documento." },
+        { "id": "D", "texto": "Una versión simplificada de CSS", "esCorrecta": false, "retroalimentacion": "Incorrecto. No es CSS, sino parte del DOM." }
+      ]
+    },
+    {
+      "id": 14,
+      "pregunta": "¿Cuál de los siguientes nombres es válido como Custom Element?",
+      "alternativas": [
+        { "id": "A", "texto": "element", "esCorrecta": false, "retroalimentacion": "Incorrecto. No contiene un guion. Los Custom Elements válidos deben tener al menos un guion." },
+        { "id": "B", "texto": "AppComponent", "esCorrecta": false, "retroalimentacion": "Incorrecto. Usa mayúsculas y además no contiene guion." },
+        { "id": "C", "texto": "app-component", "esCorrecta": true, "retroalimentacion": "Correcto. Está en minúsculas y contiene al menos un guion, cumpliendo las reglas del estándar." },
+        { "id": "D", "texto": "App-Component", "esCorrecta": false, "retroalimentacion": "Incorrecto. Usa mayúsculas. Los nombres válidos deben ir en minúsculas." }
+      ]
+    },
+    {
+      "id": 15,
+      "pregunta": "¿Por qué app-name-component también es un nombre válido para un Custom Element?",
+      "alternativas": [
+        { "id": "A", "texto": "Porque tiene varios guiones y está en minúsculas", "esCorrecta": true, "retroalimentacion": "Correcto. Un Custom Element puede tener uno o varios guiones, siempre que esté en minúsculas y cumpla las reglas del estándar." },
+        { "id": "B", "texto": "Porque los nombres válidos siempre deben iniciar con mayúscula", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los nombres válidos no deben usar mayúsculas." },
+        { "id": "C", "texto": "Porque no necesita guion si es largo", "esCorrecta": false, "retroalimentacion": "Incorrecto. El guion sigue siendo obligatorio." },
+        { "id": "D", "texto": "Porque solo es válido dentro de React", "esCorrecta": false, "retroalimentacion": "Incorrecto. La validez del nombre depende del estándar de Custom Elements, no de React." }
+      ]
+    },
+    {
+      "id": 16,
+      "pregunta": "¿Qué significa BEM?",
+      "alternativas": [
+        { "id": "A", "texto": "Block Element Modifier", "esCorrecta": true, "retroalimentacion": "Correcto. BEM es una metodología de nombres en CSS que significa Block, Element y Modifier." },
+        { "id": "B", "texto": "Base Event Module", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa expansión no corresponde a BEM." },
+        { "id": "C", "texto": "Binary Element Method", "esCorrecta": false, "retroalimentacion": "Incorrecto. BEM no significa eso." },
+        { "id": "D", "texto": "Block Event Model", "esCorrecta": false, "retroalimentacion": "Incorrecto. Tampoco corresponde al significado real." }
+      ]
+    },
+    {
+      "id": 17,
+      "pregunta": "En BEM, ¿qué representa el Block?",
+      "alternativas": [
+        { "id": "A", "texto": "La parte principal e independiente del componente", "esCorrecta": true, "retroalimentacion": "Correcto. El Block representa el componente base que puede existir por sí mismo, como .card o .button." },
+        { "id": "B", "texto": "Un color especial del componente", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un Block no representa un color, sino la unidad principal del componente." },
+        { "id": "C", "texto": "Un evento de JavaScript", "esCorrecta": false, "retroalimentacion": "Incorrecto. BEM es una metodología de nomenclatura CSS." },
+        { "id": "D", "texto": "Una base de datos visual", "esCorrecta": false, "retroalimentacion": "Incorrecto. No tiene relación con bases de datos." }
+      ]
+    },
+    {
+      "id": 18,
+      "pregunta": "¿Cómo se escribe normalmente un Element en BEM?",
+      "alternativas": [
+        { "id": "A", "texto": "block--element", "esCorrecta": false, "retroalimentacion": "Incorrecto. El doble guion (--) se usa para Modifier, no para Element." },
+        { "id": "B", "texto": "block__element", "esCorrecta": true, "retroalimentacion": "Correcto. En BEM el Element se representa con doble guion bajo, por ejemplo .card__title." },
+        { "id": "C", "texto": "block.element", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ese formato no corresponde a la convención BEM." },
+        { "id": "D", "texto": "block-element-modifier", "esCorrecta": false, "retroalimentacion": "Incorrecto. No representa específicamente la sintaxis del Element en BEM." }
+      ]
+    },
+    {
+      "id": 19,
+      "pregunta": "¿Cómo se escribe normalmente un Modifier en BEM?",
+      "alternativas": [
+        { "id": "A", "texto": "block__modifier", "esCorrecta": false, "retroalimentacion": "Incorrecto. El doble guion bajo se usa para Element, no para Modifier." },
+        { "id": "B", "texto": "block--modifier", "esCorrecta": true, "retroalimentacion": "Correcto. El Modifier se escribe con doble guion, por ejemplo .button--primary o .card--featured." },
+        { "id": "C", "texto": "block.modifier", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa no es la convención BEM." },
+        { "id": "D", "texto": "modifier--block", "esCorrecta": false, "retroalimentacion": "Incorrecto. Invierte el orden y no sigue la nomenclatura BEM." }
+      ]
+    },
+    {
+      "id": 20,
+      "pregunta": "¿Cuál de los siguientes ejemplos sigue correctamente la lógica de BEM?",
+      "alternativas": [
+        { "id": "A", "texto": ".card, .card__title, .card--featured", "esCorrecta": true, "retroalimentacion": "Correcto. Muestra un Block (.card), un Element (.card__title) y un Modifier (.card--featured) con la sintaxis adecuada." },
+        { "id": "B", "texto": ".card-title-featured", "esCorrecta": false, "retroalimentacion": "Incorrecto. No distingue claramente Block, Element y Modifier según la sintaxis BEM." },
+        { "id": "C", "texto": ".card.title.featured", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa notación no corresponde a la convención BEM." },
+        { "id": "D", "texto": ".featured__card--title", "esCorrecta": false, "retroalimentacion": "Incorrecto. Mezcla el orden lógico de BEM y no representa correctamente Block, Element y Modifier." }
+      ]
+    }
+  ]
+}

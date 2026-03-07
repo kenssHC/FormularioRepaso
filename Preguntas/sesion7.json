@@ -1,0 +1,266 @@
+{
+  "titulo": "Cuestionario de repaso sobre Lit, Web Components y conceptos relacionados",
+  "descripcion": "Banco de preguntas de opción múltiple basado en todo lo trabajado en este chat.",
+  "preguntas": [
+    {
+      "id": 1,
+      "pregunta": "¿Qué es Lit en programación?",
+      "alternativas": [
+        { "id": "A", "texto": "Una librería ligera de JavaScript para crear Web Components reutilizables usando estándares del navegador.", "esCorrecta": true, "retroalimentacion": "Correcto. Lit es una librería ligera enfocada en crear Web Components usando Custom Elements, Shadow DOM, templates y propiedades reactivas." },
+        { "id": "B", "texto": "Un sistema operativo para ejecutar componentes web sin navegador.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Lit no es un sistema operativo ni reemplaza al navegador; funciona sobre tecnologías web estándar." },
+        { "id": "C", "texto": "Una base de datos para almacenar estilos CSS y eventos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Lit no es una base de datos, sino una librería para construir componentes de interfaz." },
+        { "id": "D", "texto": "Un lenguaje de programación diferente a JavaScript.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Lit no es un lenguaje nuevo; se usa con JavaScript." }
+      ]
+    },
+    {
+      "id": 2,
+      "pregunta": "¿Cuál es una diferencia importante entre Lit y otros frameworks como React, Vue o Angular?",
+      "alternativas": [
+        { "id": "A", "texto": "Lit es un framework completo con router, SSR y estado global integrado por defecto.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso describe más a ecosistemas o frameworks más grandes. Lit se enfoca principalmente en la creación de componentes." },
+        { "id": "B", "texto": "Lit se basa en Web Components nativos y suele ser más ligero que frameworks completos.", "esCorrecta": true, "retroalimentacion": "Correcto. Una diferencia clave es que Lit se apoya en estándares del navegador como Custom Elements y Shadow DOM, y no busca ser un framework completo." },
+        { "id": "C", "texto": "Lit solo funciona dentro de Angular y no puede usarse solo.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Lit puede usarse en proyectos independientes y también integrarse con otros ecosistemas." },
+        { "id": "D", "texto": "Lit no permite reutilizar componentes.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Justamente Lit destaca por la creación de componentes reutilizables." }
+      ]
+    },
+    {
+      "id": 3,
+      "pregunta": "En el código 'export class ItemList extends LitElement', ¿qué representa 'ItemList'?",
+      "alternativas": [
+        { "id": "A", "texto": "Una variable temporal para guardar estilos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. ItemList no es una variable temporal; es el nombre de la clase del componente." },
+        { "id": "B", "texto": "La clase del componente creada con Lit.", "esCorrecta": true, "retroalimentacion": "Correcto. ItemList es la clase JavaScript que representa el componente y extiende de LitElement." },
+        { "id": "C", "texto": "Una función de Node.js para instalar dependencias.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No es una función de instalación; pertenece a la definición del componente." },
+        { "id": "D", "texto": "El nombre del package.json.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El nombre del proyecto puede estar en package.json, pero ItemList aquí es la clase del componente." }
+      ]
+    },
+    {
+      "id": 4,
+      "pregunta": "¿Para qué sirve 'static properties' en un componente Lit?",
+      "alternativas": [
+        { "id": "A", "texto": "Para definir propiedades reactivas que, al cambiar, actualizan la interfaz.", "esCorrecta": true, "retroalimentacion": "Correcto. static properties se usa para declarar propiedades reactivas del componente." },
+        { "id": "B", "texto": "Para guardar credenciales del usuario dentro del componente.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No se usa para credenciales, sino para declarar propiedades del componente." },
+        { "id": "C", "texto": "Para registrar el componente en el navegador.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El registro del componente se hace con customElements.define()." },
+        { "id": "D", "texto": "Para importar estilos CSS desde package-lock.json.", "esCorrecta": false, "retroalimentacion": "Incorrecto. package-lock.json no se usa para importar estilos." }
+      ]
+    },
+    {
+      "id": 5,
+      "pregunta": "¿Qué hace 'customElements.define(\"item-list\", ItemList)'?",
+      "alternativas": [
+        { "id": "A", "texto": "Convierte package.json en un archivo ejecutable.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa instrucción no tiene relación con package.json." },
+        { "id": "B", "texto": "Registra el Web Component para poder usarlo como etiqueta HTML.", "esCorrecta": true, "retroalimentacion": "Correcto. customElements.define() registra el componente en el navegador para usarlo como <item-list>." },
+        { "id": "C", "texto": "Crea automáticamente todos los estilos del componente.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los estilos se definen aparte, por ejemplo con static styles." },
+        { "id": "D", "texto": "Elimina el Shadow DOM del componente.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No elimina Shadow DOM; solo registra el custom element." }
+      ]
+    },
+    {
+      "id": 6,
+      "pregunta": "¿Qué es package.json?",
+      "alternativas": [
+        { "id": "A", "texto": "El archivo que define la configuración del proyecto, scripts y dependencias.", "esCorrecta": true, "retroalimentacion": "Correcto. package.json describe el proyecto y permite gestionar scripts y dependencias." },
+        { "id": "B", "texto": "El archivo que dibuja la interfaz del componente en pantalla.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La interfaz se define normalmente en render(), no en package.json." },
+        { "id": "C", "texto": "El archivo donde obligatoriamente se escriben los eventos @click.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los eventos se usan dentro del template del componente, no en package.json." },
+        { "id": "D", "texto": "El archivo donde se guardan únicamente imágenes del proyecto.", "esCorrecta": false, "retroalimentacion": "Incorrecto. package.json no almacena imágenes." }
+      ]
+    },
+    {
+      "id": 7,
+      "pregunta": "¿Qué función cumple package-lock.json?",
+      "alternativas": [
+        { "id": "A", "texto": "Bloquear las versiones exactas de las dependencias instaladas.", "esCorrecta": true, "retroalimentacion": "Correcto. package-lock.json guarda la resolución exacta de dependencias para que el proyecto funcione igual en distintas máquinas." },
+        { "id": "B", "texto": "Definir los estilos encapsulados del Shadow DOM.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los estilos no se guardan en package-lock.json." },
+        { "id": "C", "texto": "Reemplazar completamente a package.json.", "esCorrecta": false, "retroalimentacion": "Incorrecto. package-lock.json complementa a package.json, no lo reemplaza." },
+        { "id": "D", "texto": "Crear automáticamente el método render() en cada componente.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El método render() lo define el desarrollador." }
+      ]
+    },
+    {
+      "id": 8,
+      "pregunta": "Si no tienes permisos de administrador, ¿cómo puedes inicializar un proyecto con Lit?",
+      "alternativas": [
+        { "id": "A", "texto": "Instalando todo de forma local dentro de la carpeta del proyecto con npm.", "esCorrecta": true, "retroalimentacion": "Correcto. Las dependencias se pueden instalar localmente en la carpeta del proyecto sin requerir permisos de administrador." },
+        { "id": "B", "texto": "Solo si formateas el sistema operativo.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No necesitas formatear nada para trabajar con npm localmente." },
+        { "id": "C", "texto": "Únicamente si usas permisos root o administrador obligatoriamente.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Justamente se explicó que puede hacerse sin permisos de administrador." },
+        { "id": "D", "texto": "Sin Node.js, sin npm y sin crear carpeta de proyecto.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Normalmente necesitas Node.js, npm y una carpeta de proyecto." }
+      ]
+    },
+    {
+      "id": 9,
+      "pregunta": "¿Cómo se escuchan eventos en Lit dentro del render()?",
+      "alternativas": [
+        { "id": "A", "texto": "Usando el prefijo @, por ejemplo @click=${this.handleClick}.", "esCorrecta": true, "retroalimentacion": "Correcto. En Lit, el símbolo @ se usa para enlazar eventos del DOM." },
+        { "id": "B", "texto": "Usando #click=${this.handleClick}.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El prefijo correcto para eventos en Lit es @, no #." },
+        { "id": "C", "texto": "Usando .click=${this.handleClick}.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El punto se usa para property binding, no para eventos." },
+        { "id": "D", "texto": "Usando ?click=${this.handleClick}.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El signo ? se usa para boolean binding, no para escuchar eventos." }
+      ]
+    },
+    {
+      "id": 10,
+      "pregunta": "¿Qué es el ciclo de vida de un componente?",
+      "alternativas": [
+        { "id": "A", "texto": "El conjunto de etapas por las que pasa un componente desde que se crea hasta que se elimina.", "esCorrecta": true, "retroalimentacion": "Correcto. El ciclo de vida describe fases como creación, conexión al DOM, renderizado, actualización y eliminación." },
+        { "id": "B", "texto": "Una técnica para guardar dependencias en package-lock.json.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso corresponde a gestión de dependencias, no al ciclo de vida." },
+        { "id": "C", "texto": "Un tipo especial de evento personalizado.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El ciclo de vida no es un evento, sino un conjunto de etapas." },
+        { "id": "D", "texto": "El proceso de cambiar automáticamente entre frameworks.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No tiene relación con migraciones entre frameworks." }
+      ]
+    },
+    {
+      "id": 11,
+      "pregunta": "¿Cuál de los siguientes métodos de Lit define lo que se mostrará en pantalla?",
+      "alternativas": [
+        { "id": "A", "texto": "render()", "esCorrecta": true, "retroalimentacion": "Correcto. render() devuelve el template HTML que Lit mostrará en la interfaz." },
+        { "id": "B", "texto": "package()", "esCorrecta": false, "retroalimentacion": "Incorrecto. package() no es un método del ciclo de vida de Lit." },
+        { "id": "C", "texto": "defineRenderFile()", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ese método no corresponde a Lit." },
+        { "id": "D", "texto": "installCallback()", "esCorrecta": false, "retroalimentacion": "Incorrecto. No es uno de los métodos que vimos en el ciclo de vida de Lit." }
+      ]
+    },
+    {
+      "id": 12,
+      "pregunta": "¿Cómo se definen normalmente los estilos encapsulados en un componente Lit?",
+      "alternativas": [
+        { "id": "A", "texto": "Con static styles = css`...`.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa es la forma habitual de definir estilos del componente usando la utilidad css de Lit." },
+        { "id": "B", "texto": "Solo en package.json dentro del campo dependencies.", "esCorrecta": false, "retroalimentacion": "Incorrecto. dependencies sirve para librerías, no para escribir estilos del componente." },
+        { "id": "C", "texto": "Con @style=${this.color}.", "esCorrecta": false, "retroalimentacion": "Incorrecto. @ se usa para eventos, no para definir hojas de estilo completas." },
+        { "id": "D", "texto": "Con package-lock.css obligatoriamente.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ese archivo no forma parte de la estructura vista en Lit." }
+      ]
+    },
+    {
+      "id": 13,
+      "pregunta": "¿Qué es el renderizado?",
+      "alternativas": [
+        { "id": "A", "texto": "El proceso de convertir el código del componente en elementos visuales mostrados en la interfaz.", "esCorrecta": true, "retroalimentacion": "Correcto. Renderizar es generar y mostrar la UI a partir del código y los datos del componente." },
+        { "id": "B", "texto": "La eliminación automática de dependencias no usadas.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso no corresponde al concepto de renderizado." },
+        { "id": "C", "texto": "El registro de un componente con customElements.define().", "esCorrecta": false, "retroalimentacion": "Incorrecto. Registrar un componente y renderizarlo son cosas diferentes." },
+        { "id": "D", "texto": "Una forma de renombrar clases en JavaScript.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El renderizado no trata de renombrar clases." }
+      ]
+    },
+    {
+      "id": 14,
+      "pregunta": "¿Qué es el renderizado condicional?",
+      "alternativas": [
+        { "id": "A", "texto": "Mostrar u ocultar contenido según una condición lógica.", "esCorrecta": true, "retroalimentacion": "Correcto. El renderizado condicional permite decidir qué se muestra dependiendo de un valor o estado." },
+        { "id": "B", "texto": "Renderizar siempre exactamente el mismo HTML sin importar los datos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso sería lo opuesto al renderizado condicional." },
+        { "id": "C", "texto": "Actualizar package-lock.json cada vez que cambia una variable.", "esCorrecta": false, "retroalimentacion": "Incorrecto. package-lock.json no participa en el renderizado condicional." },
+        { "id": "D", "texto": "Crear un componente sin método render().", "esCorrecta": false, "retroalimentacion": "Incorrecto. El renderizado condicional ocurre justamente dentro del render o lógica relacionada." }
+      ]
+    },
+    {
+      "id": 15,
+      "pregunta": "¿Qué es el bindeo o binding?",
+      "alternativas": [
+        { "id": "A", "texto": "La vinculación entre datos y la interfaz para que se reflejen los cambios.", "esCorrecta": true, "retroalimentacion": "Correcto. Binding conecta datos con la UI y permite que los valores se muestren o actualicen en la interfaz." },
+        { "id": "B", "texto": "La instalación global de dependencias con permisos de administrador.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso no tiene relación con binding." },
+        { "id": "C", "texto": "El proceso de comprimir un archivo package.json.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Binding no trata sobre compresión de archivos." },
+        { "id": "D", "texto": "La eliminación de eventos del DOM.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Binding no significa eliminar eventos." }
+      ]
+    },
+    {
+      "id": 16,
+      "pregunta": "En Lit, ¿qué significa el prefijo '.' al inicio de un atributo dentro del template?",
+      "alternativas": [
+        { "id": "A", "texto": "Property binding: asignar una propiedad JavaScript del elemento.", "esCorrecta": true, "retroalimentacion": "Correcto. El punto se usa para asignar propiedades del DOM, por ejemplo .value=${this.name}." },
+        { "id": "B", "texto": "Event binding: escuchar eventos del DOM.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El event binding se hace con @, no con punto." },
+        { "id": "C", "texto": "Boolean binding: activar o quitar atributos booleanos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El boolean binding se hace con ?, no con punto." },
+        { "id": "D", "texto": "Interpolación de texto dentro del HTML.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La interpolación general se hace con ${}." }
+      ]
+    },
+    {
+      "id": 17,
+      "pregunta": "En Lit, ¿qué significa el prefijo '?' dentro del template?",
+      "alternativas": [
+        { "id": "A", "texto": "Sirve para atributos booleanos, como ?disabled=${this.loading}.", "esCorrecta": true, "retroalimentacion": "Correcto. El signo ? se usa para agregar o quitar atributos booleanos según true o false." },
+        { "id": "B", "texto": "Sirve para escuchar un click sobre un botón.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Para escuchar eventos se usa @." },
+        { "id": "C", "texto": "Sirve para registrar el componente en customElements.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El registro del componente no se hace con ?." },
+        { "id": "D", "texto": "Sirve para importar unsafeHTML.", "esCorrecta": false, "retroalimentacion": "Incorrecto. unsafeHTML es una directiva que se importa por separado." }
+      ]
+    },
+    {
+      "id": 18,
+      "pregunta": "¿Qué representa ${} dentro de un template de Lit?",
+      "alternativas": [
+        { "id": "A", "texto": "Interpolación de expresiones JavaScript dentro del HTML.", "esCorrecta": true, "retroalimentacion": "Correcto. ${} permite insertar variables, expresiones o templates dentro del html de Lit." },
+        { "id": "B", "texto": "Un comentario especial de package-lock.json.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No tiene relación con package-lock.json." },
+        { "id": "C", "texto": "Una forma de declarar clases CSS globales.", "esCorrecta": false, "retroalimentacion": "Incorrecto. ${} no declara clases CSS; inserta expresiones JavaScript." },
+        { "id": "D", "texto": "Un método del ciclo de vida de Lit.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No es un método, sino sintaxis de interpolación." }
+      ]
+    },
+    {
+      "id": 19,
+      "pregunta": "¿Qué es la comunicación entre componentes?",
+      "alternativas": [
+        { "id": "A", "texto": "El intercambio de información entre componentes mediante propiedades, eventos u otros mecanismos.", "esCorrecta": true, "retroalimentacion": "Correcto. Los componentes pueden comunicarse, por ejemplo, de padre a hijo con props y de hijo a padre con eventos." },
+        { "id": "B", "texto": "La instalación de varias librerías en el mismo package.json.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso es gestión de dependencias, no comunicación entre componentes." },
+        { "id": "C", "texto": "La traducción automática del código JavaScript a otro idioma.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No se refiere a traducción de código." },
+        { "id": "D", "texto": "El proceso de convertir un componente en package-lock.json.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso no existe en el flujo normal de Lit." }
+      ]
+    },
+    {
+      "id": 20,
+      "pregunta": "¿Cuál es la forma típica de comunicación de padre a hijo en Lit?",
+      "alternativas": [
+        { "id": "A", "texto": "Mediante propiedades o props enviadas al componente hijo.", "esCorrecta": true, "retroalimentacion": "Correcto. El padre suele pasar datos al hijo por medio de atributos o propiedades." },
+        { "id": "B", "texto": "Únicamente borrando package-lock.json.", "esCorrecta": false, "retroalimentacion": "Incorrecto. package-lock.json no interviene en la comunicación entre componentes." },
+        { "id": "C", "texto": "Mediante constructor() del navegador global exclusivamente.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No es la forma típica de comunicación padre-hijo." },
+        { "id": "D", "texto": "Con renderizado condicional obligatorio en todos los casos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El renderizado condicional puede ayudar, pero no define por sí solo la comunicación padre-hijo." }
+      ]
+    },
+    {
+      "id": 21,
+      "pregunta": "¿Cuál es una forma común de comunicación de hijo a padre en Lit?",
+      "alternativas": [
+        { "id": "A", "texto": "Mediante CustomEvent y dispatchEvent.", "esCorrecta": true, "retroalimentacion": "Correcto. El hijo puede disparar eventos personalizados para que el padre los escuche." },
+        { "id": "B", "texto": "Modificando directamente package.json cada vez que se hace click.", "esCorrecta": false, "retroalimentacion": "Incorrecto. package.json no se usa para comunicar componentes en tiempo de ejecución." },
+        { "id": "C", "texto": "Instalando lit dos veces en node_modules.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Instalar dependencias no es un mecanismo de comunicación entre componentes." },
+        { "id": "D", "texto": "Cambiando el nombre de customElements.define().", "esCorrecta": false, "retroalimentacion": "Incorrecto. Renombrar el componente no establece comunicación hijo-padre." }
+      ]
+    },
+    {
+      "id": 22,
+      "pregunta": "¿Qué es el renderizado con map()?",
+      "alternativas": [
+        { "id": "A", "texto": "Una técnica para generar varios elementos HTML recorriendo un arreglo de datos.", "esCorrecta": true, "retroalimentacion": "Correcto. map() permite transformar una lista en múltiples fragmentos HTML para renderizar colecciones." },
+        { "id": "B", "texto": "Una forma de instalar dependencias una por una.", "esCorrecta": false, "retroalimentacion": "Incorrecto. map() no se usa para instalar dependencias." },
+        { "id": "C", "texto": "El método que reemplaza a render() en Lit.", "esCorrecta": false, "retroalimentacion": "Incorrecto. map() se usa dentro de render(), no lo reemplaza." },
+        { "id": "D", "texto": "Una instrucción para desactivar el Shadow DOM.", "esCorrecta": false, "retroalimentacion": "Incorrecto. map() no controla Shadow DOM." }
+      ]
+    },
+    {
+      "id": 23,
+      "pregunta": "¿Qué es la reactividad en Lit?",
+      "alternativas": [
+        { "id": "A", "texto": "La capacidad del sistema para actualizar la interfaz automáticamente cuando cambian los datos.", "esCorrecta": true, "retroalimentacion": "Correcto. Si una propiedad reactiva cambia, Lit detecta el cambio y actualiza la UI." },
+        { "id": "B", "texto": "La capacidad de package-lock.json para cambiar estilos automáticamente.", "esCorrecta": false, "retroalimentacion": "Incorrecto. package-lock.json no maneja reactividad." },
+        { "id": "C", "texto": "La obligación de usar solo eventos personalizados.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La reactividad no obliga a usar solo CustomEvent." },
+        { "id": "D", "texto": "Una técnica exclusiva de CSS para animaciones.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Aunque hay cambios visuales, la reactividad aquí se refiere a datos y actualización de UI." }
+      ]
+    },
+    {
+      "id": 24,
+      "pregunta": "¿Qué es unsafeHTML en Lit?",
+      "alternativas": [
+        { "id": "A", "texto": "Una directiva que permite insertar HTML dinámico desde un string dentro del DOM.", "esCorrecta": true, "retroalimentacion": "Correcto. unsafeHTML interpreta una cadena como HTML real y la inserta en el template." },
+        { "id": "B", "texto": "Un reemplazo oficial de render() en la versión más reciente de Lit.", "esCorrecta": false, "retroalimentacion": "Incorrecto. unsafeHTML no reemplaza a render(); es una directiva adicional." },
+        { "id": "C", "texto": "Un archivo obligatorio para inicializar npm.", "esCorrecta": false, "retroalimentacion": "Incorrecto. npm no requiere un archivo llamado unsafeHTML." },
+        { "id": "D", "texto": "Un tipo especial de package-lock para estilos inseguros.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No tiene relación con package-lock.json." }
+      ]
+    },
+    {
+      "id": 25,
+      "pregunta": "¿Por qué unsafeHTML se considera 'unsafe'?",
+      "alternativas": [
+        { "id": "A", "texto": "Porque puede introducir vulnerabilidades como XSS si el contenido no es confiable.", "esCorrecta": true, "retroalimentacion": "Correcto. Si se inserta HTML malicioso desde una fuente externa, podría ejecutarse código no deseado." },
+        { "id": "B", "texto": "Porque impide usar eventos en Lit.", "esCorrecta": false, "retroalimentacion": "Incorrecto. unsafeHTML no impide usar eventos." },
+        { "id": "C", "texto": "Porque elimina automáticamente el método constructor().", "esCorrecta": false, "retroalimentacion": "Incorrecto. No modifica el ciclo de vida del componente." },
+        { "id": "D", "texto": "Porque rompe package.json cuando se importa.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No rompe package.json; el problema es de seguridad del contenido HTML." }
+      ]
+    },
+    {
+      "id": 26,
+      "pregunta": "¿Cuál de las siguientes combinaciones de símbolos y función en Lit es correcta?",
+      "alternativas": [
+        { "id": "A", "texto": "@ = eventos, . = propiedades, ? = booleanos, ${} = interpolación", "esCorrecta": true, "retroalimentacion": "Correcto. Esa es la correspondencia correcta de los bindings más usados en Lit." },
+        { "id": "B", "texto": "@ = booleanos, . = eventos, ? = estilos, ${} = package", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los significados están mezclados y no coinciden con Lit." },
+        { "id": "C", "texto": "@ = estilos, . = customElements, ? = render, ${} = node_modules", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ninguna de esas asociaciones corresponde a Lit." },
+        { "id": "D", "texto": "@ = package-lock, . = package.json, ? = npm init, ${} = map", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa opción mezcla conceptos de plantillas con archivos del proyecto." }
+      ]
+    }
+  ]
+}

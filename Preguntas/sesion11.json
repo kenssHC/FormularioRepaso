@@ -1,0 +1,276 @@
+{
+  "titulo": "Banco de preguntas - Análisis de componentes, arquitectura UI/Data/Cross y Singleton",
+  "descripcion": "Preguntas de repaso basadas únicamente en el contenido trabajado en este chat.",
+  "preguntas": [
+    {
+      "id": 1,
+      "pregunta": "¿Qué es un componente en una aplicación?",
+      "alternativas": [
+        { "id": "A", "texto": "Una unidad independiente que encapsula estructura, estilo y lógica para cumplir una función específica.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa es la idea central: un componente es una pieza modular, reutilizable y con responsabilidad específica." },
+        { "id": "B", "texto": "Una carpeta del proyecto que solo sirve para guardar imágenes.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Una carpeta puede contener recursos, pero un componente es una pieza funcional de software, no solo almacenamiento." },
+        { "id": "C", "texto": "Un archivo CSS que define colores y tipografías de toda la app.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El CSS puede ser parte de un componente, pero por sí solo no define lo que es un componente." },
+        { "id": "D", "texto": "Una pantalla completa obligatoriamente conectada a base de datos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un componente no tiene que ser una pantalla completa ni estar siempre conectado a datos." }
+      ]
+    },
+    {
+      "id": 2,
+      "pregunta": "¿Cuál de las siguientes es una característica clave de los componentes según el chat?",
+      "alternativas": [
+        { "id": "A", "texto": "Que deben estar fuertemente acoplados entre sí.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Se busca lo contrario: desacoplamiento." },
+        { "id": "B", "texto": "Que sean reutilizables.", "esCorrecta": true, "retroalimentacion": "Correcto. La reutilización fue una idea clave en la explicación del análisis de componentes." },
+        { "id": "C", "texto": "Que solo sirvan para una única pantalla.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Muchos componentes se diseñan justamente para usarse en varias pantallas." },
+        { "id": "D", "texto": "Que no tengan lógica ni estructura.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un componente puede encapsular estructura, estilo y lógica." }
+      ]
+    },
+    {
+      "id": 3,
+      "pregunta": "¿Qué busca el análisis de componentes?",
+      "alternativas": [
+        { "id": "A", "texto": "Unir todo el código en un solo archivo grande.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El análisis de componentes busca dividir, no juntar desordenadamente." },
+        { "id": "B", "texto": "Identificar, dividir y organizar una aplicación en piezas reutilizables según su responsabilidad.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la definición trabajada en las diapositivas." },
+        { "id": "C", "texto": "Eliminar la interfaz y dejar únicamente servicios.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El análisis considera UI, datos y componentes transversales." },
+        { "id": "D", "texto": "Convertir toda la aplicación en una sola feature.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Justamente se busca separar en múltiples componentes con distintas responsabilidades." }
+      ]
+    },
+    {
+      "id": 4,
+      "pregunta": "¿Cuáles son los tres tipos principales de componentes mostrados en la empresa?",
+      "alternativas": [
+        { "id": "A", "texto": "Backend Components, SQL Components y Mobile Components.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa clasificación no corresponde a la presentada en las diapositivas." },
+        { "id": "B", "texto": "Data Components, UI Components y Cross Components.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue exactamente la clasificación principal mostrada." },
+        { "id": "C", "texto": "Pages, Services y APIs.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esos pueden ser elementos de la arquitectura, pero no fueron los tres tipos principales presentados." },
+        { "id": "D", "texto": "HTML Components, CSS Components y JS Components.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa división no fue la utilizada en el chat." }
+      ]
+    },
+    {
+      "id": 5,
+      "pregunta": "¿Cuál es la función principal de un Data Component?",
+      "alternativas": [
+        { "id": "A", "texto": "Dibujar botones y tarjetas en pantalla.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso corresponde a la capa UI." },
+        { "id": "B", "texto": "Acceder, gestionar o procesar datos dentro de la aplicación.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa es la idea central de los Data Components." },
+        { "id": "C", "texto": "Reemplazar completamente a las features.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los Data Components no reemplazan la UI, la alimentan con datos." },
+        { "id": "D", "texto": "Crear únicamente estilos globales.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los estilos no son la responsabilidad de un Data Component." }
+      ]
+    },
+    {
+      "id": 6,
+      "pregunta": "¿Qué significa BGADP dentro de los Data Components?",
+      "alternativas": [
+        { "id": "A", "texto": "Basic Graphic App Design Provider.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ese nombre no fue parte de la explicación." },
+        { "id": "B", "texto": "Api Data Provider.", "esCorrecta": true, "retroalimentacion": "Correcto. BGADP se explicó como el componente que consume la API." },
+        { "id": "C", "texto": "Business Global App Data Page.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No corresponde a la convención presentada." },
+        { "id": "D", "texto": "Big Data Platform.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Aunque suene relacionado con datos, no es el término usado aquí." }
+      ]
+    },
+    {
+      "id": 7,
+      "pregunta": "¿Qué significa BGADM dentro de la arquitectura mostrada?",
+      "alternativas": [
+        { "id": "A", "texto": "Data Manager.", "esCorrecta": true, "retroalimentacion": "Correcto. BGADM se explicó como el gestor de datos dentro de la aplicación." },
+        { "id": "B", "texto": "Database Module.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No fue definido así en el chat." },
+        { "id": "C", "texto": "Background Data Mapper.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Puede sonar técnico, pero no es el nombre utilizado." },
+        { "id": "D", "texto": "Basic Data Model.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Tampoco corresponde a la convención mostrada." }
+      ]
+    },
+    {
+      "id": 8,
+      "pregunta": "¿Cuál es el formato de nombre explicado para un BGADP?",
+      "alternativas": [
+        { "id": "A", "texto": "bgadp-[nombre del servicio]-[version]", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la convención mostrada en las diapositivas." },
+        { "id": "B", "texto": "[empresa]-global-[servicio]-api-dm", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ese formato corresponde al BGADM, no al BGADP." },
+        { "id": "C", "texto": "[empresa]-[web-component]", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ese formato se mencionó para componentes UI básicos." },
+        { "id": "D", "texto": "feature-[servicio]-v[empresa]", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ese formato no fue presentado en el chat." }
+      ]
+    },
+    {
+      "id": 9,
+      "pregunta": "En el ejemplo de la API de libros, ¿cuál era el nombre del data provider?",
+      "alternativas": [
+        { "id": "A", "texto": "entelgy-global-books-api-dm", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ese era el nombre del Data Manager." },
+        { "id": "B", "texto": "bgadp-books-v3", "esCorrecta": true, "retroalimentacion": "Correcto. Ese fue el ejemplo dado para el API Data Provider de libros." },
+        { "id": "C", "texto": "books-feature-v3", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso no fue el nombre usado en la diapositiva." },
+        { "id": "D", "texto": "entelgy-books-global-v3", "esCorrecta": false, "retroalimentacion": "Incorrecto. No sigue la convención mostrada." }
+      ]
+    },
+    {
+      "id": 10,
+      "pregunta": "En el ejemplo de la API de libros, ¿cuál era el nombre del Data Manager?",
+      "alternativas": [
+        { "id": "A", "texto": "bgadp-books-v3", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ese era el API Data Provider." },
+        { "id": "B", "texto": "entelgy-global-books-api-dm", "esCorrecta": true, "retroalimentacion": "Correcto. Ese fue el nombre usado para el Data Manager del ejemplo." },
+        { "id": "C", "texto": "entelgy-books-widget", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso suena a componente UI, no a Data Manager." },
+        { "id": "D", "texto": "books-global-provider", "esCorrecta": false, "retroalimentacion": "Incorrecto. No corresponde a la convención presentada." }
+      ]
+    },
+    {
+      "id": 11,
+      "pregunta": "¿Cuál es el flujo correcto de datos explicado varias veces en el chat?",
+      "alternativas": [
+        { "id": "A", "texto": "Usuario -> UI -> API -> BGADM -> BGADP", "esCorrecta": false, "retroalimentacion": "Incorrecto. El flujo explicado partía desde la API hacia los componentes de datos y luego hacia la UI." },
+        { "id": "B", "texto": "API -> BGADP -> BGADM -> UI Components -> Usuario", "esCorrecta": true, "retroalimentacion": "Correcto. Ese fue el flujo base repetido en los ejemplos." },
+        { "id": "C", "texto": "API -> Widgets -> Basics -> Data Manager -> Usuario", "esCorrecta": false, "retroalimentacion": "Incorrecto. El Data Manager no va después de la UI en el flujo base." },
+        { "id": "D", "texto": "BGADM -> Feature -> API -> Usuario", "esCorrecta": false, "retroalimentacion": "Incorrecto. El orden no corresponde a la arquitectura mostrada." }
+      ]
+    },
+    {
+      "id": 12,
+      "pregunta": "¿Qué hacen los UI Components?",
+      "alternativas": [
+        { "id": "A", "texto": "Se encargan principalmente de mostrar la interfaz y permitir interacción con el usuario.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la definición central de los UI Components." },
+        { "id": "B", "texto": "Son exclusivos para llamadas a APIs y persistencia.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa responsabilidad se atribuyó a los Data Components." },
+        { "id": "C", "texto": "Solo sirven para definir la estructura de carpetas.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La estructura de carpetas organiza el proyecto, pero no define el rol de los UI Components." },
+        { "id": "D", "texto": "Eliminan la necesidad de features y widgets.", "esCorrecta": false, "retroalimentacion": "Incorrecto. De hecho, basics, widgets y features son subniveles de los UI Components." }
+      ]
+    },
+    {
+      "id": 13,
+      "pregunta": "¿Cuál es la jerarquía correcta de los UI Components según lo explicado?",
+      "alternativas": [
+        { "id": "A", "texto": "Feature -> Widget -> Basic Component", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la jerarquía repetida varias veces en el chat." },
+        { "id": "B", "texto": "Basic Component -> Feature -> Widget", "esCorrecta": false, "retroalimentacion": "Incorrecto. El orden lógico va de lo más grande a lo más pequeño, pero en el chat se explicó específicamente Feature -> Widget -> Basic." },
+        { "id": "C", "texto": "Widget -> API -> Feature", "esCorrecta": false, "retroalimentacion": "Incorrecto. API no forma parte de esa jerarquía de UI." },
+        { "id": "D", "texto": "Cross -> Data -> UI", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa no es la jerarquía interna de UI Components." }
+      ]
+    },
+    {
+      "id": 14,
+      "pregunta": "¿Cuál de los siguientes elementos fue identificado como componente básico en el reto mostrado?",
+      "alternativas": [
+        { "id": "A", "texto": "El botón 'Suscríbete'.", "esCorrecta": true, "retroalimentacion": "Correcto. Ese botón fue uno de los ejemplos claros de componente básico." },
+        { "id": "B", "texto": "La funcionalidad completa de consulta de cuentas.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso corresponde a una feature, no a un basic component." },
+        { "id": "C", "texto": "El Data Manager global de libros.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso pertenece a la capa de datos, no a UI básica." },
+        { "id": "D", "texto": "La autenticación global del sistema.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso se explicó como ejemplo de Cross Component." }
+      ]
+    },
+    {
+      "id": 15,
+      "pregunta": "¿Qué formato se mencionó para nombrar componentes básicos UI?",
+      "alternativas": [
+        { "id": "A", "texto": "[empresa]-[web-component]", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la convención mostrada en el reto de componentes básicos." },
+        { "id": "B", "texto": "bgadp-[servicio]-[version]", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ese formato es para API Data Provider." },
+        { "id": "C", "texto": "[empresa]-global-[servicio]-api-dm", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ese formato es para Data Manager." },
+        { "id": "D", "texto": "feature-[empresa]-[pantalla]-step", "esCorrecta": false, "retroalimentacion": "Incorrecto. No fue la convención explicada para básicos." }
+      ]
+    },
+    {
+      "id": 16,
+      "pregunta": "¿Qué caracteriza a un widget dentro de los UI Components?",
+      "alternativas": [
+        { "id": "A", "texto": "Que es una funcionalidad completa de negocio por sí sola.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso describe mejor a una feature." },
+        { "id": "B", "texto": "Que combina varios componentes básicos para formar una pieza funcional de UI.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la explicación dada para widgets." },
+        { "id": "C", "texto": "Que reemplaza a BGADP y BGADM.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los widgets pertenecen a UI y no sustituyen la capa de datos." },
+        { "id": "D", "texto": "Que siempre debe ser un modal.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un modal puede ser un componente, pero no todo widget es un modal." }
+      ]
+    },
+    {
+      "id": 17,
+      "pregunta": "En la diapositiva del listado de alimentos, ¿qué nombre se usó como ejemplo de widget?",
+      "alternativas": [
+        { "id": "A", "texto": "cards-list-foods", "esCorrecta": true, "retroalimentacion": "Correcto. Ese fue el nombre mostrado para el widget de lista de tarjetas de alimentos." },
+        { "id": "B", "texto": "entelgy-global-foods-api-dm", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ese sería el Data Manager, no el widget." },
+        { "id": "C", "texto": "bgadp-foods-v1", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ese sería el API Data Provider." },
+        { "id": "D", "texto": "foods-cross-component", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ese nombre no fue usado en el ejemplo." }
+      ]
+    },
+    {
+      "id": 18,
+      "pregunta": "¿Qué es una feature según lo trabajado en el chat?",
+      "alternativas": [
+        { "id": "A", "texto": "Un elemento visual simple como un botón o ícono.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso corresponde a componentes básicos." },
+        { "id": "B", "texto": "Un componente de alto nivel que representa una funcionalidad completa de negocio.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la idea central al corregir la diapositiva confundida con widgets." },
+        { "id": "C", "texto": "Una carpeta exclusiva para estilos SCSS.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Una feature no es solo una carpeta de estilos." },
+        { "id": "D", "texto": "Una instancia única global del sistema.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso se parece más al concepto de Singleton." }
+      ]
+    },
+    {
+      "id": 19,
+      "pregunta": "¿Por qué se dijo que la diapositiva del celular bancario estaba confundida?",
+      "alternativas": [
+        { "id": "A", "texto": "Porque mostraba un componente básico pero lo llamaba Data Manager.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La confusión real fue entre widget y feature." },
+        { "id": "B", "texto": "Porque mostraba una funcionalidad completa de negocio, aunque el título decía Widgets.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue precisamente la observación hecha en el chat." },
+        { "id": "C", "texto": "Porque usaba mal la versión del BGADP.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El punto principal no fue la versión." },
+        { "id": "D", "texto": "Porque la carpeta src no aparecía en la imagen.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La confusión era conceptual, no de carpetas." }
+      ]
+    },
+    {
+      "id": 20,
+      "pregunta": "¿Cuál de las siguientes carpetas sí apareció en la estructura de la feature template?",
+      "alternativas": [
+        { "id": "A", "texto": "elements", "esCorrecta": true, "retroalimentacion": "Correcto. 'elements' fue una de las carpetas principales de la estructura." },
+        { "id": "B", "texto": "database", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa carpeta no apareció en la estructura mostrada." },
+        { "id": "C", "texto": "controllers", "esCorrecta": false, "retroalimentacion": "Incorrecto. No fue parte de la estructura presentada." },
+        { "id": "D", "texto": "repositories", "esCorrecta": false, "retroalimentacion": "Incorrecto. Tampoco se mostró esa carpeta en el ejemplo." }
+      ]
+    },
+    {
+      "id": 21,
+      "pregunta": "¿Para qué sirve la carpeta 'mixins' dentro de la estructura mostrada?",
+      "alternativas": [
+        { "id": "A", "texto": "Para guardar únicamente imágenes y assets visuales.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa no fue la función explicada." },
+        { "id": "B", "texto": "Para contener lógica reutilizable compartida por varios componentes o páginas.", "esCorrecta": true, "retroalimentacion": "Correcto. Los mixins se explicaron como piezas reutilizables de lógica." },
+        { "id": "C", "texto": "Para almacenar respuestas de la API en producción.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso se relacionaría más con caché o manejo de datos." },
+        { "id": "D", "texto": "Para definir rutas del backend.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No fue la finalidad descrita para mixins." }
+      ]
+    },
+    {
+      "id": 22,
+      "pregunta": "¿Qué representan normalmente las carpetas 'pages' y 'steps' dentro de una feature?",
+      "alternativas": [
+        { "id": "A", "texto": "Pages son pantallas y steps son subpasos de un flujo dentro de una página.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la interpretación dada en el ejemplo de estructura." },
+        { "id": "B", "texto": "Pages son APIs y steps son bases de datos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No tienen esa función en la estructura mostrada." },
+        { "id": "C", "texto": "Pages son estilos y steps son scripts de build.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Tampoco fue esa la explicación." },
+        { "id": "D", "texto": "Pages y steps son dos nombres distintos para la misma carpeta.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Se explicó que pages y steps cumplen funciones distintas." }
+      ]
+    },
+    {
+      "id": 23,
+      "pregunta": "¿Qué es un Cross Component?",
+      "alternativas": [
+        { "id": "A", "texto": "Un componente global que brinda funcionalidades comunes a múltiples partes del sistema.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la definición central trabajada." },
+        { "id": "B", "texto": "Un input reutilizable como correo o contraseña.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso describe un basic component, no un cross component." },
+        { "id": "C", "texto": "Una feature exclusiva de una sola pantalla.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un cross component no pertenece a una única feature." },
+        { "id": "D", "texto": "Un componente que solo existe para compilar SCSS.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No tiene relación con esa tarea específica." }
+      ]
+    },
+    {
+      "id": 24,
+      "pregunta": "¿Cuál de estos ejemplos sí fue mencionado como Cross Component?",
+      "alternativas": [
+        { "id": "A", "texto": "Autenticación.", "esCorrecta": true, "retroalimentacion": "Correcto. Autenticación fue uno de los ejemplos explícitos en la diapositiva." },
+        { "id": "B", "texto": "Input password.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso es un componente UI básico." },
+        { "id": "C", "texto": "Cards-list-foods.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ese fue un ejemplo de widget." },
+        { "id": "D", "texto": "Bgadp-books-v3.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso es un Data Component de tipo API Data Provider." }
+      ]
+    },
+    {
+      "id": 25,
+      "pregunta": "¿Qué garantiza el patrón Singleton?",
+      "alternativas": [
+        { "id": "A", "texto": "Que una clase tenga múltiples instancias para mayor flexibilidad.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Singleton busca exactamente lo contrario." },
+        { "id": "B", "texto": "Que solo exista una única instancia de una clase y un punto global de acceso a ella.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la definición dada en el chat." },
+        { "id": "C", "texto": "Que toda clase deba heredar de otra para funcionar.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso no corresponde al patrón Singleton." },
+        { "id": "D", "texto": "Que todos los componentes visuales se rendericen una sola vez.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Singleton no trata del renderizado visual." }
+      ]
+    },
+    {
+      "id": 26,
+      "pregunta": "¿Cuál de estos casos fue mencionado como uso típico de Singleton?",
+      "alternativas": [
+        { "id": "A", "texto": "Auth Service o Cache Manager.", "esCorrecta": true, "retroalimentacion": "Correcto. Esos fueron ejemplos dados en la explicación del patrón." },
+        { "id": "B", "texto": "Cada botón de una interfaz.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los botones son múltiples instancias UI, no un caso típico de Singleton." },
+        { "id": "C", "texto": "Cada tarjeta de una lista de productos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Una lista necesita muchas instancias de tarjetas, no una sola." },
+        { "id": "D", "texto": "Cada input de un formulario.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Tampoco corresponde al propósito de Singleton." }
+      ]
+    },
+    {
+      "id": 27,
+      "pregunta": "Según la explicación del chat, ¿qué componentes suelen relacionarse bien con el patrón Singleton?",
+      "alternativas": [
+        { "id": "A", "texto": "Servicios globales como Data Managers o Cross Components.", "esCorrecta": true, "retroalimentacion": "Correcto. Se mencionó que muchos servicios globales pueden funcionar como Singleton." },
+        { "id": "B", "texto": "Solo los estilos SCSS.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El patrón Singleton no se aplica a archivos de estilos de ese modo." },
+        { "id": "C", "texto": "Únicamente botones e íconos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esos son componentes UI reutilizables, no casos clásicos de Singleton." },
+        { "id": "D", "texto": "Todas las páginas y steps obligatoriamente.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No toda página o step debe ser Singleton." }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Preguntas - Entelgy</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="page page--home">
+    <header class="header">
+      <h1 class="header__title">Repaso de Sesiones</h1>
+      <p class="header__subtitle">Selecciona una sesión para comenzar el quiz</p>
+    </header>
+
+    <main class="main">
+      <div class="session-grid" id="sessionGrid">
+        <!-- Las tarjetas de sesión se generan dinámicamente -->
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p class="footer__text">Las preguntas son de opción múltiple. Una vez seleccionada una respuesta no podrás cambiarla.</p>
+    </footer>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script>
+    renderSessionGrid();
+  </script>
+</body>
+</html>

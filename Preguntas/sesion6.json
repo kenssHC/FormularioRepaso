@@ -1,0 +1,206 @@
+{
+  "titulo": "Cuestionario de repaso - POO, diseño y conceptos base",
+  "descripcion": "Banco de preguntas de opción múltiple basado en todo lo conversado en este chat sobre Programación Orientada a Objetos, programación secuencial, herencia, polimorfismo, sobrecarga, encapsulamiento, abstracción, constructor, bajo acoplamiento y alta cohesión.",
+  "preguntas": [
+    {
+      "id": 1,
+      "pregunta": "¿Qué es la Programación Orientada a Objetos (POO)?",
+      "alternativas": [
+        { "id": "A", "texto": "Es un paradigma de programación que organiza el código en objetos con atributos y métodos.", "esCorrecta": true, "retroalimentacion": "Correcto. La POO organiza el software en clases y objetos, donde los objetos contienen datos (atributos) y comportamientos (métodos)." },
+        { "id": "B", "texto": "Es una técnica que solo sirve para diseñar bases de datos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La POO no es una técnica exclusiva para bases de datos." },
+        { "id": "C", "texto": "Es un tipo de lenguaje de marcado parecido a HTML.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La POO no es un lenguaje de marcado ni se parece a HTML en su propósito." },
+        { "id": "D", "texto": "Es una forma de programar exclusivamente con variables globales.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La POO busca organizar el código en objetos, no trabajar solo con variables globales." }
+      ]
+    },
+    {
+      "id": 2,
+      "pregunta": "¿Cuál es la diferencia entre una clase y un objeto?",
+      "alternativas": [
+        { "id": "A", "texto": "La clase es el valor final y el objeto es el molde.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Está invertido: el molde es la clase y el resultado creado es el objeto." },
+        { "id": "B", "texto": "La clase es una plantilla y el objeto es una instancia creada a partir de esa plantilla.", "esCorrecta": true, "retroalimentacion": "Correcto. Una clase define cómo serán los objetos, y el objeto es la instancia real creada a partir de esa definición." },
+        { "id": "C", "texto": "La clase y el objeto significan exactamente lo mismo.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No significan lo mismo: una clase define, un objeto representa una instancia concreta." },
+        { "id": "D", "texto": "El objeto siempre contiene varias clases dentro.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un objeto no contiene varias clases; normalmente es una instancia de una clase." }
+      ]
+    },
+    {
+      "id": 3,
+      "pregunta": "En la analogía del molde de galleta o muñeco, ¿qué representa la clase?",
+      "alternativas": [
+        { "id": "A", "texto": "El muñeco ya hecho o la galleta lista.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El muñeco ya hecho representa al objeto, no a la clase." },
+        { "id": "B", "texto": "El archivo guardado en disco.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La clase no se definió como un archivo guardado en disco en este tema." },
+        { "id": "C", "texto": "El molde o plantilla.", "esCorrecta": true, "retroalimentacion": "Correcto. La clase actúa como un molde que define la forma o estructura con la que luego se crean los objetos." },
+        { "id": "D", "texto": "La variable que guarda el color.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Una variable puede ser parte de un objeto, pero no representa la clase completa." }
+      ]
+    },
+    {
+      "id": 4,
+      "pregunta": "En POO, ¿qué son los atributos?",
+      "alternativas": [
+        { "id": "A", "texto": "Las propiedades o datos que describen a un objeto.", "esCorrecta": true, "retroalimentacion": "Correcto. Los atributos representan el estado o las características de un objeto, por ejemplo nombre, edad, color o velocidad." },
+        { "id": "B", "texto": "Los programas que compilan la clase.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los atributos no son programas compiladores." },
+        { "id": "C", "texto": "Las pantallas del sistema.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los atributos no son pantallas ni interfaces." },
+        { "id": "D", "texto": "Las reglas del navegador.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los atributos pertenecen al objeto, no a reglas del navegador." }
+      ]
+    },
+    {
+      "id": 5,
+      "pregunta": "En POO, ¿qué son los métodos?",
+      "alternativas": [
+        { "id": "A", "texto": "Son los nombres de las variables privadas.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un método no es simplemente el nombre de una variable privada." },
+        { "id": "B", "texto": "Son funciones o comportamientos que puede realizar un objeto.", "esCorrecta": true, "retroalimentacion": "Correcto. Los métodos definen las acciones del objeto, por ejemplo saludar(), acelerar() o obtenerDiametro()." },
+        { "id": "C", "texto": "Son los comentarios del código.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un comentario no define comportamiento del objeto." },
+        { "id": "D", "texto": "Son únicamente operaciones matemáticas.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un método puede hacer mucho más que operaciones matemáticas." }
+      ]
+    },
+    {
+      "id": 6,
+      "pregunta": "¿Qué caracteriza a la programación secuencial?",
+      "alternativas": [
+        { "id": "A", "texto": "Que organiza el código en objetos y subclases.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Organizar el código en objetos pertenece a la POO, no a la programación secuencial." },
+        { "id": "B", "texto": "Que ejecuta las instrucciones una tras otra en orden.", "esCorrecta": true, "retroalimentacion": "Correcto. En la programación secuencial las instrucciones se ejecutan paso a paso, desde el inicio hasta el fin." },
+        { "id": "C", "texto": "Que solo se puede usar en POO.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La programación secuencial no depende de la POO." },
+        { "id": "D", "texto": "Que siempre necesita herencia múltiple.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La herencia múltiple no tiene relación con el concepto de ejecución secuencial." }
+      ]
+    },
+    {
+      "id": 7,
+      "pregunta": "En el algoritmo secuencial del círculo visto en la imagen, ¿qué fórmula se utilizó para mostrar el diámetro?",
+      "alternativas": [
+        { "id": "A", "texto": "diametro = radio / 2", "esCorrecta": false, "retroalimentacion": "Incorrecto. Dividir entre 2 no da el diámetro." },
+        { "id": "B", "texto": "diametro = radio * radio", "esCorrecta": false, "retroalimentacion": "Incorrecto. radio por radio corresponde a otra operación, no al diámetro." },
+        { "id": "C", "texto": "diametro = 2 * radio", "esCorrecta": true, "retroalimentacion": "Correcto. El diámetro de un círculo se obtiene multiplicando el radio por 2." },
+        { "id": "D", "texto": "diametro = 3.14 * radio", "esCorrecta": false, "retroalimentacion": "Incorrecto. 3.14 * radio se relaciona con otras fórmulas, no con la del diámetro." }
+      ]
+    },
+    {
+      "id": 8,
+      "pregunta": "En el ejemplo POO con la clase Circulo, ¿qué atributo tenía la clase?",
+      "alternativas": [
+        { "id": "A", "texto": "diametro", "esCorrecta": false, "retroalimentacion": "Incorrecto. diametro se obtenía mediante un método, no era el atributo mostrado." },
+        { "id": "B", "texto": "valor", "esCorrecta": false, "retroalimentacion": "Incorrecto. valor era el parámetro recibido en el constructor, no el atributo principal." },
+        { "id": "C", "texto": "radio", "esCorrecta": true, "retroalimentacion": "Correcto. En la clase Circulo el atributo definido era radio, y se indicó además que era privado y de tipo entero." },
+        { "id": "D", "texto": "miCirculo", "esCorrecta": false, "retroalimentacion": "Incorrecto. miCirculo era el nombre del objeto creado, no el atributo de la clase." }
+      ]
+    },
+    {
+      "id": 9,
+      "pregunta": "¿Qué método de una clase permite inicializar los valores de un objeto?",
+      "alternativas": [
+        { "id": "A", "texto": "render", "esCorrecta": false, "retroalimentacion": "Incorrecto. render no es el método general de inicialización en POO." },
+        { "id": "B", "texto": "main", "esCorrecta": false, "retroalimentacion": "Incorrecto. main suele representar el punto de entrada en algunos lenguajes, no la inicialización de atributos de un objeto." },
+        { "id": "C", "texto": "constructor", "esCorrecta": true, "retroalimentacion": "Correcto. El constructor es el método especial que se ejecuta al crear el objeto e inicializa sus atributos." },
+        { "id": "D", "texto": "import", "esCorrecta": false, "retroalimentacion": "Incorrecto. import sirve para importar módulos o recursos, no para inicializar un objeto." }
+      ]
+    },
+    {
+      "id": 10,
+      "pregunta": "En el ejemplo MostrarDiametroPOO, si se crea miCirculo <- NUEVO Circulo(15), ¿qué valor devuelve obtenerDiametro()?",
+      "alternativas": [
+        { "id": "A", "texto": "15", "esCorrecta": false, "retroalimentacion": "Incorrecto. 15 es el radio, no el diámetro." },
+        { "id": "B", "texto": "30", "esCorrecta": true, "retroalimentacion": "Correcto. El método obtenerDiametro() retorna 2 * radio, y si radio es 15, entonces el resultado es 30." },
+        { "id": "C", "texto": "7.5", "esCorrecta": false, "retroalimentacion": "Incorrecto. 7.5 sería el resultado de dividir entre 2, no de calcular el diámetro." },
+        { "id": "D", "texto": "225", "esCorrecta": false, "retroalimentacion": "Incorrecto. 225 sería 15 * 15, no 2 * 15." }
+      ]
+    },
+    {
+      "id": 11,
+      "pregunta": "¿Cuáles son los cuatro pilares de la POO mencionados en este chat?",
+      "alternativas": [
+        { "id": "A", "texto": "Variables, ciclos, arreglos y funciones.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esos son conceptos de programación, pero no los cuatro pilares de la POO." },
+        { "id": "B", "texto": "Compilación, interpretación, enlace y despliegue.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso describe etapas o conceptos distintos al paradigma orientado a objetos." },
+        { "id": "C", "texto": "Encapsulamiento, herencia, polimorfismo y abstracción.", "esCorrecta": true, "retroalimentacion": "Correcto. Esos son los cuatro pilares fundamentales de la Programación Orientada a Objetos que se revisaron." },
+        { "id": "D", "texto": "Clases, objetos, HTML y CSS.", "esCorrecta": false, "retroalimentacion": "Incorrecto. HTML y CSS no forman parte de los pilares de la POO." }
+      ]
+    },
+    {
+      "id": 12,
+      "pregunta": "¿Qué significa encapsulamiento?",
+      "alternativas": [
+        { "id": "A", "texto": "Permitir que una clase tenga muchos nombres.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Encapsular no significa dar muchos nombres a una clase." },
+        { "id": "B", "texto": "Proteger y agrupar datos y métodos dentro de una clase, controlando el acceso.", "esCorrecta": true, "retroalimentacion": "Correcto. El encapsulamiento busca proteger la información y controlar cómo se accede a los atributos y métodos." },
+        { "id": "C", "texto": "Hacer que todas las clases hereden de todas.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso no describe encapsulamiento, sino una idea equivocada de herencia total." },
+        { "id": "D", "texto": "Escribir todo el sistema en una sola clase.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Meter todo en una sola clase va contra un buen diseño." }
+      ]
+    },
+    {
+      "id": 13,
+      "pregunta": "¿Qué significa abstracción en POO?",
+      "alternativas": [
+        { "id": "A", "texto": "Ocultar la complejidad y mostrar solo lo esencial.", "esCorrecta": true, "retroalimentacion": "Correcto. La abstracción consiste en mostrar solo la información importante y ocultar los detalles internos de implementación." },
+        { "id": "B", "texto": "Eliminar todos los atributos de una clase.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Abstraer no significa dejar una clase sin atributos." },
+        { "id": "C", "texto": "Convertir métodos en comentarios.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Comentar métodos no tiene relación con la abstracción." },
+        { "id": "D", "texto": "Duplicar clases para reutilizarlas.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Duplicar clases no es la idea de este pilar." }
+      ]
+    },
+    {
+      "id": 14,
+      "pregunta": "¿Qué significa herencia en POO?",
+      "alternativas": [
+        { "id": "A", "texto": "Que una clase puede heredar atributos y métodos de otra clase.", "esCorrecta": true, "retroalimentacion": "Correcto. La herencia permite reutilizar código al hacer que una subclase reciba características de una superclase." },
+        { "id": "B", "texto": "Que un objeto no puede usar métodos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La herencia no impide usar métodos; al contrario, puede heredarlos." },
+        { "id": "C", "texto": "Que un método siempre devuelve texto.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El tipo de retorno de un método no define la herencia." },
+        { "id": "D", "texto": "Que todas las variables se vuelven globales.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La herencia no convierte variables en globales." }
+      ]
+    },
+    {
+      "id": 15,
+      "pregunta": "Según la imagen de herencia, ¿qué es la herencia única?",
+      "alternativas": [
+        { "id": "A", "texto": "Cuando una clase hija hereda de una sola clase padre.", "esCorrecta": true, "retroalimentacion": "Correcto. En la herencia única una subclase deriva de una sola superclase." },
+        { "id": "B", "texto": "Cuando una clase no tiene atributos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La cantidad de atributos no define la herencia única." },
+        { "id": "C", "texto": "Cuando varias clases heredan de dos métodos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La definición no trata de heredar de métodos, sino de clases." },
+        { "id": "D", "texto": "Cuando una clase hereda de tres interfaces al mismo tiempo.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso se acercaría más a otro tipo de relación, no a la herencia única." }
+      ]
+    },
+    {
+      "id": 16,
+      "pregunta": "Según lo visto, ¿qué es la herencia jerárquica?",
+      "alternativas": [
+        { "id": "A", "texto": "Cuando una clase hija hereda de varias clases padre.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso describe la herencia múltiple, no la jerárquica." },
+        { "id": "B", "texto": "Cuando una superclase tiene varias subclases derivadas.", "esCorrecta": true, "retroalimentacion": "Correcto. En la herencia jerárquica una misma clase base da origen a varias subclases." },
+        { "id": "C", "texto": "Cuando no existe ninguna relación entre clases.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La herencia jerárquica sí implica relación entre clases." },
+        { "id": "D", "texto": "Cuando una clase solo tiene un constructor.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La cantidad de constructores no define este tipo de herencia." }
+      ]
+    },
+    {
+      "id": 17,
+      "pregunta": "¿Qué expresa el polimorfismo en el ejemplo de Vehiculo, Carro, Barco y Avion?",
+      "alternativas": [
+        { "id": "A", "texto": "Que todas las clases deben tener diferentes nombres de método.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Justamente el polimorfismo permite mantener el mismo nombre de método con comportamientos distintos." },
+        { "id": "B", "texto": "Que el mismo método mover() puede comportarse de forma distinta según la subclase.", "esCorrecta": true, "retroalimentacion": "Correcto. El método mover() existe en varias clases, pero cada una lo implementa de manera diferente." },
+        { "id": "C", "texto": "Que solo una clase puede tener métodos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Muchas clases pueden tener métodos." },
+        { "id": "D", "texto": "Que los objetos no pueden heredar.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El ejemplo de polimorfismo mostrado sí parte de la herencia." }
+      ]
+    },
+    {
+      "id": 18,
+      "pregunta": "¿Qué es la sobrecarga de métodos?",
+      "alternativas": [
+        { "id": "A", "texto": "Usar un mismo método con distintas versiones según la cantidad o tipo de parámetros.", "esCorrecta": true, "retroalimentacion": "Correcto. La sobrecarga consiste en tener varias versiones de un método en la misma clase, diferenciadas por sus parámetros." },
+        { "id": "B", "texto": "Poner demasiadas líneas dentro de un método hasta que falle.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La sobrecarga no significa saturar el método con demasiadas líneas." },
+        { "id": "C", "texto": "Copiar el mismo método en archivos diferentes.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Copiar métodos no equivale a sobrecargar." },
+        { "id": "D", "texto": "Cambiar el nombre de una clase automáticamente.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Cambiar nombres de clases no es sobrecarga." }
+      ]
+    },
+    {
+      "id": 19,
+      "pregunta": "En el ejemplo de la clase Comunicación, ¿qué representa enviarMensaje(String texto, String adjunto)?",
+      "alternativas": [
+        { "id": "A", "texto": "Un envío simple sin contenido.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El envío simple correspondía a enviarMensaje(String texto)." },
+        { "id": "B", "texto": "Un método para eliminar usuarios.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ese método no elimina usuarios." },
+        { "id": "C", "texto": "Un envío con archivo adjunto.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa versión del método recibe texto y adjunto, por lo que representa un mensaje con archivo." },
+        { "id": "D", "texto": "Una herencia jerárquica.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso no describe un tipo de herencia, sino una sobrecarga de método." }
+      ]
+    },
+    {
+      "id": 20,
+      "pregunta": "¿Qué significa bajo acoplamiento y alta cohesión?",
+      "alternativas": [
+        { "id": "A", "texto": "Que los módulos dependan mucho entre sí y que una clase haga muchas cosas diferentes.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso describe justo lo contrario: alto acoplamiento y baja cohesión." },
+        { "id": "B", "texto": "Que haya pocas dependencias entre módulos y que cada clase tenga responsabilidades claras y relacionadas.", "esCorrecta": true, "retroalimentacion": "Correcto. Bajo acoplamiento implica pocas dependencias entre componentes, y alta cohesión implica que cada clase tenga funciones relacionadas y bien definidas." },
+        { "id": "C", "texto": "Que todas las clases se unan en una sola para simplificar.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Unir todo en una sola clase empeora el diseño." },
+        { "id": "D", "texto": "Que los atributos siempre sean públicos y los métodos privados.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La visibilidad de atributos y métodos no define por sí sola bajo acoplamiento ni alta cohesión." }
+      ]
+    }
+  ]
+}
