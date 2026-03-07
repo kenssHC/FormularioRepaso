@@ -141,12 +141,22 @@ function renderQuestion(state) {
   const container = document.getElementById('alternativesContainer');
   container.innerHTML = '';
 
-  pregunta.alternativas.forEach(alt => {
+  /* Mezclar alternativas aleatoriamente (Fisher-Yates) */
+  const alternativasAleatorias = [...pregunta.alternativas];
+  for (let i = alternativasAleatorias.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [alternativasAleatorias[i], alternativasAleatorias[j]] = [alternativasAleatorias[j], alternativasAleatorias[i]];
+  }
+
+  /* Reasignar letras A, B, C, D según la nueva posición */
+  const letras = ['A', 'B', 'C', 'D'];
+  alternativasAleatorias.forEach((alt, index) => {
+    const letraVisible = letras[index] ?? String(index + 1);
     const btn = document.createElement('button');
     btn.className = 'alternative';
     btn.dataset.id = alt.id;
     btn.innerHTML = `
-      <span class="alternative__letter">${alt.id}</span>
+      <span class="alternative__letter">${letraVisible}</span>
       <span class="alternative__text">${alt.texto}</span>
     `;
     btn.addEventListener('click', () => handleAnswer(alt, pregunta, state));
