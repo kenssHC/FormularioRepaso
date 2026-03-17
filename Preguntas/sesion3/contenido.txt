@@ -1,0 +1,535 @@
+# **Accesibilidad**
+
+Es la práctica de diseñar y desarrollar productos digitales para que **todas las personas** puedan usarlos, incluyendo personas con discapacidad visual, auditiva, motora, cognitiva o dificultades temporales.
+
+## Principios de la Accesibilidad:
+
+### **Perceptible**
+
+Principio de accesibilidad que indica que la información debe presentarse de forma que los usuarios puedan identificarla fácilmente.
+
+Ejemplo: usar texto alternativo en imágenes o buen contraste de colores.
+
+### **Operable**
+
+Principio que indica que los componentes de la interfaz deben poder usarse sin dificultad.
+
+Ejemplo: permitir navegar con teclado, no solo con mouse.
+
+### **Comprensible**
+
+Principio que indica que la información y el funcionamiento de la interfaz deben ser fáciles de entender.
+
+Ejemplo: usar lenguaje claro y botones con nombres entendibles.
+
+### **Robusto**
+
+Principio que indica que el contenido debe funcionar correctamente en diferentes navegadores, dispositivos y tecnologías de apoyo.
+
+---
+
+## Mala práctica de accesibilidad
+
+Una mala práctica ocurre cuando se construyen interfaces que **no siguen los estándares de accesibilidad**, dificultando el uso para personas con discapacidad o para tecnologías de asistencia como lectores de pantalla.
+
+## Buena práctica de accesibilidad
+
+Es el uso correcto de **elementos semánticos de HTML y atributos accesibles** para que todas las personas, incluyendo usuarios con discapacidad, puedan usar una aplicación web sin dificultades.
+
+### Ejemplos:
+
+(Imagen 1)
+
+## Ejemplo de mala práctica
+
+```
+<divclass="btn-falso"
+role="button"
+@click="${this._save}">
+Guardar
+</div>
+
+<imgsrc="icon-check.png">
+```
+
+---
+
+## Problema 1: Usar `<div>` como botón
+
+Un `<div>` se usa para **estructura**, no para **interacción**.
+
+En el ejemplo se intenta simular un botón con:
+
+```
+role="button"
+```
+
+Esto es incorrecto porque:
+
+- No es accesible para teclado por defecto
+- Los lectores de pantalla pueden interpretarlo mal
+- Se pierde el comportamiento natural de un botón
+
+**Regla de accesibilidad:**
+
+Usar siempre el **elemento semántico correcto**.
+
+## Problema 2: Botón falso
+
+El código usa:
+
+```
+class="btn-falso"
+```
+
+Esto indica que se está creando un **botón visual**, pero no un botón real.
+
+Esto causa problemas como:
+
+- Navegación difícil con teclado
+- Mala interpretación por lectores de pantalla
+- Problemas para usuarios con discapacidad motora
+
+---
+
+## Problema 3: Imagen sin descripción
+
+```
+<imgsrc="icon-check.png">
+```
+
+El problema es que **no tiene atributo `alt`**.
+
+Esto provoca que:
+
+- Un lector de pantalla no sepa qué representa la imagen
+- Usuarios con discapacidad visual pierdan información
+
+(Imagen 2)
+
+## Ejemplo de buena práctica
+
+```html
+<button@click="${this._save}"
+aria-label="Guardar cambios del perfil">
+Guardar
+</button>
+
+<imgsrc="icon-check.png"
+alt="Check verde de operación exitosa">
+```
+
+---
+
+## Explicación del código
+
+### Uso de `<button>` (elemento semántico)
+
+Se utiliza el elemento **`<button>`** en lugar de un `<div>`.
+
+Esto es correcto porque:
+
+- Es reconocido automáticamente como botón por los navegadores.
+- Permite **navegación con teclado**.
+- Es interpretado correctamente por **lectores de pantalla**.
+
+Regla:
+
+Usar **elementos HTML con su función real**.
+
+---
+
+### Evento `@click`
+
+```
+@click="${this._save}"
+```
+
+Este evento ejecuta una función cuando el usuario hace clic en el botón.
+
+Permite que el botón realice una acción, en este caso **guardar información**.
+
+---
+
+### Atributo `aria-label`
+
+```
+aria-label="Guardar cambios del perfil"
+```
+
+`aria-label` proporciona **una descripción accesible del botón** para tecnologías de asistencia.
+
+Esto ayuda a:
+
+- lectores de pantalla
+- usuarios con discapacidad visual
+
+Por ejemplo, el lector de pantalla diría:
+
+> "Botón: Guardar cambios del perfil"
+> 
+
+---
+
+### Texto visible del botón
+
+```
+Guardar
+```
+
+El texto visible permite que los usuarios **entiendan claramente la acción del botón**.
+
+Las interfaces accesibles usan **acciones claras y comprensibles**.
+
+---
+
+### Imagen con atributo `alt`
+
+```
+<imgsrc="icon-check.png"
+alt="Check verde de operación exitosa">
+```
+
+El atributo **`alt`** describe la imagen.
+
+Esto permite que los lectores de pantalla expliquen el contenido de la imagen a usuarios con discapacidad visual.
+
+Ejemplo de lectura:
+
+> "Check verde de operación exitosa"
+> 
+
+## Accesibilidad en formularios
+
+Consiste en diseñar campos de formulario de forma que **todos los usuarios puedan entenderlos y utilizarlos**, incluyendo personas que usan lectores de pantalla o navegan con teclado.
+
+(Imagen 3)
+
+## Mala práctica
+
+```
+<span>Nombre:</span>
+<inputtype="text"placeholder="Escribe tu nombre"/>
+```
+
+### Problema 1: Uso de `<span>` en lugar de `<label>`
+
+El `<span>` solo muestra texto visual, pero **no está asociado al campo de entrada**.
+
+Esto provoca que:
+
+- los lectores de pantalla no relacionen el texto con el input
+- los usuarios no sepan qué información deben escribir
+
+📌 En accesibilidad, cada campo debe tener una **etiqueta semántica (`label`)**.
+
+---
+
+### Problema 2: Usar `placeholder` como etiqueta
+
+El `placeholder` solo sirve como **ayuda visual dentro del campo**, pero **no reemplaza una etiqueta**.
+
+Problemas:
+
+- desaparece cuando el usuario empieza a escribir
+- los lectores de pantalla no lo usan como etiqueta principal
+- puede generar confusión sobre qué campo se está completando
+
+---
+
+## Buena práctica
+
+```
+<labelfor="username">Nombre:</label>
+<inputid="username"type="text"aria-required="true">
+```
+
+---
+
+### Explicación del código
+
+### Uso de `<label>`
+
+```
+<labelfor="username">Nombre:</label>
+```
+
+El `<label>` es la **etiqueta oficial del campo**.
+
+Ventajas:
+
+- los lectores de pantalla leen la etiqueta
+- mejora la accesibilidad
+- al hacer clic en la etiqueta se enfoca el input
+
+---
+
+### Asociación con `for` y `id`
+
+```
+for="username"
+id="username"
+```
+
+Esto conecta la etiqueta con el campo.
+
+Relación:
+
+```
+label -> for="username"
+input -> id="username"
+```
+
+Así el navegador sabe que **la etiqueta describe ese input**.
+
+---
+
+### Uso de `aria-required`
+
+```
+aria-required="true"
+```
+
+Este atributo indica que **el campo es obligatorio**.
+
+Ayuda a que los lectores de pantalla informen al usuario que el campo debe completarse.
+
+Ejemplo de lectura:
+
+> "Nombre, campo obligatorio"
+> 
+
+---
+
+## Accesibilidad en Contraste de Colores
+
+### Contraste de color
+
+El contraste de color es la diferencia visual entre el **color del texto y el color del fondo**.
+
+Un buen contraste permite que el contenido sea **fácil de leer para todas las personas**, incluyendo usuarios con:
+
+- baja visión
+- daltonismo
+- pantallas con poca iluminación
+
+(Imagen 4)
+
+## Mala práctica
+
+```
+<buttonstyle="background-color: #FFC0CB; color: #723A3A">
+Compartir
+</button>
+```
+
+### Problema
+
+El color del texto **(#723A3A)** y el fondo **(#FFC0CB)** tienen **poco contraste**.
+
+Esto provoca que:
+
+- el texto sea difícil de leer
+- personas con baja visión tengan problemas para distinguirlo
+- no se cumplan estándares de accesibilidad
+
+---
+
+## Buena práctica
+
+```
+<buttonstyle="background-color: #FFC0CB; color: #2d0a0a;">
+Compartir
+</button>
+```
+
+### Mejora
+
+Se usa un color de texto **más oscuro (#2d0a0a)**.
+
+Esto aumenta el **contraste entre texto y fondo**, haciendo el botón más legible.
+
+---
+
+## Los principales pilares de la accesibilidad son:
+
+- **Calidad de ingeniería:** código mejor estructurado.
+- **Inclusión universal:** todos pueden usar la aplicación.
+- **Cumplimiento legal:** seguir normas de accesibilidad.
+- **Mejora del SEO:** mejor posicionamiento en buscadores.
+- **Mejor visibilidad:** interfaces más claras y fáciles de usar.
+
+---
+
+### **MDN Web Docs**
+
+Es una plataforma de documentación para desarrolladores que explica tecnologías web y buenas prácticas.
+
+En accesibilidad, MDN indica que los sitios web deben diseñarse pensando en **personas con discapacidades visuales, auditivas, motoras y cognitivas**, para que todos puedan usar la web sin barreras.
+
+---
+
+## Normativas de accesibilidad
+
+Son **leyes, estándares y guías** que establecen cómo deben diseñarse los productos digitales para que **todas las personas puedan acceder y usarlos sin barreras**.
+
+Estas normas ayudan a garantizar la **inclusión digital y el cumplimiento legal**.
+
+### NTP ISO/IEC 40500 (Norma Técnica Peruana)
+
+Es la **norma técnica oficial del Perú** relacionada con la accesibilidad web.
+
+- Está basada en las **WCAG 2.0**
+- Define cómo deben desarrollarse los sitios web accesibles en el país
+- Es utilizada por instituciones públicas y privadas
+
+📌 En otras palabras:
+
+Es **la versión peruana del estándar internacional de accesibilidad web**.
+
+### WCAG 2.0 (Web Content Accessibility Guidelines)
+
+Son las **guías internacionales de accesibilidad web** creadas por el **W3C**.
+
+Estas guías establecen recomendaciones para que los sitios web sean accesibles para personas con:
+
+- discapacidad visual
+- discapacidad auditiva
+- discapacidad motora
+- discapacidad cognitiva
+
+Las WCAG se basan en **4 principios fundamentales (También en los estándares W3C)**:
+
+- **Perceptible**
+- **Operable**
+- **Comprensible**
+- **Robusto**
+
+### Ley N° 29973 (Ley general de la persona con discapacidad)
+
+Es una **ley peruana** que protege los derechos de las personas con discapacidad.
+
+Entre sus disposiciones establece que:
+
+- los **servicios digitales deben ser accesibles**
+- las instituciones deben garantizar **igualdad de acceso a la información**
+- los canales digitales deben eliminar **barreras tecnológicas**
+
+📌 Esto significa que **los sitios web del Estado y muchas organizaciones deben cumplir estándares de accesibilidad**.
+
+---
+
+### Las principales entidades reguladoras de accesibilidad en Perú son:
+
+- **CONADIS:** supervisa el respeto de los derechos de accesibilidad de las personas con discapacidad.
+- **SeGDI:** establece las pautas técnicas para que las páginas y servicios digitales del Estado sean accesibles.
+
+---
+
+## Herramientas y guías para la accesibilidad
+
+### Herramientas de accesibilidad
+
+Son herramientas que permiten **analizar, evaluar y mejorar la accesibilidad de un sitio web**.
+
+Ayudan a los desarrolladores a identificar problemas que pueden afectar a usuarios con discapacidad.
+
+### Chrome DevTools
+
+Es una herramienta integrada en el navegador **Google Chrome** que permite analizar y depurar páginas web.
+
+En accesibilidad permite:
+
+- revisar la **estructura del HTML**
+- analizar la **legibilidad del contenido**
+- verificar el **contraste de colores**
+- inspeccionar elementos accesibles
+
+También permite visualizar el **árbol de accesibilidad**.
+
+---
+
+### Árbol de accesibilidad
+
+Es una representación de cómo **los lectores de pantalla interpretan una página web**.
+
+Muestra:
+
+- elementos interactivos
+- etiquetas
+- roles
+- propiedades accesibles
+
+Esto ayuda a verificar si la página **puede ser entendida correctamente por tecnologías de asistencia**.
+
+---
+
+### Lighthouse
+
+Es una herramienta automática de auditoría incluida en **Chrome DevTools**.
+
+Sirve para evaluar la calidad de una página web en diferentes aspectos.
+
+Entre ellos:
+
+- **accesibilidad**
+- **rendimiento**
+- **SEO**
+- **buenas prácticas**
+
+La herramienta genera un **puntaje de accesibilidad** y muestra recomendaciones para mejorar.
+
+---
+
+### Elements (panel de elementos)
+
+Es una sección dentro de **Chrome DevTools** que permite ver y modificar el **código HTML y CSS de una página en tiempo real**.
+
+Permite:
+
+- inspeccionar la estructura del documento
+- verificar etiquetas semánticas
+- analizar atributos de accesibilidad
+- identificar errores en el código
+
+## Glosario:
+
+### **WCAG**
+
+Significa **Web Content Accessibility Guidelines**.
+
+Son pautas internacionales que sirven como guía para crear contenido web accesible.
+
+### **Usuario con discapacidad**
+
+Es una persona que puede presentar limitaciones visuales, auditivas, físicas, cognitivas o del habla, y que necesita interfaces adaptadas o mejor pensadas para poder usar un sistema sin barreras.
+
+### **Lector de pantalla**
+
+Es una tecnología de apoyo que lee en voz alta el contenido que aparece en pantalla para ayudar a personas con discapacidad visual.
+
+### **Contraste de color**
+
+Es la diferencia visual entre el color del texto y el fondo.
+
+Un buen contraste facilita la lectura y evita que el contenido sea difícil de ver.
+
+### **Navegación por teclado**
+
+Es la posibilidad de usar una web o aplicación solo con el teclado, sin necesidad de mouse.
+
+### **Etiquetas semánticas**
+
+Son etiquetas HTML que describen el significado del contenido.
+
+Ejemplos: `<header>`, `<main>`, `<footer>`, `<nav>`.
+
+Ayudan a organizar mejor la página y facilitan la accesibilidad.
+
+### **Enlace descriptivo**
+
+Es un link cuyo texto explica claramente a dónde lleva.
+
+Ejemplo correcto: **Descargar guía de accesibilidad**.
+
+Ejemplo incorrecto: **Haz clic aquí**.
