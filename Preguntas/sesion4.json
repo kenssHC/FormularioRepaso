@@ -1,205 +1,755 @@
 {
-  "titulo": "Cuestionario de repaso - Web Components, DOM y BEM",
-  "descripcion": "Preguntas de opción múltiple basadas únicamente en el contenido trabajado en este chat.",
+  "titulo": "Repaso: Web Components, DOM y BEM",
+  "descripcion": "Preguntas de opción múltiple basadas en el contenido de la Sesión 4: Web Components, Shadow DOM, Custom Elements, ciclo de vida y metodología BEM.",
   "preguntas": [
     {
       "id": 1,
-      "pregunta": "¿Qué es un Web Component?",
+      "pregunta": "¿Cuál de estas opciones describe correctamente qué es un Web Component?",
       "alternativas": [
-        { "id": "A", "texto": "Una librería exclusiva de React para crear interfaces", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un Web Component no pertenece a React ni a un framework específico. Es una tecnología basada en estándares nativos del navegador." },
-        { "id": "B", "texto": "Una tecnología del navegador para crear componentes reutilizables y encapsulados usando estándares web", "esCorrecta": true, "retroalimentacion": "Correcto. Un Web Component permite crear componentes reutilizables, encapsulados y definidos como etiquetas personalizadas usando tecnologías estándar del navegador." },
-        { "id": "C", "texto": "Un archivo CSS que sirve para dar estilos globales", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un Web Component no es solo un archivo CSS; integra estructura, lógica y, muchas veces, estilos encapsulados." },
-        { "id": "D", "texto": "Un tipo de base de datos para guardar componentes web", "esCorrecta": false, "retroalimentacion": "Incorrecto. No tiene relación con bases de datos. Un Web Component es un componente de interfaz en la web." }
+        {
+          "id": "A",
+          "texto": "Una librería de JavaScript creada por Google para construir interfaces declarativas, similar en propósito a React o Vue.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Un Web Component no es una librería y no pertenece específicamente a Google. Es una tecnología basada en estándares nativos definidos por la W3C, que funciona directamente en el navegador sin depender de ninguna librería."
+        },
+        {
+          "id": "B",
+          "texto": "Una tecnología del navegador que permite crear componentes reutilizables y encapsulados como nuevas etiquetas HTML personalizadas, usando estándares nativos de la web.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se definió un Web Component exactamente así: una tecnología nativa del navegador para crear componentes que contienen su propio HTML, CSS y JavaScript, sin interferir con el resto de la página, y que se usan como etiquetas HTML personalizadas."
+        },
+        {
+          "id": "C",
+          "texto": "Un archivo de configuración CSS que define estilos globales compartidos entre todas las páginas de un proyecto.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Un archivo CSS global no es un Web Component. Un Web Component es una unidad completa que integra estructura (HTML), estilos (CSS) y comportamiento (JavaScript) encapsulados en un solo componente reutilizable."
+        },
+        {
+          "id": "D",
+          "texto": "Un protocolo de comunicación entre el navegador y un servidor para transferir componentes de interfaz de forma dinámica.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Eso describe conceptos de HTTP o WebSockets. Un Web Component no es un protocolo de red; es un componente de interfaz que vive y se ejecuta directamente en el navegador del cliente."
+        }
       ]
     },
     {
       "id": 2,
-      "pregunta": "¿Cuál es una característica clave de un Web Component?",
+      "pregunta": "¿Qué significa que un Web Component sea \"agnóstico\"?",
       "alternativas": [
-        { "id": "A", "texto": "Solo puede usarse una vez por proyecto", "esCorrecta": false, "retroalimentacion": "Incorrecto. Justamente una de sus ventajas es la reutilización en varias partes de una aplicación o incluso en distintos proyectos." },
-        { "id": "B", "texto": "Depende obligatoriamente de Angular o Vue", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un Web Component es agnóstico de framework y no depende de Angular, Vue ni React." },
-        { "id": "C", "texto": "Es reutilizable y encapsulado", "esCorrecta": true, "retroalimentacion": "Correcto. El componente puede reutilizarse varias veces y su estructura/estilos pueden mantenerse aislados del resto de la página." },
-        { "id": "D", "texto": "Solo sirve para crear estilos CSS", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un Web Component no se limita a estilos; puede incluir HTML, CSS y JavaScript." }
+        {
+          "id": "A",
+          "texto": "Que requiere una versión específica de Chrome para funcionar, ya que Google lideró su desarrollo como parte del estándar.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los Web Components son un estándar del W3C soportado por todos los navegadores modernos, no solo Chrome. \"Agnóstico\" no significa dependiente de un navegador, sino independiente de cualquier framework o librería."
+        },
+        {
+          "id": "B",
+          "texto": "Que no puede usarse junto a frameworks existentes porque genera conflictos con el DOM virtual de Angular, Vue o React.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Un Web Component agnóstico significa exactamente lo contrario: puede coexistir y usarse dentro de cualquier framework (Angular, Vue, React) o incluso sin ninguno, porque usa estándares nativos del navegador."
+        },
+        {
+          "id": "C",
+          "texto": "Que no depende de ningún framework o librería específica y puede usarse con React, Angular, Vue o JavaScript puro, funcionando con estándares nativos del navegador.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que ser \"agnóstico\" significa no estar atado a React, Angular, Vue ni ningún otro framework concreto. Funciona directamente en el navegador usando estándares del web platform, lo que le da portabilidad total."
+        },
+        {
+          "id": "D",
+          "texto": "Que no incluye JavaScript en su implementación y funciona únicamente con HTML y CSS para mayor compatibilidad.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los Web Components normalmente utilizan JavaScript para definir su comportamiento (clase, métodos del ciclo de vida, Shadow DOM). Ser agnóstico se refiere a no depender de un framework específico, no a excluir JavaScript."
+        }
       ]
     },
     {
       "id": 3,
-      "pregunta": "Cuando se dice que un Web Component es agnóstico, significa que:",
+      "pregunta": "¿Qué rol cumple la W3C en relación con los Web Components?",
       "alternativas": [
-        { "id": "A", "texto": "No depende de un framework específico y puede usarse en distintas tecnologías", "esCorrecta": true, "retroalimentacion": "Correcto. 'Agnóstico' significa que no está atado a React, Angular, Vue u otro framework concreto." },
-        { "id": "B", "texto": "No puede ejecutarse en navegadores", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los Web Components justamente se ejecutan en el navegador." },
-        { "id": "C", "texto": "Solo funciona en proyectos sin JavaScript", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los Web Components suelen usar JavaScript para definir comportamiento." },
-        { "id": "D", "texto": "No tiene relación con HTML", "esCorrecta": false, "retroalimentacion": "Incorrecto. Sí tiene relación con HTML: se usan como etiquetas personalizadas." }
+        {
+          "id": "A",
+          "texto": "Es la empresa que creó y mantiene el navegador Chrome, por lo que controla la implementación de Web Components en cada versión del motor V8.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La W3C no es una empresa y no creó Chrome. La W3C (World Wide Web Consortium) es un organismo internacional de estándares. Chrome es desarrollado por Google, y su motor de JavaScript es V8, pero los Web Components son un estándar abierto definido por la W3C."
+        },
+        {
+          "id": "B",
+          "texto": "Es el organismo que define las especificaciones y reglas que todos los navegadores deben seguir para implementar Web Components de manera consistente.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que la W3C define el estándar oficial de Web Components. Esto significa que establece las reglas y especificaciones que navegadores como Chrome, Firefox, Safari y Edge deben implementar para que los Web Components funcionen igual en todos ellos."
+        },
+        {
+          "id": "C",
+          "texto": "Es una librería de polyfills que añade soporte para Web Components en navegadores antiguos que no los soportan de forma nativa.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La W3C no es una librería ni un polyfill. Es el organismo de estándares web internacional. Los polyfills para Web Components son herramientas de terceros independientes de la W3C."
+        },
+        {
+          "id": "D",
+          "texto": "Es la entidad que certifica que un Web Component cumple los criterios de accesibilidad y rendimiento antes de poder publicarse.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La W3C no certifica componentes individuales. Su función es definir estándares técnicos que los navegadores implementan. La certificación de accesibilidad de un producto específico es responsabilidad del equipo de desarrollo."
+        }
       ]
     },
     {
       "id": 4,
-      "pregunta": "¿Cómo se relacionan los Web Components con la W3C?",
+      "pregunta": "¿Qué es el DOM (Document Object Model)?",
       "alternativas": [
-        { "id": "A", "texto": "La W3C los reemplazó por React", "esCorrecta": false, "retroalimentacion": "Incorrecto. React no reemplaza el estándar de Web Components. Son cosas distintas." },
-        { "id": "B", "texto": "La W3C define el estándar y las reglas que siguen los navegadores para soportarlos", "esCorrecta": true, "retroalimentacion": "Correcto. La W3C establece especificaciones para que navegadores como Chrome, Firefox, Safari o Edge implementen estos estándares." },
-        { "id": "C", "texto": "La W3C es una librería para compilar componentes", "esCorrecta": false, "retroalimentacion": "Incorrecto. La W3C no es una librería; es un organismo que define estándares web." },
-        { "id": "D", "texto": "La W3C obliga a escribir componentes solo en mayúsculas", "esCorrecta": false, "retroalimentacion": "Incorrecto. Al contrario, los nombres válidos de Custom Elements van en minúsculas." }
+        {
+          "id": "A",
+          "texto": "Un lenguaje de programación creado específicamente para manipular páginas web, separado de JavaScript y con su propia sintaxis.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El DOM no es un lenguaje de programación; es un modelo de documento. JavaScript utiliza el DOM para acceder y manipular los elementos, pero el DOM en sí mismo es una representación estructural, no un lenguaje con sintaxis propia."
+        },
+        {
+          "id": "B",
+          "texto": "Una base de datos interna del navegador que almacena en caché los archivos HTML, CSS y JavaScript descargados de una página.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Eso describe el caché del navegador. El DOM no almacena archivos; es una representación viva en memoria del documento HTML activo que el navegador puede manipular en tiempo real."
+        },
+        {
+          "id": "C",
+          "texto": "Una representación en forma de estructura de objetos del documento HTML que el navegador crea para que JavaScript pueda leer, modificar y manipular los elementos.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se definió el DOM como la representación en objetos del documento HTML que el navegador construye al cargar la página. Gracias al DOM, JavaScript puede acceder a cualquier elemento (`document.getElementById`, etc.) y modificarlo dinámicamente."
+        },
+        {
+          "id": "D",
+          "texto": "Un servidor de contenido que transforma archivos HTML en objetos JSON antes de enviarlos al navegador del cliente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El DOM no es un servidor ni trabaja con JSON. Se crea en el lado del cliente (en el navegador) a partir del HTML recibido, no antes de enviarlo desde el servidor."
+        }
       ]
     },
     {
       "id": 5,
-      "pregunta": "¿Por qué se dice que un Web Component es reutilizable?",
+      "pregunta": "¿Qué es el árbol DOM y cómo está organizado?",
       "alternativas": [
-        { "id": "A", "texto": "Porque puede usarse varias veces como una etiqueta personalizada en diferentes partes de una aplicación", "esCorrecta": true, "retroalimentacion": "Correcto. Un mismo componente puede insertarse repetidas veces sin volver a programarlo desde cero." },
-        { "id": "B", "texto": "Porque se destruye automáticamente luego de usarse una vez", "esCorrecta": false, "retroalimentacion": "Incorrecto. Reutilizable significa lo contrario: puede volver a usarse múltiples veces." },
-        { "id": "C", "texto": "Porque solo se reutiliza en bases de datos", "esCorrecta": false, "retroalimentacion": "Incorrecto. La reutilización ocurre en la interfaz y en proyectos web, no en bases de datos." },
-        { "id": "D", "texto": "Porque no necesita HTML para mostrarse", "esCorrecta": false, "retroalimentacion": "Incorrecto. Sí se relaciona con HTML, ya que se usa como etiqueta personalizada." }
+        {
+          "id": "A",
+          "texto": "Una carpeta del sistema operativo donde el navegador guarda en caché todos los archivos del proyecto web.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El árbol DOM no es una carpeta física en el disco. Es una representación lógica en memoria que el navegador construye al parsear el HTML. No tiene relación con el sistema de archivos del sistema operativo."
+        },
+        {
+          "id": "B",
+          "texto": "La representación jerárquica de todos los elementos HTML del documento, donde cada elemento es un nodo con relaciones de padre, hijo y hermano.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que el árbol DOM es la estructura jerárquica que organiza todos los elementos HTML como nodos. Por ejemplo: `document` → `html` → `head`/`body` → `h1`, `button`, etc. Esta estructura permite navegar y manipular el documento programáticamente."
+        },
+        {
+          "id": "C",
+          "texto": "Un diagrama de flujo que muestra el orden en que el navegador ejecuta los archivos JavaScript al cargar la página.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Eso describe el orden de ejecución de scripts o el event loop, no el árbol DOM. El árbol DOM representa la estructura de los elementos HTML del documento, no el flujo de ejecución de JavaScript."
+        },
+        {
+          "id": "D",
+          "texto": "La estructura de archivos del proyecto web, organizada en carpetas como `css/`, `js/` e `index.html`.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Eso describe la estructura de directorios del proyecto en el disco. El árbol DOM es una representación en memoria de los elementos HTML del documento activo en el navegador, independiente de cómo estén organizados los archivos del proyecto."
+        }
       ]
     },
     {
       "id": 6,
-      "pregunta": "¿Cuál de las siguientes opciones sí forma parte de la anatomía de un Web Component según lo visto en el chat?",
+      "pregunta": "¿Qué es el Light DOM en el contexto de los Web Components?",
       "alternativas": [
-        { "id": "A", "texto": "Shadow DOM, Custom Elements, HTML Templates y Modules", "esCorrecta": true, "retroalimentacion": "Correcto. Esos son los elementos mencionados como base de la anatomía y funcionamiento de los Web Components." },
-        { "id": "B", "texto": "Solo React Hooks, Redux y JSX", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esos conceptos pertenecen al ecosistema de React, no a la anatomía estándar de Web Components." },
-        { "id": "C", "texto": "Solo CSS global y base de datos SQL", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ni CSS global ni SQL describen la anatomía de un Web Component." },
-        { "id": "D", "texto": "PHP, Laravel y Blade", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esas tecnologías no forman parte de la anatomía estándar de los Web Components." }
+        {
+          "id": "A",
+          "texto": "El DOM que solo se activa cuando el usuario usa el modo claro del sistema operativo, en contraste con el Shadow DOM oscuro.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. \"Light DOM\" no tiene ninguna relación con el modo claro u oscuro del sistema. El término \"Light\" hace referencia a que es el DOM normal y visible de la página principal, en contraste con el DOM encapsulado del Shadow DOM."
+        },
+        {
+          "id": "B",
+          "texto": "El DOM encapsulado que vive dentro del Shadow DOM para aislar el contenido del componente del resto de la página.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Eso describe al Shadow DOM, no al Light DOM. El Light DOM es precisamente lo opuesto: es el DOM estándar que existe fuera del Shadow DOM, es decir, el HTML normal y accesible de la página principal."
+        },
+        {
+          "id": "C",
+          "texto": "El DOM normal de la página principal, es decir, el HTML visible y accesible directamente, que existe fuera del Shadow DOM.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que el Light DOM es el HTML que pertenece a la página principal y que no está encapsulado. Por ejemplo, si dentro de un `<user-card>` hay un `<p>Contenido visible</p>`, ese `<p>` pertenece al Light DOM. Es el DOM \"ligero\" y accesible en contraste con el Shadow DOM aislado."
+        },
+        {
+          "id": "D",
+          "texto": "Una versión reducida del DOM que el navegador utiliza en dispositivos móviles para mejorar el rendimiento de carga.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. No existe un \"DOM reducido\" para móviles. El DOM es el mismo independientemente del dispositivo. Light DOM es un término específico de la arquitectura de Web Components que describe el contenido fuera del Shadow DOM."
+        }
       ]
     },
     {
       "id": 7,
-      "pregunta": "¿Qué función cumple el Shadow DOM?",
+      "pregunta": "¿Cuál es la función principal del Shadow DOM en un Web Component?",
       "alternativas": [
-        { "id": "A", "texto": "Guardar información en la nube", "esCorrecta": false, "retroalimentacion": "Incorrecto. El Shadow DOM no sirve para almacenamiento; sirve para encapsular la estructura y estilos del componente." },
-        { "id": "B", "texto": "Encapsular el HTML y CSS del componente para evitar interferencias con el resto de la página", "esCorrecta": true, "retroalimentacion": "Correcto. El Shadow DOM crea un DOM aislado, ayudando a evitar conflictos de estilos o estructura." },
-        { "id": "C", "texto": "Reemplazar por completo el DOM del navegador", "esCorrecta": false, "retroalimentacion": "Incorrecto. No reemplaza el DOM completo; crea una parte encapsulada dentro de un componente." },
-        { "id": "D", "texto": "Crear rutas de navegación en una aplicación", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa es otra responsabilidad; el Shadow DOM se enfoca en encapsulamiento." }
+        {
+          "id": "A",
+          "texto": "Renderizar el HTML del componente en el servidor antes de enviarlo al navegador, mejorando el tiempo de carga inicial.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Eso describe el Server-Side Rendering (SSR), que es un concepto distinto. El Shadow DOM es un mecanismo del lado del cliente que encapsula el HTML y CSS del componente en el navegador, sin involucrar al servidor."
+        },
+        {
+          "id": "B",
+          "texto": "Encapsular el HTML y CSS del componente en un DOM aislado, evitando que sus estilos afecten al resto de la página y que los estilos externos lo afecten a él.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que el Shadow DOM crea un DOM encapsulado que protege el componente. Esto permite aislar estilos, evitar conflictos de CSS y mantener la estructura interna privada. Es como una \"burbuja\" donde el CSS de adentro no sale y el de afuera no entra."
+        },
+        {
+          "id": "C",
+          "texto": "Reemplazar completamente el árbol DOM de la página al insertar el componente, generando un nuevo DOM desde cero.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El Shadow DOM no reemplaza el DOM de la página; coexiste con él. Es una rama adicional y encapsulada dentro de un nodo específico del árbol DOM principal. El resto de la página permanece intacto."
+        },
+        {
+          "id": "D",
+          "texto": "Enviar automáticamente los datos del componente a una API REST cada vez que alguno de sus atributos cambia.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El Shadow DOM no tiene funcionalidad de comunicación con APIs. Esa responsabilidad puede manejarse desde el método `attributeChangedCallback()`, pero el Shadow DOM en sí mismo es solo el mecanismo de encapsulamiento del HTML y CSS del componente."
+        }
       ]
     },
     {
       "id": 8,
-      "pregunta": "¿Qué permiten hacer los Custom Elements?",
+      "pregunta": "¿Para qué sirve el método `.attachShadow({ mode: \"open\" })` en la definición de un Web Component?",
       "alternativas": [
-        { "id": "A", "texto": "Crear nuevas etiquetas HTML personalizadas", "esCorrecta": true, "retroalimentacion": "Correcto. Los Custom Elements permiten definir etiquetas propias, como user-card o app-component." },
-        { "id": "B", "texto": "Crear únicamente funciones matemáticas", "esCorrecta": false, "retroalimentacion": "Incorrecto. Su propósito no es matemático, sino estructural y de interfaz." },
-        { "id": "C", "texto": "Cambiar el nombre de etiquetas nativas como div o span permanentemente", "esCorrecta": false, "retroalimentacion": "Incorrecto. No renombra etiquetas HTML nativas; crea etiquetas nuevas." },
-        { "id": "D", "texto": "Eliminar la necesidad de JavaScript en toda la aplicación", "esCorrecta": false, "retroalimentacion": "Incorrecto. Normalmente se definen con JavaScript." }
+        {
+          "id": "A",
+          "texto": "Para conectar el componente a una API REST y obtener los datos que se renderizarán en su interior automáticamente al cargarlo.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `.attachShadow()` no hace peticiones a APIs ni obtiene datos. Su función es crear un Shadow DOM encapsulado dentro del componente. Las peticiones a APIs se manejan típicamente desde `connectedCallback()`."
+        },
+        {
+          "id": "B",
+          "texto": "Para crear un Shadow DOM encapsulado dentro del componente, aislando su HTML y CSS del resto de la página, con `mode: \"open\"` para que sea accesible desde JavaScript externo.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que `.attachShadow()` es el método que crea el Shadow DOM dentro del elemento. El parámetro `mode: \"open\"` permite acceder al Shadow DOM desde JavaScript externo usando `element.shadowRoot`. Esto encapsula el HTML y CSS interno, evitando que estilos externos lo afecten."
+        },
+        {
+          "id": "C",
+          "texto": "Para registrar el componente en el navegador con su nombre de etiqueta personalizada, reemplazando la necesidad de llamar a `customElements.define()`.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El registro de un componente con su nombre de etiqueta lo hace `customElements.define()`. `.attachShadow()` solo crea el Shadow DOM interno del componente; no tiene nada que ver con el registro del nombre de la etiqueta."
+        },
+        {
+          "id": "D",
+          "texto": "Para forzar que el componente herede todos los estilos CSS globales de la página, asegurando consistencia visual con el resto de la interfaz.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `.attachShadow()` hace exactamente lo contrario: crea un entorno aislado donde los estilos externos no penetran y los estilos internos no se escapan. No hereda estilos globales; los encapsula."
+        }
       ]
     },
     {
       "id": 9,
-      "pregunta": "¿Qué son los HTML Templates dentro del contexto de Web Components?",
+      "pregunta": "Al usar `.attachShadow({ mode: \"open\" })`, ¿qué significa el valor `\"open\"`?",
       "alternativas": [
-        { "id": "A", "texto": "Estructuras HTML reutilizables que no se renderizan hasta ser usadas", "esCorrecta": true, "retroalimentacion": "Correcto. Los templates permiten definir una estructura reutilizable que se activa o inserta cuando se necesita." },
-        { "id": "B", "texto": "Archivos para conectarse a una API REST", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los templates no son para conectarse a APIs; son para definir estructura HTML." },
-        { "id": "C", "texto": "Una base de datos visual para guardar etiquetas", "esCorrecta": false, "retroalimentacion": "Incorrecto. No es una base de datos." },
-        { "id": "D", "texto": "Un framework de estilos para botones", "esCorrecta": false, "retroalimentacion": "Incorrecto. Tampoco es un framework de estilos." }
+        {
+          "id": "A",
+          "texto": "Que el componente está disponible públicamente en internet y puede ser accedido o modificado por cualquier servidor externo.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El `mode: \"open\"` no tiene nada que ver con la disponibilidad pública en internet. Es una configuración local del Shadow DOM que solo afecta a cómo se accede al componente dentro del mismo navegador desde JavaScript."
+        },
+        {
+          "id": "B",
+          "texto": "Que el Shadow DOM es accesible desde JavaScript externo mediante `element.shadowRoot`, permitiendo inspeccionar y modificar su contenido.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que `mode: \"open\"` permite acceder al Shadow DOM usando `element.shadowRoot` desde JavaScript fuera del componente. Si se usara `mode: \"closed\"`, la propiedad `shadowRoot` devolvería `null` y el Shadow DOM sería completamente privado."
+        },
+        {
+          "id": "C",
+          "texto": "Que el componente se renderiza en modo pantalla completa al ser insertado en el DOM por primera vez.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El `mode: \"open\"` no afecta al tamaño visual ni al diseño del componente. Solo determina si el Shadow DOM puede ser accedido desde JavaScript externo mediante `element.shadowRoot`."
+        },
+        {
+          "id": "D",
+          "texto": "Que los estilos CSS definidos dentro del Shadow DOM se aplican abiertamente a toda la página, sin encapsulamiento.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Independientemente del valor de `mode`, el Shadow DOM siempre encapsula sus estilos. La diferencia entre `\"open\"` y `\"closed\"` es solo la accesibilidad desde JavaScript externo, no la encapsulación de estilos."
+        }
       ]
     },
     {
       "id": 10,
-      "pregunta": "¿Qué ventaja ofrecen los Modules en un Web Component?",
+      "pregunta": "¿Cuál de las siguientes opciones es un nombre VÁLIDO para un Custom Element?",
       "alternativas": [
-        { "id": "A", "texto": "Permiten organizar y separar archivos como HTML, CSS, JavaScript o incluso datos como JSON", "esCorrecta": true, "retroalimentacion": "Correcto. Los módulos ayudan a estructurar mejor el código y a importar piezas reutilizables." },
-        { "id": "B", "texto": "Sirven solo para cambiar colores automáticamente", "esCorrecta": false, "retroalimentacion": "Incorrecto. Su función principal es modularizar y organizar código, no solo cambiar colores." },
-        { "id": "C", "texto": "Reemplazan completamente al navegador", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un módulo es solo una forma de organizar código." },
-        { "id": "D", "texto": "Evitan usar HTML y CSS en un proyecto", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los módulos pueden justamente contener o importar HTML y CSS." }
+        {
+          "id": "A",
+          "texto": "UserCard",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `UserCard` usa PascalCase con mayúsculas y no contiene ningún guion. Los Custom Elements deben escribirse en minúsculas y tener al menos un guion para diferenciarse de los elementos HTML nativos."
+        },
+        {
+          "id": "B",
+          "texto": "usercard",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Aunque `usercard` está en minúsculas, le falta el guion obligatorio. HTML reserva los nombres sin guion para sus elementos nativos. Sin el guion, el navegador no puede distinguir si es un elemento nativo o personalizado."
+        },
+        {
+          "id": "C",
+          "texto": "user-card",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. `user-card` cumple ambas reglas: está completamente en minúsculas y contiene al menos un guion. En la sesión se usó exactamente este ejemplo como nombre válido de Custom Element."
+        },
+        {
+          "id": "D",
+          "texto": "User-Card",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Aunque `User-Card` contiene un guion, usa letras mayúsculas. HTML no permite mayúsculas en nombres de Custom Elements. El nombre correcto sería `user-card` en minúsculas."
+        }
       ]
     },
     {
       "id": 11,
-      "pregunta": "¿Qué es el DOM?",
+      "pregunta": "¿Por qué todo Custom Element debe tener al menos un guion en su nombre?",
       "alternativas": [
-        { "id": "A", "texto": "Una representación del documento HTML como objetos que JavaScript puede manipular", "esCorrecta": true, "retroalimentacion": "Correcto. El DOM convierte el HTML en una estructura manipulable por JavaScript." },
-        { "id": "B", "texto": "Un servidor para almacenar sitios web", "esCorrecta": false, "retroalimentacion": "Incorrecto. El DOM no es un servidor." },
-        { "id": "C", "texto": "Una librería de diseño gráfico", "esCorrecta": false, "retroalimentacion": "Incorrecto. No es una librería gráfica." },
-        { "id": "D", "texto": "Un lenguaje de programación distinto a JavaScript", "esCorrecta": false, "retroalimentacion": "Incorrecto. El DOM no es un lenguaje, sino un modelo de documento." }
+        {
+          "id": "A",
+          "texto": "Porque los guiones permiten al navegador aplicar automáticamente estilos CSS predeterminados al componente al cargarlo en la página.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los guiones en el nombre de un Custom Element no tienen ningún efecto sobre los estilos CSS. Su función es semántica: distinguir etiquetas personalizadas de los elementos HTML nativos definidos por el estándar."
+        },
+        {
+          "id": "B",
+          "texto": "Porque HTML reserva los nombres sin guion para sus elementos nativos (como `div`, `p`, `section`), y el guion es la convención para distinguir etiquetas personalizadas de las nativas.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que HTML reserva todos los nombres de etiqueta sin guion para elementos nativos actuales y futuros. El guion garantiza que nunca habrá conflicto con elementos HTML definidos por el estándar. Por eso `<component>` no es válido, pero `<app-component>` sí."
+        },
+        {
+          "id": "C",
+          "texto": "Porque sin guion, el Shadow DOM no puede crear un árbol DOM encapsulado para el componente y lanza un error en tiempo de ejecución.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La regla del guion aplica al nombre del Custom Element, no al Shadow DOM. Son conceptos independientes. El error que ocurre sin guion es al intentar llamar `customElements.define()` con un nombre inválido, no al crear el Shadow DOM."
+        },
+        {
+          "id": "D",
+          "texto": "Porque los guiones son necesarios para que los ES Modules puedan importar el componente correctamente usando la sintaxis `import`.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los ES Modules y la sintaxis `import` no tienen ninguna restricción relacionada con los guiones en el nombre del Custom Element. La regla del guion es una restricción del estándar HTML para nombres de etiquetas, no de los módulos de JavaScript."
+        }
       ]
     },
     {
       "id": 12,
-      "pregunta": "¿Qué es el árbol DOM?",
+      "pregunta": "¿Qué hace exactamente `customElements.define(\"mi-saludo\", MiSaludo)` en un Web Component?",
       "alternativas": [
-        { "id": "A", "texto": "La estructura jerárquica del DOM donde cada elemento HTML es un nodo", "esCorrecta": true, "retroalimentacion": "Correcto. El árbol DOM representa la relación jerárquica entre document, html, body y sus elementos hijos." },
-        { "id": "B", "texto": "Una carpeta del sistema operativo donde se guardan páginas web", "esCorrecta": false, "retroalimentacion": "Incorrecto. El árbol DOM no es una carpeta física." },
-        { "id": "C", "texto": "Un patrón de diseño exclusivo de Java", "esCorrecta": false, "retroalimentacion": "Incorrecto. No es un patrón exclusivo de Java." },
-        { "id": "D", "texto": "Una técnica de compresión de imágenes", "esCorrecta": false, "retroalimentacion": "Incorrecto. No tiene relación con compresión de imágenes." }
+        {
+          "id": "A",
+          "texto": "Declara una variable global llamada `mi-saludo` que almacena la referencia a la clase `MiSaludo` en la memoria del navegador.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `customElements.define()` no declara variables. Registra el componente en el registro de Custom Elements del navegador, asociando el nombre de etiqueta con la clase que lo define."
+        },
+        {
+          "id": "B",
+          "texto": "Registra el componente en el navegador asociando el nombre `\"mi-saludo\"` con la clase `MiSaludo`, permitiendo usarlo como etiqueta `<mi-saludo>` en HTML.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que `customElements.define()` registra el componente en el navegador. Una vez ejecutado, el navegador reconoce la etiqueta `<mi-saludo>` y cada vez que la encuentra en el HTML crea una instancia de la clase `MiSaludo`."
+        },
+        {
+          "id": "C",
+          "texto": "Conecta el componente a un servidor externo donde se almacena su definición para ser cargada dinámicamente cuando se necesite.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `customElements.define()` es una operación local que ocurre en el navegador del cliente, sin ninguna comunicación con servidores. Registra el componente en el registro interno del navegador."
+        },
+        {
+          "id": "D",
+          "texto": "Inicializa automáticamente el Shadow DOM del componente y le aplica los estilos CSS definidos dentro de la clase `MiSaludo`.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El Shadow DOM se crea llamando a `this.attachShadow()` dentro del constructor o del ciclo de vida del componente. `customElements.define()` solo registra el nombre de la etiqueta; no crea el Shadow DOM ni aplica estilos."
+        }
       ]
     },
     {
       "id": 13,
-      "pregunta": "¿Qué es el Light DOM?",
+      "pregunta": "¿Cuál es la característica principal de los HTML Templates dentro de los Web Components?",
       "alternativas": [
-        { "id": "A", "texto": "El DOM normal de la página, es decir, el contenido fuera del Shadow DOM", "esCorrecta": true, "retroalimentacion": "Correcto. El Light DOM es el HTML normal que existe en la página principal y fuera del encapsulamiento del Shadow DOM." },
-        { "id": "B", "texto": "Un DOM que solo aparece cuando la página está en modo claro", "esCorrecta": false, "retroalimentacion": "Incorrecto. 'Light DOM' no se refiere al tema visual claro/oscuro." },
-        { "id": "C", "texto": "Un DOM desactivado que no puede leerse", "esCorrecta": false, "retroalimentacion": "Incorrecto. El Light DOM sí forma parte normal del documento." },
-        { "id": "D", "texto": "Una versión simplificada de CSS", "esCorrecta": false, "retroalimentacion": "Incorrecto. No es CSS, sino parte del DOM." }
+        {
+          "id": "A",
+          "texto": "Que se renderizan automáticamente al cargar la página y se actualizan en tiempo real con datos de una API REST.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Lo distintivo de los HTML Templates es precisamente que NO se renderizan automáticamente al cargar la página. Definen una estructura que permanece inactiva hasta que se usa explícitamente en el código, lo cual es su principal ventaja."
+        },
+        {
+          "id": "B",
+          "texto": "Que aplican estilos CSS al Shadow DOM del componente de forma automática, sin necesidad de escribir clases.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los HTML Templates son estructuras reutilizables de HTML, no mecanismos de aplicación de estilos. Los estilos CSS se aplican dentro del Shadow DOM mediante etiquetas `<style>` o archivos CSS, no a través de templates."
+        },
+        {
+          "id": "C",
+          "texto": "Que definen estructuras HTML reutilizables que no se renderizan hasta que se usan explícitamente, permitiendo predefinir el diseño del componente.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que los HTML Templates son estructuras HTML que existen en el documento pero permanecen inactivas: no se muestran en pantalla hasta que el código las activa e inserta. Esto permite definir el diseño del componente de forma declarativa sin que se renderice innecesariamente."
+        },
+        {
+          "id": "D",
+          "texto": "Que reemplazan al constructor de la clase del componente, eliminando la necesidad de escribir JavaScript para inicializar el componente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los HTML Templates no reemplazan al constructor ni eliminan la necesidad de JavaScript. El constructor, el Shadow DOM y el ciclo de vida siguen siendo necesarios. Los templates solo definen la estructura HTML reutilizable del componente."
+        }
       ]
     },
     {
       "id": 14,
-      "pregunta": "¿Cuál de los siguientes nombres es válido como Custom Element?",
+      "pregunta": "¿Qué permiten hacer los ES Modules en el desarrollo de Web Components?",
       "alternativas": [
-        { "id": "A", "texto": "element", "esCorrecta": false, "retroalimentacion": "Incorrecto. No contiene un guion. Los Custom Elements válidos deben tener al menos un guion." },
-        { "id": "B", "texto": "AppComponent", "esCorrecta": false, "retroalimentacion": "Incorrecto. Usa mayúsculas y además no contiene guion." },
-        { "id": "C", "texto": "app-component", "esCorrecta": true, "retroalimentacion": "Correcto. Está en minúsculas y contiene al menos un guion, cumpliendo las reglas del estándar." },
-        { "id": "D", "texto": "App-Component", "esCorrecta": false, "retroalimentacion": "Incorrecto. Usa mayúsculas. Los nombres válidos deben ir en minúsculas." }
+        {
+          "id": "A",
+          "texto": "Convertir el Shadow DOM en una representación de servidor que se procesa antes de enviarse al navegador del cliente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los ES Modules son una característica de JavaScript para organizar código en archivos separados. No tienen relación con el procesamiento en servidor ni con el Shadow DOM."
+        },
+        {
+          "id": "B",
+          "texto": "Organizar el código del componente en archivos separados (HTML, CSS, JavaScript, JSON) que se pueden importar y reutilizar entre distintos componentes.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que los ES Modules permiten modularizar el código del componente separándolo en archivos: la estructura en HTML, los estilos en CSS, la lógica en JavaScript y los datos en JSON. Luego se importan con `import \"./user-card.js\"`, facilitando la reutilización y el mantenimiento."
+        },
+        {
+          "id": "C",
+          "texto": "Registrar automáticamente todos los Custom Elements de un proyecto sin necesidad de llamar a `customElements.define()` para cada uno.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los ES Modules no registran Custom Elements automáticamente. El registro siempre debe hacerse explícitamente con `customElements.define()`. Los módulos simplemente permiten importar el archivo que contiene esa llamada de registro."
+        },
+        {
+          "id": "D",
+          "texto": "Sincronizar el estado del componente con una base de datos en tiempo real mediante una conexión persistente WebSocket.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los ES Modules son un sistema de módulos estáticos para organizar e importar código JavaScript. No tienen funcionalidad de comunicación en tiempo real. Las conexiones WebSocket se implementan con la API `WebSocket` de JavaScript, independientemente de los módulos."
+        }
       ]
     },
     {
       "id": 15,
-      "pregunta": "¿Por qué app-name-component también es un nombre válido para un Custom Element?",
+      "pregunta": "¿Por qué es obligatorio llamar a `super()` en el constructor de un Web Component?",
       "alternativas": [
-        { "id": "A", "texto": "Porque tiene varios guiones y está en minúsculas", "esCorrecta": true, "retroalimentacion": "Correcto. Un Custom Element puede tener uno o varios guiones, siempre que esté en minúsculas y cumpla las reglas del estándar." },
-        { "id": "B", "texto": "Porque los nombres válidos siempre deben iniciar con mayúscula", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los nombres válidos no deben usar mayúsculas." },
-        { "id": "C", "texto": "Porque no necesita guion si es largo", "esCorrecta": false, "retroalimentacion": "Incorrecto. El guion sigue siendo obligatorio." },
-        { "id": "D", "texto": "Porque solo es válido dentro de React", "esCorrecta": false, "retroalimentacion": "Incorrecto. La validez del nombre depende del estándar de Custom Elements, no de React." }
+        {
+          "id": "A",
+          "texto": "Porque `super()` activa el Shadow DOM del componente; sin esta llamada, `.attachShadow()` lanzará un error al ejecutarse.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `super()` no activa ni está relacionado con el Shadow DOM. El Shadow DOM se crea explícitamente con `this.attachShadow()`. `super()` llama al constructor de la clase padre (`HTMLElement`) para que el elemento base se inicialice correctamente."
+        },
+        {
+          "id": "B",
+          "texto": "Porque el componente extiende `HTMLElement`, y `super()` llama al constructor de esa clase padre, inicializando correctamente el elemento base antes de agregar lógica propia.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que `MiSaludo extends HTMLElement` hace que el componente herede de `HTMLElement`. En JavaScript, cuando una clase hereda de otra, el constructor hijo debe llamar a `super()` primero para que el constructor de la clase padre se ejecute y configure el elemento base correctamente."
+        },
+        {
+          "id": "C",
+          "texto": "Porque `super()` registra automáticamente el componente en el registro de Custom Elements del navegador, reemplazando la llamada a `customElements.define()`.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `super()` no registra ningún Custom Element. El registro lo hace exclusivamente `customElements.define()`. `super()` solo llama al constructor de la clase padre (`HTMLElement`) para inicializar el elemento base."
+        },
+        {
+          "id": "D",
+          "texto": "Porque `super()` es una palabra reservada que JavaScript exige usar en cualquier función que se llame dentro de un constructor, como medida de seguridad.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `super()` no es una medida de seguridad genérica. Es la forma de llamar al constructor de la clase padre en la herencia de JavaScript. Es obligatorio en clases que extienden otras (como `HTMLElement`) porque sin esa llamada, `this` no existe aún y el elemento base no se inicializa."
+        }
       ]
     },
     {
       "id": 16,
-      "pregunta": "¿Qué significa BEM?",
+      "pregunta": "¿En qué momento del ciclo de vida se ejecuta `constructor()` y para qué se usa principalmente?",
       "alternativas": [
-        { "id": "A", "texto": "Block Element Modifier", "esCorrecta": true, "retroalimentacion": "Correcto. BEM es una metodología de nombres en CSS que significa Block, Element y Modifier." },
-        { "id": "B", "texto": "Base Event Module", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa expansión no corresponde a BEM." },
-        { "id": "C", "texto": "Binary Element Method", "esCorrecta": false, "retroalimentacion": "Incorrecto. BEM no significa eso." },
-        { "id": "D", "texto": "Block Event Model", "esCorrecta": false, "retroalimentacion": "Incorrecto. Tampoco corresponde al significado real." }
+        {
+          "id": "A",
+          "texto": "Cuando el componente se inserta en el DOM de la página, siendo el momento ideal para hacer peticiones a APIs y renderizar contenido.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Eso describe `connectedCallback()`. El `constructor()` se ejecuta antes de que el componente esté en el DOM: cuando se crea la instancia. Por eso no se recomienda manipular el DOM en el constructor; es mejor hacerlo en `connectedCallback()`."
+        },
+        {
+          "id": "B",
+          "texto": "Cuando se crea la instancia del componente, antes de que aparezca en el DOM, siendo el lugar para inicializar variables, crear el Shadow DOM y configurar el estado inicial.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que `constructor()` se ejecuta cuando se crea la instancia del componente (antes de insertarlo en el DOM). Se usa para llamar a `super()`, crear el Shadow DOM con `this.attachShadow()`, inicializar variables y configurar el estado inicial. No se recomienda manipular el DOM aquí."
+        },
+        {
+          "id": "C",
+          "texto": "Cuando el componente es eliminado del DOM, siendo el lugar adecuado para limpiar eventos y evitar memory leaks.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La limpieza de eventos y la liberación de recursos al eliminar el componente se hace en `disconnectedCallback()`. El `constructor()` se ejecuta en el momento opuesto: cuando el componente se crea por primera vez."
+        },
+        {
+          "id": "D",
+          "texto": "Cuando un atributo del componente cambia su valor, permitiendo actualizar la interfaz de manera reactiva.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La respuesta a cambios en atributos es responsabilidad de `attributeChangedCallback()`. El `constructor()` solo se ejecuta una vez, al crear la instancia, y no se vuelve a llamar cuando los atributos cambian."
+        }
       ]
     },
     {
       "id": 17,
-      "pregunta": "En BEM, ¿qué representa el Block?",
+      "pregunta": "¿Cuándo se ejecuta `connectedCallback()` y por qué es el método más importante en la práctica?",
       "alternativas": [
-        { "id": "A", "texto": "La parte principal e independiente del componente", "esCorrecta": true, "retroalimentacion": "Correcto. El Block representa el componente base que puede existir por sí mismo, como .card o .button." },
-        { "id": "B", "texto": "Un color especial del componente", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un Block no representa un color, sino la unidad principal del componente." },
-        { "id": "C", "texto": "Un evento de JavaScript", "esCorrecta": false, "retroalimentacion": "Incorrecto. BEM es una metodología de nomenclatura CSS." },
-        { "id": "D", "texto": "Una base de datos visual", "esCorrecta": false, "retroalimentacion": "Incorrecto. No tiene relación con bases de datos." }
+        {
+          "id": "A",
+          "texto": "Cuando se crea la instancia del componente, siendo el primer método que se ejecuta en el ciclo de vida.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El primer método en ejecutarse es `constructor()`, no `connectedCallback()`. `connectedCallback()` se ejecuta después, cuando el componente ya ha sido insertado en el DOM de la página."
+        },
+        {
+          "id": "B",
+          "texto": "Cuando el componente se inserta en el DOM de la página, siendo el momento ideal para renderizar contenido, agregar eventos y hacer peticiones a APIs.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que `connectedCallback()` se dispara cuando el componente aparece en la página (se añade al DOM). En ese momento ya es seguro interactuar con el DOM, renderizar HTML, escuchar eventos o iniciar peticiones. Por eso se considera el más importante en el desarrollo cotidiano."
+        },
+        {
+          "id": "C",
+          "texto": "Cuando un atributo del componente cambia, permitiendo actualizar la vista con los nuevos valores recibidos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La respuesta a cambios en atributos observados es responsabilidad de `attributeChangedCallback()`. `connectedCallback()` se ejecuta solo cuando el componente se inserta en el DOM, no cada vez que sus atributos cambian."
+        },
+        {
+          "id": "D",
+          "texto": "Cuando el componente se mueve entre documentos o iframes distintos, útil para sincronizar estado.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El movimiento entre documentos dispara `adoptedCallback()`, no `connectedCallback()`. `connectedCallback()` responde a la inserción del componente en el DOM actual, no a su traslado entre documentos."
+        }
       ]
     },
     {
       "id": 18,
-      "pregunta": "¿Cómo se escribe normalmente un Element en BEM?",
+      "pregunta": "¿Cuándo se ejecuta `disconnectedCallback()` y cuál es su uso más importante?",
       "alternativas": [
-        { "id": "A", "texto": "block--element", "esCorrecta": false, "retroalimentacion": "Incorrecto. El doble guion (--) se usa para Modifier, no para Element." },
-        { "id": "B", "texto": "block__element", "esCorrecta": true, "retroalimentacion": "Correcto. En BEM el Element se representa con doble guion bajo, por ejemplo .card__title." },
-        { "id": "C", "texto": "block.element", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ese formato no corresponde a la convención BEM." },
-        { "id": "D", "texto": "block-element-modifier", "esCorrecta": false, "retroalimentacion": "Incorrecto. No representa específicamente la sintaxis del Element en BEM." }
+        {
+          "id": "A",
+          "texto": "Cuando el componente se inserta en el DOM por primera vez, para inicializar sus eventos y configurar su estado.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La inicialización de eventos al insertar el componente es tarea de `connectedCallback()`. `disconnectedCallback()` se ejecuta en el momento opuesto: cuando el componente se elimina del DOM."
+        },
+        {
+          "id": "B",
+          "texto": "Cuando el componente es eliminado del DOM, siendo el lugar para limpiar eventos, cancelar timers o intervalos y evitar memory leaks.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que `disconnectedCallback()` se ejecuta cuando el componente desaparece del DOM. Su uso principal es la limpieza: eliminar event listeners que se añadieron en `connectedCallback()`, cancelar `setInterval` o `setTimeout` activos y liberar referencias para evitar que la memoria no se libere (memory leaks)."
+        },
+        {
+          "id": "C",
+          "texto": "Cuando el navegador detecta que el usuario no tiene conexión a internet, para mostrar un mensaje de error en el componente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La detección de pérdida de conexión se maneja con el evento `offline` del navegador, no con `disconnectedCallback()`. Este último responde a que el componente fue eliminado del árbol DOM de la página, independientemente del estado de la red."
+        },
+        {
+          "id": "D",
+          "texto": "Cuando cambia un atributo observado del componente, para actualizar el contenido que depende de ese valor.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los cambios en atributos observados disparan `attributeChangedCallback()`. `disconnectedCallback()` solo se ejecuta cuando el componente es eliminado del DOM, no cuando sus propiedades cambian."
+        }
       ]
     },
     {
       "id": 19,
-      "pregunta": "¿Cómo se escribe normalmente un Modifier en BEM?",
+      "pregunta": "Para que `attributeChangedCallback()` detecte cambios en un atributo, ¿qué es necesario declarar además?",
       "alternativas": [
-        { "id": "A", "texto": "block__modifier", "esCorrecta": false, "retroalimentacion": "Incorrecto. El doble guion bajo se usa para Element, no para Modifier." },
-        { "id": "B", "texto": "block--modifier", "esCorrecta": true, "retroalimentacion": "Correcto. El Modifier se escribe con doble guion, por ejemplo .button--primary o .card--featured." },
-        { "id": "C", "texto": "block.modifier", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa no es la convención BEM." },
-        { "id": "D", "texto": "modifier--block", "esCorrecta": false, "retroalimentacion": "Incorrecto. Invierte el orden y no sigue la nomenclatura BEM." }
+        {
+          "id": "A",
+          "texto": "Un método `connectedCallback()` que active el listener del atributo al insertar el componente en el DOM.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `connectedCallback()` no activa listeners de atributos. Para que `attributeChangedCallback()` funcione, se debe declarar `static get observedAttributes()` que retorna los nombres de los atributos que el componente debe observar."
+        },
+        {
+          "id": "B",
+          "texto": "Un Shadow DOM con `mode: \"open\"` para que los cambios en atributos sean detectables desde JavaScript externo.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El modo del Shadow DOM no afecta a la detección de cambios en atributos. `attributeChangedCallback()` funciona independientemente de si hay Shadow DOM o no. Lo que se necesita es declarar `static get observedAttributes()` con los atributos a observar."
+        },
+        {
+          "id": "C",
+          "texto": "El método estático `static get observedAttributes()` que retorna un array con los nombres de los atributos que el componente debe vigilar.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que `attributeChangedCallback()` no observa todos los atributos por defecto; solo observa aquellos que se declaren en `static get observedAttributes()`. Por ejemplo: `static get observedAttributes() { return [\"nombre\"]; }`. Sin esa declaración, el callback nunca se dispara."
+        },
+        {
+          "id": "D",
+          "texto": "Una llamada a `customElements.define()` con un tercer parámetro que liste los atributos observables del componente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `customElements.define()` solo acepta dos parámetros: el nombre del componente y la clase. Los atributos observables se declaran dentro de la clase con `static get observedAttributes()`, no en el registro del componente."
+        }
       ]
     },
     {
       "id": 20,
-      "pregunta": "¿Cuál de los siguientes ejemplos sigue correctamente la lógica de BEM?",
+      "pregunta": "¿Cuándo se ejecuta `adoptedCallback()` y qué tan frecuente es su uso?",
       "alternativas": [
-        { "id": "A", "texto": ".card, .card__title, .card--featured", "esCorrecta": true, "retroalimentacion": "Correcto. Muestra un Block (.card), un Element (.card__title) y un Modifier (.card--featured) con la sintaxis adecuada." },
-        { "id": "B", "texto": ".card-title-featured", "esCorrecta": false, "retroalimentacion": "Incorrecto. No distingue claramente Block, Element y Modifier según la sintaxis BEM." },
-        { "id": "C", "texto": ".card.title.featured", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa notación no corresponde a la convención BEM." },
-        { "id": "D", "texto": ".featured__card--title", "esCorrecta": false, "retroalimentacion": "Incorrecto. Mezcla el orden lógico de BEM y no representa correctamente Block, Element y Modifier." }
+        {
+          "id": "A",
+          "texto": "Cada vez que el componente se actualiza visualmente al cambiar un atributo, siendo uno de los callbacks más usados en el desarrollo diario.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Las actualizaciones visuales por cambios en atributos disparan `attributeChangedCallback()`. `adoptedCallback()` se ejecuta en un caso mucho más específico: cuando el componente es movido a otro documento, lo cual es muy poco común."
+        },
+        {
+          "id": "B",
+          "texto": "Cuando el componente es movido a otro documento (como un iframe), siendo un escenario muy poco común en la práctica.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que `adoptedCallback()` se ejecuta cuando el componente es trasladado a otro `document`, por ejemplo mediante `document.adoptNode()`. Este escenario ocurre principalmente cuando se trabaja con iframes o ventanas secundarias, y es muy poco frecuente en el desarrollo cotidiano."
+        },
+        {
+          "id": "C",
+          "texto": "Antes de que el constructor sea llamado, para pre-configurar el estado del componente sin necesidad de Shadow DOM.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El `constructor()` siempre es el primer método en ejecutarse en el ciclo de vida. Ningún callback del ciclo de vida se ejecuta antes que el constructor. `adoptedCallback()` se ejecuta después, cuando el componente ya existe y es movido entre documentos."
+        },
+        {
+          "id": "D",
+          "texto": "Cuando el usuario hace clic en el componente, actuando como el event handler nativo del ciclo de vida para eventos del usuario.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los métodos del ciclo de vida de un Web Component responden a eventos del DOM (inserción, eliminación, cambios de atributos), no a interacciones del usuario como clics. Los clics se manejan con `addEventListener()`, no con callbacks del ciclo de vida."
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "pregunta": "¿Qué es BEM y cuál es su objetivo principal?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Es un framework CSS completo como Bootstrap, que provee componentes visuales prediseñados listos para usar en proyectos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. BEM no es un framework ni provee componentes prediseñados. Es una metodología de nomenclatura para clases CSS: un conjunto de convenciones de nombres que el desarrollador aplica manualmente para organizar mejor sus estilos."
+        },
+        {
+          "id": "B",
+          "texto": "Es una metodología para nombrar clases en CSS que divide los componentes en Bloque, Elemento y Modificador, con el objetivo de crear CSS más claro, reutilizable y fácil de mantener.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se definió BEM (Block Element Modifier) como una metodología de nomenclatura CSS. Divide cada componente en tres partes: Block (componente independiente), Element (parte interna del block) y Modifier (variante del block o element). El objetivo es evitar conflictos de estilos y hacer el código más organizado."
+        },
+        {
+          "id": "C",
+          "texto": "Es un compilador de CSS que transforma clases en JavaScript para aplicarlas dinámicamente a los componentes en tiempo de ejecución.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. BEM no es un compilador ni transforma código. Es solo una convención de nombres que el desarrollador sigue al escribir clases CSS. No hay ninguna herramienta BEM que transforme el código; es una práctica de escritura."
+        },
+        {
+          "id": "D",
+          "texto": "Es un estándar de la W3C para definir el diseño visual de Web Components, integrado en la especificación del Shadow DOM.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. BEM no es un estándar de la W3C y no forma parte de la especificación de Web Components. Es una metodología de nomenclatura creada por el equipo de Yandex como convención de organización CSS, completamente independiente de los estándares del navegador."
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "pregunta": "En BEM, ¿qué representa el \"Block\" y cuáles son ejemplos correctos?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Una variante o estado visual del componente, como `.button--primary` o `.card--featured`, que cambia su apariencia.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Eso describe al Modifier, no al Block. El Modifier (con `--`) indica una variante del componente. El Block es la unidad principal e independiente: `.button` o `.card`, sin doble guion ni doble guion bajo."
+        },
+        {
+          "id": "B",
+          "texto": "Una parte interna del componente que depende de él para existir, como `.card__title` o `.menu__item`.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Eso describe al Element (con `__`). El Element depende del Block y no puede existir solo. El Block, en cambio, es la unidad base independiente: `.card`, `.menu`, `.button`."
+        },
+        {
+          "id": "C",
+          "texto": "El componente principal e independiente de la interfaz que puede existir por sí solo, como `.card`, `.menu`, `.button` o `.header`.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se definió el Block como el componente base e independiente. Puede existir por sí solo sin depender de otro elemento. Ejemplos: `.card`, `.menu`, `.button`, `.header`. En HTML sería algo como `<div class=\"card\">...</div>`."
+        },
+        {
+          "id": "D",
+          "texto": "Un pseudo-elemento CSS que aplica estilos automáticamente al primer o último hijo del componente usando `::before` o `::after`.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los pseudo-elementos CSS (`::before`, `::after`) son conceptos del lenguaje CSS, no de la metodología BEM. En BEM, Block es simplemente el componente raíz al que se le da nombre como clase CSS."
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "pregunta": "En BEM, ¿cómo se escribe un Element y qué indica esa notación?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "`block--element`, con doble guion, indicando que el element modifica visualmente al block.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El doble guion `--` es la notación del Modifier, no del Element. El Modifier representa una variante o estado. Para el Element se usa doble guion bajo `__`, que indica que esa parte depende del block."
+        },
+        {
+          "id": "B",
+          "texto": "`block__element`, con doble guion bajo, indicando que es una parte interna del block que depende de él.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que el Element en BEM se escribe con doble guion bajo `__`. Por ejemplo: `.card__title`, `.card__image`, `.card__description`. Esta notación indica que esos elementos son partes internas de la `.card` y no pueden existir de forma independiente fuera del block."
+        },
+        {
+          "id": "C",
+          "texto": "`block.element`, con punto, indicando que el element hereda las propiedades del block mediante la cascada CSS.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El punto en CSS se usa para selectores de clase encadenados, no como separador en la metodología BEM. En BEM, el Element se separa del Block con doble guion bajo `__`, generando un nombre de clase único como `.card__title`."
+        },
+        {
+          "id": "D",
+          "texto": "`block-element`, con guion simple, indicando que es una versión reducida y simplificada del block.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Un solo guion no tiene un significado especial en BEM. Puede ser parte del nombre del block o del element (como `user-card`), pero no es la notación para separar block y element. La separación entre block y element siempre usa doble guion bajo `__`."
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "pregunta": "En BEM, ¿para qué sirve el Modifier y cómo se escribe correctamente?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Describe una parte interna del componente que depende del block. Se escribe como `block__modifier`.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La notación `block__algo` (doble guion bajo) corresponde al Element, no al Modifier. El Element es una parte interna. El Modifier, en cambio, representa una variante o estado y se escribe con doble guion `block--modifier`."
+        },
+        {
+          "id": "B",
+          "texto": "Representa el componente raíz e independiente. Se escribe solo como `.modifier`.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El componente raíz e independiente es el Block, no el Modifier. El Block se escribe como `.card` o `.button`. El Modifier siempre va unido al block o al element al que modifica: `.card--featured` o `.card__title--destacado`."
+        },
+        {
+          "id": "C",
+          "texto": "Representa una variante o estado de un block o element, cambiando su apariencia o comportamiento. Se escribe como `block--modifier` o `block__element--modifier`.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que el Modifier usa doble guion `--` y representa una variante del block o element. Ejemplos: `.button--primary` (botón en su variante primaria), `.card--featured` (tarjeta destacada), `.card__title--grande` (título grande dentro de la tarjeta). El Modifier cambia algo visual o funcional sin alterar la estructura."
+        },
+        {
+          "id": "D",
+          "texto": "Define las animaciones CSS del componente. Se escribe como `block:::modifier` usando triple dos puntos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Las animaciones en CSS se definen con `@keyframes` y la propiedad `animation`, no con BEM. La notación `:::` no existe en BEM ni en CSS estándar. El Modifier en BEM usa siempre doble guion `--`."
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "pregunta": "¿Cuál de los siguientes conjuntos de clases CSS aplica correctamente la metodología BEM para una tarjeta con título y versión destacada?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "`.card-title`, `.card-image`, `.card-featured` (todos con guion simple).",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El guion simple no distingue entre Block, Element y Modifier en BEM. `.card-title` parece ser un elemento de `.card`, pero no usa la notación `__`. `.card-featured` debería ser `.card--featured` (Modifier). Esta nomenclatura no sigue BEM."
+        },
+        {
+          "id": "B",
+          "texto": "`.card`, `.card__title`, `.card--featured`.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. Este conjunto aplica perfectamente BEM: `.card` es el Block (componente independiente), `.card__title` es el Element (parte interna del block, con doble guion bajo `__`) y `.card--featured` es el Modifier (variante del block, con doble guion `--`). En la sesión se usó exactamente este ejemplo."
+        },
+        {
+          "id": "C",
+          "texto": "`.card`, `.title__card`, `.featured--card`.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El orden está invertido. En BEM siempre es `block__element` y `block--modifier`, no `element__block` ni `modifier--block`. El nombre del block debe ser siempre el prefijo de los elementos y modificadores que pertenecen a él."
+        },
+        {
+          "id": "D",
+          "texto": "`.card`, `.card.title`, `.card.featured`.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `.card.title` es un selector CSS que selecciona elementos que tienen ambas clases al mismo tiempo, lo cual no es nomenclatura BEM. En BEM, los elements y modifiers son clases únicas con el prefijo del block: `.card__title` y `.card--featured`."
+        }
       ]
     }
   ]

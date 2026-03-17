@@ -1,0 +1,565 @@
+# Web Component
+
+Un **Web Component** es una tecnología del navegador que permite crear **componentes reutilizables y encapsulados para interfaces web**. Estos componentes funcionan como **nuevas etiquetas HTML personalizadas** que contienen su propio **HTML, CSS y JavaScript**, sin interferir con el resto de la página.
+
+## ¿Un Web Component es agnóstico?
+
+Un **Web Component es agnóstico** porque **no depende de ningún framework o librería específica**. Funciona directamente en el **navegador usando estándares nativos del web platform**.
+
+**Qué significa "agnóstico":**
+
+- No pertenece a **React**
+- No pertenece a **Angular**
+- No pertenece a **Vue**
+- Funciona con **JavaScript puro**
+
+Es decir, **puede usarse en cualquier tecnología o incluso sin framework**.
+
+## Relación con la W3C
+
+Los **Web Components son un estándar oficial del web definido por la W3C (World Wide Web Consortium)**.
+
+**Qué significa esto:**
+
+La **W3C define las reglas y especificaciones** que los navegadores deben seguir para que los Web Components funcionen igual en todos.
+
+## DOM (Document Object Model)
+
+El **DOM (Document Object Model)** es una **representación en forma de estructura de objetos del documento HTML de una página web** que el navegador crea para poder **leer, modificar y manipular los elementos con JavaScript**.
+
+## Árbol DOM (DOM Tree)
+
+El **árbol DOM** es la **estructura jerárquica en forma de árbol que representa todos los elementos HTML del documento**.
+
+Cada elemento HTML se convierte en un **nodo (node)** dentro del árbol.
+
+**Estructura conceptual**
+
+```
+Document
+ └── html
+      ├── head
+      │     └── title
+      └── body
+            ├── h1
+            └── button
+```
+
+## Light DOM
+
+El **Light DOM** es el **DOM normal que existe fuera del Shadow DOM**, es decir, **el contenido que pertenece a la página principal**.
+
+Es el **HTML visible y accesible directamente en la página**.
+
+**Ejemplo**
+
+```
+<user-card>
+<p>Contenido visible</p>
+</user-card>
+```
+
+Ese `<p>` pertenece al **Light DOM**.
+
+## Tecnologías del estándar Web Components
+
+La W3C define que los Web Components se basan en:
+
+1. **Custom Elements**
+    
+    Permiten crear etiquetas HTML personalizadas.
+    
+2. **Shadow DOM**
+    
+    Encapsula estilos y estructura.
+    
+3. **HTML Template**
+    
+    Define estructuras reutilizables.
+    
+4. **ES Modules**
+    
+    Permite modularizar el JavaScript.
+    
+
+---
+
+## BEM (Block Element Modifier)
+
+**BEM** es una **metodología para nombrar clases en CSS** que ayuda a organizar el código y evitar conflictos de estilos en una interfaz web.
+
+Su nombre significa:
+
+```
+B → Block
+E → Element
+M → Modifier
+```
+
+El objetivo de BEM es **crear CSS más claro, reutilizable y fácil de mantener**.
+
+## Estructura de BEM
+
+BEM divide los componentes en **tres partes**:
+
+### 1. Block (Bloque)
+
+**Definición:**
+
+El **Block** es el **componente principal o independiente** de la interfaz.
+
+Ejemplo:
+
+```
+.card
+.menu
+.button
+.header
+```
+
+HTML:
+
+```
+<divclass="card"></div>
+```
+
+El **block puede existir por sí solo**.
+
+---
+
+### 2. Element (Elemento)
+
+**Definición:**
+
+Un **Element** es una **parte interna del bloque** que depende de él.
+
+Se escribe usando **doble guion bajo `__`**
+
+```
+block__element
+```
+
+Ejemplo:
+
+```
+.card__title
+.card__image
+.card__description
+```
+
+HTML:
+
+```
+<divclass="card">
+<h2class="card__title">Producto</h2>
+</div>
+```
+
+---
+
+### 3. Modifier (Modificador)
+
+**Definición:**
+
+Un **Modifier** cambia la **apariencia o comportamiento** de un bloque o elemento.
+
+Se escribe usando **doble guion `--`**
+
+```
+block--modifier
+block__element--modifier
+```
+
+---
+
+## Anatomía de un Web Component
+
+Un **Web Component** está formado por varias tecnologías estándar del navegador.
+
+## 1. Shadow DOM
+
+**Definición:**
+
+El **Shadow DOM** es un **DOM encapsulado** que protege el HTML y CSS del componente para que **no interfiera con el resto de la página**.
+
+**Qué permite:**
+
+- Aislar estilos
+- Evitar conflictos de CSS
+- Mantener la estructura interna privada
+
+**Idea simple:**
+
+```
+Página Web
+ ├── Header
+ ├── Card Component
+ │     └── Shadow DOM (aislado)
+ └── Footer
+```
+
+## `.attachShadow()` en Web Components
+
+`.attachShadow()` es un **método de JavaScript que permite crear un Shadow DOM dentro de un elemento HTML**. Esto se usa para **encapsular el HTML y CSS de un Web Component**.
+
+En otras palabras, permite que **una parte del componente tenga su propio DOM aislado del resto de la página**.
+
+---
+
+## 2. Custom Elements
+
+Los **Custom Elements** son **etiquetas HTML personalizadas** que se crean para construir **Web Components reutilizables**.
+
+**Ejemplo**
+
+```
+classUserCardextendsHTMLElement {
+  connectedCallback() {
+this.innerHTML="<p>Usuario</p>";
+  }
+}
+
+customElements.define("user-card",UserCard);
+```
+
+Uso en HTML:
+
+```
+<user-card></user-card>
+```
+
+## Reglas para nombrar un Custom Element
+
+### 1. Debe contener un guion
+
+Todo **Custom Element debe tener al menos un guion** en su nombre.
+
+✔ Correcto
+
+```
+<app-component>
+<user-card>
+<my-button>
+```
+
+❌ Incorrecto
+
+```
+<component>
+<element>
+<buttoncustom>
+```
+
+Esto se debe a que **HTML reserva nombres sin guion para elementos nativos**.
+
+---
+
+### 2. Debe escribirse en minúsculas
+
+Los **Custom Elements deben estar en minúsculas**.
+
+✔ Correcto
+
+```
+<app-component>
+```
+
+❌ Incorrecto
+
+```
+<AppComponent>
+<App-Component>
+```
+
+HTML **no permite mayúsculas en los nombres de Custom Elements**.
+
+---
+
+### 3. Puede tener varios guiones
+
+Se pueden usar **varios guiones para nombres más descriptivos**.
+
+✔ Ejemplo válido
+
+```
+<app-name-component>
+```
+
+---
+
+## 3. HTML Templates
+
+**Definición:**
+
+Los **HTML Templates** permiten definir **estructuras HTML reutilizables** que no se renderizan hasta que se usan.
+
+**Ejemplo**
+
+```
+<templateid="card-template">
+<divclass="card">
+<h2>Usuario</h2>
+</div>
+</template>
+```
+
+**Ventaja:**
+
+Permite **predefinir el diseño del componente**.
+
+---
+
+## 4. Modules (HTML, CSS, JS, JSON)
+
+**Definición:**
+
+Los **Modules** permiten organizar el código del componente en archivos separados que se pueden importar.
+
+**Ejemplo**
+
+```
+import"./user-card.js";
+```
+
+Los módulos pueden incluir:
+
+- **HTML** → estructura
+- **CSS** → estilos
+- **JavaScript** → lógica
+- **JSON** → datos
+
+**Ventaja:**
+
+Permiten **modularizar y reutilizar código fácilmente**.
+
+## Ciclo de vida de un Web Component
+
+El **ciclo de vida de un Web Component** son los **métodos que se ejecutan automáticamente en diferentes momentos de la existencia del componente**, desde que se crea hasta que se elimina del DOM.
+
+## Métodos del ciclo de vida
+
+Los principales métodos (callbacks) son:
+
+```
+constructor()
+connectedCallback()
+disconnectedCallback()
+attributeChangedCallback()
+adoptedCallback()
+```
+
+## 1. `constructor()`
+
+**Cuándo se ejecuta:**
+
+Cuando se **crea la instancia del componente**.
+
+**Para qué sirve:**
+
+- Inicializar variables
+- Crear el Shadow DOM (`attachShadow`)
+- Configurar el estado inicial
+
+**Ejemplo:**
+
+```
+constructor() {
+super();
+this.attachShadow({ mode:"open" });
+}
+```
+
+No se recomienda manipular el DOM aquí aún.
+
+---
+
+## 2. `connectedCallback()`
+
+**Cuándo se ejecuta:**
+
+Cuando el componente se **inserta en el DOM (aparece en la página)**.
+
+**Para qué sirve:**
+
+- Renderizar contenido
+- Hacer peticiones (API)
+- Agregar eventos
+
+**Ejemplo:**
+
+```
+connectedCallback() {
+this.shadowRoot.innerHTML=`<p>Estoy en el DOM</p>`;
+}
+```
+
+Es el método **más importante en la práctica**.
+
+---
+
+## 3. `disconnectedCallback()`
+
+**Cuándo se ejecuta:**
+
+Cuando el componente es **eliminado del DOM**.
+
+**Para qué sirve:**
+
+- Limpiar eventos
+- Cancelar timers o intervalos
+- Evitar memory leaks
+
+**Ejemplo:**
+
+```
+disconnectedCallback() {
+console.log("Componente eliminado");
+}
+```
+
+---
+
+## 4. `attributeChangedCallback()`
+
+**Cuándo se ejecuta:**
+
+Cuando **cambia un atributo del componente**.
+
+**Para que funcione debes declarar:**
+
+```
+static get observedAttributes() {
+return ["nombre"];
+}
+```
+
+**Ejemplo:**
+
+```
+attributeChangedCallback(name,oldValue,newValue) {
+console.log(`${name} cambió de${oldValue} a${newValue}`);
+}
+```
+
+Útil para hacer componentes dinámicos.
+
+---
+
+## 5. `adoptedCallback()`
+
+**Cuándo se ejecuta:**
+
+Cuando el componente es **movido a otro documento (otro DOM)**.
+
+**Uso real:**
+
+Muy poco común.
+
+```
+adoptedCallback() {
+console.log("Movido a otro documento");
+}
+```
+
+---
+
+## Puntos Importantes:
+
+## 1. `class MiSaludo extends HTMLElement`
+
+**Qué hace:**
+
+Crea una clase nueva para definir nuestro componente.
+
+**Idea simple:**
+
+Le estamos diciendo al navegador:
+
+> “Voy a crear un nuevo elemento HTML personalizado”.
+> 
+
+## 2. `super()`
+
+```
+super();
+```
+
+**Qué hace:**
+
+Llama al constructor de `HTMLElement`.
+
+**Por qué es necesario:**
+
+Porque `MiSaludo` hereda de `HTMLElement`, y primero debe inicializarse correctamente el elemento base.
+
+## 3. `this.attachShadow({ mode: "open" })`
+
+```
+constshadow=this.attachShadow({ mode:"open" });
+```
+
+**Qué hace:**
+
+Crea un **Shadow DOM** dentro del componente.
+
+**Para qué sirve:**
+
+- encapsula el HTML interno
+- encapsula el CSS interno
+- evita que estilos externos afecten al componente
+- evita que estilos del componente afecten a la página
+
+**`mode: "open"` significa:**
+
+Que podemos acceder al shadow desde JavaScript usando:
+
+```
+element.shadowRoot
+```
+
+## 4. `shadow.innerHTML = ...`
+
+```
+shadow.innerHTML=`
+  <style>
+    p {
+      color: blue;
+      font-size: 20px;
+    }
+  </style>
+  <p>Hola, soy un Web Component</p>
+`;
+```
+
+**Qué hace:**
+
+Inserta el contenido dentro del Shadow DOM.
+
+Aquí estamos agregando:
+
+- un bloque `<style>`
+- un `<p>` con texto
+
+**Importante:**
+
+Ese `<style>` solo afecta a lo que está dentro del Shadow DOM.
+
+## 5. `customElements.define("mi-saludo", MiSaludo)`
+
+```
+customElements.define("mi-saludo",MiSaludo);
+```
+
+**Qué hace:**
+
+Registra el componente con el nombre `"mi-saludo"`.
+
+**Resultado:**
+
+Ahora ya podemos usar esta etiqueta en HTML:
+
+```
+<mi-saludo></mi-saludo>
+```
+
+.
