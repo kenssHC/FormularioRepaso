@@ -236,7 +236,7 @@
         },
         {
           "id": "C",
-          "texto": "Porque href es un atributo exclusivo de los botones <button> y su uso en etiquetas <a> genera un error en el navegador.",
+          "texto": "Porque href es un atributo exclusivo de los botones `<button>` y su uso en etiquetas `<a>` genera un error en el navegador.",
           "esCorrecta": false,
           "retroalimentacion": "Incorrecto. href es un atributo propio de la etiqueta <a> (anchor), no de <button>. Los botones no tienen href. El problema aquí no es técnico sino de buenas prácticas: usar javascript:void(0) vacía la semántica del enlace."
         },
@@ -400,7 +400,7 @@
         },
         {
           "id": "D",
-          "texto": "Porque su uso está restringido a archivos CSS externos y no funciona cuando se escribe dentro de etiquetas <style> en el HTML.",
+          "texto": "Porque su uso está restringido a archivos CSS externos y no funciona cuando se escribe dentro de etiquetas `<style>` en el HTML.",
           "esCorrecta": false,
           "retroalimentacion": "Incorrecto. !important funciona tanto en archivos CSS externos como en etiquetas <style> dentro del HTML o incluso en estilos inline. No hay ninguna restricción de ubicación para su uso técnico, aunque su uso excesivo en cualquier contexto sigue siendo una mala práctica."
         }

@@ -58,11 +58,22 @@ async function renderSessionGrid() {
     const card = document.createElement('a');
     card.className = 'session-card';
     card.href = `quiz.html?sesion=${session.id}`;
-    card.innerHTML = `
-      <span class="session-card__number">${session.label}</span>
-      <span class="session-card__title">${titulo}</span>
-      <span class="session-card__count">${questionCount} preguntas</span>
-    `;
+
+    const numSpan = document.createElement('span');
+    numSpan.className = 'session-card__number';
+    numSpan.textContent = session.label;
+
+    const titleSpan = document.createElement('span');
+    titleSpan.className = 'session-card__title';
+    titleSpan.textContent = titulo;
+
+    const countSpan = document.createElement('span');
+    countSpan.className = 'session-card__count';
+    countSpan.textContent = `${questionCount} preguntas`;
+
+    card.appendChild(numSpan);
+    card.appendChild(titleSpan);
+    card.appendChild(countSpan);
     grid.appendChild(card);
   }
 }
@@ -167,10 +178,17 @@ function renderQuestion(state) {
     const btn = document.createElement('button');
     btn.className = 'alternative';
     btn.dataset.id = alt.id;
-    btn.innerHTML = `
-      <span class="alternative__letter">${letraVisible}</span>
-      <span class="alternative__text">${alt.texto}</span>
-    `;
+
+    const letterSpan = document.createElement('span');
+    letterSpan.className = 'alternative__letter';
+    letterSpan.textContent = letraVisible;
+
+    const textSpan = document.createElement('span');
+    textSpan.className = 'alternative__text';
+    textSpan.textContent = alt.texto;
+
+    btn.appendChild(letterSpan);
+    btn.appendChild(textSpan);
     btn.addEventListener('click', () => handleAnswer(alt, pregunta, state));
     container.appendChild(btn);
   });
