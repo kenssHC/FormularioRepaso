@@ -1,0 +1,117 @@
+### **HTML (HyperText Markup Language)**
+
+Lenguaje de marcado usado para **estructurar** el contenido de una página web. Define elementos como **títulos, párrafos, imágenes, enlaces, listas y formularios** mediante etiquetas (tags).
+
+**Función del HTML**
+
+Cumple la función de ser el **“esqueleto”** de una web: organiza la información y le da **significado y estructura** para que el navegador la muestre correctamente. Normalmente se complementa con **CSS** (diseño/estilos) y **JavaScript** (interactividad).
+
+### **Accesibilidad web (A11y)**
+
+Práctica de diseñar y programar sitios/aplicaciones para que puedan ser **usados por todas las personas**, incluyendo quienes tienen **discapacidad visual, auditiva, motora o cognitiva**, y también en contextos como poca luz, sin mouse o con mala conexión.
+
+**Función de la accesibilidad**
+
+Asegura que el contenido sea **perceptible, operable, comprensible y robusto**: se pueda navegar con **teclado**, entender con **lectores de pantalla**, tener **buen contraste**, textos alternativos, formularios claros y una estructura semántica correcta.
+
+(Imagen 1)
+
+**Mala práctica en HTML:**
+
+Usar demasiados `<div>` para estructurar una página en lugar de etiquetas semánticas.
+
+**Buena práctica:**
+
+Utilizar etiquetas semánticas (`header`, `nav`, `section`, `article`, `footer`) para mejorar **la estructura, accesibilidad y mantenimiento del código**.
+
+**BEM (Block Element Modifier)**
+
+Metodología para organizar y nombrar clases en CSS que divide los componentes en **bloques, elementos y modificadores**, facilitando la **reutilización, mantenimiento y escalabilidad de los estilos**.
+
+(Imagen 2)
+
+**Buenas prácticas HTML:**
+
+1. No usar **CSS inline**, usar **clases y archivos CSS**.
+2. No mezclar **HTML con JavaScript dentro de atributos**.
+3. Usar enlaces con **rutas reales** (`href="/pagina"`).
+
+**Beneficios:**
+
+- Código más **limpio**
+- Más **mantenible**
+- Mejor **accesibilidad**
+- Mejor **SEO**
+
+(Imagen 3)
+
+### Buenas prácticas HTML
+
+**1. Inputs accesibles**
+
+Siempre usar `label` conectado al `input`.
+
+**2. Botones con iconos**
+
+Si un botón solo tiene icono, usar `aria-label`.
+
+**3. Jerarquía de títulos**
+
+No saltar niveles de encabezados (`h1 → h2 → h3`).
+
+### CSS (Cascading Style Sheets)
+
+**CSS** es un lenguaje de estilos que se utiliza para **definir la apariencia y el diseño** de una página web. Permite aplicar estilos como **colores, tamaños, fuentes, espacios, alineaciones y diseño visual** a los elementos definidos en HTML.
+
+### Función del CSS
+
+La función del CSS es **dar estilo y presentación al contenido estructurado con HTML**, separando la **estructura (HTML)** del **diseño visual**, lo que facilita la organización, mantenimiento y reutilización de los estilos en una página web.
+
+(Imagen 4)
+
+Buenas prácticas en CSS
+
+1. Evitar !important
+Rompe la jerarquía natural de CSS y dificulta el mantenimiento.
+2. No usar CSS inline
+Los estilos deben ir en archivos CSS, no dentro del HTML.
+3. Usar clases CSS
+Permiten reutilizar estilos y mantener el código organizado.
+
+(Imagen 5)
+
+### Buenas prácticas CSS
+
+1. Nombrar clases por **significado**, no por apariencia.
+
+2. Evitar **selectores largos y muy específicos**.
+
+3. Evitar **repetición de valores**, usar **variables CSS**.
+
+**Preprocesador CSS:**
+
+Herramienta que añade funcionalidades avanzadas a CSS (variables, anidamiento, reutilización de código) y luego **se convierte en CSS estándar para que el navegador lo interprete**. (SASS)
+
+**JavaScript**
+
+Es un **lenguaje de programación** que se utiliza principalmente para **agregar interactividad y comportamiento dinámico a las páginas web**.
+
+(Imagen 6)
+
+### Buenas prácticas en JavaScript
+
+1. Evitar `var`, usar **`const` y `let`**.
+
+2. Usar **nombres descriptivos** en variables y funciones.
+
+3. Usar **camelCase** como convención de nombres.
+
+(Imagen 7)
+
+**1. Escribir tests**
+
+Permiten verificar automáticamente que el código funciona.
+
+**2. Usar funciones puras**
+
+Funciones que siempre devuelven el mismo resultado para los mismos datos y no modifican el estado externo.

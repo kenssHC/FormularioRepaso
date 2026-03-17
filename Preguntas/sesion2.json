@@ -1,255 +1,753 @@
 {
-  "titulo": "Repaso de buenas prácticas en HTML, CSS, JS y accesibilidad",
-  "descripcion": "Banco de preguntas de opción múltiple basado en todo lo conversado en este chat.",
+  "titulo": "Repaso: Buenas prácticas en HTML, CSS y JavaScript",
+  "descripcion": "Preguntas de opción múltiple basadas en el contenido de la Sesión 2: HTML semántico, accesibilidad, CSS organizado y buenas prácticas en JavaScript.",
   "preguntas": [
     {
       "id": 1,
-      "pregunta": "¿Qué es HTML?",
+      "pregunta": "¿Cuál de las siguientes opciones describe correctamente qué es HTML?",
       "alternativas": [
-        { "id": "A", "texto": "Un lenguaje de programación para dar interactividad a una web.", "esCorrecta": false, "retroalimentacion": "Incorrecto. En este chat se explicó que la interactividad normalmente la aporta JavaScript, no HTML." },
-        { "id": "B", "texto": "Un lenguaje de marcado que estructura el contenido de una página web.", "esCorrecta": true, "retroalimentacion": "Correcto. Se definió HTML como un lenguaje de marcado que organiza títulos, párrafos, imágenes, enlaces, listas y formularios." },
-        { "id": "C", "texto": "Un framework para aplicar estilos visuales a componentes.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los estilos visuales se relacionan con CSS; HTML se encarga de la estructura." },
-        { "id": "D", "texto": "Una base de datos para almacenar contenido web.", "esCorrecta": false, "retroalimentacion": "Incorrecto. HTML no almacena datos; describe la estructura del contenido que ve el navegador." }
+        {
+          "id": "A",
+          "texto": "Un lenguaje de estilos que define colores, tipografías y el diseño visual de una página web.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Eso describe a CSS (Cascading Style Sheets). HTML es un lenguaje de marcado, no de estilos; su propósito es estructurar el contenido mediante etiquetas como <h1>, <p>, <img> o <form>, no definir su apariencia visual."
+        },
+        {
+          "id": "B",
+          "texto": "Un lenguaje de marcado que estructura el contenido de una página web mediante etiquetas como títulos, párrafos, imágenes y formularios.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se definió HTML (HyperText Markup Language) exactamente así: un lenguaje de marcado que organiza el contenido mediante etiquetas (tags). Define la estructura y el significado del contenido, no su apariencia ni su comportamiento dinámico."
+        },
+        {
+          "id": "C",
+          "texto": "Un lenguaje de programación que agrega interactividad y comportamiento dinámico a las páginas web.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Esa es la función de JavaScript. HTML no tiene lógica de programación ni permite ejecutar instrucciones condicionales o bucles; solo describe la estructura del contenido que ve el navegador."
+        },
+        {
+          "id": "D",
+          "texto": "Un protocolo de comunicación entre el navegador y el servidor web para transferir datos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Eso describe a HTTP/HTTPS, que son los protocolos de transferencia. HTML es el lenguaje en que está escrito el contenido que se transfiere, no el mecanismo de transferencia en sí."
+        }
       ]
     },
     {
       "id": 2,
-      "pregunta": "¿Qué función cumple HTML en una página web?",
+      "pregunta": "En la sesión se describió HTML como el \"esqueleto\" de la web. ¿Qué significa eso con exactitud?",
       "alternativas": [
-        { "id": "A", "texto": "Ser el esqueleto de la web, dando estructura y significado al contenido.", "esCorrecta": true, "retroalimentacion": "Correcto. En el chat se explicó que HTML es el 'esqueleto' de la web y que organiza la información para que el navegador la interprete." },
-        { "id": "B", "texto": "Controlar la lógica del negocio y las peticiones al servidor.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa función no corresponde a HTML; HTML no maneja lógica de negocio." },
-        { "id": "C", "texto": "Aplicar colores, tamaños y animaciones complejas.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso corresponde principalmente a CSS, no a HTML." },
-        { "id": "D", "texto": "Validar automáticamente toda la seguridad del sitio.", "esCorrecta": false, "retroalimentacion": "Incorrecto. HTML puede ayudar con estructura y algunos atributos, pero no se encarga de toda la seguridad." }
+        {
+          "id": "A",
+          "texto": "Que HTML define los colores y fuentes que el usuario ve, mientras que CSS aporta la estructura lógica.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Está invertido. HTML da la estructura (el esqueleto) y CSS se encarga de la apariencia visual (los estilos). Si HTML fuera la \"piel\", no podría existir una base semántica sobre la que montar el contenido."
+        },
+        {
+          "id": "B",
+          "texto": "Que HTML es un archivo binario que el navegador convierte en una representación visual interna antes de renderizar.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. HTML es un archivo de texto plano con etiquetas legibles. El navegador lo parsea para construir el DOM (Document Object Model), que es la representación interna, pero eso no es lo que se quiere decir con \"esqueleto\"."
+        },
+        {
+          "id": "C",
+          "texto": "Que HTML organiza la información y le da significado y estructura para que el navegador la muestre correctamente, complementándose con CSS y JavaScript.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que HTML es el \"esqueleto\" porque organiza el contenido y le da estructura semántica. Al igual que un esqueleto sostiene el cuerpo, HTML sostiene la página. Luego CSS añade el diseño visual y JavaScript la interactividad."
+        },
+        {
+          "id": "D",
+          "texto": "Que HTML ejecuta la lógica del servidor y entrega al navegador los datos ya procesados y listos para mostrar.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. HTML es un lenguaje del lado del cliente (frontend); no ejecuta lógica de servidor. Esa tarea la realizan lenguajes como Python, Node.js, PHP o Java en el backend."
+        }
       ]
     },
     {
       "id": 3,
-      "pregunta": "¿Qué es la accesibilidad web?",
+      "pregunta": "¿Cuál es la definición más completa de accesibilidad web (A11y) según lo visto en la sesión?",
       "alternativas": [
-        { "id": "A", "texto": "La práctica de diseñar y programar sitios para que puedan ser usados por todas las personas, incluidas aquellas con discapacidad.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la definición dada en el chat para accesibilidad web." },
-        { "id": "B", "texto": "Una técnica para que una página cargue más rápido usando menos imágenes.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El rendimiento puede influir en la experiencia, pero no define la accesibilidad." },
-        { "id": "C", "texto": "Un conjunto de estilos visuales para hacer páginas minimalistas.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La accesibilidad no se limita al diseño visual, sino al uso universal del sitio." },
-        { "id": "D", "texto": "Una librería de JavaScript para formularios.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La accesibilidad no es una librería, sino un enfoque de diseño y desarrollo." }
+        {
+          "id": "A",
+          "texto": "La práctica de optimizar el rendimiento de una web para que cargue en menos de 2 segundos en conexiones lentas.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Eso es rendimiento web (performance), no accesibilidad. Aunque ambas mejoran la experiencia del usuario, son conceptos distintos. La accesibilidad se enfoca en que el contenido sea usable por personas con discapacidades o en contextos difíciles, no en velocidad de carga."
+        },
+        {
+          "id": "B",
+          "texto": "El conjunto de técnicas para que una web sea compatible con todos los navegadores modernos, incluyendo Chrome, Firefox y Safari.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Eso es compatibilidad entre navegadores (cross-browser). La accesibilidad va más allá: se trata de diseñar para personas con discapacidad visual, auditiva, motora o cognitiva, y también para contextos como poca luz, sin mouse o con mala conexión."
+        },
+        {
+          "id": "C",
+          "texto": "La práctica de diseñar y programar sitios para que puedan ser usados por todas las personas, incluyendo quienes tienen discapacidades visuales, auditivas, motoras o cognitivas.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se definió la accesibilidad web (A11y) exactamente así: incluye a personas con discapacidades, pero también contempla contextos difíciles como poca luz, uso sin mouse o conexión lenta. El objetivo es que nadie quede excluido del contenido."
+        },
+        {
+          "id": "D",
+          "texto": "El uso sistemático de colores de alto contraste y fuentes grandes en toda la interfaz para facilitar la lectura.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El contraste y el tamaño de fuente son aspectos de accesibilidad, pero no la definen completamente. La accesibilidad también incluye navegación por teclado, lectores de pantalla, textos alternativos en imágenes, formularios con labels, jerarquía semántica y mucho más."
+        }
       ]
     },
     {
       "id": 4,
-      "pregunta": "Según lo conversado, ¿qué asegura la accesibilidad en una web?",
+      "pregunta": "Según la sesión, ¿cuáles son los cuatro principios que la accesibilidad web debe garantizar?",
       "alternativas": [
-        { "id": "A", "texto": "Que el contenido sea perceptible, operable, comprensible y robusto.", "esCorrecta": true, "retroalimentacion": "Correcto. En el chat se mencionaron exactamente esos cuatro principios." },
-        { "id": "B", "texto": "Que la web tenga siempre colores oscuros y tipografía grande.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esos pueden ser aspectos de diseño, pero no resumen la accesibilidad." },
-        { "id": "C", "texto": "Que la web funcione únicamente con mouse y animaciones.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Se indicó justamente que debe poder navegarse también con teclado." },
-        { "id": "D", "texto": "Que todo el contenido esté escondido hasta que el usuario haga clic.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso no mejora accesibilidad; podría incluso perjudicarla." }
+        {
+          "id": "A",
+          "texto": "Rápido, seguro, responsivo y moderno.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Esos son atributos de calidad web general, pero no son los cuatro principios de accesibilidad. Los principios correctos son los del estándar WCAG (Web Content Accessibility Guidelines): Perceptible, Operable, Comprensible y Robusto."
+        },
+        {
+          "id": "B",
+          "texto": "Perceptible, operable, comprensible y robusto.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se mencionaron exactamente estos cuatro principios, que corresponden al estándar WCAG. Perceptible: el contenido debe poder verse u oírse. Operable: debe poderse navegar con teclado. Comprensible: la información debe ser clara. Robusto: debe funcionar con distintas tecnologías de asistencia."
+        },
+        {
+          "id": "C",
+          "texto": "Legible, navegable, adaptable y estético.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Aunque legible y navegable se relacionan con accesibilidad, no son los cuatro principios oficiales. \"Estético\" en particular no forma parte de los criterios de accesibilidad web definidos por la WCAG."
+        },
+        {
+          "id": "D",
+          "texto": "Visible, funcional, eficiente y mantenible.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Esos términos pueden describir cualidades de software en general, pero no son los cuatro principios de accesibilidad web. El estándar de referencia es el WCAG con sus principios: Perceptible, Operable, Comprensible y Robusto."
+        }
       ]
     },
     {
       "id": 5,
-      "pregunta": "¿Por qué se considera mala práctica abusar de muchos div anidados para estructurar una página?",
+      "pregunta": "Observa el código de la imagen. ¿Cuál es el problema principal que muestra esta estructura HTML?",
+      "imagen": "Preguntas/sesion2/images/imagen1.png",
+      "imagenAlt": "Código HTML con exceso de divs anidados dentro de un header",
       "alternativas": [
-        { "id": "A", "texto": "Porque produce una 'div soup', reduce semántica y dificulta mantenimiento y accesibilidad.", "esCorrecta": true, "retroalimentacion": "Correcto. Así se explicó en el chat: demasiados divs vuelven el código menos legible, menos semántico y menos accesible." },
-        { "id": "B", "texto": "Porque el navegador no puede renderizar más de tres div seguidos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El problema no es un límite técnico del navegador, sino de legibilidad, semántica y mantenimiento." },
-        { "id": "C", "texto": "Porque usar div está prohibido en HTML5.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los div sí se pueden usar; lo incorrecto es abusar de ellos cuando hay etiquetas semánticas más apropiadas." },
-        { "id": "D", "texto": "Porque los div solo sirven para formularios.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los div son contenedores genéricos y pueden usarse en muchos casos." }
+        {
+          "id": "A",
+          "texto": "El código usa etiquetas semánticas donde debería usar divs, lo que genera conflictos con los estilos CSS.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Está al revés: el problema del código mostrado es precisamente el exceso de divs genéricos donde deberían usarse etiquetas semánticas como <header>, <nav> o <section>. Las etiquetas semánticas no generan conflictos de estilos; al contrario, mejoran la organización."
+        },
+        {
+          "id": "B",
+          "texto": "El código tiene demasiados divs anidados en lugar de etiquetas semánticas, generando una estructura difícil de leer, mantener y entender para lectores de pantalla.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. Este patrón se llama \"div soup\" (sopa de divs). El problema es que los divs no tienen significado semántico: el navegador y los lectores de pantalla no entienden si ese bloque es un menú, un artículo o un pie de página. Usar etiquetas como <header>, <nav>, <section> o <article> mejora la accesibilidad, el SEO y la mantenibilidad del código."
+        },
+        {
+          "id": "C",
+          "texto": "El código omite el atributo class en los divs internos, lo cual impide que CSS pueda aplicarles estilos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. CSS puede seleccionar elementos por tipo (div), por atributo (id) o por clase. La ausencia de class en algunos divs no impide aplicar estilos. El problema real del código mostrado es el exceso de divs anidados sin semántica, no la falta de clases."
+        },
+        {
+          "id": "D",
+          "texto": "El código usa id=\"header\" en un div cuando debería usar id=\"main\" para que el navegador reconozca el área principal.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El nombre del id no define la semántica del elemento para el navegador ni para los lectores de pantalla; eso lo hace la etiqueta HTML. Tener un div con id=\"header\" es distinto a usar la etiqueta <header>, que sí comunica semántica real."
+        }
       ]
     },
     {
       "id": 6,
-      "pregunta": "¿Cuál de estas opciones representa una buena práctica semántica en HTML?",
+      "pregunta": "¿Cuáles son ejemplos de etiquetas semánticas en HTML que reemplazan correctamente el uso excesivo de divs?",
       "alternativas": [
-        { "id": "A", "texto": "Usar solo div para todo el sitio.", "esCorrecta": false, "retroalimentacion": "Incorrecto. En el chat se criticó precisamente esa práctica." },
-        { "id": "B", "texto": "Usar etiquetas como header, nav, section, article y footer según el contenido.", "esCorrecta": true, "retroalimentacion": "Correcto. Se explicó que estas etiquetas mejoran estructura, accesibilidad y SEO." },
-        { "id": "C", "texto": "Reemplazar todos los títulos por span con estilos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso elimina semántica y empeora la estructura del documento." },
-        { "id": "D", "texto": "Usar tablas para maquetar toda la página.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso no fue recomendado y no es una buena práctica moderna de estructura." }
+        {
+          "id": "A",
+          "texto": "span, br, hr y wbr.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Esas etiquetas existen en HTML pero no definen secciones semánticas de una página. <span> es un contenedor en línea sin significado propio, <br> inserta un salto de línea y <hr> es una línea horizontal. Ninguna reemplaza el uso de divs para estructurar secciones."
+        },
+        {
+          "id": "B",
+          "texto": "header, nav, section, article y footer.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que estas etiquetas semánticas dan significado real al contenido: <header> identifica el encabezado, <nav> la navegación, <section> una sección temática, <article> un contenido independiente y <footer> el pie. Usarlas mejora la estructura, la accesibilidad y el SEO frente al uso de divs genéricos."
+        },
+        {
+          "id": "C",
+          "texto": "div, template, slot y shadow.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. <div> es justamente el elemento genérico que se quiere reemplazar. <template>, <slot> y shadow son conceptos de Web Components, no etiquetas semánticas de estructuración de contenido. No transmiten significado sobre el rol del bloque en la página."
+        },
+        {
+          "id": "D",
+          "texto": "script, style, link y meta.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Esas etiquetas pertenecen al <head> del documento y sirven para cargar recursos o definir metadatos, no para estructurar el contenido visible de la página. No reemplazan el uso de divs en el <body>."
+        }
       ]
     },
     {
       "id": 7,
-      "pregunta": "¿Qué significa BEM en CSS?",
+      "pregunta": "La imagen muestra dos formas de aplicar estilos a un párrafo. ¿Por qué se considera mala práctica la opción marcada como MAL?",
+      "imagen": "Preguntas/sesion2/images/imagen2.png",
+      "imagenAlt": "Comparación entre CSS inline (MAL) y uso de clase CSS (BIEN)",
       "alternativas": [
-        { "id": "A", "texto": "Block Element Modifier.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la expansión indicada en el chat." },
-        { "id": "B", "texto": "Basic Element Method.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa expansión no corresponde a la metodología BEM." },
-        { "id": "C", "texto": "Browser Event Model.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso no tiene relación con la metodología de nombres en CSS." },
-        { "id": "D", "texto": "Block Event Module.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No fue la definición presentada en el chat." }
+        {
+          "id": "A",
+          "texto": "Porque mezcla la estructura HTML con la presentación visual directamente en el elemento, dificultando el mantenimiento y la reutilización de los estilos.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. El CSS inline (<p style=\"color: blue; font-size: 16px;\">) mezcla la estructura (HTML) con la presentación (CSS) en el mismo lugar. Esto significa que si quieres cambiar el color de todos los párrafos similares, debes editar cada elemento individualmente. La alternativa correcta es usar una clase como class=\"texto-destacado\" y definir los estilos en un archivo CSS, centralizando los cambios."
+        },
+        {
+          "id": "B",
+          "texto": "Porque el atributo style solo funciona en elementos de bloque como div y p, pero no en elementos en línea como span o a.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El atributo style funciona en prácticamente cualquier elemento HTML, tanto en bloque como en línea. El problema del CSS inline no es una limitación técnica de compatibilidad, sino una cuestión de organización y mantenimiento del código."
+        },
+        {
+          "id": "C",
+          "texto": "Porque el CSS inline tiene menor prioridad en la cascada que las clases externas, por lo que nunca llega a aplicarse.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Es al contrario: el CSS inline tiene muy alta especificidad en la cascada de CSS, incluso más que las clases. Por eso puede ser difícil de sobrescribir desde un archivo CSS externo, lo cual es otra razón más para evitarlo."
+        },
+        {
+          "id": "D",
+          "texto": "Porque los navegadores modernos ya no interpretan el atributo style en línea y lo ignoran por razones de seguridad.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los navegadores sí interpretan el atributo style. Aunque las políticas de seguridad CSP (Content Security Policy) pueden restringir ciertos estilos inline en producción, eso no es el motivo por el que se considera mala práctica en el contexto de la sesión."
+        }
       ]
     },
     {
       "id": 8,
-      "pregunta": "¿Para qué sirve la metodología BEM?",
+      "pregunta": "La imagen también muestra dos formas de escribir un enlace. ¿Por qué usar `href=\"javascript:void(0)\" onclick=\"ir()\"` es una mala práctica?",
+      "imagen": "Preguntas/sesion2/images/imagen2.png",
+      "imagenAlt": "Comparación entre enlace con javascript:void(0) (MAL) y href con ruta real (BIEN)",
       "alternativas": [
-        { "id": "A", "texto": "Para organizar y nombrar clases en CSS de manera clara, reutilizable y mantenible.", "esCorrecta": true, "retroalimentacion": "Correcto. Se explicó que BEM ayuda a evitar conflictos y a escalar los estilos." },
-        { "id": "B", "texto": "Para crear bases de datos dentro del navegador.", "esCorrecta": false, "retroalimentacion": "Incorrecto. BEM no tiene relación con bases de datos." },
-        { "id": "C", "texto": "Para sustituir completamente a HTML.", "esCorrecta": false, "retroalimentacion": "Incorrecto. BEM es una metodología de CSS, no un reemplazo de HTML." },
-        { "id": "D", "texto": "Para compilar JavaScript en segundo plano.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso no corresponde al propósito de BEM." }
+        {
+          "id": "A",
+          "texto": "Porque el evento onclick no funciona en dispositivos móviles y la página no responde al toque.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los eventos onclick sí funcionan en dispositivos móviles (se disparan con el toque). El problema real es de semántica y separación de responsabilidades: se mezcla HTML con JavaScript dentro del atributo href y onclick, lo que va en contra de las buenas prácticas."
+        },
+        {
+          "id": "B",
+          "texto": "Porque mezcla HTML con JavaScript dentro del atributo del elemento, pierde la semántica real del enlace y perjudica la accesibilidad y el SEO.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. Usar href=\"javascript:void(0)\" convierte un enlace en un botón falso sin URL real, lo que confunde a lectores de pantalla y motores de búsqueda. Además, mezcla la lógica JavaScript directamente en el HTML (onclick=\"ir()\"), rompiendo la separación de responsabilidades. La buena práctica es usar href=\"/pagina\" para rutas reales o un <button> si es una acción sin navegación."
+        },
+        {
+          "id": "C",
+          "texto": "Porque href es un atributo exclusivo de los botones <button> y su uso en etiquetas <a> genera un error en el navegador.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. href es un atributo propio de la etiqueta <a> (anchor), no de <button>. Los botones no tienen href. El problema aquí no es técnico sino de buenas prácticas: usar javascript:void(0) vacía la semántica del enlace."
+        },
+        {
+          "id": "D",
+          "texto": "Porque void(0) devuelve un error de sintaxis en navegadores basados en el motor V8 como Chrome.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. JavaScript:void(0) es una expresión válida que devuelve undefined y no genera ningún error de sintaxis. El problema es conceptual y de diseño: vaciar el href de un enlace rompe su propósito semántico y dificulta el mantenimiento."
+        }
       ]
     },
     {
       "id": 9,
-      "pregunta": "¿Por qué es mala práctica usar estilos inline en HTML?",
+      "pregunta": "Observa los ejemplos de la imagen. ¿Por qué la versión con `<label>` es la buena práctica para un campo de email?",
+      "imagen": "Preguntas/sesion2/images/imagen3.png",
+      "imagenAlt": "Comparación entre input sin label (MAL) y con label correctamente asociado (BIEN)",
       "alternativas": [
-        { "id": "A", "texto": "Porque mezcla estructura con estilos y dificulta mantenimiento y reutilización.", "esCorrecta": true, "retroalimentacion": "Correcto. Eso fue explicado varias veces en el chat al comparar estilo inline versus clases CSS." },
-        { "id": "B", "texto": "Porque el navegador no entiende el atributo style.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El navegador sí entiende style; el problema es de organización y mantenimiento." },
-        { "id": "C", "texto": "Porque solo funciona en Internet Explorer.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El atributo style funciona ampliamente; no es ese el problema." },
-        { "id": "D", "texto": "Porque CSS solo puede escribirse dentro de archivos JavaScript.", "esCorrecta": false, "retroalimentacion": "Incorrecto. CSS puede escribirse en archivos CSS, etiquetas style o inline, aunque no todas son igual de recomendables." }
+        {
+          "id": "A",
+          "texto": "Porque el `label` activa la validación automática del formato de email y evita que el usuario ingrese texto inválido.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El elemento <label> no realiza validación. La validación de formato en un input de tipo email la hace el atributo type=\"email\". El propósito del <label> es descriptivo y de accesibilidad, no de validación."
+        },
+        {
+          "id": "B",
+          "texto": "Porque el `label` conectado al input mejora la accesibilidad: los lectores de pantalla anuncian el campo, y hacer clic en la etiqueta también activa el foco en el input.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. Asociar un <label> al <input> mediante los atributos for e id tiene dos beneficios clave: los lectores de pantalla leen el label al enfocar el campo (mejorando la accesibilidad para personas con discapacidad visual), y al hacer clic en el texto del label también se activa el input (mejorando la usabilidad para todos los usuarios)."
+        },
+        {
+          "id": "C",
+          "texto": "Porque sin `label` el navegador deshabilita automáticamente el campo y no permite escribir texto en él.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Un input sin label funciona técnicamente igual: acepta texto, puede enviarse y el navegador no lo deshabilita. El problema es de accesibilidad y usabilidad, no de funcionalidad básica."
+        },
+        {
+          "id": "D",
+          "texto": "Porque el atributo `for` del label aplica automáticamente estilos CSS al input cuando está en foco.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El atributo for únicamente crea una asociación semántica entre el <label> y el <input> con el mismo id. Para aplicar estilos al input en foco se usa la pseudoclase CSS :focus, que es independiente del label."
+        }
       ]
     },
     {
       "id": 10,
-      "pregunta": "¿Qué práctica fue marcada como incorrecta para un enlace?",
+      "pregunta": "La imagen muestra un botón con solo un ícono de X sin texto visible. ¿Cuál es la buena práctica para hacerlo accesible?",
+      "imagen": "Preguntas/sesion2/images/imagen3.png",
+      "imagenAlt": "Comparación entre botón con solo ícono sin descripción (MAL) y con aria-label (BIEN)",
       "alternativas": [
-        { "id": "A", "texto": "<a href=\"/pagina\">Click</a>", "esCorrecta": false, "retroalimentacion": "Incorrecto. En el chat se indicó que esta es la forma correcta cuando el enlace apunta a una ruta real." },
-        { "id": "B", "texto": "<a href=\"#seccion\">Ir a sección</a>", "esCorrecta": false, "retroalimentacion": "Incorrecto. Aunque no se analizó específicamente aquí, esto no fue lo señalado como mala práctica principal." },
-        { "id": "C", "texto": "<a href=\"javascript:void(0)\" onclick=\"ir()\">Click</a>", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la opción mostrada como mala práctica porque mezcla HTML con JavaScript y afecta semántica y accesibilidad." },
-        { "id": "D", "texto": "<a href=\"https://ejemplo.com\">Sitio</a>", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un enlace con destino real es semánticamente válido." }
+        {
+          "id": "A",
+          "texto": "Agregar el atributo `title=\"Cerrar\"` al botón para que aparezca un tooltip al pasar el cursor por encima.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El atributo title no es confiable para accesibilidad: no todos los lectores de pantalla lo anuncian, y en dispositivos táctiles (donde no hay cursor) el tooltip no aparece. La solución recomendada en la sesión es aria-label, que es interpretado de forma consistente por tecnologías de asistencia."
+        },
+        {
+          "id": "B",
+          "texto": "Reemplazar el botón por un `<div>` con el ícono y añadir un evento onclick para manejar el clic.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Usar un <div> en lugar de un <button> elimina la semántica del botón: los lectores de pantalla no lo anuncian como interactivo, y no es accesible por teclado de forma nativa (no tiene foco con Tab). Los botones deben usarse para acciones, no divs."
+        },
+        {
+          "id": "C",
+          "texto": "Usar `aria-label=\"Cerrar\"` en el botón para que los lectores de pantalla describan su función al usuario.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. Cuando un botón solo tiene un ícono visual, carece de texto que los lectores de pantalla puedan leer. El atributo aria-label provee una etiqueta accesible que no es visible en pantalla pero sí es anunciada por tecnologías de asistencia, como se mostró en la sesión: <button aria-label=\"Cerrar\">✕</button>."
+        },
+        {
+          "id": "D",
+          "texto": "Agregar un `<span>` con el texto \"Cerrar\" dentro del botón y ocultarlo con `display:none` en CSS.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Un elemento con display:none queda completamente oculto también para los lectores de pantalla, por lo que no mejora la accesibilidad. Para ocultar visualmente pero mantener el texto accesible, se usaría una clase especial con posicionamiento fuera de pantalla (técnica visually-hidden), pero en este caso aria-label es la solución más directa y recomendada."
+        }
       ]
     },
     {
       "id": 11,
-      "pregunta": "¿Por qué es importante asociar un label a un input de email?",
+      "pregunta": "La imagen muestra dos jerarquías de encabezados. ¿Por qué la primera (h1 → h3 → h2) es una mala práctica?",
+      "imagen": "Preguntas/sesion2/images/imagen3.png",
+      "imagenAlt": "Comparación entre jerarquía de encabezados incorrecta con salto (MAL) y correcta (BIEN)",
       "alternativas": [
-        { "id": "A", "texto": "Porque permite que lectores de pantalla entiendan qué dato debe ingresar el usuario y mejora usabilidad.", "esCorrecta": true, "retroalimentacion": "Correcto. Eso se explicó cuando se comparó 'Email: input' con 'label for' e 'input id'." },
-        { "id": "B", "texto": "Porque sin label el input deja de aceptar texto.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El input sigue funcionando, pero pierde claridad y accesibilidad." },
-        { "id": "C", "texto": "Porque el label reemplaza la validación del formulario.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El label describe el campo; no reemplaza la validación." },
-        { "id": "D", "texto": "Porque el atributo for convierte el input en botón.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El atributo for solo enlaza la etiqueta con el control correspondiente." }
+        {
+          "id": "A",
+          "texto": "Porque h3 y h2 son etiquetas obsoletas en HTML5 y deberían reemplazarse por h1 en toda la página.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Las etiquetas h2, h3, h4, h5 y h6 están completamente vigentes en HTML5. No están obsoletas. El problema no es la etiqueta en sí, sino el orden en que se usan: saltar de h1 a h3 rompiendo la secuencia lógica."
+        },
+        {
+          "id": "B",
+          "texto": "Porque saltar de h1 directamente a h3 rompe la jerarquía lógica del documento, afectando la navegación de lectores de pantalla y la interpretación de motores de búsqueda.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. Los encabezados (h1–h6) deben usarse en orden jerárquico descendente: h1 para el título principal, h2 para secciones, h3 para subsecciones dentro de una sección, etc. Saltar niveles (h1 → h3) confunde a los lectores de pantalla, que usan los encabezados para navegar el documento, y a los motores de búsqueda que interpretan la estructura del contenido."
+        },
+        {
+          "id": "C",
+          "texto": "Porque los navegadores solo renderizan correctamente los encabezados si se usan en el orden inverso: h3, h2, h1.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los navegadores renderizan los encabezados en cualquier orden sin generar errores visuales graves. El problema es semántico y de accesibilidad, no de renderizado. Un h3 antes que h2 se mostrará visualmente, pero perderá su significado jerárquico en el documento."
+        },
+        {
+          "id": "D",
+          "texto": "Porque mezclar h2 y h3 en la misma página genera un conflicto de especificidad CSS que impide aplicar estilos a ambas etiquetas.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. No existe ningún conflicto de especificidad CSS al usar h2 y h3 juntos. Ambas son etiquetas distintas y pueden coexistir con sus propios estilos sin problema. La mala práctica mostrada en la imagen es de orden lógico y semántico, no de CSS."
+        }
       ]
     },
     {
       "id": 12,
-      "pregunta": "Si un botón solo muestra un ícono, ¿qué se recomendó hacer?",
+      "pregunta": "¿Qué es BEM y para qué sirve en el desarrollo frontend?",
       "alternativas": [
-        { "id": "A", "texto": "Agregar aria-label, por ejemplo aria-label=\"Cerrar\".", "esCorrecta": true, "retroalimentacion": "Correcto. En el chat se indicó que así el lector de pantalla entiende la función del botón." },
-        { "id": "B", "texto": "Cambiar el botón por un div sin texto.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso empeoraría semántica y accesibilidad." },
-        { "id": "C", "texto": "Ocultar completamente el botón con CSS.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ocultarlo no soluciona el problema de accesibilidad." },
-        { "id": "D", "texto": "Usar onclick directamente y quitar el texto visible.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El problema no se resuelve con onclick; sigue faltando una descripción accesible." }
+        {
+          "id": "A",
+          "texto": "Es un preprocesador CSS que añade variables y anidamiento al lenguaje, convirtiéndolos luego en CSS estándar.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Eso describe a SASS (o LESS), que son preprocesadores CSS. BEM es una metodología de nombrado de clases, no una herramienta que transforma código. Puede usarse junto a SASS, pero son conceptos distintos."
+        },
+        {
+          "id": "B",
+          "texto": "Es una metodología para organizar y nombrar clases en CSS dividiendo los componentes en Bloques, Elementos y Modificadores, facilitando la reutilización y el mantenimiento.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que BEM (Block Element Modifier) es una convención de nombres. Un Bloque es un componente independiente (ej: .card), un Elemento es una parte del bloque (ej: .card__title) y un Modificador representa una variante o estado (ej: .card--destacada). Esta estructura hace que el CSS sea más predecible y escalable."
+        },
+        {
+          "id": "C",
+          "texto": "Es una librería de JavaScript que genera automáticamente clases CSS únicas para evitar colisiones de nombres en proyectos grandes.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. BEM no es una librería de JavaScript ni genera clases automáticamente. Es una convención de nomenclatura escrita manualmente por el desarrollador. Las soluciones automáticas para evitar colisión de nombres (como CSS Modules o CSS-in-JS) son distintas de BEM."
+        },
+        {
+          "id": "D",
+          "texto": "Es un framework CSS completo, como Bootstrap o Tailwind, que provee componentes prediseñados listos para usar.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. BEM no es un framework ni incluye componentes prediseñados. Es una metodología de nomenclatura que el desarrollador aplica a sus propias clases. Puede usarse con cualquier tecnología o framework, incluyendo Bootstrap o Tailwind, pero es independiente de ellos."
+        }
       ]
     },
     {
       "id": 13,
-      "pregunta": "¿Cuál es la buena práctica respecto a la jerarquía de encabezados?",
+      "pregunta": "La imagen muestra un selector CSS con `!important`. ¿Por qué se recomienda evitar su uso?",
+      "imagen": "Preguntas/sesion2/images/imagen4.png",
+      "imagenAlt": "Código CSS con !important en un selector .fullCard y comparación de CSS inline vs clase CSS",
       "alternativas": [
-        { "id": "A", "texto": "Saltar libremente entre h1, h3 y h2 para que se vea más bonito.", "esCorrecta": false, "retroalimentacion": "Incorrecto. En el chat se indicó que saltar niveles rompe la estructura lógica del documento." },
-        { "id": "B", "texto": "Seguir una jerarquía lógica: h1, luego h2, luego h3 según subsecciones.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la recomendación mostrada en la imagen y explicada después." },
-        { "id": "C", "texto": "Usar siempre solo h1 en toda la página.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso tampoco crea una estructura adecuada para secciones y subsecciones." },
-        { "id": "D", "texto": "Usar p con font-size grande en lugar de h1, h2 y h3.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El tamaño visual no reemplaza la semántica de los encabezados." }
+        {
+          "id": "A",
+          "texto": "Porque `!important` solo funciona con propiedades de dimensión como width y height, no con colores, fuentes ni posicionamiento.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. !important funciona con cualquier propiedad CSS, no solo con dimensiones. Puede aplicarse a color, font-size, display, position, etc. El problema de !important no es su compatibilidad con propiedades, sino el daño que hace a la cascada natural de CSS."
+        },
+        {
+          "id": "B",
+          "texto": "Porque rompe la cascada natural de CSS: al forzar la máxima prioridad de una regla, se vuelve muy difícil sobrescribirla desde otros selectores, complicando el mantenimiento.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. La cascada de CSS determina qué estilo prevalece según especificidad y orden. Cuando se usa !important, se anula esa lógica y el valor se aplica sin importar la especificidad de otros selectores. Esto provoca que para sobrescribir ese valor desde otro lugar también haya que usar !important, creando un ciclo de escalada difícil de mantener."
+        },
+        {
+          "id": "C",
+          "texto": "Porque el navegador convierte automáticamente el valor con !important en una variable global que afecta a todos los elementos de la página.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. !important no crea variables globales ni afecta a todos los elementos. Solo eleva la prioridad de esa regla específica dentro del selector donde se declara. No tiene un alcance global automático."
+        },
+        {
+          "id": "D",
+          "texto": "Porque su uso está restringido a archivos CSS externos y no funciona cuando se escribe dentro de etiquetas <style> en el HTML.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. !important funciona tanto en archivos CSS externos como en etiquetas <style> dentro del HTML o incluso en estilos inline. No hay ninguna restricción de ubicación para su uso técnico, aunque su uso excesivo en cualquier contexto sigue siendo una mala práctica."
+        }
       ]
     },
     {
       "id": 14,
-      "pregunta": "¿Por qué se recomendó evitar !important en CSS?",
+      "pregunta": "La imagen muestra clases CSS con nombres como `.rojo`, `.grande` e `.izquierda` como mala práctica. ¿Por qué son problemáticos esos nombres?",
+      "imagen": "Preguntas/sesion2/images/imagen5.png",
+      "imagenAlt": "Comparación entre nombres de clase por apariencia (MAL) y por significado (BIEN)",
       "alternativas": [
-        { "id": "A", "texto": "Porque rompe la jerarquía natural de CSS y complica sobrescribir estilos.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la explicación dada al analizar 'width: 245px !important'." },
-        { "id": "B", "texto": "Porque !important está prohibido por CSS3.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No está prohibido; simplemente no se recomienda salvo casos excepcionales." },
-        { "id": "C", "texto": "Porque hace que el navegador ignore la regla.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ocurre lo contrario: le da prioridad alta a la regla." },
-        { "id": "D", "texto": "Porque solo funciona si se usa con JavaScript.", "esCorrecta": false, "retroalimentacion": "Incorrecto. !important es parte de CSS, no depende de JavaScript." }
+        {
+          "id": "A",
+          "texto": "Porque los navegadores no reconocen clases con nombres en español y solo procesan las escritas en inglés.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los navegadores procesan cualquier nombre de clase válido independientemente del idioma. La restricción no es de idioma sino de caracteres permitidos (letras, números, guiones y guiones bajos). El problema de .rojo o .grande no es el español, sino que describen apariencia en vez de significado."
+        },
+        {
+          "id": "B",
+          "texto": "Porque los nombres basados en apariencia pierden su significado cuando el diseño cambia: si .rojo ya no es rojo, el nombre se vuelve confuso o engañoso.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que nombrar clases por su apariencia visual (color, tamaño, posición) genera problemas de mantenimiento. Si el diseño cambia y .rojo pasa a ser naranja, el nombre ya no refleja la realidad. En cambio, un nombre semántico como .error sigue siendo válido sin importar el color que adopte en el futuro."
+        },
+        {
+          "id": "C",
+          "texto": "Porque los nombres cortos como .rojo tienen menor especificidad CSS que los nombres largos y por eso sus estilos no se aplican correctamente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La especificidad de una clase en CSS no depende de la longitud del nombre. Una clase .rojo tiene exactamente la misma especificidad que una clase .contenedor-principal. Ambas son clases simples (especificidad 0,1,0)."
+        },
+        {
+          "id": "D",
+          "texto": "Porque CSS no permite nombres de clase con menos de seis caracteres y los ignorará al renderizar.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. CSS no tiene ningún límite mínimo de caracteres para nombres de clase. Incluso una clase de una sola letra como .a es válida técnicamente. El problema es de legibilidad y mantenibilidad del código, no de una restricción del lenguaje."
+        }
       ]
     },
     {
       "id": 15,
-      "pregunta": "¿Cuál es una buena práctica para aplicar estilos a un elemento como una alerta?",
+      "pregunta": "La imagen muestra que varias clases repiten el color `#007bff`. ¿Qué solución propone la buena práctica?",
+      "imagen": "Preguntas/sesion2/images/imagen5.png",
+      "imagenAlt": "Código CSS con color repetido en varias clases (MAL) vs uso de variable CSS con :root (BIEN)",
       "alternativas": [
-        { "id": "A", "texto": "Usar style inline en cada div para fondo, padding y color.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa práctica fue marcada como mala porque mezcla estructura con estilos." },
-        { "id": "B", "texto": "Usar una clase, por ejemplo class=\"alerta\", y definir sus estilos en CSS.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la alternativa marcada como correcta en la imagen de CSS." },
-        { "id": "C", "texto": "Aplicar estilos solo desde JavaScript con setAttribute.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No fue la práctica recomendada para organización de estilos." },
-        { "id": "D", "texto": "Evitar totalmente las clases en HTML.", "esCorrecta": false, "retroalimentacion": "Incorrecto. En el chat se recomendó precisamente usar clases para separar HTML y CSS." }
+        {
+          "id": "A",
+          "texto": "Copiar el mismo valor hexadecimal en cada regla y guardar un archivo de referencia de colores fuera del proyecto.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Eso no resuelve el problema de raíz: si el color cambia, habría que actualizarlo manualmente en cada regla. Además, un archivo de referencia externo no está conectado al CSS y no automatiza nada."
+        },
+        {
+          "id": "B",
+          "texto": "Usar JavaScript para asignar el color dinámicamente a cada elemento al cargar la página.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Aunque JavaScript puede modificar estilos, no es la solución adecuada para definir colores de diseño reutilizables. Mezclar lógica de presentación en JavaScript va en contra de la separación de responsabilidades. CSS tiene su propia solución nativa: las variables CSS."
+        },
+        {
+          "id": "C",
+          "texto": "Definir `--color-primario: #007bff` en `:root` y usar `var(--color-primario)` en cada clase que lo necesite.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se mostró exactamente esa solución. Las variables CSS (custom properties) se declaran en :root para que estén disponibles globalmente. Luego cada clase usa var(--color-primario) en vez del valor directo. Si el color debe cambiar, se modifica en un único lugar (:root) y se actualiza en todo el proyecto automáticamente."
+        },
+        {
+          "id": "D",
+          "texto": "Usar `!important` en la primera regla que define el color para que se herede automáticamente en todos los elementos hijos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. !important no hace que un valor se herede automáticamente; solo eleva la prioridad de esa regla específica. Además, la herencia CSS depende de cada propiedad (algunas se heredan y otras no), y !important no cambia ese comportamiento. Esta solución empeoraría el mantenimiento, no lo mejoraría."
+        }
       ]
     },
     {
       "id": 16,
-      "pregunta": "¿Qué tipo de nombre de clase se recomendó usar en CSS?",
+      "pregunta": "La imagen muestra el problema de usar selectores muy largos como `header > nav > ul > li > a`. ¿Cuál es la alternativa correcta?",
+      "imagen": "Preguntas/sesion2/images/imagen5.png",
+      "imagenAlt": "Comparación entre selector CSS muy largo y específico (MAL) y uso de clase directa (BIEN)",
       "alternativas": [
-        { "id": "A", "texto": "Nombres basados solo en apariencia, como .rojo o .grande.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Se explicó que esos nombres pierden sentido si cambia el diseño." },
-        { "id": "B", "texto": "Nombres basados en función o significado, como .error o .titulo-seccion.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la práctica marcada como buena en la imagen." },
-        { "id": "C", "texto": "Nombres de una sola letra para escribir menos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso empeora legibilidad y mantenimiento." },
-        { "id": "D", "texto": "Nombres aleatorios generados manualmente sin relación con el contenido.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No ayudan a entender el propósito del estilo." }
+        {
+          "id": "A",
+          "texto": "Usar `!important` en el selector largo para que sus estilos siempre prevalezcan sobre otros.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Agregar !important a un selector largo no soluciona el problema de fragilidad: si cambia la estructura HTML, el selector deja de funcionar igualmente. Además, !important también fue señalado en la sesión como mala práctica por sí solo."
+        },
+        {
+          "id": "B",
+          "texto": "Reemplazar el selector largo por una clase semántica directa como `.nav-link { color: blue; }`.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se mostró exactamente esta solución: en vez de depender de una cadena de ancestros (header > nav > ul > li > a), se asigna una clase al elemento específico (.nav-link) y se le aplica el estilo. Así el CSS es independiente de la estructura HTML y no se rompe si se cambia el marcado."
+        },
+        {
+          "id": "C",
+          "texto": "Eliminar todos los selectores de tipo (a, p, h1) y usar únicamente IDs para seleccionar elementos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Usar IDs como selectores CSS genera alta especificidad, lo que también dificulta sobrescribir estilos. Los IDs deben ser únicos por página y su uso excesivo como selectores CSS crea los mismos problemas de rigidez que los selectores largos."
+        },
+        {
+          "id": "D",
+          "texto": "Convertir todos los selectores CSS a JavaScript para aplicarlos dinámicamente con classList.add().",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Mover toda la lógica de estilos a JavaScript viola la separación de responsabilidades. CSS debe manejar los estilos, JavaScript la interactividad. Esta práctica haría el código más complejo y difícil de mantener."
+        }
       ]
     },
     {
       "id": 17,
-      "pregunta": "¿Qué problema tienen selectores muy largos como header > nav > ul > li > a?",
+      "pregunta": "¿Qué es un preprocesador CSS como SASS y cuál es su función principal?",
       "alternativas": [
-        { "id": "A", "texto": "Dependen demasiado de la estructura HTML y son difíciles de sobrescribir.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la crítica principal presentada en el chat." },
-        { "id": "B", "texto": "Son obligatorios en CSS moderno.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No son obligatorios; de hecho se recomendó evitarlos." },
-        { "id": "C", "texto": "Mejoran automáticamente el rendimiento del navegador.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ese no fue el beneficio señalado, y aquí se habló más de mantenibilidad." },
-        { "id": "D", "texto": "Impiden completamente usar clases CSS.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No impiden usar clases; simplemente hacen el CSS más rígido." }
+        {
+          "id": "A",
+          "texto": "Un framework de JavaScript que genera hojas de estilos automáticamente al renderizar componentes de la interfaz.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Eso describe a soluciones CSS-in-JS como styled-components o Emotion. SASS es un preprocesador CSS: actúa antes del navegador, añade funcionalidades al CSS puro y luego lo convierte en CSS estándar."
+        },
+        {
+          "id": "B",
+          "texto": "Un plugin del navegador que optimiza y comprime los archivos CSS en tiempo real mientras se carga la página.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. SASS no es un plugin del navegador ni actúa durante la carga de la página. Opera durante el desarrollo o el proceso de build: transforma el código SASS en CSS estándar antes de que el navegador lo reciba."
+        },
+        {
+          "id": "C",
+          "texto": "Una herramienta que añade funcionalidades avanzadas a CSS como variables nativas, anidamiento y reutilización de código, y luego las convierte en CSS estándar para el navegador.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que SASS es un preprocesador CSS que extiende el lenguaje añadiendo características como variables, anidamiento de selectores, mixins (bloques reutilizables) e importaciones. Luego compila esas características en CSS puro que cualquier navegador puede interpretar."
+        },
+        {
+          "id": "D",
+          "texto": "Una extensión de HTML que permite escribir estilos directamente dentro de los componentes sin usar archivos CSS separados.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. SASS no es una extensión de HTML. Es un superconjunto de CSS que se escribe en archivos .scss o .sass y se compila a CSS. No elimina la necesidad de archivos de estilos separados; al contrario, fomenta su organización modular."
+        }
       ]
     },
     {
       "id": 18,
-      "pregunta": "¿Qué se recomendó para evitar repetir muchas veces un mismo color en CSS?",
+      "pregunta": "La imagen muestra dos grupos de declaraciones en JavaScript. ¿Por qué se recomienda reemplazar `var` por `const` y `let`?",
+      "imagen": "Preguntas/sesion2/images/imagen6.png",
+      "imagenAlt": "Comparación entre uso de var (MAL) y const/let (BIEN) en JavaScript",
       "alternativas": [
-        { "id": "A", "texto": "Copiar el mismo hexadecimal en cada regla para mantener consistencia manual.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa repetición fue marcada como mala práctica." },
-        { "id": "B", "texto": "Usar variables CSS, por ejemplo --color-primario en :root.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la solución propuesta para evitar repetición y facilitar cambios." },
-        { "id": "C", "texto": "Poner todos los colores dentro del HTML con style.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso iría contra la separación entre HTML y CSS." },
-        { "id": "D", "texto": "Cambiar el color solo desde JavaScript en tiempo real.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No fue la práctica recomendada para mantener consistencia de estilos." }
+        {
+          "id": "A",
+          "texto": "Porque `var` es una palabra reservada en JavaScript moderno y genera un error de sintaxis en versiones ES6 en adelante.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `var` sigue siendo una palabra clave válida en JavaScript moderno y no genera errores de sintaxis. Simplemente se desaconseja su uso porque tiene un comportamiento menos predecible que const y let."
+        },
+        {
+          "id": "B",
+          "texto": "Porque `const` y `let` tienen alcance de bloque, son más predecibles y evitan los errores difíciles de detectar que produce `var` con su alcance de función y su comportamiento de hoisting.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. `var` tiene alcance de función (no de bloque), lo que puede causar que una variable sea accesible fuera del bloque donde se declaró. Además, `var` sufre hoisting: la declaración sube al inicio del contexto aunque la asignación no, lo que puede generar comportamientos inesperados. `const` y `let` (ES6+) tienen alcance de bloque y son más predecibles."
+        },
+        {
+          "id": "C",
+          "texto": "Porque `const` y `let` son más rápidos de ejecutar que `var` en todos los motores de JavaScript modernos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La diferencia de rendimiento entre var, const y let es insignificante en la práctica. La razón para preferir const y let es la claridad semántica y la predictibilidad del alcance, no el rendimiento."
+        },
+        {
+          "id": "D",
+          "texto": "Porque `var` solo puede declararse dentro de funciones y no está permitido en el ámbito global del archivo.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `var` puede declararse tanto dentro de funciones como en el ámbito global. De hecho, uno de sus problemas es precisamente que las variables var declaradas en bloques (if, for) escapan al ámbito de la función o global, lo que puede causar efectos no deseados."
+        }
       ]
     },
     {
       "id": 19,
-      "pregunta": "¿Qué se recomendó en JavaScript respecto a la declaración de variables?",
+      "pregunta": "La imagen muestra nombres de variables y funciones como `d`, `c` y `a` vs `fechaActual`, `calcularDoble` y `numero`. ¿Por qué el segundo grupo es mejor práctica?",
+      "imagen": "Preguntas/sesion2/images/imagen6.png",
+      "imagenAlt": "Comparación entre nombres poco descriptivos (MAL) y nombres descriptivos en camelCase (BIEN)",
       "alternativas": [
-        { "id": "A", "texto": "Usar var por defecto en todo el proyecto.", "esCorrecta": false, "retroalimentacion": "Incorrecto. En el chat se indicó que var es una forma antigua y se recomienda evitarla." },
-        { "id": "B", "texto": "Usar const cuando el valor no cambia y let cuando puede cambiar.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la buena práctica destacada en la explicación sobre JS." },
-        { "id": "C", "texto": "Usar solo var y redeclarar si es necesario.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Justamente se explicó que var puede generar problemas por su alcance y redeclaración." },
-        { "id": "D", "texto": "No declarar variables, solo asignarlas directamente.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso no es una buena práctica y puede crear errores o variables globales accidentales." }
+        {
+          "id": "A",
+          "texto": "Porque los nombres largos reciben mayor prioridad en la pila de ejecución del motor de JavaScript.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El motor de JavaScript ejecuta las funciones y variables según la pila de llamadas (call stack) y el orden lógico del código, no según el largo del nombre. Nombres largos o cortos no afectan la prioridad de ejecución."
+        },
+        {
+          "id": "B",
+          "texto": "Porque los nombres descriptivos comunican el propósito del código: cualquier persona (o tú mismo en el futuro) puede entender qué hace la función o qué contiene la variable sin necesidad de leer toda la lógica.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se destacó que nombres como `d`, `c` o `a` son crípticos: obligan a analizar el código completo para entender qué representan. En cambio, `fechaActual`, `calcularDoble` y `numero` son autoexplicativos. Esto es clave para el mantenimiento, la colaboración en equipo y la legibilidad del código a largo plazo."
+        },
+        {
+          "id": "C",
+          "texto": "Porque el uso de camelCase mejora la velocidad de interpretación del motor de JavaScript al reducir la ambigüedad de los tokens.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El motor de JavaScript no procesa camelCase más rápido que otros formatos de nombre. La velocidad de interpretación depende de factores de optimización mucho más complejos. camelCase es una convención de legibilidad para desarrolladores, no una optimización de rendimiento."
+        },
+        {
+          "id": "D",
+          "texto": "Porque los nombres con más de cinco caracteres son requeridos por el estándar ECMAScript para que las funciones sean exportables entre módulos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. No existe ninguna regla en ECMAScript sobre la longitud mínima de nombres para exportar o importar funciones. La exportación de módulos (export/import) funciona con cualquier nombre de función o variable, sin importar su longitud."
+        }
       ]
     },
     {
       "id": 20,
-      "pregunta": "¿Cuál de estas opciones refleja una mejor práctica de nombres en JavaScript?",
+      "pregunta": "La imagen muestra un test con `describe`, `test` y `expect`. ¿Para qué sirven los tests automáticos en el desarrollo de software?",
+      "imagen": "Preguntas/sesion2/images/imagen7.png",
+      "imagenAlt": "Código de test unitario con describe, test y expect verificando la función suma",
       "alternativas": [
-        { "id": "A", "texto": "const d = new Date(); function c(a){ return a * 2; }", "esCorrecta": false, "retroalimentacion": "Incorrecto. En el chat se criticaron nombres como d, c o a por ser poco descriptivos." },
-        { "id": "B", "texto": "const fechaActual = new Date(); function calcularDoble(numero){ return numero * 2; }", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la versión considerada mejor: nombres claros y en camelCase." },
-        { "id": "C", "texto": "const x = [1,2,3]; function z(y){ return y; }", "esCorrecta": false, "retroalimentacion": "Incorrecto. Nombres genéricos como x, z o y dificultan entender el código." },
-        { "id": "D", "texto": "const variable123 = 5; function f1(n){ return n + 1; }", "esCorrecta": false, "retroalimentacion": "Incorrecto. Aunque podría funcionar, sigue siendo menos claro que usar nombres con significado." }
+        {
+          "id": "A",
+          "texto": "Para reemplazar el código de producción con versiones de prueba durante el despliegue en el servidor.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los tests no reemplazan el código de producción; se ejecutan por separado para validar su comportamiento. El código de producción y los tests coexisten: los tests verifican que la lógica funciona correctamente antes o después de desplegar."
+        },
+        {
+          "id": "B",
+          "texto": "Para verificar automáticamente que una función devuelve el resultado esperado, detectando errores cuando el código cambia o se agrega nueva funcionalidad.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que los tests permiten verificar automáticamente que el código funciona como se espera. En el ejemplo mostrado, `expect(suma(2, 3)).toBe(5)` comprueba que la función suma es correcta. Si alguien modifica la función accidentalmente, el test falla y alerta al equipo inmediatamente."
+        },
+        {
+          "id": "C",
+          "texto": "Para comprimir y minificar el código JavaScript antes de enviarlo al navegador, reduciendo el peso del archivo.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La compresión y minificación son tareas de herramientas de build como Webpack, Rollup o Vite. Los tests son una práctica de aseguramiento de calidad (QA) que verifica el comportamiento del código, no su tamaño ni su formato."
+        },
+        {
+          "id": "D",
+          "texto": "Para generar automáticamente documentación técnica a partir de los nombres de las funciones y sus parámetros.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La generación automática de documentación es tarea de herramientas como JSDoc o TypeDoc. Los tests tienen otro propósito: verificar que las funciones producen los resultados esperados, no documentar su interfaz."
+        }
       ]
     },
     {
       "id": 21,
-      "pregunta": "¿Qué convención de nombres se señaló como mejor en JavaScript?",
+      "pregunta": "La imagen muestra una clase `Calculadora` con métodos `sumar`, `restar` y `multiplicar`. ¿Qué propiedad hace que sean funciones puras?",
+      "imagen": "Preguntas/sesion2/images/imagen7.png",
+      "imagenAlt": "Clase Calculadora con métodos puros que reciben parámetros y devuelven el resultado sin efectos secundarios",
       "alternativas": [
-        { "id": "A", "texto": "snake_case para todo en frontend.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Se mencionó que en JavaScript la convención más usada es camelCase." },
-        { "id": "B", "texto": "kebab-case en nombres de variables y funciones JS.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Kebab-case no se usa en variables JS porque el guion tiene otro significado." },
-        { "id": "C", "texto": "camelCase, por ejemplo fechaActual o calcularDoble.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la convención destacada como mejor práctica en el chat." },
-        { "id": "D", "texto": "Solo mayúsculas para funciones.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa no fue la convención recomendada para funciones normales." }
+        {
+          "id": "A",
+          "texto": "Que usan la sintaxis de clase (class), lo que garantiza automáticamente que no pueden modificar variables externas a la clase.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El uso de la sintaxis class no garantiza pureza. Un método dentro de una clase puede perfectamente modificar propiedades del objeto (this.propiedad), acceder a variables globales o producir efectos secundarios. La pureza depende de la implementación del método, no de la sintaxis."
+        },
+        {
+          "id": "B",
+          "texto": "Que reciben parámetros de entrada y siempre devuelven el mismo resultado para los mismos datos, sin modificar ningún estado externo ni producir efectos secundarios.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que una función pura tiene dos propiedades esenciales: determinismo (mismo input = mismo output siempre) y ausencia de efectos secundarios (no modifica variables externas, no hace llamadas a APIs, no escribe en el DOM). Los métodos de la Calculadora cumplen ambas: `sumar(2, 3)` siempre devuelve 5 y no modifica nada fuera de la función."
+        },
+        {
+          "id": "C",
+          "texto": "Que están escritos en camelCase, lo cual es el estándar definido por ECMAScript para identificar funciones puras.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El camelCase es una convención de nombres recomendada en JavaScript, pero no define ni garantiza la pureza de una función. Una función en camelCase puede tener efectos secundarios y una función con cualquier otro formato de nombre puede ser pura."
+        },
+        {
+          "id": "D",
+          "texto": "Que se invocan a través de una instancia (`new Calculadora()`), lo que aísla su estado del resto del programa.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Crear una instancia con `new` no garantiza pureza. Si los métodos de la instancia accedieran a `this.total` (una propiedad interna) y la modificaran en cada operación, dejarían de ser puros. La pureza está en la lógica del método: solo debe depender de sus argumentos y devolver un valor sin alterar nada externo."
+        }
       ]
     },
     {
       "id": 22,
-      "pregunta": "¿Para qué sirven los tests automáticos como los ejemplos con describe, test y expect?",
+      "pregunta": "¿Por qué se recomienda usar funciones puras como buena práctica en JavaScript?",
       "alternativas": [
-        { "id": "A", "texto": "Para verificar automáticamente que una función funciona como se espera.", "esCorrecta": true, "retroalimentacion": "Correcto. En el chat se explicó que los tests ayudan a detectar errores y mantener confianza al cambiar el código." },
-        { "id": "B", "texto": "Para reemplazar completamente el código de producción.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los tests validan el comportamiento, no reemplazan la lógica de la aplicación." },
-        { "id": "C", "texto": "Para que el navegador ejecute CSS más rápido.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los tests no tienen esa función." },
-        { "id": "D", "texto": "Para convertir funciones en clases automáticamente.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Testing no convierte estructuras de código." }
+        {
+          "id": "A",
+          "texto": "Porque son más rápidas de ejecutar que las funciones impuras en todos los motores de JavaScript.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Las funciones puras no tienen una ventaja de velocidad de ejecución garantizada sobre las impuras. Sus beneficios son de diseño y calidad de código: predecibilidad, facilidad de prueba y mantenimiento."
+        },
+        {
+          "id": "B",
+          "texto": "Porque son predecibles, fáciles de testear de manera aislada, y su comportamiento no depende de ningún estado externo que pueda variar.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se concluyó que las funciones puras son buena práctica porque: 1) Son predecibles: siempre devuelven el mismo resultado para los mismos datos. 2) Son fáciles de testear: no requieren configurar estado externo para probarlas. 3) Son más mantenibles: al no tener efectos secundarios, no generan bugs difíciles de rastrear."
+        },
+        {
+          "id": "C",
+          "texto": "Porque reemplazan por completo la necesidad de escribir tests: al ser deterministas, el código se asume correcto.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Las funciones puras facilitan el testing, pero no lo eliminan. Todavía es necesario escribir tests para verificar que la lógica es correcta. De hecho, una de las ventajas de las funciones puras es precisamente que son más fáciles de testear, no que hacen innecesario hacerlo."
+        },
+        {
+          "id": "D",
+          "texto": "Porque solo las funciones puras pueden ser importadas y exportadas entre módulos de JavaScript.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Cualquier función, pura o impura, puede exportarse e importarse usando los módulos de JavaScript (export/import). La pureza no es un requisito para la modularidad del código."
+        }
       ]
     },
     {
       "id": 23,
-      "pregunta": "En el ejemplo de test de suma, ¿qué caso adicional se probó además de sumar dos números positivos?",
+      "pregunta": "¿Cuál de las siguientes opciones describe correctamente qué es CSS y cuál es su función?",
       "alternativas": [
-        { "id": "A", "texto": "La concatenación de strings.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ese caso no apareció en el ejemplo." },
-        { "id": "B", "texto": "La suma de números negativos.", "esCorrecta": true, "retroalimentacion": "Correcto. El segundo test comprobaba que suma(-2, -3) daba -5." },
-        { "id": "C", "texto": "La división entre cero.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No fue uno de los casos mostrados." },
-        { "id": "D", "texto": "La lectura de fechas con Date.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso apareció en ejemplos de nombres de variables, no en los tests." }
+        {
+          "id": "A",
+          "texto": "CSS es un lenguaje de programación que controla la lógica de negocio y las peticiones al servidor desde el navegador.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. CSS no es un lenguaje de programación y no maneja lógica de negocio ni peticiones al servidor. Es un lenguaje de estilos declarativo que define la apariencia visual de los elementos HTML: colores, tamaños, fuentes, espacios y diseño."
+        },
+        {
+          "id": "B",
+          "texto": "CSS es un lenguaje de marcado que estructura el contenido de la web complementando a JavaScript.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El lenguaje de marcado que estructura el contenido es HTML. CSS (Cascading Style Sheets) es un lenguaje de estilos que se complementa con HTML y JavaScript, pero su función es definir la presentación visual, no la estructura del contenido."
+        },
+        {
+          "id": "C",
+          "texto": "CSS es un lenguaje de estilos que define la apariencia y el diseño de una página web, separando la presentación visual de la estructura HTML.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se definió CSS (Cascading Style Sheets) como el lenguaje que da estilo y presentación al contenido estructurado con HTML. Su separación de HTML permite organizar, reutilizar y mantener mejor los estilos: se pueden cambiar colores, tipografías o disposición sin tocar el HTML."
+        },
+        {
+          "id": "D",
+          "texto": "CSS es un framework que genera HTML dinámicamente desde plantillas predefinidas al cargar la página.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. CSS no genera HTML ni es un framework. Es un lenguaje de estilos aplicado sobre el HTML existente. Los frameworks que generan HTML dinámicamente son herramientas como React, Vue o Angular."
+        }
       ]
     },
     {
       "id": 24,
-      "pregunta": "¿Qué caracteriza a un método o función pura?",
+      "pregunta": "¿Qué convención de nombres se recomienda usar en JavaScript para variables y funciones según la sesión?",
       "alternativas": [
-        { "id": "A", "texto": "Siempre devuelve el mismo resultado para los mismos datos y no modifica el estado externo.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la explicación dada al mostrar la clase Calculadora." },
-        { "id": "B", "texto": "Necesita cambiar variables globales para funcionar.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso sería lo contrario de una función pura." },
-        { "id": "C", "texto": "Solo puede existir dentro de una clase.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Una función pura puede existir dentro o fuera de una clase." },
-        { "id": "D", "texto": "Debe usar siempre console.log para mostrar el resultado.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Mostrar por consola no define pureza." }
-      ]
-    },
-    {
-      "id": 25,
-      "pregunta": "¿Por qué se consideran buenas prácticas las funciones puras?",
-      "alternativas": [
-        { "id": "A", "texto": "Porque son más predecibles, fáciles de probar, mantener y reutilizar.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la conclusión mencionada al final de la explicación sobre métodos puros." },
-        { "id": "B", "texto": "Porque siempre deben crear efectos secundarios en el DOM.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Una función pura justamente evita efectos secundarios." },
-        { "id": "C", "texto": "Porque reemplazan por completo la necesidad de hacer tests.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ayudan a probar mejor, pero no eliminan la necesidad de testing." },
-        { "id": "D", "texto": "Porque solo funcionan con números enteros.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La pureza no depende del tipo de dato usado." }
+        {
+          "id": "A",
+          "texto": "snake_case: separando palabras con guiones bajos (ej: fecha_actual, calcular_doble).",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. snake_case es la convención estándar en lenguajes como Python o en SQL. En JavaScript, la convención dominante para variables y funciones es camelCase. snake_case sí se usa en JavaScript para algunos casos específicos como constantes en bases de datos o nombres de archivos, pero no es la convención general del lenguaje."
+        },
+        {
+          "id": "B",
+          "texto": "PascalCase: con la primera letra de cada palabra en mayúscula (ej: FechaActual, CalcularDoble).",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. PascalCase se usa en JavaScript, pero para clases y constructores (ej: class Calculadora). Para variables y funciones normales, la convención es camelCase, que empieza con minúscula (ej: calcularDoble, fechaActual)."
+        },
+        {
+          "id": "C",
+          "texto": "kebab-case: separando palabras con guiones (ej: fecha-actual, calcular-doble).",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. kebab-case es la convención usada en CSS (para nombres de clases y propiedades personalizadas) y en URLs o nombres de archivos. En JavaScript no se puede usar kebab-case en nombres de variables o funciones porque el guion (-) es interpretado como el operador de resta."
+        },
+        {
+          "id": "D",
+          "texto": "camelCase: con la primera letra en minúscula y cada palabra siguiente comenzando en mayúscula (ej: fechaActual, calcularDoble).",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se destacó camelCase como la convención estándar en JavaScript para variables y funciones. La primera palabra va en minúscula y cada palabra siguiente empieza en mayúscula: fechaActual, calcularDoble, nombreUsuario. Esto se mostró en la imagen comparando nombres como `c` y `d` (mala práctica) contra `calcularDoble` y `fechaActual` (buena práctica)."
+        }
       ]
     }
   ]

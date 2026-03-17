@@ -128,6 +128,18 @@ function renderQuestion(state) {
     `Pregunta ${currentIndex + 1}`;
   document.getElementById('questionText').textContent = pregunta.pregunta;
 
+  /* Imagen de apoyo (opcional) */
+  const imgWrapper = document.getElementById('questionImageWrapper');
+  const imgEl = document.getElementById('questionImage');
+  if (pregunta.imagen) {
+    imgEl.src = pregunta.imagen;
+    imgEl.alt = pregunta.imagenAlt ?? 'Imagen de apoyo a la pregunta';
+    imgWrapper.style.display = 'block';
+  } else {
+    imgEl.src = '';
+    imgWrapper.style.display = 'none';
+  }
+
   /* Feedback oculto */
   const feedbackBox = document.getElementById('feedbackBox');
   feedbackBox.style.display = 'none';

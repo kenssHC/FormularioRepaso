@@ -207,6 +207,24 @@ body {
   margin-bottom: 1.5rem;
 }
 
+.question-card__image-wrapper {
+  margin: 0 0 1.5rem;
+  text-align: center;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  background: var(--color-neutral-light);
+}
+
+.question-card__image {
+  max-width: 100%;
+  height: auto;
+  max-height: 380px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
 /* ===========================
    ALTERNATIVAS
    =========================== */
