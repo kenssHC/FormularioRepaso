@@ -1,0 +1,756 @@
+{
+  "titulo": "Repaso: Analytics Tagging — Trazas, Binding, cellsConnections, Feature Flags y Rest Operator",
+  "descripcion": "Preguntas de opción múltiple basadas en el contenido de la Sesión 16: qué es el etiquetado de analíticas, tags, trazas, binding, estructura de configuración de eventos (cellsConnections, bind, analytics), el Excel de guía de tageo, feature flags, rest operator y literales vs constantes.",
+  "preguntas": [
+    {
+      "id": 1,
+      "pregunta": "¿Qué es el Analytics Tagging (etiquetado de analíticas)?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Es el proceso de añadir estilos CSS con clases específicas a los elementos de la UI para identificarlos visualmente en los reportes de diseño.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El Analytics Tagging no tiene relación con estilos CSS ni reportes de diseño. En la sesión se definió como el proceso de agregar etiquetas o códigos de seguimiento en una página web o aplicación para recopilar datos sobre el comportamiento de los usuarios."
+        },
+        {
+          "id": "B",
+          "texto": "Es el proceso de agregar etiquetas o códigos de seguimiento en una página web o aplicación para recopilar datos sobre el comportamiento de los usuarios.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se definió el Analytics Tagging exactamente así: el proceso de agregar etiquetas o códigos de seguimiento para saber qué hacen los usuarios en el sistema, como qué páginas visitan, qué botones presionan, cuánto tiempo permanecen, etc."
+        },
+        {
+          "id": "C",
+          "texto": "Es un sistema de versionado de código que etiqueta (tag) cada release del proyecto para su despliegue en producción.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los 'tags' de Git son para versionar código. El Analytics Tagging es un concepto diferente: fragmentos de código de seguimiento en la UI para registrar el comportamiento del usuario."
+        },
+        {
+          "id": "D",
+          "texto": "Es la metodología de etiquetar tickets en Jira con categorías de analítica para medir la velocidad del equipo de desarrollo.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El Analytics Tagging no es sobre gestión de proyectos. Es el proceso técnico de insertar código de rastreo en la aplicación para capturar el comportamiento real de los usuarios."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "pregunta": "¿Qué es una 'tag' (etiqueta) en el contexto de Analytics Tagging?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Es un atributo HTML como `class` o `id` que identifica un elemento en el DOM para aplicarle estilos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los atributos `class` e `id` son para estilizar y seleccionar elementos del DOM, no para analítica. Una tag de analítica es un fragmento de código JavaScript que envía información a herramientas de analítica externas."
+        },
+        {
+          "id": "B",
+          "texto": "Es un pequeño fragmento de código JavaScript que se coloca en una página web para enviar información a herramientas de analítica.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se definió la tag como un pequeño fragmento de código JavaScript colocado en la página web con el propósito de enviar información a herramientas de analítica, permitiendo rastrear el comportamiento del usuario."
+        },
+        {
+          "id": "C",
+          "texto": "Es una etiqueta HTML del tipo `<analytics>` específica para registrar eventos de usuario sin usar JavaScript.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. No existe una etiqueta HTML `<analytics>`. Las tags de analítica son fragmentos de código JavaScript, no etiquetas HTML nativas."
+        },
+        {
+          "id": "D",
+          "texto": "Es el nombre técnico del archivo `.feature` donde se documentan los eventos del usuario en formato Gherkin.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los archivos `.feature` son de BDD/Gherkin, un concepto diferente. Una tag de analítica es un snippet de JavaScript que recopila y envía datos del comportamiento del usuario a plataformas de medición."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "pregunta": "¿Qué son las 'trazas' en analíticas?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Son las líneas de código comentadas que el desarrollador deja para depurar errores en producción.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Eso describe comentarios de depuración o logs de debugging. En la sesión se definió una traza como el registro detallado de las acciones que realiza un usuario dentro de la aplicación, paso a paso, para seguir su recorrido o flujo."
+        },
+        {
+          "id": "B",
+          "texto": "Son los registros detallados de las acciones que realiza un usuario dentro de la aplicación, paso a paso, que permiten seguir su recorrido (flujo).",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se definió: una traza = el historial de lo que hizo el usuario. Son registros detallados de cada acción del usuario dentro de la aplicación que permiten seguir su flujo completo."
+        },
+        {
+          "id": "C",
+          "texto": "Son los errores y excepciones que se registran en el stack trace del navegador cuando falla el JavaScript.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Un 'stack trace' de errores es diferente a las 'trazas analíticas'. Las trazas de analítica registran el comportamiento exitoso del usuario, no los errores técnicos del sistema."
+        },
+        {
+          "id": "D",
+          "texto": "Son las conexiones entre componentes definidas en el archivo de cellsConnections del framework Cells.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Las conexiones entre componentes (cellsConnections) son la forma de enlazar eventos con analíticas, no las trazas en sí. Las trazas son el resultado: el registro cronológico del recorrido del usuario."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "pregunta": "¿Cuál es la definición de 'bindeo' (binding) en el contexto de analíticas?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Es el proceso de vincular un componente web con su archivo de estilos CSS correspondiente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Vincular estilos CSS no es binding en el contexto de analíticas. En la sesión se definió el binding como el proceso de conectar o enlazar datos con elementos de la interfaz o con funciones, de manera que cuando el dato cambia, la interfaz o el comportamiento también se actualiza automáticamente."
+        },
+        {
+          "id": "B",
+          "texto": "Es el proceso de conectar o enlazar datos con elementos de la interfaz o con funciones, de manera que cuando el dato cambia, la interfaz o el comportamiento se actualiza automáticamente.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se definió el bindeo exactamente así: binding = enlace entre datos y código/interfaz. Cuando el dato cambia, la interfaz o el comportamiento también se actualiza automáticamente. Es el mecanismo que conecta los eventos de UI con las analíticas."
+        },
+        {
+          "id": "C",
+          "texto": "Es la asignación de valores por defecto a las propiedades de un componente Lit al momento de su inicialización.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La asignación de valores por defecto es inicialización de propiedades. El binding en analíticas es el proceso de enlazar datos y eventos de la interfaz con funciones o comportamientos que reaccionan automáticamente a los cambios."
+        },
+        {
+          "id": "D",
+          "texto": "Es el nombre del método que usa Cucumber para vincular los Step Definitions con los escenarios Gherkin.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El binding de Cucumber es un concepto de testing distinto. En el contexto de analíticas, el bindeo es el proceso de enlazar datos o eventos de la UI con funciones que los procesan, generando actualizaciones automáticas."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "pregunta": "En la configuración de analíticas, ¿qué representa `cellsConnections`?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Es el array de dependencias del componente que se instalan con npm antes del build.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Las dependencias de npm van en `package.json`. En la sesión se explicó que `cellsConnections` es el lugar dentro de la configuración del componente donde se conectan los eventos del componente con las analíticas."
+        },
+        {
+          "id": "B",
+          "texto": "Es el lugar dentro de la configuración del componente donde se conectan los eventos del componente con las analíticas.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se mostró la estructura `components → properties → cellsConnections` y se explicó que `cellsConnections` es donde se definen las conexiones entre los eventos del componente y las analíticas. Cada bloque dentro representa un evento con su `bind` y su `analytics`."
+        },
+        {
+          "id": "C",
+          "texto": "Es la lista de componentes hijos que un componente padre puede renderizar en su Shadow DOM.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los componentes hijos se definen en el template del componente. `cellsConnections` es específico para el mapeo de eventos con analíticas en la configuración del componente."
+        },
+        {
+          "id": "D",
+          "texto": "Es el objeto de configuración de las rutas de navegación entre páginas del dashboard.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Las rutas de navegación se configuran en el router de la aplicación. `cellsConnections` es donde se define qué eventos del componente disparan qué analíticas."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "pregunta": "¿Qué estructura general sigue el archivo de configuración de analíticas exportado con `module.exports`?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "`module.exports → routes → handlers → events`",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Esa estructura correspondería a una configuración de router, no de analíticas. En la sesión se mostró que la estructura del archivo de configuración de analíticas sigue: `components → properties → cellsConnections`."
+        },
+        {
+          "id": "B",
+          "texto": "`module.exports` exporta una función que recibe `CONFIG`, y dentro la estructura es `components → properties → cellsConnections`.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se mostró exactamente esa estructura: `module.exports = CONFIG => { const base = { components: { properties: { cellsConnections: { ... } } } } }`. Es una función que recibe una configuración y devuelve el objeto de analíticas con la jerarquía components → properties → cellsConnections."
+        },
+        {
+          "id": "C",
+          "texto": "`module.exports → analytics → scenarios → tags`",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Esa estructura no existe en el archivo de analíticas. La jerarquía correcta que se vio en la sesión es `components → properties → cellsConnections`."
+        },
+        {
+          "id": "D",
+          "texto": "`module.exports → feature → scenario → given → when → then`",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Esa estructura es de Gherkin/BDD. La configuración de analíticas usa `components → properties → cellsConnections` para definir qué eventos del componente disparan qué analíticas."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "pregunta": "Dado el evento `mobile_transfer_dashboard_card_expiration`, ¿qué representa cada parte de su estructura?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "`mobile_transfer_dashboard_card_expiration` es un selector CSS; `bind` es el handler de JavaScript; `analytics` es el endpoint de la API.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El nombre del evento es un identificador interno del evento, no un selector CSS. `bind` es el identificador técnico de evento (ID de tracking); `analytics` es la referencia a la huella analítica definida en otro archivo."
+        },
+        {
+          "id": "B",
+          "texto": "`mobile_transfer_dashboard_card_expiration` es el nombre interno del evento; `bind` es el identificador único del evento (ID de tracking); `analytics` es la huella analítica que se enviará.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó cada parte: el nombre del evento (`mobile_transfer_dashboard_card_expiration`) es el identificador interno; `bind` (`payments-p2p-p2m-dashboard-pc-card-expiration-link-click`) es el ID único de tracking que conecta la UI con la analítica; y `analytics` (`ANALYTICS.EXTERNAL_LINK_CARD_EXPIRATION`) referencia la huella analítica ya definida en otro archivo."
+        },
+        {
+          "id": "C",
+          "texto": "`mobile_transfer_dashboard_card_expiration` es el nombre del componente Lit; `bind` es la propiedad reactiva; `analytics` es el evento del Custom Element.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El nombre del componente Lit no se define así. En el contexto de analíticas, el objeto representa un evento rastreable, donde `bind` es el ID de tracking y `analytics` es la referencia a la huella analítica."
+        },
+        {
+          "id": "D",
+          "texto": "`mobile_transfer_dashboard_card_expiration` es el nombre de la ruta URL; `bind` es la query string; `analytics` es el cuerpo de la petición POST.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Este objeto no describe una petición HTTP. Es la configuración de un evento analítico: nombre interno, identificador de tracking (`bind`) y referencia a la huella analítica (`analytics`)."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "pregunta": "¿Para qué sirve el campo `bind` dentro de un evento de analítica?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Sirve para enlazar el componente con su hoja de estilos CSS mediante el nombre del evento.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `bind` no tiene relación con estilos CSS. En la sesión se explicó que `bind` es el identificador único del evento que se usa para conectar la UI con la analítica e identificar el evento en los logs. Es como un ID de tracking."
+        },
+        {
+          "id": "B",
+          "texto": "Es el identificador único del evento que conecta la UI con la analítica e identifica el evento en los logs; funciona como un ID de tracking.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se enfatizó que el campo `bind` es MUY IMPORTANTE: es el identificador único del evento, se usa para conectar la UI con la analítica e identificar el evento en los logs. Es comparable a un ID de tracking que permite rastrear exactamente qué acción ocurrió."
+        },
+        {
+          "id": "C",
+          "texto": "Es la función callback que se ejecuta cuando el usuario interactúa con el componente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los callbacks de eventos se manejan en el código del componente. En la configuración de analíticas, `bind` es el identificador de texto que nombra el evento para conectarlo con el sistema de rastreo."
+        },
+        {
+          "id": "D",
+          "texto": "Es la URL del endpoint al que se envía la petición cuando el evento analítico se dispara.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La URL del endpoint donde se envían los datos analíticos es configuración de la herramienta de analítica (como Google Analytics o Adobe Analytics). `bind` es el nombre/ID interno del evento que lo identifica en el sistema."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "pregunta": "¿Qué es el campo `analytics` dentro de un evento, como en `analytics: ANALYTICS.EXTERNAL_LINK_CARD_EXPIRATION`?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Es el nombre del componente Lit que dispara el evento de analítica.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `analytics` no es el nombre del componente. En la sesión se explicó que `analytics` es la referencia a la huella analítica que ya se definió en otro archivo (como `_mobileTransferDashboard.js`). Es el objeto con la información que se enviará a la plataforma de analítica."
+        },
+        {
+          "id": "B",
+          "texto": "Es la referencia a la huella analítica que ya fue definida en otro archivo; contiene la información que se enviará cuando el evento ocurra.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que `analytics` referencia la huella analítica ya definida en otro archivo (por ejemplo, `_mobileTransferDashboard.js`). No es la huella en sí sino la referencia a ella: `ANALYTICS.EXTERNAL_LINK_CARD_EXPIRATION` apunta al objeto de analítica donde está la información completa que se enviará."
+        },
+        {
+          "id": "C",
+          "texto": "Es un booleano que activa o desactiva el tracking de ese evento específico (true = activo, false = inactivo).",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El campo `analytics` no es un booleano. Es la referencia a un objeto con la definición completa de la huella analítica. Para activar o desactivar funcionalidades se usan los feature flags (true/false)."
+        },
+        {
+          "id": "D",
+          "texto": "Es el identificador único del evento equivalente a `bind`, pero en formato de objeto en lugar de string.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `bind` y `analytics` tienen roles distintos: `bind` es el ID de tracking del evento; `analytics` es la referencia a la huella analítica con la información que se enviará. No son equivalentes."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "pregunta": "En el archivo de configuración de analíticas, ¿qué finalidad tiene el archivo en su conjunto?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Define los estilos visuales del dashboard de analítica que ve el equipo de negocio.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El archivo no define estilos visuales. En la sesión se explicó que el archivo define qué eventos se registran y qué analítica se dispara cuando ocurren: es la configuración de tracking del dashboard."
+        },
+        {
+          "id": "B",
+          "texto": "Define qué eventos se registran y qué analítica se dispara cuando ocurren, conectando los eventos del componente con las huellas analíticas.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se describió el archivo como una configuración de analíticas del dashboard donde cada bloque representa un evento, `bind` es el identificador técnico del evento y `analytics` es la huella que se enviará. En resumen: aquí se define qué eventos se registran y qué analítica se dispara cuando ocurren."
+        },
+        {
+          "id": "C",
+          "texto": "Almacena los datos de usuario recopilados en la base de datos local del navegador (localStorage).",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El archivo no almacena datos de usuarios. Es una configuración de código que define la conexión entre eventos de la UI y las analíticas que se dispararán; los datos reales se envían a plataformas externas de analítica."
+        },
+        {
+          "id": "D",
+          "texto": "Configura las rutas de navegación del componente dashboard dentro del framework Cells.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Las rutas de navegación son configuración del router de la aplicación. Este archivo es exclusivamente de analíticas: mapea eventos de componentes con sus respectivas huellas analíticas."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "pregunta": "La empresa cuenta con un Excel de guía de tageo. ¿Qué se encuentra en la sección 'Huella y errores' de ese Excel?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Los errores de JavaScript encontrados durante el testing E2E del dashboard.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La sección de 'Huella y errores' no registra errores de JavaScript de testing. En la sesión se explicó que en 'Huella y errores' se encuentran las visitas a las páginas (pageview): registros de cuándo y cómo los usuarios visitan cada página."
+        },
+        {
+          "id": "B",
+          "texto": "Las visitas a las páginas (pageview): registros de cuándo y cómo los usuarios visitan cada sección de la aplicación.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se mencionó explícitamente que en la sección de 'Huella y errores' del Excel de guía de tageo están las visitas a las páginas (pageview). Es donde se registra el tracking de cada página visitada por el usuario."
+        },
+        {
+          "id": "C",
+          "texto": "Los eventos de click (onclick) y los eventos de inicio de flujos de usuario (onclickstart).",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los onclick y onclickstart están en la sección de 'Funnel'. La sección de 'Huella y errores' contiene las visitas a páginas (pageview)."
+        },
+        {
+          "id": "D",
+          "texto": "La tabla de contenidos con el índice de todas las analíticas disponibles en el proyecto.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La tabla de contenidos es otra página del Excel. 'Huella y errores' contiene específicamente el registro de visitas a páginas (pageview)."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "pregunta": "¿Qué contiene la sección 'Funnel' del Excel de guía de tageo?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Las visitas a páginas (pageview) que registran el tráfico de usuarios en cada sección.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Las visitas a páginas (pageview) están en la sección 'Huella y errores'. En la sesión se indicó que en 'Funnel' están los eventos de interacción del usuario: onclick, onclickstart, etc."
+        },
+        {
+          "id": "B",
+          "texto": "Los eventos de interacción del usuario como onclick y onclickstart, que registran las acciones realizadas en la aplicación.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se indicó que en la sección 'Funnel' del Excel de guía de tageo están los onclick, onclickstart, etc. Son los eventos de interacción que el usuario realiza durante su recorrido por la aplicación."
+        },
+        {
+          "id": "C",
+          "texto": "Los errores técnicos registrados en producción junto con sus trazas de stack.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los errores pueden estar en la sección 'Huella y errores'. La sección 'Funnel' contiene los eventos de interacción del usuario: clicks y acciones durante su flujo."
+        },
+        {
+          "id": "D",
+          "texto": "La guía de estilos visuales de los componentes del dashboard (colores, tipografías, márgenes).",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El Excel de guía de tageo es de analíticas, no de diseño visual. La sección 'Funnel' registra eventos de interacción del usuario (onclick, onclickstart), no definiciones de estilos."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "pregunta": "¿Cuántas páginas o secciones se mencionaron del Excel de guía de tageo en la sesión?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Dos páginas: 'Funnel' y 'Pageview'.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. En la sesión se mencionaron cuatro páginas del Excel: tabla de contenidos, guía funnel, huella y errores. 'Pageview' no es el nombre de ninguna página; las visitas a páginas están dentro de 'Huella y errores'."
+        },
+        {
+          "id": "B",
+          "texto": "Cuatro páginas: tabla de contenidos, guía funnel, huella y errores.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se mencionaron explícitamente esas cuatro páginas del Excel de guía de tageo: tabla de contenidos (índice), guía funnel (onclick, onclickstart), y huella y errores (pageviews y errores)."
+        },
+        {
+          "id": "C",
+          "texto": "Tres páginas: configuración, eventos y reportes.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Esos no son los nombres mencionados en la sesión. Las cuatro páginas mencionadas fueron: tabla de contenidos, guía funnel, huella y errores."
+        },
+        {
+          "id": "D",
+          "texto": "Una sola página con toda la información de analíticas organizada por componente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El Excel tiene múltiples secciones/páginas. En la sesión se mencionaron: tabla de contenidos, guía funnel, y huella y errores."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "pregunta": "¿Qué son los 'feature flags' mencionados en la sesión y cómo funcionan?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Son banderas en Git que marcan los commits relacionados con nuevas funcionalidades del dashboard.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Las marcas de Git son 'tags' de versioning, no feature flags. En la sesión se describió que los feature flags son interruptores de funcionalidades que se pueden apagar y encender usando `false` y `true`."
+        },
+        {
+          "id": "B",
+          "texto": "Son interruptores de funcionalidades que se pueden apagar (false) o encender (true) para controlar si una característica está activa o no.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se mencionó que se cuenta con feature flags que se pueden apagar y prender con `false` y `true`. Son mecanismos de control que permiten activar o desactivar funcionalidades sin necesidad de desplegar código nuevo."
+        },
+        {
+          "id": "C",
+          "texto": "Son las banderas de depuración de Chrome DevTools que activan el modo de inspección de analíticas.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Las herramientas de Chrome DevTools son para depuración del navegador. Los feature flags son configuraciones dentro del código de la aplicación que controlan si determinadas funcionalidades están habilitadas."
+        },
+        {
+          "id": "D",
+          "texto": "Son los parámetros booleanos de los Step Definitions de Cucumber que determinan si un test pasa o falla.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los feature flags no están relacionados con Cucumber ni con tests. Son mecanismos de configuración en el código de producción que permiten activar o desactivar funcionalidades usando valores `true` o `false`."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "pregunta": "¿Cuál es la principal ventaja de usar feature flags (`true`/`false`) en una aplicación?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Permiten mejorar el rendimiento del JavaScript porque `true` y `false` son tipos primitivos más rápidos que los objetos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los feature flags no tienen una ventaja de rendimiento técnico por ser booleanos. Su ventaja es operacional: permiten controlar qué funcionalidades están activas sin necesidad de modificar el código fuente ni realizar un nuevo despliegue."
+        },
+        {
+          "id": "B",
+          "texto": "Permiten activar o desactivar funcionalidades de la aplicación de forma controlada sin necesidad de modificar el código fuente ni hacer un nuevo despliegue.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. Los feature flags son interruptores que se pueden apagar (`false`) o encender (`true`). Su ventaja principal es la flexibilidad operacional: se puede habilitar una funcionalidad para un grupo de usuarios, desactivarla si hay problemas, o apagarla en ciertos entornos, todo sin hacer un nuevo deployment."
+        },
+        {
+          "id": "C",
+          "texto": "Permiten que el compilador de TypeScript omita el código desactivado y reduzca el tamaño del bundle.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los feature flags en tiempo de ejecución no afectan la compilación de TypeScript ni el tree-shaking del bundle. Su propósito es el control operacional de funcionalidades en producción."
+        },
+        {
+          "id": "D",
+          "texto": "Permiten a los testers ejecutar solo los tests de las funcionalidades habilitadas, omitiendo los demás.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Aunque los feature flags pueden influir en qué se prueba, su propósito principal es controlar qué funcionalidades están activas en la aplicación para los usuarios finales, no gestionar la ejecución de tests."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "pregunta": "¿Qué es el 'rest operator' (`...`) en JavaScript y qué hace?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Es el operador de comentarios de bloque en JavaScript, equivalente a `/* */`.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los comentarios de bloque se escriben con `/* */`. El rest operator (`...`) es un operador que copia valores y los almacena en otros, permitiendo capturar el resto de los elementos de un array u objeto."
+        },
+        {
+          "id": "B",
+          "texto": "Es el operador que copia valores y los almacena en otros; permite capturar el 'resto' de los elementos de un array u objeto en una sola variable.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se describió el rest operator (`...`) como el que 'copia valores y los almacena en otros'. Se usa para capturar los elementos restantes de un array u objeto (rest) o para expandir elementos (spread). Ejemplo: `const { a, ...resto } = obj` almacena en `resto` todas las propiedades excepto `a`."
+        },
+        {
+          "id": "C",
+          "texto": "Es la sintaxis para definir funciones asíncronas que esperan respuesta de una API REST.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Las funciones asíncronas se definen con `async/await` o con `.then()/.catch()`. El operador `...` (rest/spread) es para copiar y desestructurar valores de arrays y objetos."
+        },
+        {
+          "id": "D",
+          "texto": "Es el operador de concatenación de strings, equivalente al `+` de Python.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La concatenación de strings en JavaScript usa `+` o template literals (backticks). El operador `...` es el rest/spread operator que copia o expande valores de arrays y objetos."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "pregunta": "En JavaScript, si se escribe `const { nombre, ...resto } = usuario`, ¿qué almacena `resto`?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Solo el valor de `nombre`, ya que es la propiedad que se extrae de `usuario`.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `nombre` es lo que se extrae individualmente. `resto` almacena todo lo demás: todas las propiedades de `usuario` excepto `nombre`. Por eso se llama 'rest' (el resto)."
+        },
+        {
+          "id": "B",
+          "texto": "Todas las propiedades de `usuario` excepto `nombre`; el rest operator captura los valores restantes en el objeto `resto`.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que el rest operator `...` copia valores y los almacena en otros. En esta desestructuración: `nombre` se extrae sola y `...resto` captura todas las demás propiedades del objeto `usuario`."
+        },
+        {
+          "id": "C",
+          "texto": "El prototipo de `usuario` (`Object.prototype`) y sus métodos heredados.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La desestructuración con rest operator no incluye métodos del prototipo. Solo copia las propiedades propias enumerables del objeto, excluyendo la que ya se extrajo (`nombre`)."
+        },
+        {
+          "id": "D",
+          "texto": "Una referencia al objeto `usuario` original, equivalente a `const resto = usuario`.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El rest operator no crea una referencia al objeto original. Crea un nuevo objeto con las propiedades restantes (todas excepto `nombre`), no una referencia directa a `usuario`."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "pregunta": "¿Cuál es la diferencia entre el 'rest operator' y el 'spread operator' cuando ambos usan `...`?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "No hay diferencia; `...` siempre hace exactamente lo mismo independientemente del contexto.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Aunque ambos usan la misma sintaxis `...`, el contexto determina su comportamiento: rest agrupa/recoge elementos restantes en una variable; spread expande/despliega los elementos de un array u objeto en otro contexto."
+        },
+        {
+          "id": "B",
+          "texto": "Rest (`...`) recoge los elementos restantes en una variable (en desestructuración); spread (`...`) expande los elementos de un array u objeto en otro lugar (en llamadas a funciones o creación de arrays/objetos).",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. Son dos usos del mismo operador `...`: rest operator se usa en el lado izquierdo (desestructuración) para recoger los elementos restantes; spread operator se usa en el lado derecho para expandir los elementos. En ambos casos 'copia valores y los almacena en otros' como indicó la sesión."
+        },
+        {
+          "id": "C",
+          "texto": "Rest solo funciona con arrays; spread solo funciona con objetos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Tanto rest como spread funcionan con arrays y con objetos. La diferencia es el contexto de uso: rest en desestructuración (lado izquierdo), spread en composición (lado derecho)."
+        },
+        {
+          "id": "D",
+          "texto": "Rest es una característica de ES5; spread fue introducido en ES2022 como una mejora posterior.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Ambos fueron introducidos en ES6 (ES2015). No son características de versiones diferentes de JavaScript."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "pregunta": "Dentro de la información de las analíticas, ¿qué son los 'objetos'?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Son los componentes web (Custom Elements) que disparan los eventos analíticos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los componentes web son otra capa de la arquitectura. En la sesión se mencionó que dentro de la información de las analíticas se tienen: objetos, constantes y literales. Los objetos son las estructuras de datos que contienen la información analítica."
+        },
+        {
+          "id": "B",
+          "texto": "Son las estructuras de datos que agrupan la información analítica (como la huella analítica) en forma de pares clave-valor.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se indicó que dentro de la información de las analíticas se encuentran objetos, constantes y literales. Los objetos son las estructuras de datos (como `ANALYTICS.EXTERNAL_LINK_CARD_EXPIRATION`) que agrupan la información de la huella en pares clave-valor."
+        },
+        {
+          "id": "C",
+          "texto": "Son los archivos `.feature` de Gherkin que describen el comportamiento analítico esperado del sistema.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los archivos `.feature` son de BDD. Los 'objetos' en analíticas son estructuras de datos JavaScript que contienen la información que se enviará al sistema de tracking cuando un evento ocurra."
+        },
+        {
+          "id": "D",
+          "texto": "Son las páginas del Excel de guía de tageo donde se documentan los eventos por componente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Las páginas del Excel son: tabla de contenidos, guía funnel, huella y errores. Los 'objetos' en analíticas son estructuras de datos JavaScript que componen la huella analítica."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "pregunta": "En el contexto de las analíticas, ¿cuál es la diferencia entre 'constantes' y 'literales'?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Las constantes son los valores numéricos de la huella; los literales son los valores de texto.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La distinción no es por tipo de dato (número vs texto). En la sesión se explicó: las constantes son los títulos de las variables (los nombres que identifican cada dato); los literales son su contenido (el valor real almacenado)."
+        },
+        {
+          "id": "B",
+          "texto": "Las constantes son los títulos de las variables (los identificadores); los literales son su contenido (el valor real almacenado en ellas).",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se definió explícitamente: las constantes son los títulos de las variables y los literales son su contenido. Por ejemplo, `EXTERNAL_LINK_CARD_EXPIRATION` sería la constante (el nombre/título) y el valor de string que contiene sería el literal."
+        },
+        {
+          "id": "C",
+          "texto": "Las constantes se pueden cambiar en tiempo de ejecución; los literales son inmutables y solo se definen al inicializar.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Es al revés en JavaScript: las constantes declaradas con `const` no se pueden reasignar; los literales son valores hardcoded en el código. Pero en el contexto de analíticas de la sesión, constantes = títulos de variables y literales = su contenido."
+        },
+        {
+          "id": "D",
+          "texto": "Son sinónimos; 'constante' y 'literal' son dos nombres para el mismo concepto en analíticas.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. En la sesión se distinguieron claramente: constantes son los títulos (identificadores/nombres de las variables) y literales son el contenido (el valor almacenado). No son sinónimos."
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "pregunta": "¿Qué relación existe entre el `bind` de un evento y la identificación del evento en los logs del sistema?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Ninguna; los logs usan el nombre del componente, no el valor de `bind`.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. En la sesión se enfatizó que `bind` (marcado como MUY IMPORTANTE) se usa para identificar el evento en los logs, entre otras funciones. Es precisamente el ID que permite rastrear el evento en los registros del sistema."
+        },
+        {
+          "id": "B",
+          "texto": "`bind` es el identificador técnico del evento que permite localizarlo en los logs; sirve como ID de tracking para saber exactamente qué evento ocurrió.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se marcó `bind` como MUY IMPORTANTE y se explicó que se usa para: conectar UI con analítica e identificar el evento en logs. Es el ID de tracking que cuando aparece en los registros permite saber exactamente qué acción del usuario se capturó."
+        },
+        {
+          "id": "C",
+          "texto": "El `bind` solo se usa en el código fuente; los logs usan el valor de `analytics` para identificar los eventos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. En la sesión se explicó que el `bind` tiene dos usos: conectar UI con analítica e identificar el evento en los logs. No es exclusivo del código fuente."
+        },
+        {
+          "id": "D",
+          "texto": "El `bind` se transforma automáticamente en un UUID al ejecutarse, perdiendo el valor de string original en los logs.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El `bind` mantiene su valor de string (`payments-p2p-p2m-dashboard-pc-card-expiration-link-click`) en los logs. No se transforma en UUID. Su formato descriptivo es precisamente lo que permite identificar el evento al leer los registros."
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "pregunta": "Si el equipo de negocio quiere saber cuántos usuarios hacen clic en el botón de 'Tarjeta Expirada' del dashboard, ¿qué tipo de evento analítico se registraría según lo visto en la sesión?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Un pageview, registrado en la sección 'Huella y errores' del Excel de guía de tageo.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Un pageview registra visitas a páginas, no clics en botones específicos. El clic en un botón es una interacción del usuario que se registraría como un evento de tipo onclick en la sección 'Funnel' del Excel."
+        },
+        {
+          "id": "B",
+          "texto": "Un evento onclick registrado en la sección 'Funnel' del Excel de guía de tageo, con su respectivo `bind` e `analytics` en la configuración de analíticas.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que en 'Funnel' están los onclick y onclickstart. Un clic en el botón de 'Tarjeta Expirada' sería un onclick que se configura en `cellsConnections` con un `bind` (el ID del evento) y un `analytics` (la huella que se enviará cuando ocurra el clic)."
+        },
+        {
+          "id": "C",
+          "texto": "Una traza de error, porque el botón de 'Tarjeta Expirada' implica un estado de error del sistema.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Una traza de error registra fallos técnicos del sistema. El clic en un botón es una interacción del usuario que se registra como evento de analítica (onclick en 'Funnel'), independientemente del estado que describe el botón."
+        },
+        {
+          "id": "D",
+          "texto": "Un feature flag, activándolo con `true` para que el evento quede registrado.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los feature flags controlan si una funcionalidad está activa o no, no registran eventos de usuario. El clic del usuario se registra como un evento onclick configurado en `cellsConnections`."
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "pregunta": "Un desarrollador necesita expandir las propiedades de un objeto `config` dentro de otro objeto `newConfig` sin modificar `config`. ¿Qué operador JavaScript de la sesión es el adecuado?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "El operador `typeof`, porque permite inspeccionar el tipo del objeto `config` antes de copiarlo.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `typeof` es para verificar el tipo de un valor, no para copiar propiedades. El operador adecuado es el rest/spread operator (`...`) que en la sesión se describió como el que 'copia valores y los almacena en otros'."
+        },
+        {
+          "id": "B",
+          "texto": "El rest/spread operator (`...`), que copia valores y los almacena en otros. Ejemplo: `const newConfig = { ...config, nuevaPropiedad: valor }`.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se describió el rest operator (`...`) como el que 'copia valores y los almacena en otros'. En este caso se usa como spread: `const newConfig = { ...config, nuevaPropiedad: valor }` expande todas las propiedades de `config` en `newConfig` sin mutar el original."
+        },
+        {
+          "id": "C",
+          "texto": "El operador `instanceof`, porque verifica si `config` es instancia del objeto que se desea expandir.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `instanceof` verifica si un objeto es instancia de una clase, no copia propiedades. El spread operator (`...`) es el adecuado para expandir las propiedades de un objeto en otro."
+        },
+        {
+          "id": "D",
+          "texto": "El operador `delete`, para eliminar las propiedades de `config` y luego reasignarlas en `newConfig`.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `delete` elimina propiedades y modificaría el objeto original `config`. El spread operator (`...`) copia las propiedades sin alterar el objeto fuente."
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "pregunta": "¿Cómo se relacionan las 'trazas' de analítica con el concepto de 'flujo de usuario'?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Las trazas son el código de los Step Definitions que simulan el flujo del usuario en los tests E2E.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Las trazas de analítica no son código de tests. En la sesión se definió: una traza = el historial de lo que hizo el usuario. Son los registros de las acciones reales del usuario en producción, que permiten seguir su recorrido (flujo) dentro de la aplicación."
+        },
+        {
+          "id": "B",
+          "texto": "Las trazas son los registros cronológicos de las acciones reales del usuario; al seguirlas en orden se reconstruye el flujo completo que ese usuario realizó en la aplicación.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se definió: una traza = el historial de lo que hizo el usuario. Las trazas registran cada acción paso a paso, lo que permite seguir el recorrido (flujo) del usuario: qué página visitó primero, qué botones presionó, en qué punto abandonó el proceso, etc."
+        },
+        {
+          "id": "C",
+          "texto": "Las trazas definen el flujo que el usuario debería seguir; si el usuario se desvía, el sistema lo redirige automáticamente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Las trazas son descriptivas (registran lo que el usuario hizo), no prescriptivas (no definen lo que debe hacer). No redirigen al usuario; simplemente documentan su comportamiento real para análisis posterior."
+        },
+        {
+          "id": "D",
+          "texto": "Las trazas y el flujo de usuario son conceptos independientes; las trazas solo registran errores técnicos del servidor.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Las trazas de analítica sí están relacionadas con el flujo del usuario: registran sus acciones paso a paso. No se limitan a errores técnicos; registran todo el comportamiento: visitas, clics, tiempos de permanencia, etc."
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "pregunta": "Si en la configuración de analíticas un feature flag está en `false`, ¿qué implicación tiene esto para el tracking de ese evento?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "El evento sigue registrándose, pero los datos se almacenan en un log separado marcado como inactivo.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Un feature flag en `false` apaga la funcionalidad correspondiente. Si la funcionalidad está apagada, el evento no ocurre ni se registra. No existe un log separado para eventos de funcionalidades desactivadas."
+        },
+        {
+          "id": "B",
+          "texto": "La funcionalidad asociada a ese evento está desactivada, por lo que el evento no se disparará y no habrá datos analíticos de esa interacción.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que los feature flags se pueden apagar (`false`) y encender (`true`). Si el flag de una funcionalidad está en `false`, la funcionalidad está desactivada y por ende el evento asociado no ocurrirá, lo que significa que tampoco se generarán trazas ni datos analíticos de esa interacción."
+        },
+        {
+          "id": "C",
+          "texto": "El `bind` del evento pasa de su valor de string a `null`, lo que genera un error en el sistema de analíticas.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El feature flag no modifica el valor de `bind`. Al estar en `false`, simplemente la funcionalidad no está disponible para el usuario, por lo que el evento nunca se dispara."
+        },
+        {
+          "id": "D",
+          "texto": "El sistema analítico registra el evento con un valor de `false` en lugar de los datos reales del usuario.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El feature flag en `false` no registra nada; desactiva la funcionalidad completa. No hay un registro con valor `false`; simplemente no hay tracking porque la funcionalidad que generaría el evento no está disponible."
+        }
+      ]
+    }
+  ]
+}
