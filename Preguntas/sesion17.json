@@ -1,0 +1,756 @@
+{
+  "titulo": "Repaso: Tests E2E de Analíticas — Gherkin, Estructura, Prerequisitos y Buenas Prácticas",
+  "descripcion": "Preguntas de opción múltiple basadas en el contenido de la Sesión 17: por qué hacer tests E2E de analíticas, por qué se usa Gherkin, qué se necesita antes de escribirlos, la estructura básica (Scenario, criterio, pasos, validación), buenas prácticas (límite de And, recording: true) y el archivo propio de la empresa.",
+  "preguntas": [
+    {
+      "id": 1,
+      "pregunta": "¿Cuál es el objetivo principal de hacer un test E2E de analíticas?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Verificar que los componentes web rendericen correctamente en distintos navegadores.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Verificar el renderizado en distintos navegadores es un objetivo de los tests E2E funcionales o de compatibilidad. En la sesión se definió que el test E2E de analíticas sirve para asegurar que los datos que envía la aplicación (eventos, tags, tracking) son correctos desde el inicio hasta que llegan al sistema de analítica."
+        },
+        {
+          "id": "B",
+          "texto": "Asegurar que los datos que envía la aplicación (eventos, tags, tracking) son correctos desde el inicio hasta que llegan al sistema de analítica.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se definió exactamente eso: el test E2E de analíticas se hace para asegurar que los datos que envía la aplicación (eventos, tags, tracking) son correctos desde el inicio hasta que llegan al sistema de analítica (ej: analytics, dataLayer, tracking)."
+        },
+        {
+          "id": "C",
+          "texto": "Medir el tiempo de respuesta de la aplicación bajo carga alta de usuarios simultáneos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Medir el tiempo de respuesta bajo carga es un test de rendimiento o estrés. El test E2E de analíticas valida que los eventos y datos de tracking lleguen correctamente al sistema de analítica, no el rendimiento del servidor."
+        },
+        {
+          "id": "D",
+          "texto": "Validar que las clases CSS de los componentes siguen los estándares de diseño definidos en el equipo.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Validar estilos CSS es un test visual o de snapshot, no un test E2E de analíticas. El foco del test E2E de analíticas es la correctitud de los datos de eventos y tracking que se envían desde la aplicación hasta el sistema analítico."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "pregunta": "¿Qué tipos de datos se verifican en un test E2E de analíticas?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Solo los errores de JavaScript (errores 404, 500) que ocurren durante la navegación del usuario.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los errores HTTP se verifican en tests funcionales o de monitoreo. En la sesión se indicó que en el test E2E de analíticas se verifican los eventos, tags y tracking que la aplicación envía al sistema de analítica."
+        },
+        {
+          "id": "B",
+          "texto": "Los eventos, tags y datos de tracking que la aplicación envía desde la interacción del usuario hasta que llegan al sistema de analítica.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se especificó que el test E2E de analíticas verifica que los datos (eventos, tags, tracking) que envía la aplicación son correctos desde el inicio hasta que llegan al sistema de analítica (analytics, dataLayer, tracking)."
+        },
+        {
+          "id": "C",
+          "texto": "Los valores de las propiedades reactivas de los componentes Lit y su sincronización con el Shadow DOM.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Las propiedades reactivas de Lit se verifican en tests unitarios de componentes. El test E2E de analíticas se enfoca en los eventos y datos de tracking que se envían desde la UI hasta los sistemas de medición."
+        },
+        {
+          "id": "D",
+          "texto": "El contenido del archivo Excel de guía de tageo para verificar que esté actualizado.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El Excel de guía de tageo es un documento de referencia para escribir los tests, no un elemento que se verifica automáticamente. Los tests E2E de analíticas verifican eventos, tags y tracking en el flujo real de la aplicación."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "pregunta": "¿A qué sistemas o herramientas deben llegar correctamente los datos para que el test E2E de analíticas pase?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "A la base de datos relacional del backend y al sistema de caché del servidor.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los tests E2E de analíticas no verifican la base de datos del backend. En la sesión se mencionaron como destinos: el sistema de analítica, el dataLayer y el tracking (herramientas de medición del comportamiento del usuario)."
+        },
+        {
+          "id": "B",
+          "texto": "Al sistema de analítica, al dataLayer y al sistema de tracking; es decir, las herramientas que recopilan y procesan los datos de comportamiento del usuario.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se mencionó que los datos deben llegar correctamente al sistema de analítica, al dataLayer y al tracking. Estos son los sistemas finales que reciben y procesan los eventos enviados desde la aplicación."
+        },
+        {
+          "id": "C",
+          "texto": "Al navegador del usuario final, verificando que el localStorage y el sessionStorage contienen los datos correctos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Aunque el localStorage puede usarse en algunos contextos, el destino que verifica el test E2E de analíticas es el sistema de analítica externo (como Google Analytics, Adobe Analytics, dataLayer de GTM), no el almacenamiento local del navegador."
+        },
+        {
+          "id": "D",
+          "texto": "Solo al archivo de Step Definitions de Cucumber, donde queda registrado el resultado de cada evento.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los Step Definitions son el código que ejecuta la prueba, no el destino de los datos analíticos. El destino que se verifica es el sistema de analítica externo donde los eventos deben llegar correctamente."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "pregunta": "¿Por qué se usa Gherkin específicamente en los tests E2E de analíticas?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Porque Gherkin tiene soporte nativo para validar el dataLayer y el sistema de tracking sin necesidad de código adicional.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Gherkin no tiene soporte nativo para validar dataLayer; eso lo hace el código de los Step Definitions. En la sesión se explicó que Gherkin se usa porque permite describir el comportamiento de las analíticas en lenguaje claro (de negocio) y conectar eso con pruebas automatizadas E2E."
+        },
+        {
+          "id": "B",
+          "texto": "Porque permite describir el comportamiento de las analíticas en lenguaje claro (de negocio) y conectar esa descripción con las pruebas automatizadas E2E.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se indicó que se usa Gherkin porque permite describir el comportamiento de las analíticas en lenguaje claro (negocio) y conectar eso con pruebas automatizadas E2E. Así el equipo de negocio puede entender y validar qué se está probando."
+        },
+        {
+          "id": "C",
+          "texto": "Porque Gherkin ejecuta directamente los eventos de analítica sin necesidad de Cucumber ni Step Definitions.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Gherkin no ejecuta código; solo describe escenarios. La ejecución la realizan herramientas como Cucumber junto con los Step Definitions. La razón de usar Gherkin es la legibilidad del negocio."
+        },
+        {
+          "id": "D",
+          "texto": "Porque es el único lenguaje que soportan las herramientas de analítica como Google Analytics y Adobe Analytics.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Las herramientas de analítica no requieren Gherkin para recibir datos; reciben eventos a través de JavaScript. Gherkin se usa en los tests E2E porque facilita la escritura de escenarios en lenguaje de negocio comprensible por todos."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "pregunta": "¿Qué ventaja específica aporta el lenguaje de negocio de Gherkin al contexto de los tests de analíticas?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Permite al equipo de QA escribir tests más rápidos porque Gherkin reduce el número de líneas de código necesarias.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La velocidad de escritura no es la ventaja principal que se destacó. La ventaja clave de Gherkin en analíticas es que permite describir el comportamiento en lenguaje claro de negocio, haciendo que el equipo no técnico (negocio, analistas) pueda entender y validar qué se está probando."
+        },
+        {
+          "id": "B",
+          "texto": "Hace que el equipo de negocio (analistas, product owners) pueda leer y entender qué comportamiento de analíticas se está verificando, sin necesitar conocimientos técnicos.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se destacó que Gherkin permite describir el comportamiento de las analíticas en lenguaje claro (negocio). Esto significa que analistas de datos, product owners o responsables de analítica pueden revisar los escenarios y confirmar que están probando lo correcto."
+        },
+        {
+          "id": "C",
+          "texto": "Elimina la necesidad de tener el Excel de guía de tageo, ya que los escenarios Gherkin reemplazan esa documentación.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Gherkin no reemplaza al Excel de guía de tageo. De hecho, el Excel es uno de los prerequisitos para escribir los tests E2E de analíticas. Ambos son herramientas complementarias."
+        },
+        {
+          "id": "D",
+          "texto": "Permite que el sistema de analítica interprete directamente los archivos `.feature` sin pasar por el dataLayer.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los sistemas de analítica no interpretan archivos `.feature`. Gherkin es un lenguaje de descripción de tests que Cucumber convierte en código ejecutable; el dataLayer sigue siendo el canal por donde fluyen los datos analíticos."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "pregunta": "La empresa tiene su propio archivo E2E de analítica. ¿Qué implica esto para los desarrolladores del equipo?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Que no es necesario aprender Gherkin, ya que el archivo propio usa una sintaxis diferente incompatible con Gherkin.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El hecho de tener un archivo propio no significa que no se use Gherkin; de hecho, en la sesión se explicó que Gherkin se usa en los tests E2E de analíticas. El archivo propio de la empresa es una implementación específica sobre esa base."
+        },
+        {
+          "id": "B",
+          "texto": "Que existe una estructura y convenciones específicas de la empresa para escribir tests E2E de analíticas, que los desarrolladores deben conocer y seguir.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se mencionó como nota que en la empresa tienen su propio archivo de E2E de analítica. Esto implica que hay convenciones, estructuras o helpers específicos de la organización que los desarrolladores deben conocer para escribir correctamente estos tests."
+        },
+        {
+          "id": "C",
+          "texto": "Que los tests E2E de analíticas de la empresa no son reutilizables entre proyectos; cada proyecto parte desde cero.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Tener un archivo propio generalmente implica reutilización: es un archivo base o de configuración común que los proyectos pueden usar. No significa que se parta desde cero en cada proyecto."
+        },
+        {
+          "id": "D",
+          "texto": "Que los tests E2E de analíticas son responsabilidad exclusiva del equipo de analítica, no de los desarrolladores front-end.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La existencia del archivo propio no asigna responsabilidad exclusiva a ningún equipo. En el contexto de la sesión, los desarrolladores front-end trabajan con este archivo como parte de su flujo de trabajo de testing."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "pregunta": "¿Cuáles son los tres elementos que se necesitan antes de escribir un test E2E de analíticas?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Tener configurado Cypress, haber instalado Cucumber y tener el archivo `karma.conf.js` listo.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Esos son requisitos técnicos de herramientas, no los prerequisitos mencionados en la sesión. Los tres elementos necesarios son: tener las analíticas ya implementadas, tener la guía de analíticas (Excel) y de preferencia tener los E2E funcionales desarrollados."
+        },
+        {
+          "id": "B",
+          "texto": "Tener las analíticas ya implementadas, tener la guía de analíticas (Excel) y de preferencia tener los E2E funcionales desarrollados.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se listaron exactamente esos tres elementos: 1) tener las analíticas ya implementadas, 2) tener la guía de analíticas (Excel) y 3) de preferencia, los E2E funcionales ya desarrollados. El tercer punto es recomendado pero no estrictamente obligatorio."
+        },
+        {
+          "id": "C",
+          "texto": "Tener el dataLayer configurado, tener los Step Definitions escritos y tener el archivo `.feature` creado.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El dataLayer, los Step Definitions y el `.feature` son partes de la implementación del test, no prerequisitos previos. Los prerequisitos son: analíticas implementadas, Excel de guía y E2E funcionales."
+        },
+        {
+          "id": "D",
+          "texto": "Tener el diseño UX aprobado, haber completado el sprint de desarrollo y haber pasado los tests unitarios.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Esos son hitos del proceso de desarrollo general. Los prerequisitos específicos para los tests E2E de analíticas son: analíticas implementadas, guía de analíticas (Excel) y E2E funcionales desarrollados."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "pregunta": "¿Por qué es necesario que las analíticas estén ya implementadas antes de escribir el test E2E de analíticas?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Porque el test E2E de analíticas sirve para implementar las analíticas; si no existen, el test las crea automáticamente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El test E2E de analíticas no crea las analíticas; las verifica. Si las analíticas no están implementadas, no hay nada que verificar y el test no tendría sentido ni podría ejecutarse."
+        },
+        {
+          "id": "B",
+          "texto": "Porque el test E2E de analíticas verifica que los eventos y datos ya implementados se envían correctamente; sin implementación previa no hay nada que verificar.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. El test E2E de analíticas es un test de verificación, no de implementación. Si los eventos analíticos no están aún en el código de la aplicación, el test simplemente fallaría porque la analítica que debe verificar no existe. Por eso es un prerequisito obligatorio."
+        },
+        {
+          "id": "C",
+          "texto": "Porque Gherkin solo puede describir comportamientos de código ya existente; no puede describir funcionalidades futuras.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Técnicamente Gherkin puede describir comportamientos de funcionalidades que aún no existen (de hecho, en BDD a veces se hace). La razón real es que el test E2E de analíticas verifica la implementación ya existente; sin ella no hay datos que validar."
+        },
+        {
+          "id": "D",
+          "texto": "Porque el Excel de guía de tageo solo se genera automáticamente una vez que las analíticas están implementadas en el código.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El Excel de guía de tageo es un documento que se crea manualmente por el equipo de analítica como referencia. No se genera automáticamente desde el código. La razón de este prerequisito es que sin analíticas implementadas no hay eventos reales que el test pueda verificar."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "pregunta": "¿Por qué se recomienda (de preferencia) tener los E2E funcionales desarrollados antes de escribir los tests E2E de analíticas?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Porque los E2E de analíticas heredan automáticamente el código de los E2E funcionales mediante herencia de clases.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. No hay herencia automática de código. La recomendación es de orden lógico: los E2E funcionales ya verifican que los flujos del usuario funcionan correctamente, lo que proporciona una base sólida sobre la que verificar que además los eventos analíticos se disparan bien."
+        },
+        {
+          "id": "B",
+          "texto": "Porque los E2E funcionales ya verifican que los flujos del usuario funcionan, proporcionando una base sólida para luego verificar que los eventos analíticos se disparan correctamente en esos mismos flujos.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. Tener los E2E funcionales es 'de preferencia': si los flujos del usuario ya están verificados como funcionales, al escribir los E2E de analíticas se puede asumir que el flujo en sí funciona y concentrarse en verificar solo que los eventos analíticos se disparan y llegan correctamente."
+        },
+        {
+          "id": "C",
+          "texto": "Porque Cucumber exige que existan tests E2E funcionales antes de poder crear tests E2E de analíticas en el mismo proyecto.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Cucumber no impone ese requisito técnico. Es una recomendación de buenas prácticas: tener los flujos funcionales verificados da confianza para construir sobre ellos los tests de analíticas."
+        },
+        {
+          "id": "D",
+          "texto": "Porque los E2E funcionales generan automáticamente los archivos `.feature` para los tests de analíticas.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los archivos `.feature` se escriben manualmente. La razón de esta recomendación es práctica: si el flujo funcional ya está probado, los tests de analíticas se pueden enfocar exclusivamente en verificar los eventos de tracking."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "pregunta": "¿Cuál de los tres prerequisitos es 'de preferencia' (recomendado pero no obligatorio)?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Tener las analíticas ya implementadas.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Tener las analíticas implementadas es un requisito obligatorio, no opcional. Sin analíticas en el código, el test no tiene nada que verificar y no podría ejecutarse correctamente."
+        },
+        {
+          "id": "B",
+          "texto": "Tener los E2E funcionales desarrollados.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se listó 'de preferencia los E2E funcionales desarrollados' como el tercer prerequisito, marcándolo explícitamente como recomendado pero no estrictamente obligatorio, a diferencia de tener las analíticas implementadas y el Excel de guía."
+        },
+        {
+          "id": "C",
+          "texto": "Tener la guía de analíticas (Excel).",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La guía de analíticas (Excel) se mencionó como un requisito necesario, no opcional. Es la referencia que define qué eventos deben registrarse y cómo, información indispensable para escribir los tests."
+        },
+        {
+          "id": "D",
+          "texto": "Todos los prerequisitos son opcionales; se puede escribir el test E2E de analíticas sin ninguno de ellos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Solo los E2E funcionales son 'de preferencia'. Los otros dos (analíticas implementadas y Excel de guía) son necesarios. Sin analíticas en el código y sin guía de referencia, el test no tendría base para ejecutarse ni criterios para validar."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "pregunta": "¿Cuál es la estructura básica de un escenario E2E de analíticas?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Feature → Background → Scenario → Examples (tabla de datos).",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Esa es una estructura general de Gherkin con tablas de datos. En la sesión se definió la estructura básica específica para E2E de analíticas como: Scenario → criterio → pasos → validación."
+        },
+        {
+          "id": "B",
+          "texto": "Scenario → criterio → pasos → validación.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se presentó exactamente esa estructura básica para los E2E de analíticas: el Scenario contiene un criterio (el contexto o condición), los pasos (las acciones que se realizan) y la validación (la verificación del resultado analítico esperado)."
+        },
+        {
+          "id": "C",
+          "texto": "Arrange → Act → Assert (patrón AAA de los tests unitarios).",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El patrón AAA (Arrange, Act, Assert) es de los tests unitarios. Para los tests E2E de analíticas la estructura es: Scenario → criterio → pasos → validación, siguiendo la sintaxis Gherkin."
+        },
+        {
+          "id": "D",
+          "texto": "Given → When → Then → And → But (todas las keywords de Gherkin en orden fijo).",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. No se usan todas las keywords en orden fijo. La estructura básica del E2E de analíticas es: Scenario → criterio → pasos → validación, que se implementa con las keywords de Gherkin pero no todas son obligatorias ni en ese orden rígido."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "pregunta": "En la estructura del E2E de analíticas, ¿qué representa el 'criterio'?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Es el código JavaScript que ejecuta la verificación del dataLayer.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El código JavaScript de verificación va en los Step Definitions, no en el criterio del Gherkin. El 'criterio' en la estructura del escenario representa el contexto o la condición inicial que define en qué situación se ejecuta el test."
+        },
+        {
+          "id": "B",
+          "texto": "Es el contexto o condición que define la situación en la que se ejecutará el test; establece el estado previo necesario para el escenario.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la estructura Scenario → criterio → pasos → validación, el criterio define la condición inicial o el contexto del escenario. Es el equivalente al 'Given' de Gherkin: establece el estado del sistema antes de que ocurran las acciones del test."
+        },
+        {
+          "id": "C",
+          "texto": "Es el umbral de éxito del test; si el evento analítico tarda más de X milisegundos, el criterio falla.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Un umbral de tiempo sería un criterio de rendimiento, no de analíticas. El 'criterio' en la estructura del E2E de analíticas es el contexto inicial que establece la condición bajo la cual se ejecuta el escenario."
+        },
+        {
+          "id": "D",
+          "texto": "Es el número mínimo de eventos que deben dispararse para que el test se considere válido.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El 'criterio' no es un conteo de eventos. Es la definición del contexto o condición inicial del escenario, que determina en qué estado se encuentra el sistema antes de ejecutar los pasos del test."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "pregunta": "En la estructura del E2E de analíticas, ¿qué representa la 'validación'?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Es el paso donde el desarrollador aprueba manualmente el test revisando el Excel de guía de tageo.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La validación no es un proceso manual. En la estructura del E2E de analíticas, la 'validación' es la verificación automática del resultado: comprobar que el evento analítico esperado se disparó correctamente y llegó al sistema de tracking."
+        },
+        {
+          "id": "B",
+          "texto": "Es la verificación del resultado esperado: comprobar que el evento analítico se disparó correctamente y los datos llegaron bien al sistema de analítica.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. La 'validación' es el último elemento de la estructura Scenario → criterio → pasos → validación. Es la comprobación del resultado: se verifica que el evento analítico (tag, tracking) se disparó correctamente y que los datos enviados son los esperados según la guía de tageo."
+        },
+        {
+          "id": "C",
+          "texto": "Es la sección donde se definen los datos de prueba (usuarios, contraseñas, montos) para ejecutar el flujo.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los datos de prueba van en el contexto o en los pasos del escenario. La 'validación' es la parte final donde se verifica el resultado: que el evento analítico ocurrió correctamente."
+        },
+        {
+          "id": "D",
+          "texto": "Es sinónimo de 'criterio'; ambos definen las condiciones del test de forma equivalente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Son elementos distintos: el 'criterio' establece el contexto inicial (condición previa) y la 'validación' verifica el resultado final (que el evento analítico se disparó correctamente). No son sinónimos."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "pregunta": "¿Cuál es la buena práctica sobre el uso de `And` en los escenarios E2E de analíticas, según la recomendación del banco?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Usar `And` tantas veces como sea necesario; no hay límite recomendado en ningún contexto.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. En la sesión se mencionó explícitamente que para el banco se recomienda no usar más de 3 `And`. Aunque en general se puede usar más, la recomendación específica del banco es limitarlo a 3 para mantener los escenarios claros y legibles."
+        },
+        {
+          "id": "B",
+          "texto": "No usar más de 3 `And` por escenario; esta es la recomendación específica del banco, aunque en general sí se puede usar más.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se indicó exactamente: no usar más de 3 `And`, en este caso recomendado para el banco; en general se puede. Es una convención de la empresa para mantener los escenarios concisos y legibles."
+        },
+        {
+          "id": "C",
+          "texto": "No usar `And` en ningún caso; siempre reemplazarlo por `Given`, `When` o `Then` según corresponda.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `And` sí se usa en los escenarios; la buena práctica no es eliminarlo sino limitarlo. La recomendación del banco es no usar más de 3 `And` por escenario."
+        },
+        {
+          "id": "D",
+          "texto": "Usar `And` solo en la sección de validación, nunca en los pasos ni en el criterio.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `And` puede usarse después de cualquier keyword (Given, When, Then) para agregar condiciones adicionales. La restricción no es sobre dónde usarlo sino en cuántas veces: máximo 3 `And` según la recomendación del banco."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "pregunta": "La buena práctica de máximo 3 `And` es específica del banco. ¿Qué implica esto?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Que en proyectos no bancarios está prohibido usar `And` de cualquier forma.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. En la sesión se aclaró que 'en general se puede' usar más de 3 `And`. La limitación de 3 es una convención específica del banco para mantener los escenarios simples, no una regla universal del lenguaje Gherkin."
+        },
+        {
+          "id": "B",
+          "texto": "Que es una convención interna de la empresa para mantener los escenarios concisos; fuera de ese contexto Gherkin permite usar más `And` sin restricción técnica.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se aclaró que el límite de 3 `And` es la recomendación del banco, pero que en general se puede usar más. Es una convención de equipo para asegurar que los escenarios sean fáciles de leer y mantener, no una limitación técnica del lenguaje Gherkin."
+        },
+        {
+          "id": "C",
+          "texto": "Que Gherkin como lenguaje limita técnicamente a 3 el número máximo de `And` en cualquier escenario.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Gherkin no tiene límite técnico en el número de `And`. El límite de 3 es una convención interna del banco para mantener los escenarios claros y manejables, no una restricción del lenguaje."
+        },
+        {
+          "id": "D",
+          "texto": "Que los tests con más de 3 `And` generan un error de compilación en Cucumber y no pueden ejecutarse.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Cucumber no genera errores por tener más de 3 `And`. Es una buena práctica de equipo, no una restricción técnica. Los escenarios con más `And` se ejecutan sin problema; simplemente son menos legibles."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "pregunta": "¿Qué hace `recording: true` en el contexto de los tests E2E de analíticas?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Graba un video del navegador durante la ejecución del test para documentar visualmente el flujo del usuario.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Aunque algunas herramientas de E2E como Cypress sí pueden grabar videos, en el contexto de la sesión `recording: true` se usa para grabar los steps o el escenario descrito en Gherkin, no necesariamente el video del navegador."
+        },
+        {
+          "id": "B",
+          "texto": "Se usa para grabar los steps o el escenario descrito, registrando la ejecución de los pasos del test E2E de analíticas.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se indicó que `recording: true` se usa para grabar los steps o el escenario descrito. Es una opción de configuración que activa el registro de la ejecución de los pasos del test E2E de analíticas."
+        },
+        {
+          "id": "C",
+          "texto": "Activa el modo de depuración de Cucumber, imprimiendo en consola cada evento analítico antes de que se dispare.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El modo de depuración se configura de forma diferente en Cucumber (con flags como `--verbose` o `--debug`). En la sesión se especificó que `recording: true` se usa para grabar los steps o el escenario descrito."
+        },
+        {
+          "id": "D",
+          "texto": "Hace que el test se repita automáticamente tres veces en caso de fallo, registrando cada intento.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La repetición automática en caso de fallo es la funcionalidad de 'retry' en herramientas de testing. `recording: true` es para grabar los steps o el escenario descrito, no para reintentos."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "pregunta": "¿Por qué sería útil activar `recording: true` en un test E2E de analíticas?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Porque permite reducir el tiempo de ejecución del test al saltar los pasos ya grabados en ejecuciones anteriores.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `recording: true` no cachea pasos para saltarlos. Su utilidad es de documentación y trazabilidad: al grabar los steps y el escenario, se puede revisar qué ocurrió durante la ejecución del test, lo que facilita el diagnóstico cuando un test falla."
+        },
+        {
+          "id": "B",
+          "texto": "Porque permite tener un registro de cómo se ejecutaron los pasos del escenario, facilitando el diagnóstico cuando el test falla o cuando se necesita auditar el comportamiento analítico.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. Al grabar los steps y el escenario, `recording: true` genera un registro detallado de la ejecución. Esto es especialmente valioso en tests de analíticas: si un evento no se disparó correctamente, el registro permite identificar en qué paso ocurrió el problema."
+        },
+        {
+          "id": "C",
+          "texto": "Porque es obligatorio para que Cucumber pueda conectarse con el dataLayer del navegador.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La conexión con el dataLayer no depende de `recording: true`. Es una opción de registro adicional, no un requisito técnico para que Cucumber funcione con el sistema de analíticas."
+        },
+        {
+          "id": "D",
+          "texto": "Porque sin `recording: true` los tests E2E de analíticas no pasan la validación de buenas prácticas del banco.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. En la sesión no se mencionó `recording: true` como obligatorio para cumplir buenas prácticas. Es una opción de configuración que se usa cuando se quiere grabar la ejecución de los steps o el escenario."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "pregunta": "¿En qué se diferencia un test E2E funcional de un test E2E de analíticas?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "No hay diferencia; ambos verifican exactamente lo mismo usando los mismos criterios de validación.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Son tests distintos con objetivos diferentes. El E2E funcional verifica que los flujos del usuario (login, pago, navegación) funcionan correctamente. El E2E de analíticas verifica que los eventos de tracking se disparan correctamente y llegan al sistema de analítica."
+        },
+        {
+          "id": "B",
+          "texto": "El E2E funcional verifica que los flujos del usuario funcionan correctamente; el E2E de analíticas verifica que los eventos de tracking se disparan correctamente y los datos llegan al sistema de analítica.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. Son tests complementarios: el E2E funcional verifica la experiencia del usuario (¿puede iniciar sesión?, ¿puede hacer una transferencia?); el E2E de analíticas verifica el tracking (¿se registró el clic en el botón de transferencia?, ¿llegaron los datos al dataLayer?)."
+        },
+        {
+          "id": "C",
+          "texto": "El E2E funcional usa Gherkin; el E2E de analíticas usa el patrón AAA con Mocha y Chai.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Ambos tipos de test pueden usar Gherkin. En la sesión se explicó que Gherkin se usa en los tests E2E de analíticas precisamente porque permite describir el comportamiento analítico en lenguaje de negocio."
+        },
+        {
+          "id": "D",
+          "texto": "El E2E funcional es automático; el E2E de analíticas siempre es manual y requiere revisión humana.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los tests E2E de analíticas también son automatizados con herramientas como Cucumber. La automatización es precisamente una de las razones por las que se usa Gherkin: para conectar descripciones en lenguaje natural con pruebas automatizadas."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "pregunta": "¿Por qué el Excel de guía de tageo es un prerequisito necesario para escribir los tests E2E de analíticas?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Porque Cucumber lee directamente el Excel para generar los archivos `.feature` automáticamente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Cucumber no lee archivos Excel ni genera `.feature` automáticamente. El Excel es una referencia manual que el desarrollador consulta para saber qué eventos debe haber, qué datos deben contener y en qué páginas deben dispararse."
+        },
+        {
+          "id": "B",
+          "texto": "Porque es la referencia que define qué eventos deben registrarse, qué datos deben contener y en qué situaciones deben dispararse; sin ella no se sabe qué verificar en el test.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. El Excel de guía de tageo contiene toda la especificación de analíticas: qué eventos existen, sus datos (huella analítica), cuándo deben dispararse (pageviews, clicks). Sin esa guía, el desarrollador no sabría qué esperar al escribir la validación del test E2E de analíticas."
+        },
+        {
+          "id": "C",
+          "texto": "Porque el Excel contiene los Step Definitions pre-escritos que se importan directamente en el proyecto de testing.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El Excel de guía de tageo no contiene código; es documentación con las especificaciones de analíticas. Los Step Definitions los escribe el desarrollador en JavaScript/TypeScript basándose en esa guía."
+        },
+        {
+          "id": "D",
+          "texto": "Porque sin el Excel el sistema de analítica no puede procesar los eventos enviados por la aplicación.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El sistema de analítica procesa los eventos independientemente de si existe o no el Excel. El Excel es necesario para el desarrollador como referencia al escribir los tests: le dice qué debe verificar y cuál es el comportamiento analítico esperado."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "pregunta": "Si un equipo escribe un test E2E de analíticas sin tener el Excel de guía de tageo, ¿cuál sería el riesgo principal?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Que Cucumber no pueda ejecutarse porque requiere el archivo Excel en la misma carpeta del proyecto.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Cucumber no requiere ningún archivo Excel. El riesgo es de calidad del test: sin la guía, el desarrollador no tiene una referencia oficial de qué datos deben contener los eventos, por lo que podría validar valores incorrectos o incompletos."
+        },
+        {
+          "id": "B",
+          "texto": "Que el test verifique valores incorrectos o incompletos porque no se sabe cuál es la especificación oficial de los eventos analíticos.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. El Excel de guía de tageo es la fuente de verdad de las analíticas: define exactamente qué datos debe contener cada evento. Sin esa referencia, el test podría estar validando valores equivocados, lo que daría falsa confianza aunque el test pase."
+        },
+        {
+          "id": "C",
+          "texto": "Que los feature flags de analíticas queden desactivados automáticamente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los feature flags no dependen del Excel. El riesgo de no tener la guía es de especificación: no saber qué datos exactos deben tener los eventos, lo que hace el test menos confiable."
+        },
+        {
+          "id": "D",
+          "texto": "Que Gherkin rechace los archivos `.feature` escritos sin respetar el formato del Excel.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Gherkin no valida ni conoce la existencia del Excel. El riesgo es conceptual: sin la guía de tageo como referencia, los criterios de validación del test pueden ser incorrectos o incompletos."
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "pregunta": "¿Qué relación existe entre la estructura 'Scenario → criterio → pasos → validación' y las keywords de Gherkin (Given, When, Then)?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Son estructuras completamente independientes; la estructura del E2E de analíticas no usa las keywords de Gherkin.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La estructura del E2E de analíticas se implementa usando las keywords de Gherkin. 'Criterio' se implementa con `Given`, 'pasos' con `When` y `And`, y 'validación' con `Then`."
+        },
+        {
+          "id": "B",
+          "texto": "La estructura (criterio, pasos, validación) se implementa con las keywords de Gherkin: criterio ≈ Given, pasos ≈ When/And, validación ≈ Then.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. La estructura básica del E2E de analíticas (Scenario → criterio → pasos → validación) se expresa en la sintaxis Gherkin: el criterio es el estado inicial (Given), los pasos son las acciones del usuario (When/And) y la validación es el resultado esperado (Then)."
+        },
+        {
+          "id": "C",
+          "texto": "La validación siempre debe usar `Given`; los pasos siempre usan `Then`; el criterio siempre usa `When`.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los roles están invertidos. Given = contexto/criterio; When = acción/pasos; Then = resultado/validación. Esta correspondencia es fundamental en Gherkin."
+        },
+        {
+          "id": "D",
+          "texto": "La estructura del E2E de analíticas reemplaza a Given/When/Then con sus propios nombres, sin usar las keywords estándar de Gherkin.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El E2E de analíticas sigue usando las keywords estándar de Gherkin. La estructura (criterio, pasos, validación) es una descripción conceptual de qué hace cada parte del escenario, no nombres alternativos a las keywords."
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "pregunta": "¿Cuál es la diferencia entre el objetivo de un test E2E de analíticas y el de un test unitario de analíticas?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "No hay diferencia; ambos verifican que los eventos analíticos se disparen correctamente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Aunque ambos pueden verificar eventos analíticos, su alcance es diferente. Un test unitario verifica una función o método de forma aislada. El E2E de analíticas verifica que los datos fluyan correctamente desde la interacción del usuario hasta llegar al sistema de analítica, en un flujo completo y real."
+        },
+        {
+          "id": "B",
+          "texto": "El test unitario verifica una función analítica de forma aislada; el E2E de analíticas verifica que los datos fluyan correctamente de principio a fin, desde la UI hasta el sistema de analítica.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. El test unitario prueba una pieza de código aislada (por ejemplo, que la función de construcción de la huella analítica devuelva el objeto correcto). El E2E verifica el flujo completo: que cuando el usuario hace clic, el evento se dispara, los datos correctos llegan al dataLayer y al sistema de analítica."
+        },
+        {
+          "id": "C",
+          "texto": "El test unitario usa Gherkin; el E2E de analíticas usa Mocha y Chai.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Es al revés en este contexto: los tests unitarios usan Mocha, Chai y Sinon; los tests E2E de analíticas usan Gherkin con Cucumber para describir el comportamiento en lenguaje de negocio."
+        },
+        {
+          "id": "D",
+          "texto": "El test E2E de analíticas verifica solo el frontend; el test unitario verifica el backend analítico.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los tests E2E de analíticas verifican todo el flujo desde el frontend hasta que los datos llegan al sistema de analítica (que puede incluir capas de backend). Los tests unitarios se enfocan en unidades de código aisladas independientemente de si son frontend o backend."
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "pregunta": "En el contexto del test E2E de analíticas, ¿qué significa 'desde el inicio hasta que llegan al sistema de analítica'?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Que el test comienza cuando el desarrollador abre el IDE y termina cuando el código se despliega en producción.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Ese es el ciclo de desarrollo, no el alcance del test. 'Desde el inicio hasta que llegan al sistema de analítica' describe el recorrido de los datos: comienza con la acción del usuario en la UI y termina cuando los datos analíticos llegan a la plataforma de medición."
+        },
+        {
+          "id": "B",
+          "texto": "Que el test verifica el recorrido completo de los datos: desde la acción del usuario en la UI, pasando por el disparo del evento, hasta que los datos llegan correctamente al sistema de analítica (dataLayer, tracking).",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. El 'inicio' es la interacción del usuario (hacer clic, navegar a una página) y el 'fin' es que los datos analíticos correctos lleguen al sistema de medición (dataLayer, analytics). Verificar ese flujo completo es el objetivo del test E2E de analíticas."
+        },
+        {
+          "id": "C",
+          "texto": "Que el test solo ejecuta el primer y el último paso del flujo del usuario, omitiendo los pasos intermedios para mayor velocidad.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Un test E2E no omite pasos intermedios. El término 'desde el inicio hasta que llegan' describe el alcance completo: todo el flujo desde que el usuario actúa hasta que los datos de analítica llegan al destino."
+        },
+        {
+          "id": "D",
+          "texto": "Que el test se ejecuta desde el servidor de CI/CD hasta que el reporte queda almacenado en el repositorio de GitHub.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Eso describe el pipeline de CI/CD, no el alcance del test. La frase describe el recorrido de los datos analíticos: desde la interacción del usuario en la aplicación hasta que los eventos llegan correctamente al sistema de analítica."
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "pregunta": "¿Por qué combinar BDD (Gherkin) con tests E2E de analíticas tiene sentido desde la perspectiva del equipo de negocio?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Porque Gherkin genera automáticamente los reportes de analíticas que el equipo de negocio revisa en el Excel.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Gherkin no genera reportes de analíticas. La razón de combinar BDD con tests E2E de analíticas es que Gherkin permite describir el comportamiento analítico esperado en lenguaje claro (de negocio), haciendo que tanto el equipo técnico como el de negocio entiendan qué se está verificando."
+        },
+        {
+          "id": "B",
+          "texto": "Porque Gherkin permite describir el comportamiento analítico en lenguaje de negocio, haciendo que analistas, product owners y el equipo técnico entiendan y validen lo mismo.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se destacó que Gherkin se usa porque permite describir el comportamiento de las analíticas en lenguaje claro (negocio). Para las analíticas esto es especialmente valioso: los analistas de datos pueden leer los escenarios y confirmar que se están probando los eventos correctos con los datos correctos."
+        },
+        {
+          "id": "C",
+          "texto": "Porque el equipo de negocio puede ejecutar los tests de Cucumber directamente sin intervención técnica.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Aunque Gherkin es legible para el negocio, ejecutar los tests requiere configuración técnica y herramientas como Cucumber. La ventaja es que el equipo de negocio puede leer y validar los escenarios, no ejecutarlos directamente."
+        },
+        {
+          "id": "D",
+          "texto": "Porque BDD es obligatorio para todos los tests que involucren analíticas en proyectos bancarios según regulaciones.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. No hay regulaciones que obliguen a usar BDD para tests de analíticas en banca. La combinación es una buena práctica por sus beneficios de comunicación entre equipos técnicos y de negocio."
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "pregunta": "Resumiendo la sesión: si un desarrollador va a escribir por primera vez un test E2E de analíticas, ¿cuál sería el orden correcto de pasos previos según lo visto?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "1) Escribir el test en Gherkin, 2) implementar las analíticas, 3) revisar el Excel de guía de tageo.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El orden está equivocado. Las analíticas deben estar implementadas antes de escribir el test (no después), y la guía Excel se consulta antes de escribir los escenarios, no después. El orden correcto es: implementar analíticas → consultar Excel → (idealmente tener E2E funcionales) → escribir el test."
+        },
+        {
+          "id": "B",
+          "texto": "1) Verificar que las analíticas estén implementadas, 2) consultar el Excel de guía de tageo, 3) (preferiblemente) tener los E2E funcionales listos, 4) escribir el Scenario con criterio, pasos y validación.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se estableció ese orden lógico: primero verificar que las analíticas existen (prerequisito obligatorio), luego consultar el Excel de guía de tageo (referencia necesaria para saber qué validar), tener los E2E funcionales si es posible (recomendado), y finalmente escribir el Scenario con su estructura (criterio → pasos → validación) usando buenas prácticas (máximo 3 `And`, `recording: true`)."
+        },
+        {
+          "id": "C",
+          "texto": "1) Instalar Cucumber y Playwright, 2) crear el archivo `.feature`, 3) implementar los Step Definitions, 4) implementar las analíticas.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Implementar las analíticas al final no tiene sentido: el test debe verificar algo que ya existe. Además, la instalación de herramientas es un setup de proyecto que se hace una vez, no un paso previo de cada test. Los prerequisitos son: analíticas implementadas, Excel de guía y E2E funcionales."
+        },
+        {
+          "id": "D",
+          "texto": "1) Pedir al equipo de negocio que escriba los escenarios Gherkin, 2) implementar las analíticas según esos escenarios, 3) ejecutar los tests.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Aunque el equipo de negocio puede colaborar en definir los escenarios, el prerequisito es que las analíticas ya estén implementadas antes de los tests, no al revés. Además, la guía de tageo (Excel) es la referencia oficial, no los escenarios Gherkin."
+        }
+      ]
+    }
+  ]
+}
