@@ -751,6 +751,36 @@
           "retroalimentacion": "Incorrecto. Eso viola la regla de la sesión: 'El UXDM es siempre GLOBAL, no se mapeará contra BGADMs locales'. Además, crear un Local DM redundante duplicaría APIs y generaría inconsistencias. La solución correcta es recibir esos datos desde el componente superior que ya los obtuvo."
         }
       ]
+    },
+    {
+      "id": 26,
+      "pregunta": "La sesión distingue tres fuentes de contenido que puede mostrar una pantalla. ¿Cuáles son y qué tipo de información provee cada una?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "BGADP (peticiones a APIs), BGADM (gestión interna de datos) y locales-app (traducciones); cada una se elige según el método HTTP que necesita el componente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. BGADP, BGADM y locales-app son piezas de la arquitectura del proyecto, no las tres fuentes de contenido del UXDM. La sesión clasificó las fuentes según el tipo de dato: si es estático, si viene de un endpoint en tiempo de ejecución o si viene de un CMS como AEM."
+        },
+        {
+          "id": "B",
+          "texto": "Datos estáticos (literales, assets o contenido fijo del frontend que no cambia frecuentemente), textos a partir de respuesta de endpoints (información dinámica que devuelve una API) y textos a partir del gestor de contenidos AEM (textos, imágenes y banners gestionados desde un CMS sin tocar el código).",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se definieron estas tres fuentes: 1) Datos estáticos: no cambian frecuentemente, vienen de archivos de literales multi-language, assets o contenido fijo del frontend. 2) Textos a partir de respuesta de endpoints: la aplicación consulta una URL/servicio del backend y recibe información dinámica que se muestra en la interfaz. 3) Textos a partir del gestor de contenidos (AEM): Adobe Experience Manager es el CMS que almacena textos, imágenes, banners y promociones, lo que permite actualizar contenido sin modificar el código de la aplicación."
+        },
+        {
+          "id": "C",
+          "texto": "URI params (datos identificadores del recurso), query params (datos de filtrado) y body (datos enviados al servidor); las tres se usan en todas las peticiones HTTP del UXDM.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. URI params, query params y body son partes de la estructura de una petición HTTP (cómo se envían los datos al servidor), no las fuentes de contenido mostrado en la interfaz. Las tres fuentes de contenido son: estáticos, desde endpoints y desde AEM."
+        },
+        {
+          "id": "D",
+          "texto": "DM Global (APIs del banco), DM Local (APIs del equipo) y DM Canónico (versión oficial del API Catalog); se elige una según el entorno de despliegue.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Global/Local/Canónico son clasificaciones de los Data Models dentro del control de versiones, no las tres fuentes de contenido del UXDM. Además la sesión prohíbe usar Local DMs en el mapeo. Las fuentes de contenido son: estáticos, endpoints y AEM."
+        }
+      ]
     }
   ]
 }
