@@ -811,6 +811,96 @@
           "retroalimentacion": "Incorrecto. La asignación correcta es: `@` para eventos, `.` para propiedades JavaScript, `?` para atributos booleanos, y `${}` para interpolación de expresiones JavaScript dentro del template HTML."
         }
       ]
+    },
+    {
+      "id": 28,
+      "pregunta": "¿Qué hace la directiva `when()` de Lit y en qué se diferencia del operador ternario `condicion ? a : b` dentro del template?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "`when()` ejecuta las dos ramas del condicional simultáneamente para pre-calcularlas; el ternario solo ejecuta una.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `when()` no ejecuta ambas ramas; solo ejecuta la que corresponde según la condición. La diferencia real con el ternario no es sobre cuántas ramas se evalúan, sino que `when()` es la forma idiomática proporcionada por Lit para expresar renderizado condicional de forma más legible."
+        },
+        {
+          "id": "B",
+          "texto": "`when(condicion, () => html`truePart`, () => html`falsePart`)` es la directiva de Lit para renderizado condicional, equivalente al ternario pero con una sintaxis más explícita y legible para casos con templates complejos.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se mostró `when(this.loggedIn, () => html\\`<p>Bienvenido</p>\\`, () => html\\`<p>Inicia sesión</p>\\`)`. Es equivalente al ternario `this.loggedIn ? html\\`...\\` : html\\`...\\``, pero usando la directiva importada desde `lit/directives/when.js`. Ofrece mejor legibilidad cuando el contenido condicional es extenso."
+        },
+        {
+          "id": "C",
+          "texto": "`when()` oculta el elemento con `display: none` cuando la condición es falsa; el ternario lo elimina completamente del DOM.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `when()` no usa `display: none`. Cuando la condición es falsa, renderiza la parte alternativa (o nada si no se provee). Tanto `when()` como el ternario controlan qué HTML se incluye en el template, no su visibilidad CSS."
+        },
+        {
+          "id": "D",
+          "texto": "`when()` solo puede usarse en el método `connectedCallback()` y no dentro de `render()`.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Las directivas de Lit, incluyendo `when()`, se usan dentro de `render()` en el template `html\\`...\\``. No tienen ninguna relación con `connectedCallback()`."
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "pregunta": "¿Para qué sirve la directiva `unsafeHTML()` y qué riesgo de seguridad conlleva su uso?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Permite aplicar estilos CSS dinámicos dentro de `static styles`, con el riesgo de inyectar reglas CSS maliciosas.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Eso describe `unsafeCSS`, no `unsafeHTML`. La directiva `unsafeHTML()` se usa dentro del template `html\\`...\\`` para renderizar contenido HTML como string, con el riesgo de inyección de código HTML/JavaScript malicioso (XSS)."
+        },
+        {
+          "id": "B",
+          "texto": "Permite renderizar un string de HTML directamente en el template como si fuera markup real, con el riesgo de ataques XSS si el contenido proviene de fuentes no confiables.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que `unsafeHTML(this.content)` permite que Lit interprete el string como HTML real en lugar de texto plano. El riesgo es que si `this.content` contiene `<script>alert('hack')</script>` o similares provenientes de un usuario o API externa, ese código se ejecutaría en el navegador (ataque XSS). Por eso solo debe usarse con contenido completamente controlado."
+        },
+        {
+          "id": "C",
+          "texto": "Permite usar propiedades privadas `#campo` de otras clases dentro del template de Lit, saltando la restricción de privacidad.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `unsafeHTML` no tiene ninguna relación con propiedades privadas ni con la restricción de acceso `#`. Es una directiva de renderizado que interpreta strings como HTML dentro del template."
+        },
+        {
+          "id": "D",
+          "texto": "Permite que el componente ignore el Shadow DOM y aplique sus estilos al documento principal, con el riesgo de romper el diseño global.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `unsafeHTML` no afecta al Shadow DOM. El encapsulamiento de estilos lo gestiona el propio sistema de Lit con Shadow DOM. `unsafeHTML` es exclusivamente para renderizar contenido HTML dinámico dentro del template."
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "pregunta": "En el ciclo de vida de Lit, ¿por qué `update()` y `updated()` se consideran malas prácticas para el banco y se recomienda evitarlos?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Porque `update()` y `updated()` no están disponibles en la versión de Lit usada en el banco, generando errores de compilación si se usan.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `update()` y `updated()` sí existen en Lit y son métodos del ciclo de vida estándar. La razón por la que el banco los considera malas prácticas no es por incompatibilidad técnica, sino por los riesgos que su uso introduce en la mantenibilidad y estabilidad del código."
+        },
+        {
+          "id": "B",
+          "texto": "Porque `update()` afecta el sistema interno de reactividad de Lit y `updated()` se ejecuta en cada actualización del componente; usarlos incorrectamente puede causar bucles de renderizado, efectos secundarios no controlados y errores difíciles de depurar.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se indicó explícitamente que tanto `update()` como `updated()` se tomaron como malas prácticas para el banco para evitar errores. `update()` forma parte del sistema interno de reactividad de Lit y sobreescribirlo puede romper el ciclo de renderizado. `updated()` se ejecuta tras cada actualización, lo que facilita crear bucles involuntarios si se modifica una propiedad reactiva dentro de él."
+        },
+        {
+          "id": "C",
+          "texto": "Porque `update()` y `updated()` están deprecados en la versión de Lit usada en el banco y serán eliminados en la próxima versión.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. No están deprecados. La recomendación de evitarlos es una convención interna del banco para reducir el riesgo de errores en los componentes. Para la mayoría de casos se prefiere usar `firstUpdated()` (una sola vez) en lugar de `updated()` (cada actualización)."
+        },
+        {
+          "id": "D",
+          "texto": "Porque `update()` y `updated()` son exclusivos de React y no son compatibles con la arquitectura de Web Components de Lit.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `update()` y `updated()` son métodos del ciclo de vida de `LitElement`, no de React. React tiene su propio ciclo de vida con hooks como `useEffect`. La razón para evitarlos en el banco es de buenas prácticas internas, no de incompatibilidad."
+        }
+      ]
     }
   ]
 }

@@ -751,6 +751,36 @@
           "retroalimentacion": "Incorrecto. Aunque ambas cumplen una función similar (alojar repositorios Git), tienen diferencias importantes en integraciones y ecosistemas. En entornos Atlassian, Bitbucket tiene ventajas claras. En proyectos open source, GitHub tiene mayor presencia. La elección depende del contexto."
         }
       ]
+    },
+    {
+      "id": 26,
+      "pregunta": "¿Qué hace exactamente el comando `git clone <URL>` y qué crea en tu máquina local?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Descarga solo el último commit del repositorio remoto, sin incluir el historial de versiones ni las ramas.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `git clone` descarga el repositorio completo, incluyendo todo el historial de commits, todas las ramas y las etiquetas. No se limita al último commit."
+        },
+        {
+          "id": "B",
+          "texto": "Copia el repositorio remoto completo (código, historial de commits y ramas) a tu máquina local, creando una carpeta con el proyecto y un repositorio Git local ya configurado y vinculado al remoto.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que `git clone <URL>` copia el repositorio remoto completo a tu equipo: código fuente, historial de commits, ramas y configuración. Automáticamente crea la carpeta del proyecto, inicializa el repositorio Git local y configura el remoto `origin` apuntando a la URL original, listo para hacer `push` y `pull`."
+        },
+        {
+          "id": "C",
+          "texto": "Crea una rama nueva llamada `clone` en el repositorio remoto y la sincroniza con tu repositorio local existente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `git clone` no crea ninguna rama en el remoto ni requiere un repositorio local previo. Su función es copiar un repositorio remoto completo a una nueva carpeta local. Para crear ramas se usa `git branch` o `git checkout -b`."
+        },
+        {
+          "id": "D",
+          "texto": "Fusiona los cambios del repositorio remoto con tu repositorio local actual, equivalente a hacer `git pull` en un repositorio ya clonado.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Eso describe `git pull`, no `git clone`. `git pull` actualiza un repositorio ya existente en tu máquina. `git clone` se usa cuando aún no tienes el repositorio localmente y necesitas obtenerlo por primera vez."
+        }
+      ]
     }
   ]
 }
