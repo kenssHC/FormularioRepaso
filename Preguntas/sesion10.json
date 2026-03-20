@@ -728,6 +728,66 @@
     },
     {
       "id": 25,
+      "pregunta": "¿En qué se diferencia el binding type `delayed` del tipo `always`?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "`delayed` se desregistra automáticamente del canal cada vez que el usuario cambia de página, mientras que `always` permanece siempre activo.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El comportamiento de desregistrarse al cambiar de página corresponde al binding type `currentview`, no a `delayed`. La sesión explicó que `delayed` funciona igual que `always` en cuanto a permanencia, con la única diferencia de cuándo se produce el registro inicial."
+        },
+        {
+          "id": "B",
+          "texto": "`delayed` espera a que todos los componentes de la aplicación estén cargados antes de registrarse en el canal; `always` se registra inmediatamente sin esperar a nadie.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que `delayed` funciona como `always` (permanece activo siempre), pero con una diferencia: espera a que todos los componentes estén cargados antes de registrarse. Esto evita problemas cuando un componente intenta escuchar un canal pero otros componentes aún no están listos, lo que podría generar estados inconsistentes."
+        },
+        {
+          "id": "C",
+          "texto": "`delayed` solo registra los DataManagers y omite los componentes UI, mientras que `always` registra todos los tipos de componentes.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Esa descripción corresponde parcialmente al binding type `ui`, no a `delayed`. El binding type `delayed` no distingue por tipo de componente; simplemente retrasa el momento del registro hasta que todos los componentes están cargados."
+        },
+        {
+          "id": "D",
+          "texto": "`delayed` introduce un retardo fijo de 500ms antes de registrarse, lo que permite que el navegador priorice el renderizado visual inicial.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `delayed` no tiene un retardo fijo en milisegundos. El retardo es dinámico: espera hasta que todos los componentes estén cargados, sea cual sea el tiempo que eso tome. No está relacionado con optimizaciones de renderizado visual."
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "pregunta": "¿Qué ocurre con los componentes de una página cuando el usuario navega a otra usando el binding type `currentview`?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Los componentes de la página anterior siguen escuchando el canal en segundo plano para no perder datos publicados durante la navegación.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Eso describe el comportamiento de `always`. Con `currentview`, los componentes de la vista anterior se desregistran completamente del canal al cambiar de página. No siguen escuchando en segundo plano."
+        },
+        {
+          "id": "B",
+          "texto": "Los componentes de la vista anterior se desregistran del canal y los componentes de la nueva vista se registran, de modo que solo los componentes activos en la pantalla actual están conectados.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que `currentview` registra solo los componentes de la vista actual. Al navegar: los de la página anterior se desregistran y los de la nueva página se registran. Esto es útil para evitar que componentes de vistas inactivas reaccionen a datos que no les corresponden en ese momento."
+        },
+        {
+          "id": "C",
+          "texto": "Los componentes de ambas páginas (la anterior y la nueva) permanecen registrados simultáneamente hasta que el usuario cierre sesión.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `currentview` hace exactamente lo contrario: garantiza que solo los componentes de la vista actual están registrados. Si ambas páginas permanecieran activas, se anularía el propósito del binding type, que es limitar el alcance de escucha a la vista en uso."
+        },
+        {
+          "id": "D",
+          "texto": "Los componentes de la vista anterior se destruyen del DOM y se recrean desde cero al regresar a esa página.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `currentview` controla el registro y desregistro en los canales, no el ciclo de vida del DOM. Los componentes pueden seguir existiendo en el DOM aunque estén desregistrados del canal. La destrucción y recreación del DOM depende de la implementación del router, no del binding type."
+        }
+      ]
+    },
+    {
+      "id": 28,
       "pregunta": "Según el diagrama, ¿en qué momento exacto se publican los datos del usuario en el canal `ch_user_data`?",
       "imagen": "Preguntas/sesion10/images/imagen2.png",
       "imagenAlt": "Diagrama Ejemplo 1: Login → Dashboard. LoginPage publica en ch_user_data cuando loginDM emite login-success. DashboardPage se suscribe con subscribe()",
@@ -759,7 +819,7 @@
       ]
     },
     {
-      "id": 26,
+      "id": 29,
       "pregunta": "Según el diagrama del carrito de compras, ¿qué objeto exacto reciben los tres suscriptores cuando `ProductPage` agrega un producto?",
       "imagen": "Preguntas/sesion10/images/imagen3.png",
       "imagenAlt": "Diagrama Ejemplo 2: Carrito de compras. ProductPage publica en ch_cart_items. HeaderComponent, CartSidebar y CartBadge se suscriben al mismo canal",
