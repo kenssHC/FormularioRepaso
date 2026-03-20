@@ -1,0 +1,756 @@
+{
+  "titulo": "Repaso: Diseño Atómico — Atoms, Molecules, Organisms, Templates, Pages, OPX y MultiStep",
+  "descripcion": "Preguntas de opción múltiple basadas en el contenido de la Sesión 13: componentes atómicos, los cinco niveles del diseño atómico (Atom, Molecule, Organism, Template, Page), jerarquía en proyectos Cells + Lit, ejemplo real en banca y tipos de flujo OPX vs MultiStep.",
+  "preguntas": [
+    {
+      "id": 1,
+      "pregunta": "¿Cuál es la relación correcta entre los componentes básicos y los componentes atómicos?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Son sinónimos; se usan de forma intercambiable en la documentación de Cells y no hay diferencia entre ellos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. No son sinónimos. Tienen una relación jerárquica: los componentes básicos se construyen a partir de los atómicos. El término 'básico' agrupa elementos reutilizables de interfaz, mientras que los 'atómicos' son los bloques más pequeños que los forman."
+        },
+        {
+          "id": "B",
+          "texto": "Los componentes básicos están formados por componentes atómicos; los atómicos son los elementos más pequeños e indivisibles de la interfaz.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó exactamente esta relación: los componentes básicos están formados por componentes atómicos. Los atómicos son los elementos más pequeños de la interfaz y no se pueden dividir en partes más simples. Sirven como bloques de construcción para crear componentes más complejos."
+        },
+        {
+          "id": "C",
+          "texto": "Los componentes atómicos contienen varios componentes básicos agrupados en una estructura compleja.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La relación es inversa. Son los componentes básicos los que están formados por atómicos, no al revés. El atómico es el nivel más pequeño: no contiene a otros componentes, sino que es él quien se usa como parte de los básicos."
+        },
+        {
+          "id": "D",
+          "texto": "Los componentes atómicos pertenecen a la capa de datos (Data Components) y los básicos a la capa de interfaz (UI Components).",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los componentes atómicos no son Data Components. Ambos (atómicos y básicos) pertenecen a la capa de interfaz visual (UI). Los Data Components (BGADP, BGADM) son una categoría completamente diferente de la arquitectura de Cells."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "pregunta": "¿Cuál de las siguientes opciones describe correctamente las tres características principales de los Atoms?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Contienen lógica de negocio compleja, consumen APIs directamente y tienen múltiples estados reactivos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los Atoms no contienen lógica de negocio compleja ni consumen APIs directamente. Eso es responsabilidad de los Data Components (BGADP, BGADM). Los Atoms son simples y solo se ocupan de mostrar un elemento básico de la interfaz."
+        },
+        {
+          "id": "B",
+          "texto": "Son complejos, no reutilizables y pueden dividirse en partes más pequeñas.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Las tres características están invertidas. Los Atoms son simples (no complejos), reutilizables (no exclusivos) y no se pueden dividir en partes más pequeñas (es su definición fundamental)."
+        },
+        {
+          "id": "C",
+          "texto": "Son simples, reutilizables y no se pueden dividir en partes más simples.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se listaron exactamente estas tres características de los Atoms: simples, reutilizables y no se pueden dividir más. Son los bloques de construcción más básicos de la interfaz: botón, ícono, input, texto, label."
+        },
+        {
+          "id": "D",
+          "texto": "Son la unión de varias moléculas y forman la estructura completa de una pantalla.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Eso describe a los Organisms, no a los Atoms. Los Atoms son el nivel más pequeño: elementos individuales como un botón o un ícono. Son las moléculas las que agrupan átomos, y los organismos los que agrupan moléculas."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "pregunta": "¿Cuál de los siguientes es un ejemplo de componente atómico (Atom)?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Una tarjeta de producto que muestra título, imagen y precio.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Una tarjeta con título, imagen y precio combina varios elementos, por lo que es una Molecule. Los Atoms son elementos individuales e indivisibles como un botón, un ícono o un texto."
+        },
+        {
+          "id": "B",
+          "texto": "Un input de formulario para ingresar el monto a transferir.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. Un input es un ejemplo clásico de Atom: es un elemento simple, reutilizable e indivisible. La sesión listó explícitamente el input como uno de los componentes atómicos junto con botón, ícono, texto y label."
+        },
+        {
+          "id": "C",
+          "texto": "Una lista completa de cuentas bancarias con información de saldo.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Una lista completa de cuentas es un Organism: agrupa múltiples moléculas (tarjetas de cuenta) para formar una sección grande de la interfaz. Está muy por encima del nivel Atom en la jerarquía."
+        },
+        {
+          "id": "D",
+          "texto": "El formulario completo de transferencia bancaria con todos sus campos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Un formulario completo es un Organism o Molecule: combina múltiples elementos (inputs, labels, botones). No es indivisible; se puede desglosar en sus partes atómicas."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "pregunta": "¿Qué forma exactamente una Molecule en el diseño atómico?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "La estructura de una pantalla completa sin datos reales, como un molde reutilizable.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Eso describe a un Template. Una Molecule es mucho más pequeña: es la unión de varios Atoms para crear un bloque de interfaz funcional, no la estructura de una pantalla entera."
+        },
+        {
+          "id": "B",
+          "texto": "La unión de varios Atoms para crear un bloque de interfaz funcional.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se definió la Molecule como la unión de varios Átomos. El ejemplo dado fue: H2 Title + Button + Box formando un bloque de interfaz. Un ejemplo real es una tarjeta simple con título, botón e imagen."
+        },
+        {
+          "id": "C",
+          "texto": "Un conjunto de Organisms que forman una sección completa de la aplicación.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Eso describe a un nivel superior, no a una Molecule. Los Organisms agrupan Molecules, y los Templates/Pages agrupan Organisms. La Molecule está en el segundo nivel, justo por encima de los Atoms."
+        },
+        {
+          "id": "D",
+          "texto": "Un componente de datos que gestiona el estado global de varios Atoms.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Las Molecules no gestionan estado global ni son Data Components. Son componentes de interfaz que combinan Atoms visualmente para crear piezas funcionales de la UI."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "pregunta": "Según el ejemplo de la sesión, ¿cuál de los siguientes corresponde a una Molecule?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Un botón de confirmación individual.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Un botón individual es un Atom: es simple, reutilizable e indivisible. Para ser una Molecule necesitaría combinarse con otros Atoms como un label, un ícono o un input."
+        },
+        {
+          "id": "B",
+          "texto": "Una tarjeta compuesta por H2 Title + Button + Box.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. Ese fue el ejemplo exacto de Molecule mostrado en la sesión: H2 Title + Button + Box forman un bloque de interfaz. También se mencionó la tarjeta simple (título + botón + imagen) como otro ejemplo real de Molecule."
+        },
+        {
+          "id": "C",
+          "texto": "Una página de catálogo que muestra todos los productos disponibles.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Una página de catálogo completa es una Page (o al menos un Organism). Contiene múltiples tarjetas de productos (moléculas) agrupadas, lo que la sitúa en un nivel mucho más alto de la jerarquía."
+        },
+        {
+          "id": "D",
+          "texto": "La feature completa de Transferencias del banco.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Una Feature es el nivel más alto de la jerarquía en Cells + Lit: Feature → Page → Organisms → Molecules → Atoms. La feature de Transferencias contiene Pages, que contienen Organisms, que contienen Molecules."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "pregunta": "¿Qué diferencia a un Organism de una Molecule?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Un Organism es más simple que una Molecule porque usa menos Atoms en su composición.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La relación de complejidad es la opuesta: los Organisms son más complejos que las Molecules. Un Organism agrupa Molecules para formar secciones grandes, mientras que una Molecule solo combina Atoms básicos."
+        },
+        {
+          "id": "B",
+          "texto": "Un Organism es un conjunto de Molecules que forman una sección grande de la interfaz, como una lista de productos o un catálogo.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se definió el Organism como un conjunto de Molecules que forman una sección más grande. Los ejemplos dados fueron: lista de productos, lista de tarjetas, catálogo. Mientras que una Molecule puede ser una tarjeta individual, el Organism sería la lista completa de esas tarjetas."
+        },
+        {
+          "id": "C",
+          "texto": "Un Organism contiene datos reales y una Molecule no; esa es la única diferencia entre ambos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La diferencia entre tener o no datos reales es la que distingue a un Template de una Page, no a los Organisms de las Molecules. Ambos (Organism y Molecule) pueden estar en un Template (sin datos) o en una Page (con datos)."
+        },
+        {
+          "id": "D",
+          "texto": "Los Organisms solo existen en proyectos bancarios; en aplicaciones de ecommerce se usan Molecules directamente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El diseño atómico es una metodología universal de diseño de interfaces que aplica a cualquier tipo de aplicación web, no solo a proyectos bancarios."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "pregunta": "¿Cuál es la diferencia fundamental entre un Template y una Page?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "El Template usa componentes de Lit y la Page usa componentes de Polymer.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La diferencia entre Template y Page no es tecnológica. No tiene relación con Lit ni Polymer; ambos son niveles del diseño atómico que describen la estructura y el estado de los datos de una pantalla."
+        },
+        {
+          "id": "B",
+          "texto": "El Template define la estructura de la página sin datos reales, como un molde; la Page es el Template con datos reales insertados.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó esta distinción con una fórmula: template + datos = page. El Template es como un molde que define dónde va el Header, la lista de productos y el Footer, pero sin datos específicos. La Page es ese mismo molde ya cargado con datos reales (Silla, Mesa, Sofá)."
+        },
+        {
+          "id": "C",
+          "texto": "El Template ya contiene datos reales y la Page los elimina para mostrar solo la estructura de la pantalla.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La relación está completamente invertida. Es el Template el que NO tiene datos (solo estructura) y la Page la que SÍ tiene datos reales. Un Template con datos ya es una Page."
+        },
+        {
+          "id": "D",
+          "texto": "No hay diferencia conceptual; son nombres distintos para el mismo nivel según el equipo de desarrollo.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Son niveles distintos con propósitos distintos. El Template sirve para definir y validar la estructura visual antes de tener datos disponibles. La Page es la versión final funcional con datos reales que el usuario ve."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "pregunta": "En el ejemplo de la sesión, una pantalla mostraría 'Header / Lista de productos / Footer' pero todavía sin datos. Después mostraría 'Silla, Mesa, Sofá'. ¿Qué nivel corresponde a cada estado?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "El primero es un Organism y el segundo es una Molecule.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Organisms y Molecules son componentes dentro de una pantalla, no pantallas completas. La diferencia entre los dos estados describe exactamente la distinción entre Template (estructura sin datos) y Page (estructura con datos reales)."
+        },
+        {
+          "id": "B",
+          "texto": "El primero es un Template (estructura sin datos); el segundo es una Page (Template con datos reales: Silla, Mesa, Sofá).",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se mostró exactamente este ejemplo: 'Header / Lista de productos / Footer' sin datos específicos es el Template (molde). Cuando esa misma estructura se llena con productos reales como 'Silla, Mesa, Sofá', se convierte en una Page. La fórmula es: template + datos = page."
+        },
+        {
+          "id": "C",
+          "texto": "El primero es una Page y el segundo es un Template.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Es exactamente al revés. La estructura sin datos es el Template y la que tiene datos reales es la Page. Una Page siempre tiene datos reales; un Template nunca los tiene (es solo el molde)."
+        },
+        {
+          "id": "D",
+          "texto": "Ambos son Pages; la diferencia es que una está en modo de prueba y la otra en producción.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La distinción no es de entornos (prueba vs producción), sino conceptual: una tiene datos reales (Page) y la otra no (Template). Esta diferencia es válida independientemente del entorno en que se ejecute la aplicación."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "pregunta": "¿Cuál es la jerarquía correcta de mayor a menor nivel en proyectos con Cells + Lit según la sesión?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Page → Feature → Organisms → Molecules → Atoms",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La Feature va en el nivel más alto, por encima de la Page. En Cells + Lit, la Feature es la unidad funcional de más alto nivel que puede contener una o más Pages."
+        },
+        {
+          "id": "B",
+          "texto": "Atoms → Molecules → Organisms → Page → Feature",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Esa es la jerarquía de menor a mayor complejidad, que sería la forma de construcción (de abajo hacia arriba). La jerarquía de mayor a menor nivel es Feature → Page → Organisms → Molecules → Atoms."
+        },
+        {
+          "id": "C",
+          "texto": "Feature → Page → Organisms → Molecules → Atoms",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se presentó exactamente esta jerarquía para proyectos grandes con Cells + Lit: Feature (nivel más alto) → Page → Organisms → Molecules → Atoms (nivel más pequeño). El ejemplo real fue la feature 'Transferencias' desglosada en todos sus niveles."
+        },
+        {
+          "id": "D",
+          "texto": "Feature → Organisms → Molecules → Page → Atoms",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La Page no está entre las Molecules y los Atoms. La jerarquía correcta es Feature → Page → Organisms → Molecules → Atoms. La Page siempre va inmediatamente después de la Feature, antes de los Organisms."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "pregunta": "En el ejemplo bancario de la feature 'Transferencias', el 'Formulario de transferencia' y la 'Lista de cuentas' son ejemplos de qué nivel?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Atoms, porque son elementos simples que se repiten en muchas pantallas del banco.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Un formulario de transferencia o una lista de cuentas son componentes complejos formados por múltiples elementos. Los Atoms son elementos simples e indivisibles como un input o un botón individual."
+        },
+        {
+          "id": "B",
+          "texto": "Molecules, porque combinan varios elementos básicos para formar piezas funcionales.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Las Molecules son más pequeñas, como un 'Campo monto' (que combina label + input) o un 'Botón enviar'. El 'Formulario de transferencia' completo y la 'Lista de cuentas' son conjuntos de múltiples moléculas, lo que los sitúa en un nivel superior."
+        },
+        {
+          "id": "C",
+          "texto": "Organisms, porque son conjuntos de Molecules que forman secciones grandes de la interfaz.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En el ejemplo real de la sesión, los Organisms de la feature 'Transferencias' son exactamente: 'Formulario transferencia' y 'Lista de cuentas'. Estos son secciones grandes que agrupan múltiples moléculas como 'Campo monto', 'Campo cuenta' y 'Botón enviar'."
+        },
+        {
+          "id": "D",
+          "texto": "Templates, porque definen la estructura de cómo se verá la pantalla.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Un Template es la estructura de una pantalla completa (sin datos), no una sección específica. El 'Formulario de transferencia' es una sección dentro de la página, no la estructura de toda la página."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "pregunta": "En la feature 'Transferencias', ¿cuáles son los ejemplos de Molecules según el ejemplo de la sesión?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Input, button, icon, text.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Input, button, icon y text son los Atoms del ejemplo: elementos simples e indivisibles en el nivel más bajo de la jerarquía. Las Molecules combinan varios de estos Atoms para formar piezas más funcionales."
+        },
+        {
+          "id": "B",
+          "texto": "Campo monto, Campo cuenta, Botón enviar.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se listaron 'Campo monto', 'Campo cuenta' y 'Botón enviar' como las Molecules de la feature 'Transferencias'. Cada uno combina Atoms: el 'Campo monto' combina label + input; el 'Botón enviar' combina icon + text + button."
+        },
+        {
+          "id": "C",
+          "texto": "Formulario transferencia, Lista de cuentas.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. 'Formulario transferencia' y 'Lista de cuentas' son los Organisms del ejemplo: secciones grandes que agrupan múltiples Molecules. Son un nivel más alto que las Molecules."
+        },
+        {
+          "id": "D",
+          "texto": "La página 'Transferencia bancaria'.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. 'Transferencia bancaria' es la Page del ejemplo: el nivel entre la Feature y los Organisms. Contiene los Organisms, que contienen las Molecules, que contienen los Atoms."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "pregunta": "¿Cuáles son los Atoms mencionados en el ejemplo real de la feature 'Transferencias'?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Campo monto y Campo cuenta.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. 'Campo monto' y 'Campo cuenta' son Molecules: combinan varios Atoms (label, input, mensaje de error) para formar un campo funcional completo. Los Atoms son los elementos más básicos dentro de esos campos."
+        },
+        {
+          "id": "B",
+          "texto": "Input, button, icon, text.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se listaron exactamente estos cuatro Atoms en el ejemplo de 'Transferencias': input, button, icon, text. Son los bloques más pequeños e indivisibles de la interfaz a partir de los cuales se construyen las Molecules, Organisms y Pages."
+        },
+        {
+          "id": "C",
+          "texto": "Formulario transferencia y Lista de cuentas.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Esos son los Organisms del ejemplo, no los Atoms. Los Organisms son las secciones más grandes de la pantalla, compuestas por múltiples Molecules. Los Atoms son los elementos más simples e indivisibles."
+        },
+        {
+          "id": "D",
+          "texto": "Header, Lista de productos, Footer.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Header, Lista de productos y Footer son los elementos de la estructura de un Template, no los Atoms del ejemplo de Transferencias. Los Atoms del ejemplo de banca son: input, button, icon, text."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "pregunta": "¿Qué significa OPX en el contexto de los flujos de interacción de una feature?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Que la feature utiliza un único Data Model global (One Provider eXperience) para todas sus pantallas.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. OPX no tiene relación con la cantidad de Data Models que usa una feature. Es un tipo de flujo de interacción del usuario que define si la experiencia ocurre en una o varias pantallas."
+        },
+        {
+          "id": "B",
+          "texto": "Que la feature presenta una experiencia de una sola pantalla (One Page eXperience), donde todo el proceso ocurre en una única vista.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se definió OPX como 'experiencia de una sola pantalla'. La abreviatura representa One Page eXperience. Todo el flujo que el usuario debe completar ocurre dentro de una única pantalla, sin navegar a otra."
+        },
+        {
+          "id": "C",
+          "texto": "Que la feature solo puede usarse en dispositivos móviles (One Phone eXperience).",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. OPX no restringe el tipo de dispositivo. Es un tipo de flujo de interacción del usuario (una sola pantalla vs varios pasos), aplicable tanto en móvil como en web de escritorio."
+        },
+        {
+          "id": "D",
+          "texto": "Que la feature usa un único componente atómico como base para construir toda su interfaz.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. OPX no describe la composición de componentes. Es un tipo de flujo de interacción: toda la experiencia del usuario se resuelve en una sola pantalla, independientemente de cuántos Atoms, Molecules u Organisms contenga."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "pregunta": "¿Qué caracteriza a un flujo MultiStep en el contexto de las features?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Que la feature usa múltiples Data Models simultáneamente para obtener datos de distintas APIs.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. MultiStep describe el flujo de interacción del usuario, no la cantidad de APIs consumidas. Una feature puede usar múltiples APIs y aun así ser OPX si todo ocurre en una sola pantalla."
+        },
+        {
+          "id": "B",
+          "texto": "Que la experiencia está dividida en varios pasos o pantallas que el usuario completa secuencialmente.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se definió MultiStep como la experiencia dividida en varios pasos o pantallas. El usuario avanza secuencialmente por cada paso para completar el proceso. Un ejemplo típico sería un flujo de apertura de cuenta con: datos personales → documentos → confirmación → éxito."
+        },
+        {
+          "id": "C",
+          "texto": "Que el componente tiene múltiples Atoms dentro de una sola Molecule.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. MultiStep es un tipo de flujo de interacción de alto nivel de la feature, no una característica de la composición interna de un componente. Que una Molecule tenga varios Atoms es simplemente su naturaleza, no un 'MultiStep'."
+        },
+        {
+          "id": "D",
+          "texto": "Que la feature puede configurarse para funcionar en múltiples países con distintos idiomas.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El soporte multiidioma está relacionado con los literales y el sistema de traducción (locales-app), no con el tipo de flujo MultiStep. MultiStep se refiere a que el proceso del usuario está dividido en pasos secuenciales."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "pregunta": "¿Cuándo sería más apropiado elegir un flujo MultiStep en lugar de OPX para diseñar una feature?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Cuando la feature muestra un único resumen de información sin que el usuario deba tomar decisiones.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Un resumen informativo sin acciones del usuario es un caso ideal para OPX: toda la información cabe en una sola pantalla. El MultiStep se usa cuando hay un proceso con varios pasos secuenciales que el usuario debe completar."
+        },
+        {
+          "id": "B",
+          "texto": "Cuando el proceso tiene múltiples pasos secuenciales que el usuario debe completar uno a uno, como un flujo de transferencia con selección de cuenta, monto y confirmación.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. El MultiStep es adecuado cuando el proceso requiere que el usuario complete varios pasos en orden: por ejemplo, seleccionar cuenta origen → ingresar monto → confirmar → resultado. Dividirlo en pasos hace la experiencia más clara y guiada que intentar mostrar todo en una sola pantalla."
+        },
+        {
+          "id": "C",
+          "texto": "Cuando la feature tiene más de 5 Atoms en su composición interna.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La cantidad de Atoms no determina el tipo de flujo. Una feature OPX puede tener decenas de Atoms en su única pantalla. El criterio para elegir MultiStep es la naturaleza del proceso del usuario, no la cantidad de componentes."
+        },
+        {
+          "id": "D",
+          "texto": "Cuando la feature consume más de una API de datos para obtener su información.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La cantidad de APIs consumidas no determina el tipo de flujo de interacción. Una feature OPX puede consumir varias APIs para mostrar toda la información en una sola pantalla."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "pregunta": "Un desarrollador debe crear un componente de 'campo de búsqueda' que incluye un input de texto, un ícono de lupa y un botón 'Buscar'. ¿Qué nivel del diseño atómico corresponde a ese componente?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Un Atom, porque todos sus elementos por separado son simples.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El input, el ícono y el botón por separado sí son Atoms. Pero el componente 'campo de búsqueda' que los combina ya no es un Atom: es la unión de varios Atoms para crear algo funcional, lo que lo convierte en una Molecule."
+        },
+        {
+          "id": "B",
+          "texto": "Una Molecule, porque combina varios Atoms (input + icon + button) para formar una pieza de interfaz funcional.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. El 'campo de búsqueda' es una Molecule: combina el input de texto (Atom) + el ícono de lupa (Atom) + el botón 'Buscar' (Atom) para crear un bloque funcional. Sigue la definición de la sesión: una Molecule es la unión de varios Atoms."
+        },
+        {
+          "id": "C",
+          "texto": "Un Organism, porque agrupa varias secciones de la interfaz.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Un Organism agrupa Molecules para formar secciones grandes como una lista de resultados de búsqueda o un formulario de filtros. El 'campo de búsqueda' en sí es más pequeño: es una Molecule que puede ser parte de un Organism mayor."
+        },
+        {
+          "id": "D",
+          "texto": "Una Page, porque el usuario interactúa directamente con él para buscar información.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Una Page es la pantalla completa con datos reales. El hecho de que el usuario interactúe con un componente no lo convierte en Page. El 'campo de búsqueda' es una pieza de la interfaz (Molecule) que puede aparecer dentro de una Page."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "pregunta": "¿Por qué es útil tener un Template separado de una Page en el proceso de diseño de una aplicación?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Porque los Templates se compilan más rápido en producción al no tener datos dinámicos que procesar.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La utilidad del Template no es de rendimiento técnico. Es una herramienta de diseño y comunicación que permite definir y validar la estructura visual antes de tener datos disponibles."
+        },
+        {
+          "id": "B",
+          "texto": "Porque permite definir y validar la estructura visual antes de que los datos reales estén disponibles, facilitando el diseño, prototipado y comunicación entre equipos.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. La sesión explicó que el Template es como un molde: define dónde van los elementos (Header, lista, Footer) sin datos específicos. Esto es útil porque el equipo de diseño puede trabajar en la estructura y el equipo de desarrollo puede implementarla antes de que el backend esté listo con los datos reales."
+        },
+        {
+          "id": "C",
+          "texto": "Porque los Templates usan CSS y las Pages usan JavaScript, separando responsabilidades técnicas del proyecto.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La distinción Template/Page no es tecnológica. Ambos pueden usar los mismos lenguajes. La diferencia es conceptual: uno tiene datos reales y el otro no."
+        },
+        {
+          "id": "D",
+          "texto": "Porque los Templates se usan exclusivamente en entornos de testing y las Pages solo en producción.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. No hay esa restricción de entornos. El Template es una etapa del diseño conceptual, no un artefacto de testing. La Page es la versión final con datos, pero puede existir en cualquier entorno."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "pregunta": "En la jerarquía de Cells + Lit, ¿cuál es la relación entre una Feature y una Page?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Son el mismo concepto; Feature es el nombre que se usa en Cells y Page es el nombre que se usa en diseño atómico.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. No son el mismo concepto. Son niveles distintos y ambos términos coexisten en la misma jerarquía de Cells + Lit: Feature → Page → Organisms → Molecules → Atoms. La Feature es el contenedor de más alto nivel y la Page es una pantalla dentro de ella."
+        },
+        {
+          "id": "B",
+          "texto": "La Feature es el nivel más alto que puede contener una o más Pages, donde cada Page representa una pantalla dentro de esa funcionalidad.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se presentó la jerarquía: Feature (nivel más alto) → Page. En el ejemplo de 'Transferencias', la Feature contiene la Page 'Transferencia bancaria'. Una Feature compleja podría tener múltiples Pages."
+        },
+        {
+          "id": "C",
+          "texto": "La Page es el nivel más alto que contiene Features como sub-módulos de cada pantalla.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La jerarquía es Feature → Page, no al revés. La Feature es el contenedor de la funcionalidad de negocio completa, y dentro de ella están las Pages que representan cada pantalla del flujo."
+        },
+        {
+          "id": "D",
+          "texto": "Las Features solo existen en proyectos con Polymer; en proyectos con Lit se usa directamente Page como nivel superior.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La jerarquía Feature → Page aplica en proyectos con Cells + Lit, no solo con Polymer. La sesión presentó explícitamente esta jerarquía para 'proyectos grandes como Cells + Lit'."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "pregunta": "Un equipo construye la feature 'Ver cuentas' de un banco. Una 'tarjeta individual que muestra el nombre y saldo de una cuenta' es qué nivel de la jerarquía?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Atom, porque es un elemento individual de la interfaz.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Un Atom es un elemento indivisible como un botón, un texto o un ícono. La tarjeta que muestra nombre Y saldo combina varios elementos (texto del nombre, texto del saldo, quizás un ícono), por lo que no es indivisible."
+        },
+        {
+          "id": "B",
+          "texto": "Molecule, porque combina varios Atoms (texto del nombre, texto del saldo, ícono) para formar una pieza funcional.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. Una tarjeta individual de cuenta es una Molecule: combina Atoms como el texto del nombre de la cuenta, el texto del saldo y posiblemente un ícono, formando un bloque de interfaz funcional. La lista completa de tarjetas sería el Organism."
+        },
+        {
+          "id": "C",
+          "texto": "Organism, porque es la sección más importante de la pantalla de cuentas.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La importancia visual no define el nivel. El Organism sería la 'Lista de cuentas' completa (múltiples tarjetas agrupadas). Una tarjeta individual es una Molecule."
+        },
+        {
+          "id": "D",
+          "texto": "Page, porque el usuario ve esta información directamente cuando abre la aplicación.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La Page es la pantalla completa de 'Ver cuentas' con todos sus elementos y datos reales. Una tarjeta individual es solo una pieza de esa pantalla, no la pantalla completa."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "pregunta": "¿Cuál de los siguientes ejemplos describe mejor a un Organism?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Un ícono de flecha que indica dirección en un botón de navegación.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Un ícono de flecha es un Atom: es simple, reutilizable e indivisible. Los Organisms son mucho más complejos: agrupan Molecules para formar secciones enteras de la interfaz."
+        },
+        {
+          "id": "B",
+          "texto": "Un campo de formulario con label, input y mensaje de error debajo.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Un campo con label + input + mensaje de error es una Molecule: combina varios Atoms para crear una pieza funcional. Un Organism sería el formulario completo que agrupa múltiples de estos campos."
+        },
+        {
+          "id": "C",
+          "texto": "Una lista completa de tarjetas de productos, donde cada tarjeta es una Molecule repetida.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. Un Organism es exactamente eso: un conjunto de Molecules que forman una sección grande. La sesión dio como ejemplos: lista de productos, lista de tarjetas, catálogo. Cada tarjeta individual es una Molecule, y la lista completa de esas tarjetas forma el Organism."
+        },
+        {
+          "id": "D",
+          "texto": "La estructura 'Header / Contenido principal / Footer' sin datos reales.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Una estructura de pantalla sin datos reales es un Template. Aunque Header, Contenido y Footer podrían ser Organisms individualmente, la descripción de 'estructura sin datos' caracteriza al Template, no al Organism."
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "pregunta": "¿Por qué los Atoms son el nivel más importante para garantizar la reutilización de código en una aplicación grande?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Porque contienen toda la lógica de negocio centralizada que comparten los componentes superiores.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los Atoms no contienen lógica de negocio. Esa es responsabilidad de los Data Components (BGADP, BGADM). Los Atoms son elementos puramente visuales: botón, ícono, input, texto."
+        },
+        {
+          "id": "B",
+          "texto": "Porque al ser los bloques más pequeños e indivisibles, un mismo Atom puede usarse en múltiples Molecules, Organisms y Pages de toda la aplicación.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. La reutilización de los Atoms es máxima precisamente por su simplicidad. Un `entelgy-button` puede aparecer en el formulario de transferencias, en la pantalla de cuentas, en el onboarding y en cientos de otros lugares. Cuanto más pequeño y simple es el componente, más lugares puede reutilizarse."
+        },
+        {
+          "id": "C",
+          "texto": "Porque los Atoms incluyen los estilos globales CSS que heredan automáticamente todos los niveles superiores.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los Atoms no son los contenedores de estilos globales. En proyectos con Shadow DOM (como Lit/Cells), los estilos están encapsulados por componente. La reutilización de Atoms es por su funcionalidad como bloques de interfaz, no por herencia de estilos."
+        },
+        {
+          "id": "D",
+          "texto": "Porque los Atoms son los únicos componentes que no dependen de channels ni DMs para funcionar.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Aunque los Atoms generalmente son más independientes, la razón de su alta reutilización es su simplicidad e indivisibilidad, no su independencia de channels. La sesión no relacionó los Atoms con channels o DMs específicamente."
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "pregunta": "Un equipo recibe el diseño de una pantalla de onboarding con 3 pasos: paso 1 (datos personales), paso 2 (subir documentos), paso 3 (confirmación). ¿Qué tipo de flujo y qué nivel describe cada paso?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "OPX, porque hay solo una pantalla de onboarding; cada paso es un Atom.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Tres pasos secuenciales distintos (datos personales → documentos → confirmación) no caben en una sola pantalla; eso es un flujo MultiStep. Y cada paso no es un Atom: es una Page o un conjunto de Organisms dentro del flujo."
+        },
+        {
+          "id": "B",
+          "texto": "MultiStep, porque hay varios pasos secuenciales; cada paso es una Page (o vista) con sus propios Organisms, Molecules y Atoms.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. El flujo es MultiStep: la experiencia está dividida en varios pasos que el usuario completa secuencialmente. Cada paso corresponde a una Page (o vista) dentro del flujo, y cada Page contiene sus propios Organisms (formularios, listas), Molecules (campos, botones compuestos) y Atoms (inputs, botones, textos)."
+        },
+        {
+          "id": "C",
+          "texto": "OPX, porque todos los pasos pertenecen a la misma feature de onboarding; cada paso es un Template.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Que todos los pasos pertenezcan a la misma Feature no lo hace OPX. OPX significa que todo ocurre en una única pantalla. Si hay pasos separados el usuario navega entre ellos, eso es MultiStep."
+        },
+        {
+          "id": "D",
+          "texto": "MultiStep, porque hay varios pasos; cada paso es un Atom que se puede reutilizar en otras features.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El tipo de flujo (MultiStep) es correcto, pero cada paso no es un Atom. Los Atoms son elementos simples e indivisibles como un input o un botón. Cada paso del onboarding es una Page o vista completa con múltiples niveles de componentes."
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "pregunta": "¿Qué ventaja principal ofrece aplicar el diseño atómico al construir interfaces con Cells + Lit?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Elimina la necesidad de usar Data Components (BGADP/BGADM) porque los Atoms gestionan sus propios datos directamente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El diseño atómico organiza los componentes de la capa UI, no elimina la necesidad de la capa de datos. Los BGADP y BGADM siguen siendo necesarios para obtener y gestionar datos; el diseño atómico define cómo se construye la interfaz que los muestra."
+        },
+        {
+          "id": "B",
+          "texto": "Permite construir interfaces de forma modular: desde los elementos más pequeños (Atoms) que se combinan progresivamente hasta formar pantallas completas (Pages), facilitando la reutilización y el mantenimiento.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. La sesión explicó que en proyectos grandes como Cells + Lit el diseño atómico organiza los componentes en niveles: Atoms → Molecules → Organisms → Page → Feature. Esto permite que un mismo Atom (como `entelgy-button`) se reutilice en decenas de Molecules, reduciendo la duplicación y facilitando el mantenimiento."
+        },
+        {
+          "id": "C",
+          "texto": "Garantiza que todos los componentes compartan el mismo Shadow DOM abierto, simplificando los estilos globales.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El diseño atómico no define cómo se implementa el Shadow DOM. Cada componente Lit tiene su propio Shadow DOM encapsulado. El diseño atómico es una metodología de organización, no una especificación técnica de implementación."
+        },
+        {
+          "id": "D",
+          "texto": "Obliga a que cada Feature tenga exactamente 5 niveles de componentes, asegurando consistencia en todos los proyectos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El diseño atómico no impone una cantidad fija de niveles por Feature. Propone 5 niveles conceptuales (Atom, Molecule, Organism, Template, Page) pero no todas las features necesitan usar todos los niveles de la misma forma."
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "pregunta": "¿Cómo se relacionan OPX y MultiStep con los niveles del diseño atómico?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "OPX solo usa Atoms y MultiStep solo usa Molecules, lo que determina su nombre.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. No existe esa restricción. Ambos tipos de flujo se construyen con todos los niveles del diseño atómico. OPX y MultiStep describen cómo está estructurada la experiencia del usuario (una pantalla vs varios pasos), no qué tipos de componentes se pueden usar."
+        },
+        {
+          "id": "B",
+          "texto": "OPX y MultiStep son tipos de flujo de alto nivel de la Feature que se construyen usando componentes de todos los niveles: Atoms, Molecules y Organisms.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. OPX y MultiStep son tipos de flujo de interacción de la Feature que definen cómo el usuario navega por la funcionalidad. Ambos se implementan usando la jerarquía completa del diseño atómico: los Atoms forman Molecules, que forman Organisms, que componen las Pages del flujo (una para OPX, varias para MultiStep)."
+        },
+        {
+          "id": "C",
+          "texto": "OPX y MultiStep son tipos de Atoms que pueden usarse dentro de Molecules para crear interacciones complejas.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. OPX y MultiStep no son componentes ni Atoms. Son categorías que describen el patrón de flujo de una Feature completa: una sola pantalla (OPX) vs varios pasos secuenciales (MultiStep)."
+        },
+        {
+          "id": "D",
+          "texto": "OPX reemplaza al Template y MultiStep reemplaza a la Page en la jerarquía de Cells + Lit.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. OPX y MultiStep no reemplazan a ningún nivel del diseño atómico. Son conceptos ortogonales: Template y Page describen la estructura y presencia de datos; OPX y MultiStep describen el patrón de navegación del usuario dentro de la feature."
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "pregunta": "Un diseñador muestra el wireframe de la feature 'Pagar servicio' con esta estructura: pantalla 1 (seleccionar servicio), pantalla 2 (ingresar monto), pantalla 3 (confirmar), pantalla 4 (resultado). En cada pantalla hay un título, un área de contenido y un botón de acción. Identifica el tipo de flujo y los niveles correctos.",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "OPX; el título, el contenido y el botón son Organisms porque aparecen en todas las pantallas.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Cuatro pantallas separadas no pueden ser OPX; OPX es una sola pantalla. Además, el título y el botón individual son Atoms, no Organisms."
+        },
+        {
+          "id": "B",
+          "texto": "MultiStep (4 pasos secuenciales); cada pantalla es una Page; el título y el botón son Atoms; el área de contenido con múltiples elementos es una Molecule u Organism.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. El flujo es MultiStep: 4 pantallas secuenciales que el usuario completa en orden. Cada pantalla es una Page dentro del flujo. El título (texto individual) y el botón de acción son Atoms. El área de contenido que agrupa varios elementos (por ejemplo, la lista de servicios) sería un Organism formado por Molecules (tarjetas de servicio) formadas por Atoms (texto, ícono)."
+        },
+        {
+          "id": "C",
+          "texto": "MultiStep; cada pantalla es un Atom porque el botón de acción se repite en todas ellas.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El tipo de flujo (MultiStep) es correcto, pero una pantalla completa nunca puede ser un Atom. Que el botón se repita en todas las pantallas solo significa que ese Atom (botón) se reutiliza en múltiples Pages, lo cual es precisamente la ventaja del diseño atómico."
+        },
+        {
+          "id": "D",
+          "texto": "OPX; cada pantalla es un Template porque todavía no tiene datos reales en el wireframe.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Un wireframe puede representar un Template (estructura sin datos), pero eso no cambia que son 4 pantallas separadas. 4 pantallas = MultiStep, no OPX. El hecho de que sea un wireframe solo significa que estamos en la fase de diseño, no que el flujo sea OPX."
+        }
+      ]
+    }
+  ]
+}
