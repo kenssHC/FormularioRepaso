@@ -753,6 +753,66 @@
           "retroalimentacion": "Incorrecto. `describe`, `it` y `test.only` son elementos de Mocha para estructurar tests, no estilos de aserciones de Chai. Los estilos de aserciones de Chai son `expect`, `should` y `assert`."
         }
       ]
+    },
+    {
+      "id": 26,
+      "pregunta": "La sesión describe cuatro herramientas del entorno de desarrollo: `vite`, `@open-wc/prettier-config`, `@open-wc/eslint-config` y `@open-wc/testing`. ¿Qué función cumple específicamente `vite`?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Detectar errores de sintaxis, variables no usadas y malas prácticas en el código fuente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Detectar errores de sintaxis y malas prácticas es la función de ESLint, configurado con `@open-wc/eslint-config`. Vite cumple un rol diferente: es la herramienta que levanta el servidor de desarrollo, compila módulos y habilita el hot reload."
+        },
+        {
+          "id": "B",
+          "texto": "Levantar el servidor de desarrollo, compilar módulos ES modernos y habilitar el hot reload con `npm run dev`.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que Vite es la herramienta para desarrollar y ejecutar aplicaciones web modernas. Sus funciones son: levantar el servidor de desarrollo, compilar módulos y habilitar hot reload. Se ejecuta con `npm run dev`."
+        },
+        {
+          "id": "C",
+          "texto": "Formatear el código automáticamente para mantener un estilo consistente en el proyecto.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Formatear el código automáticamente es la función de Prettier, configurado con `@open-wc/prettier-config`. Prettier convierte código sin formato (ej: `const a=1`) en código con estilo consistente (`const a = 1;`). Vite es el servidor de desarrollo y compilador de módulos."
+        },
+        {
+          "id": "D",
+          "texto": "Crear componentes en tests, verificar el DOM y usar Mocha + Chai para testear Web Components.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Esa es la función de `@open-wc/testing`, la librería especializada para testear Web Components con Lit. Vite no está relacionado con testing; es la herramienta que levanta el entorno de desarrollo (servidor, compilación de módulos, hot reload)."
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "pregunta": "La sesión menciona como buena práctica 'cubrir casos normales, límites y errores'. ¿Qué significa cada uno de esos tres tipos de casos?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Casos normales = los tests que pasan; casos límite = los tests que tardan más de 1 segundo; casos de error = los tests que fallan por culpa de Sinon.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Esa descripción mezcla el resultado del test con el tipo de caso que se prueba. En la sesión se distinguió: caso normal → el flujo feliz que funciona correctamente; casos borde (límite) → valores extremos o situaciones límite del dominio; casos inválidos o de error → entradas incorrectas o situaciones de fallo que el código debe manejar."
+        },
+        {
+          "id": "B",
+          "texto": "Caso normal = el flujo esperado que funciona correctamente; casos borde = valores extremos o situaciones límite; casos de error = entradas inválidas o situaciones de fallo que el código debe manejar.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se indicó que no basta con probar el caso feliz. Se debe incluir: caso normal (el comportamiento esperado cuando todo va bien), casos borde o límite (valores extremos del dominio, como 0, -1, el máximo permitido) y casos inválidos o de error (entradas incorrectas, nulos, valores fuera de rango que el código debe gestionar sin romperse)."
+        },
+        {
+          "id": "C",
+          "texto": "Los tres tipos de casos se refieren al mismo escenario ejecutado en tres navegadores distintos: Chrome (normal), Firefox (límite) y Safari (error).",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Esos tipos de casos no tienen relación con el navegador donde se ejecutan. Son categorías del dominio del problema: el flujo normal, los valores extremos y los casos de error o entrada inválida. Ejecutar en múltiples navegadores es responsabilidad de Karma."
+        },
+        {
+          "id": "D",
+          "texto": "Son las tres fases del patrón AAA: caso normal = Arrange, caso límite = Act, caso de error = Assert.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Las tres fases del patrón AAA son Arrange (preparar datos), Act (ejecutar la función) y Assert (validar el resultado). Son una estructura interna del test. Los tipos de casos (normal, borde, error) se refieren a qué escenario del sistema se está probando, y cada uno de ellos tiene su propio AAA completo."
+        }
+      ]
     }
   ]
 }
