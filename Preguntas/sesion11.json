@@ -1,275 +1,755 @@
 {
-  "titulo": "Banco de preguntas - Análisis de componentes, arquitectura UI/Data/Cross y Singleton",
-  "descripcion": "Preguntas de repaso basadas únicamente en el contenido trabajado en este chat.",
+  "titulo": "Repaso: Análisis de Componentes — Data, UI, Cross y Patrón Singleton",
+  "descripcion": "Preguntas de opción múltiple basadas en el contenido de la Sesión 11: qué es un componente, análisis de componentes, Data Components (BGADP y BGADM), UI Components (básicos, widgets, features), estructura de carpetas de una feature, Cross Components y patrón Singleton.",
   "preguntas": [
     {
       "id": 1,
-      "pregunta": "¿Qué es un componente en una aplicación?",
+      "pregunta": "¿Qué define correctamente a un componente en una arquitectura basada en Web Components como Cells?",
       "alternativas": [
-        { "id": "A", "texto": "Una unidad independiente que encapsula estructura, estilo y lógica para cumplir una función específica.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa es la idea central: un componente es una pieza modular, reutilizable y con responsabilidad específica." },
-        { "id": "B", "texto": "Una carpeta del proyecto que solo sirve para guardar imágenes.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Una carpeta puede contener recursos, pero un componente es una pieza funcional de software, no solo almacenamiento." },
-        { "id": "C", "texto": "Un archivo CSS que define colores y tipografías de toda la app.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El CSS puede ser parte de un componente, pero por sí solo no define lo que es un componente." },
-        { "id": "D", "texto": "Una pantalla completa obligatoriamente conectada a base de datos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un componente no tiene que ser una pantalla completa ni estar siempre conectado a datos." }
+        {
+          "id": "A",
+          "texto": "Es siempre una pantalla completa de la aplicación con navegación propia y conexión directa a una base de datos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Un componente no tiene que ser una pantalla completa ni estar siempre conectado a una base de datos. Puede ser tan pequeño como un botón o tan grande como una feature. La pantalla completa corresponde más a una página dentro de la arquitectura."
+        },
+        {
+          "id": "B",
+          "texto": "Es una unidad independiente que encapsula HTML, CSS y JavaScript, diseñada para ser reutilizable, modular y desacoplada, representada como una etiqueta HTML personalizada.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se definió el componente como una unidad independiente de software que encapsula estructura (HTML), estilo (CSS) y lógica (JavaScript) para cumplir una función específica. Está diseñado para ser reutilizable, modular y desacoplado. En Web Components / Lit / Cells se representa como una etiqueta HTML personalizada como `<login-form>`."
+        },
+        {
+          "id": "C",
+          "texto": "Es un archivo de configuración JSON que define la estructura de carpetas y los nombres de los módulos del proyecto.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los archivos JSON de configuración son parte del entorno de un proyecto pero no son componentes. Un componente es una pieza funcional de software con estructura, estilos y lógica, no un archivo de configuración."
+        },
+        {
+          "id": "D",
+          "texto": "Es exclusivamente un módulo JavaScript que gestiona el estado global de la aplicación mediante el patrón Singleton.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Un componente no es exclusivamente un gestor de estado. Los gestores de estado global son un caso particular. Los componentes pueden ser tan simples como un ícono o tan complejos como una feature con múltiples pantallas."
+        }
       ]
     },
     {
       "id": 2,
-      "pregunta": "¿Cuál de las siguientes es una característica clave de los componentes según el chat?",
+      "pregunta": "¿Cuál de los siguientes NO es un beneficio del análisis de componentes mencionado en la sesión?",
       "alternativas": [
-        { "id": "A", "texto": "Que deben estar fuertemente acoplados entre sí.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Se busca lo contrario: desacoplamiento." },
-        { "id": "B", "texto": "Que sean reutilizables.", "esCorrecta": true, "retroalimentacion": "Correcto. La reutilización fue una idea clave en la explicación del análisis de componentes." },
-        { "id": "C", "texto": "Que solo sirvan para una única pantalla.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Muchos componentes se diseñan justamente para usarse en varias pantallas." },
-        { "id": "D", "texto": "Que no tengan lógica ni estructura.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un componente puede encapsular estructura, estilo y lógica." }
+        {
+          "id": "A",
+          "texto": "Reutilizar código entre distintas partes de la aplicación.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto, porque esta SÍ es un beneficio. En la sesión se listó la reutilización de código como uno de los objetivos principales del análisis de componentes, junto con el mantenimiento y la escalabilidad."
+        },
+        {
+          "id": "B",
+          "texto": "Eliminar por completo la necesidad de usar control de versiones con Git en el proyecto.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto, porque esta NO es un beneficio del análisis de componentes. El análisis de componentes ayuda a organizar el código en piezas reutilizables, pero no tiene ninguna relación con eliminar Git. Git sigue siendo necesario para el control de versiones independientemente de cómo esté organizado el código."
+        },
+        {
+          "id": "C",
+          "texto": "Facilitar el mantenimiento del código a lo largo del tiempo.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto, porque esta SÍ es un beneficio. En la sesión se explicó que dividir la aplicación en componentes pequeños facilita el mantenimiento porque cada pieza tiene una responsabilidad clara y puede modificarse sin afectar al resto."
+        },
+        {
+          "id": "D",
+          "texto": "Mantener la aplicación más ordenada y escalar el proyecto con mayor facilidad.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto, porque esta SÍ es un beneficio. La sesión listó explícitamente 'mantener la aplicación más ordenada' y 'escalar el proyecto' como ventajas del análisis de componentes."
+        }
       ]
     },
     {
       "id": 3,
-      "pregunta": "¿Qué busca el análisis de componentes?",
+      "pregunta": "¿Por qué la clasificación en Data Components, UI Components y Cross Components es útil en proyectos grandes como los del banco?",
       "alternativas": [
-        { "id": "A", "texto": "Unir todo el código en un solo archivo grande.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El análisis de componentes busca dividir, no juntar desordenadamente." },
-        { "id": "B", "texto": "Identificar, dividir y organizar una aplicación en piezas reutilizables según su responsabilidad.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la definición trabajada en las diapositivas." },
-        { "id": "C", "texto": "Eliminar la interfaz y dejar únicamente servicios.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El análisis considera UI, datos y componentes transversales." },
-        { "id": "D", "texto": "Convertir toda la aplicación en una sola feature.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Justamente se busca separar en múltiples componentes con distintas responsabilidades." }
+        {
+          "id": "A",
+          "texto": "Porque cada tipo de componente usa un lenguaje de programación diferente, lo que facilita asignar equipos especializados por tecnología.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los tres tipos de componentes pueden estar escritos en el mismo lenguaje (JavaScript/TypeScript con Lit). La clasificación no es por tecnología sino por responsabilidad funcional dentro de la arquitectura."
+        },
+        {
+          "id": "B",
+          "texto": "Porque asigna una responsabilidad clara a cada pieza del sistema: uno maneja datos, otro la interfaz y otro las funcionalidades transversales, reduciendo el acoplamiento.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se presentó esta clasificación como la base del análisis de componentes: Data Components acceden y gestionan datos, UI Components muestran la interfaz, y Cross Components proveen funcionalidades comunes a toda la aplicación. Esta separación de responsabilidades hace el sistema más mantenible y escalable."
+        },
+        {
+          "id": "C",
+          "texto": "Porque los tres tipos no pueden comunicarse entre sí, garantizando el aislamiento total del código de cada capa.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los componentes sí se comunican entre sí, precisamente a través del sistema de channels. Por ejemplo, el flujo: API → BGADP → BGADM → UI Components muestra cómo los Data Components entregan datos a los UI Components."
+        },
+        {
+          "id": "D",
+          "texto": "Porque los tres tipos juntos reemplazan la necesidad de usar Git, Artifactory y Bitbucket en el desarrollo.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La clasificación de componentes es una decisión arquitectónica del código fuente. Git, Artifactory y Bitbucket son herramientas de infraestructura de desarrollo que siguen siendo necesarias independientemente de cómo se clasifiquen los componentes."
+        }
       ]
     },
     {
       "id": 4,
-      "pregunta": "¿Cuáles son los tres tipos principales de componentes mostrados en la empresa?",
+      "pregunta": "¿Cuál es la diferencia funcional entre un BGADP y un BGADM?",
       "alternativas": [
-        { "id": "A", "texto": "Backend Components, SQL Components y Mobile Components.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa clasificación no corresponde a la presentada en las diapositivas." },
-        { "id": "B", "texto": "Data Components, UI Components y Cross Components.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue exactamente la clasificación principal mostrada." },
-        { "id": "C", "texto": "Pages, Services y APIs.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esos pueden ser elementos de la arquitectura, pero no fueron los tres tipos principales presentados." },
-        { "id": "D", "texto": "HTML Components, CSS Components y JS Components.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa división no fue la utilizada en el chat." }
+        {
+          "id": "A",
+          "texto": "El BGADP gestiona y organiza los datos dentro de la aplicación; el BGADM hace las peticiones HTTP a la API externa.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los roles están completamente invertidos. El BGADP (API Data Provider) es el que hace peticiones HTTP a la API externa. El BGADM (Data Manager) es el que gestiona y organiza los datos dentro de la aplicación."
+        },
+        {
+          "id": "B",
+          "texto": "El BGADP conecta la aplicación con el backend haciendo peticiones a la API; el BGADM gestiona y organiza esos datos dentro de la aplicación para compartirlos con los UI Components.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se presentó esta tabla de diferencias: BGADP → conecta con la API (GET, POST, PUT, DELETE); BGADM → gestiona los datos dentro de la aplicación. El BGADM no necesariamente llama a la API directamente; más bien organiza, transforma y comparte los datos que llegan del BGADP."
+        },
+        {
+          "id": "C",
+          "texto": "El BGADP solo hace peticiones GET para obtener datos; el BGADM hace POST, PUT y DELETE para modificarlos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. En la sesión se listaron los cuatro métodos HTTP (GET, POST, PUT, DELETE) como parte de las peticiones que puede hacer el BGADP. La división no es por tipo de petición HTTP sino por responsabilidad: uno conecta con la API y el otro gestiona los datos."
+        },
+        {
+          "id": "D",
+          "texto": "No hay diferencia funcional; son dos nombres distintos para el mismo tipo de componente según la empresa que los implemente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Tienen funciones claramente distintas. El ejemplo de la sesión lo ilustra: `bgadp-books-v3` hace la llamada a la API de libros, mientras que `entelgy-global-books-api-dm` administra esos datos dentro del sistema. Son componentes separados con roles diferentes."
+        }
       ]
     },
     {
       "id": 5,
-      "pregunta": "¿Cuál es la función principal de un Data Component?",
+      "pregunta": "Siguiendo la convención de la sesión, ¿cuál sería el nombre correcto para un BGADP que consume la versión 2 del servicio de transacciones?",
       "alternativas": [
-        { "id": "A", "texto": "Dibujar botones y tarjetas en pantalla.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso corresponde a la capa UI." },
-        { "id": "B", "texto": "Acceder, gestionar o procesar datos dentro de la aplicación.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa es la idea central de los Data Components." },
-        { "id": "C", "texto": "Reemplazar completamente a las features.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los Data Components no reemplazan la UI, la alimentan con datos." },
-        { "id": "D", "texto": "Crear únicamente estilos globales.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los estilos no son la responsabilidad de un Data Component." }
+        {
+          "id": "A",
+          "texto": "entelgy-global-transactions-api-dm",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Ese formato (`[empresa]-global-[servicio]-api-dm`) corresponde al BGADM (Data Manager), no al BGADP. Además incluye el nombre de empresa, que no forma parte de la convención del BGADP."
+        },
+        {
+          "id": "B",
+          "texto": "bgadp-transactions-v2",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. La convención para el BGADP es `bgadp-[nombre del servicio]-[version]`. En este caso: `bgadp` (tipo de componente) + `transactions` (servicio) + `v2` (versión). Otros ejemplos de la sesión: `bgadp-accounts-v1`, `bgadp-user-profile-v1`."
+        },
+        {
+          "id": "C",
+          "texto": "transactions-global-provider-v2",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. No sigue la convención establecida. El BGADP debe empezar con el prefijo `bgadp-` para identificarlo como API Data Provider. El formato 'transactions-global-provider' no corresponde a ninguna convención explicada en la sesión."
+        },
+        {
+          "id": "D",
+          "texto": "entelgy-transactions-bgadp-v2",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La convención del BGADP usa `bgadp` como prefijo al inicio, no como sufijo. Además no incluye el nombre de empresa. El formato correcto es `bgadp-[servicio]-[version]`."
+        }
       ]
     },
     {
       "id": 6,
-      "pregunta": "¿Qué significa BGADP dentro de los Data Components?",
+      "pregunta": "Siguiendo la convención explicada, ¿cuál sería el nombre correcto para el Data Manager del servicio de cuentas de BBVA?",
       "alternativas": [
-        { "id": "A", "texto": "Basic Graphic App Design Provider.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ese nombre no fue parte de la explicación." },
-        { "id": "B", "texto": "Api Data Provider.", "esCorrecta": true, "retroalimentacion": "Correcto. BGADP se explicó como el componente que consume la API." },
-        { "id": "C", "texto": "Business Global App Data Page.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No corresponde a la convención presentada." },
-        { "id": "D", "texto": "Big Data Platform.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Aunque suene relacionado con datos, no es el término usado aquí." }
+        {
+          "id": "A",
+          "texto": "bgadp-accounts-api-dm",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Mezcla el prefijo de BGADP (`bgadp-`) con el sufijo de BGADM (`api-dm`). Un BGADM debe usar el formato `[empresa]-global-[servicio]-api-dm`, sin el prefijo `bgadp`."
+        },
+        {
+          "id": "B",
+          "texto": "accounts-global-data-bbva",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. No sigue la convención. El formato del BGADM es `[empresa]-global-[servicio]-api-dm`. La empresa debe ir al inicio y el sufijo debe ser `api-dm`."
+        },
+        {
+          "id": "C",
+          "texto": "bbva-global-accounts-api-dm",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. La convención del BGADM es `[empresa]-global-[nombre servicio]-api-dm`. Desglose: `bbva` (empresa) + `global` (componente global del sistema) + `accounts` (servicio) + `api-dm` (Data Manager). Otros ejemplos de la sesión: `bbva-global-transactions-api-dm`, `entelgy-global-books-api-dm`."
+        },
+        {
+          "id": "D",
+          "texto": "bbva-accounts-provider-v1",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El sufijo `provider` y la versión `v1` corresponden al formato del BGADP, no del BGADM. Además falta la palabra `global` que es parte de la convención del Data Manager."
+        }
       ]
     },
     {
       "id": 7,
-      "pregunta": "¿Qué significa BGADM dentro de la arquitectura mostrada?",
+      "pregunta": "¿Qué hace el BGADM con los datos que recibe del BGADP?",
       "alternativas": [
-        { "id": "A", "texto": "Data Manager.", "esCorrecta": true, "retroalimentacion": "Correcto. BGADM se explicó como el gestor de datos dentro de la aplicación." },
-        { "id": "B", "texto": "Database Module.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No fue definido así en el chat." },
-        { "id": "C", "texto": "Background Data Mapper.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Puede sonar técnico, pero no es el nombre utilizado." },
-        { "id": "D", "texto": "Basic Data Model.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Tampoco corresponde a la convención mostrada." }
+        {
+          "id": "A",
+          "texto": "Los guarda directamente en la base de datos del banco y genera un log de auditoría por cada operación.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El BGADM no escribe en bases de datos directamente. Su función es organizar, transformar y compartir los datos con los componentes de interfaz dentro de la aplicación frontend. La persistencia en base de datos es responsabilidad del backend."
+        },
+        {
+          "id": "B",
+          "texto": "Los organiza, transforma y comparte con los UI Components; no necesariamente llama a la API directamente.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que el BGADM actúa como gestor de datos del sistema: puede guardar datos, transformarlos y compartirlos con otros componentes. Además se destacó que no necesariamente llama a la API directamente; esa es la función del BGADP."
+        },
+        {
+          "id": "C",
+          "texto": "Los envía inmediatamente al servidor remoto mediante git push para mantener el repositorio actualizado.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Git push es una operación de control de versiones del código fuente, no tiene relación con el flujo de datos en tiempo de ejecución. El BGADM gestiona datos de la aplicación en runtime, no versionado de código."
+        },
+        {
+          "id": "D",
+          "texto": "Los elimina una vez que los UI Components terminan de renderizarlos, para liberar memoria del navegador.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El BGADM no elimina datos automáticamente tras el renderizado. Su función es mantenerlos disponibles para los componentes que los necesiten. Eliminarlos prematuramente causaría errores si más componentes necesitan esos datos después."
+        }
       ]
     },
     {
       "id": 8,
-      "pregunta": "¿Cuál es el formato de nombre explicado para un BGADP?",
+      "pregunta": "¿Cuál es el flujo correcto de datos en la arquitectura presentada en la sesión?",
       "alternativas": [
-        { "id": "A", "texto": "bgadp-[nombre del servicio]-[version]", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la convención mostrada en las diapositivas." },
-        { "id": "B", "texto": "[empresa]-global-[servicio]-api-dm", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ese formato corresponde al BGADM, no al BGADP." },
-        { "id": "C", "texto": "[empresa]-[web-component]", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ese formato se mencionó para componentes UI básicos." },
-        { "id": "D", "texto": "feature-[servicio]-v[empresa]", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ese formato no fue presentado en el chat." }
+        {
+          "id": "A",
+          "texto": "Usuario → UI Components → BGADM → BGADP → API",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Ese flujo está completamente invertido. Describe cómo el usuario interactúa hacia atrás hasta la API, cuando en realidad el flujo de obtención de datos va en la dirección contraria: desde la API hacia el usuario."
+        },
+        {
+          "id": "B",
+          "texto": "API → BGADP → BGADM → UI Components → Usuario",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se presentó este flujo base repetidamente: la API provee datos → el BGADP los consume haciendo peticiones HTTP → el BGADM los organiza y gestiona → los UI Components los reciben y los muestran → el usuario los ve e interactúa."
+        },
+        {
+          "id": "C",
+          "texto": "API → BGADM → UI Components → BGADP → Usuario",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El BGADM no consume la API directamente; esa es la función del BGADP. El BGADP debe ir antes del BGADM en el flujo, no después de los UI Components."
+        },
+        {
+          "id": "D",
+          "texto": "BGADM → BGADP → API → Usuario → UI Components",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El orden incorrecto en múltiples puntos. El BGADP siempre va antes que el BGADM (el primero conecta con la API, el segundo gestiona los datos). Además, el usuario recibe la información a través de los UI Components, no al revés."
+        }
       ]
     },
     {
       "id": 9,
-      "pregunta": "En el ejemplo de la API de libros, ¿cuál era el nombre del data provider?",
+      "pregunta": "¿Cuál de las siguientes opciones describe correctamente a un componente básico (Basic Component)?",
       "alternativas": [
-        { "id": "A", "texto": "entelgy-global-books-api-dm", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ese era el nombre del Data Manager." },
-        { "id": "B", "texto": "bgadp-books-v3", "esCorrecta": true, "retroalimentacion": "Correcto. Ese fue el ejemplo dado para el API Data Provider de libros." },
-        { "id": "C", "texto": "books-feature-v3", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso no fue el nombre usado en la diapositiva." },
-        { "id": "D", "texto": "entelgy-books-global-v3", "esCorrecta": false, "retroalimentacion": "Incorrecto. No sigue la convención mostrada." }
+        {
+          "id": "A",
+          "texto": "Es el componente de más alto nivel que representa una funcionalidad completa del negocio, como realizar transferencias.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Eso describe a una Feature, no a un componente básico. Los componentes básicos son los más simples y pequeños de la jerarquía UI: botón, input, ícono. Una feature contiene widgets que a su vez pueden usar componentes básicos."
+        },
+        {
+          "id": "B",
+          "texto": "Es el bloque más simple y reutilizable de interfaz: elementos como botón, input, ícono o checkbox, sin lógica compleja.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se describieron los Basic Components como los componentes más simples y reutilizables: bloques básicos de interfaz. Ejemplos: `button`, `input`, `label`, `icon`, `card`, `text`, `checkbox`. No tienen lógica compleja; solo muestran elementos de la interfaz."
+        },
+        {
+          "id": "C",
+          "texto": "Es un componente que agrupa varios widgets para formar una pantalla completa de la aplicación.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los componentes básicos no agrupan widgets. La jerarquía es al revés: los widgets agrupan componentes básicos, y las features pueden agrupar widgets. Un componente básico es la unidad más atómica e indivisible de la interfaz."
+        },
+        {
+          "id": "D",
+          "texto": "Es un componente transversal que provee autenticación y manejo de errores a todas las partes del sistema.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Eso describe a un Cross Component, no a un componente básico. La autenticación y el manejo de errores son funcionalidades transversales que se usan en muchas partes de la aplicación."
+        }
       ]
     },
     {
       "id": 10,
-      "pregunta": "En el ejemplo de la API de libros, ¿cuál era el nombre del Data Manager?",
+      "pregunta": "Siguiendo la convención `[empresa]-[web-component]`, ¿cómo se llamarían los componentes básicos de Entelgy para un ícono y un input de contraseña?",
       "alternativas": [
-        { "id": "A", "texto": "bgadp-books-v3", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ese era el API Data Provider." },
-        { "id": "B", "texto": "entelgy-global-books-api-dm", "esCorrecta": true, "retroalimentacion": "Correcto. Ese fue el nombre usado para el Data Manager del ejemplo." },
-        { "id": "C", "texto": "entelgy-books-widget", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso suena a componente UI, no a Data Manager." },
-        { "id": "D", "texto": "books-global-provider", "esCorrecta": false, "retroalimentacion": "Incorrecto. No corresponde a la convención presentada." }
+        {
+          "id": "A",
+          "texto": "`bgadp-icon-v1` y `bgadp-password-v1`",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El prefijo `bgadp-` es la convención para API Data Providers (Data Components), no para componentes básicos de interfaz. Los componentes básicos UI siguen la convención `[empresa]-[web-component]`."
+        },
+        {
+          "id": "B",
+          "texto": "`icon-entelgy` y `password-input-entelgy`",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El orden en la convención es `[empresa]-[web-component]`, con el nombre de la empresa primero. No `[web-component]-[empresa]`."
+        },
+        {
+          "id": "C",
+          "texto": "`entelgy-icon` y `entelgy-input-password`",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. La convención para componentes básicos es `[empresa]-[web-component]`. En la sesión se listaron exactamente estos ejemplos: `entelgy-icon` para el ícono y `entelgy-input-password` para el campo de contraseña. Otros ejemplos: `entelgy-button`, `entelgy-input-email`."
+        },
+        {
+          "id": "D",
+          "texto": "`entelgy-global-icon-api-dm` y `entelgy-global-password-api-dm`",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El formato `[empresa]-global-[servicio]-api-dm` es la convención del BGADM (Data Manager), no de los componentes básicos UI. Un ícono o un input de contraseña son elementos visuales, no gestores de datos."
+        }
       ]
     },
     {
       "id": 11,
-      "pregunta": "¿Cuál es el flujo correcto de datos explicado varias veces en el chat?",
+      "pregunta": "¿En qué se diferencia un widget de un componente básico?",
       "alternativas": [
-        { "id": "A", "texto": "Usuario -> UI -> API -> BGADM -> BGADP", "esCorrecta": false, "retroalimentacion": "Incorrecto. El flujo explicado partía desde la API hacia los componentes de datos y luego hacia la UI." },
-        { "id": "B", "texto": "API -> BGADP -> BGADM -> UI Components -> Usuario", "esCorrecta": true, "retroalimentacion": "Correcto. Ese fue el flujo base repetido en los ejemplos." },
-        { "id": "C", "texto": "API -> Widgets -> Basics -> Data Manager -> Usuario", "esCorrecta": false, "retroalimentacion": "Incorrecto. El Data Manager no va después de la UI en el flujo base." },
-        { "id": "D", "texto": "BGADM -> Feature -> API -> Usuario", "esCorrecta": false, "retroalimentacion": "Incorrecto. El orden no corresponde a la arquitectura mostrada." }
+        {
+          "id": "A",
+          "texto": "Un widget solo puede aparecer en una única página de la aplicación; los componentes básicos se pueden usar en cualquier parte.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La diferencia no es de dónde pueden usarse. Tanto los widgets como los componentes básicos pueden reutilizarse en múltiples lugares. La diferencia está en su complejidad: el widget combina varios básicos y tiene algo de lógica de UI."
+        },
+        {
+          "id": "B",
+          "texto": "Un widget combina varios componentes básicos para formar una pieza funcional más compleja con algo de lógica de UI, como un formulario de login.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que los widgets son componentes más complejos formados por varios componentes básicos. El ejemplo dado fue el Login Widget: `input usuario + input contraseña + botón login`. Tienen algo de lógica de UI y representan una pieza funcional de la pantalla."
+        },
+        {
+          "id": "C",
+          "texto": "Un widget tiene acceso directo a las APIs y consume datos sin necesitar un BGADP o BGADM.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los widgets pertenecen a la capa UI y no manejan la lógica de datos directamente. En la sesión se mostró que el widget `cards-list-foods` recibe sus datos del BGADP y el BGADM; no los obtiene directamente de la API."
+        },
+        {
+          "id": "D",
+          "texto": "Los widgets reemplazan a las features cuando la funcionalidad es demasiado compleja para un solo componente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los widgets no reemplazan a las features; la jerarquía es que las features contienen widgets. Cuando la funcionalidad es compleja, se crea una feature que organiza múltiples widgets, no un widget más grande."
+        }
       ]
     },
     {
       "id": 12,
-      "pregunta": "¿Qué hacen los UI Components?",
+      "pregunta": "El widget `cards-list-foods` muestra tarjetas con alimentos (Kiwi, Lemon, Strawberries, Figs). ¿Dónde se originan esos datos?",
       "alternativas": [
-        { "id": "A", "texto": "Se encargan principalmente de mostrar la interfaz y permitir interacción con el usuario.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la definición central de los UI Components." },
-        { "id": "B", "texto": "Son exclusivos para llamadas a APIs y persistencia.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa responsabilidad se atribuyó a los Data Components." },
-        { "id": "C", "texto": "Solo sirven para definir la estructura de carpetas.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La estructura de carpetas organiza el proyecto, pero no define el rol de los UI Components." },
-        { "id": "D", "texto": "Eliminan la necesidad de features y widgets.", "esCorrecta": false, "retroalimentacion": "Incorrecto. De hecho, basics, widgets y features son subniveles de los UI Components." }
+        {
+          "id": "A",
+          "texto": "Dentro del propio widget, hardcodeados en el código JavaScript del componente como un array estático.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. En la sesión se destacó explícitamente que esos datos 'no están dentro del componente, vienen desde una API'. Si estuvieran hardcodeados, el componente no podría mostrar datos dinámicos y sería imposible actualizarlos sin modificar el código."
+        },
+        {
+          "id": "B",
+          "texto": "En una API externa, a la que accede el BGADP `bgadp-foods-v1`, y cuyos datos gestiona el BGADM `entelgy-global-foods-api-dm` antes de entregarlos al widget.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó este ejemplo completo: el widget `cards-list-foods` se conecta a los Data Components para obtener la información. El BGADP `bgadp-foods-v1` consume la API y el BGADM `entelgy-global-foods-api-dm` administra esos datos y los entrega al widget UI."
+        },
+        {
+          "id": "C",
+          "texto": "En el archivo `locales-app/es.json` del proyecto, ya que son textos de la interfaz que deben traducirse a distintos idiomas.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `locales-app` guarda traducciones de textos estáticos de la interfaz (i18n), no datos dinámicos de contenido. Los nombres de alimentos son datos de negocio que provienen de una API, no textos de interfaz que se traducen."
+        },
+        {
+          "id": "D",
+          "texto": "En el canal `__bridge_app` del sistema de channels, que distribuye automáticamente los datos a todos los widgets de la aplicación.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `__bridge_app` es el canal de contexto de navegación del Bridge (informa sobre `currentPage` y `fromPage`). No distribuye datos de negocio. Los datos del widget vienen a través del flujo: API → BGADP → BGADM → Widget."
+        }
       ]
     },
     {
       "id": 13,
-      "pregunta": "¿Cuál es la jerarquía correcta de los UI Components según lo explicado?",
+      "pregunta": "¿Cuál es la diferencia principal entre una feature y un widget en la jerarquía de UI Components?",
       "alternativas": [
-        { "id": "A", "texto": "Feature -> Widget -> Basic Component", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la jerarquía repetida varias veces en el chat." },
-        { "id": "B", "texto": "Basic Component -> Feature -> Widget", "esCorrecta": false, "retroalimentacion": "Incorrecto. El orden lógico va de lo más grande a lo más pequeño, pero en el chat se explicó específicamente Feature -> Widget -> Basic." },
-        { "id": "C", "texto": "Widget -> API -> Feature", "esCorrecta": false, "retroalimentacion": "Incorrecto. API no forma parte de esa jerarquía de UI." },
-        { "id": "D", "texto": "Cross -> Data -> UI", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa no es la jerarquía interna de UI Components." }
+        {
+          "id": "A",
+          "texto": "Una feature es un elemento visual simple como un botón o tarjeta; un widget es una funcionalidad completa del negocio como ver cuentas bancarias.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los roles están invertidos. El elemento visual simple (botón, tarjeta) es un componente básico. La funcionalidad completa del negocio (ver cuentas bancarias, realizar transferencias) es la feature. El widget está en el nivel intermedio."
+        },
+        {
+          "id": "B",
+          "texto": "Un widget combina varios componentes básicos para formar una pieza funcional; una feature es un componente de alto nivel que representa una funcionalidad completa del negocio, pudiendo contener múltiples widgets.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. La jerarquía de la sesión es: Básicos → Widgets → Features. Los básicos son los bloques atómicos, los widgets los combinan para crear piezas funcionales, y las features agrupan widgets para representar funcionalidades completas. Ejemplo: la feature 'Transferencias' contiene account selector widget, amount input widget, confirmation widget y transfer button widget."
+        },
+        {
+          "id": "C",
+          "texto": "Los widgets se usan en proyectos con Polymer y las features solo en proyectos modernos con Lit.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La clasificación básico/widget/feature es arquitectónica y no depende de la tecnología. Se puede aplicar tanto en proyectos con Polymer (legacy) como con Lit (actual). La sesión no establece esa distinción tecnológica."
+        },
+        {
+          "id": "D",
+          "texto": "Una feature siempre tiene conexión directa a APIs; un widget nunca puede recibir datos externos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Ni las features tienen conexión directa a APIs (usan Data Components para eso) ni los widgets están prohibidos de recibir datos. El ejemplo `cards-list-foods` es un widget que sí recibe datos externos a través del BGADP y BGADM."
+        }
       ]
     },
     {
       "id": 14,
-      "pregunta": "¿Cuál de los siguientes elementos fue identificado como componente básico en el reto mostrado?",
+      "pregunta": "La feature 'Transferencias' contiene: account selector widget, amount input widget, confirmation widget y transfer button widget. ¿Qué demuestra esto sobre la composición de una feature?",
       "alternativas": [
-        { "id": "A", "texto": "El botón 'Suscríbete'.", "esCorrecta": true, "retroalimentacion": "Correcto. Ese botón fue uno de los ejemplos claros de componente básico." },
-        { "id": "B", "texto": "La funcionalidad completa de consulta de cuentas.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso corresponde a una feature, no a un basic component." },
-        { "id": "C", "texto": "El Data Manager global de libros.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso pertenece a la capa de datos, no a UI básica." },
-        { "id": "D", "texto": "La autenticación global del sistema.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso se explicó como ejemplo de Cross Component." }
+        {
+          "id": "A",
+          "texto": "Que las features son idénticas a los widgets, solo que tienen más elementos visuales.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. No son lo mismo con diferente tamaño. La sesión fue clara: las features representan funcionalidades completas de negocio y pueden contener múltiples widgets. Los widgets son piezas funcionales más pequeñas. La diferencia es conceptual y de alcance, no solo de cantidad."
+        },
+        {
+          "id": "B",
+          "texto": "Que una feature puede contener múltiples widgets, donde cada widget representa una pieza funcional específica dentro del flujo completo.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se mostró este ejemplo: `Transfer Feature` contiene account selector widget + amount input widget + confirmation widget + transfer button widget. Cada widget cumple una función específica dentro del flujo de transferencias, y la feature los organiza como funcionalidad completa."
+        },
+        {
+          "id": "C",
+          "texto": "Que una feature debe tener exactamente 4 widgets para ser considerada una funcionalidad completa.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. No existe esa regla. El número de widgets dentro de una feature depende de la complejidad del caso de uso del negocio. Una feature simple podría tener menos widgets y una compleja podría tener más."
+        },
+        {
+          "id": "D",
+          "texto": "Que los widgets dentro de una feature se comunican directamente entre sí, sin necesitar el sistema de channels.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La sesión no establece eso. Los componentes dentro de una feature pueden comunicarse mediante channels para mantener el desacoplamiento. La arquitectura de channels existe precisamente para evitar comunicación directa entre componentes."
+        }
       ]
     },
     {
       "id": 15,
-      "pregunta": "¿Qué formato se mencionó para nombrar componentes básicos UI?",
+      "pregunta": "En la estructura de carpetas `BBVA-FEATURE-TEMPLATE`, ¿qué se guarda dentro de la carpeta `elements`?",
       "alternativas": [
-        { "id": "A", "texto": "[empresa]-[web-component]", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la convención mostrada en el reto de componentes básicos." },
-        { "id": "B", "texto": "bgadp-[servicio]-[version]", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ese formato es para API Data Provider." },
-        { "id": "C", "texto": "[empresa]-global-[servicio]-api-dm", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ese formato es para Data Manager." },
-        { "id": "D", "texto": "feature-[empresa]-[pantalla]-step", "esCorrecta": false, "retroalimentacion": "Incorrecto. No fue la convención explicada para básicos." }
+        {
+          "id": "A",
+          "texto": "Los archivos de traducciones (i18n) en distintos idiomas para los textos de la feature.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Las traducciones (i18n) se guardan en `locales-app`, no en `elements`. La carpeta `elements` contiene los componentes UI propios de la feature, organizados según nombre de feature y componente."
+        },
+        {
+          "id": "B",
+          "texto": "Los componentes UI propios de la feature, como `featurename-componentname-1`, `featurename-componentname-2`, etc.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que `elements` contiene los componentes UI de la feature. Siguen la convención de nombre `featurename-componentname-N`, donde cada componente tiene el nombre de la feature como prefijo para identificar a qué feature pertenece."
+        },
+        {
+          "id": "C",
+          "texto": "Las respuestas de las APIs cacheadas localmente para mejorar el rendimiento de la feature.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El caché de respuestas de API no se guarda en la carpeta `elements`. Esa carpeta contiene código de componentes UI, no datos. La gestión de caché es responsabilidad de Cross Components o de lógica de los Data Components."
+        },
+        {
+          "id": "D",
+          "texto": "Los archivos de tests E2E que verifican que el flujo completo de la feature funciona correctamente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los tests E2E se guardan en carpetas específicas de testing, no en `elements`. La carpeta `elements` contiene los componentes de interfaz, no archivos de prueba."
+        }
       ]
     },
     {
       "id": 16,
-      "pregunta": "¿Qué caracteriza a un widget dentro de los UI Components?",
+      "pregunta": "¿Para qué sirve la carpeta `mixins` dentro de la estructura de una feature?",
       "alternativas": [
-        { "id": "A", "texto": "Que es una funcionalidad completa de negocio por sí sola.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso describe mejor a una feature." },
-        { "id": "B", "texto": "Que combina varios componentes básicos para formar una pieza funcional de UI.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la explicación dada para widgets." },
-        { "id": "C", "texto": "Que reemplaza a BGADP y BGADM.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los widgets pertenecen a UI y no sustituyen la capa de datos." },
-        { "id": "D", "texto": "Que siempre debe ser un modal.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un modal puede ser un componente, pero no todo widget es un modal." }
+        {
+          "id": "A",
+          "texto": "Para guardar las imágenes, íconos y assets visuales que usa la feature en su interfaz.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Las imágenes y assets visuales generalmente se guardan en carpetas como `assets` o `images`. Los mixins son lógica de JavaScript, no archivos de recursos visuales."
+        },
+        {
+          "id": "B",
+          "texto": "Para contener lógica reutilizable que puede compartirse entre varios componentes o páginas de la feature, evitando duplicar código.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que los mixins contienen lógica reutilizable que puede usarse en varios componentes. Sirven para compartir lógica, reutilizar funciones y evitar repetir código. Ejemplo de contenido: `FeatureNameComponentMixin.js` y `FeatureNamePageMixin.js`."
+        },
+        {
+          "id": "C",
+          "texto": "Para almacenar los archivos de configuración de channels y los bindings JSON de `cellsConnections`.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los archivos de configuración de channels pueden estar en la definición de cada componente, no en una carpeta `mixins`. Los mixins son específicamente para lógica JavaScript reutilizable entre componentes."
+        },
+        {
+          "id": "D",
+          "texto": "Para definir las rutas de navegación entre las páginas y steps de la feature.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Las rutas de navegación se configuran generalmente en el router de la aplicación o en el Bridge, no en la carpeta `mixins`. Los mixins son lógica compartida de los componentes, no configuración de routing."
+        }
       ]
     },
     {
       "id": 17,
-      "pregunta": "En la diapositiva del listado de alimentos, ¿qué nombre se usó como ejemplo de widget?",
+      "pregunta": "¿Cuál es la diferencia entre `pages` y `steps` dentro de la estructura de una feature?",
       "alternativas": [
-        { "id": "A", "texto": "cards-list-foods", "esCorrecta": true, "retroalimentacion": "Correcto. Ese fue el nombre mostrado para el widget de lista de tarjetas de alimentos." },
-        { "id": "B", "texto": "entelgy-global-foods-api-dm", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ese sería el Data Manager, no el widget." },
-        { "id": "C", "texto": "bgadp-foods-v1", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ese sería el API Data Provider." },
-        { "id": "D", "texto": "foods-cross-component", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ese nombre no fue usado en el ejemplo." }
+        {
+          "id": "A",
+          "texto": "Pages son los archivos de estilos CSS de cada pantalla y steps son los scripts de compilación del proyecto.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los estilos están en los archivos `.css.js` y `.scss` de la feature, no en `pages`. Los scripts de compilación pertenecen al `package.json` del proyecto. Pages y steps son carpetas de componentes, no de estilos ni de scripts."
+        },
+        {
+          "id": "B",
+          "texto": "Pages representan las pantallas de la feature, que usan widgets y básicos; steps son sub-pasos dentro de una página, usados en flujos paso a paso.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que `pages` contiene las pantallas de la feature (por ejemplo `featurename-pagename-1`) y `steps` contiene los sub-pasos dentro de algunas páginas (por ejemplo `namestep1-step`). Los steps se usan en flujos que requieren varios pasos secuenciales."
+        },
+        {
+          "id": "C",
+          "texto": "Pages y steps son nombres intercambiables que usa el equipo según su preferencia para organizar los mismos archivos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. No son intercambiables. En la sesión se explicaron con funciones distintas: pages para pantallas y steps para sub-pasos de flujos. Usar uno u otro tiene un significado semántico en la arquitectura del proyecto."
+        },
+        {
+          "id": "D",
+          "texto": "Pages contienen los Data Components de la feature y steps contienen los componentes UI.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Ni pages ni steps contienen Data Components. Ambas carpetas contienen componentes de la capa de presentación. Los Data Components (BGADP, BGADM) están en su propia estructura separada."
+        }
       ]
     },
     {
       "id": 18,
-      "pregunta": "¿Qué es una feature según lo trabajado en el chat?",
+      "pregunta": "¿Cuál es la función de la carpeta `utils` dentro de una feature según la estructura presentada?",
       "alternativas": [
-        { "id": "A", "texto": "Un elemento visual simple como un botón o ícono.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso corresponde a componentes básicos." },
-        { "id": "B", "texto": "Un componente de alto nivel que representa una funcionalidad completa de negocio.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la idea central al corregir la diapositiva confundida con widgets." },
-        { "id": "C", "texto": "Una carpeta exclusiva para estilos SCSS.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Una feature no es solo una carpeta de estilos." },
-        { "id": "D", "texto": "Una instancia única global del sistema.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso se parece más al concepto de Singleton." }
+        {
+          "id": "A",
+          "texto": "Guardar los archivos de ventanas modales que aparecen en el flujo de la feature.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los modales tienen su propia carpeta `modals` en la estructura de la feature. La carpeta `utils` tiene un propósito diferente relacionado con funciones auxiliares."
+        },
+        {
+          "id": "B",
+          "texto": "Contener funciones auxiliares, constantes y helpers reutilizables dentro de la feature.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que `utils` contiene las funciones auxiliares del proyecto: constantes, funciones reutilizables y helpers. Los ejemplos de archivos mostrados fueron `constants.js`, `index.js` y `utils.js`."
+        },
+        {
+          "id": "C",
+          "texto": "Almacenar la lógica reutilizable compartida entre múltiples componentes, como validaciones de formulario.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La lógica reutilizable compartida entre componentes se guarda en la carpeta `mixins`, no en `utils`. Aunque ambas tienen lógica auxiliar, los mixins están específicamente diseñados para compartirse entre componentes y páginas."
+        },
+        {
+          "id": "D",
+          "texto": "Guardar los componentes Cross que la feature utiliza y que son compartidos con otras features del sistema.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los Cross Components son independientes de las features y tienen su propia estructura. La carpeta `utils` dentro de una feature contiene funciones auxiliares específicas de esa feature, no componentes compartidos del sistema."
+        }
       ]
     },
     {
       "id": 19,
-      "pregunta": "¿Por qué se dijo que la diapositiva del celular bancario estaba confundida?",
+      "pregunta": "¿Qué hace que un componente sea clasificado como 'Cross Component' y no como una feature o widget?",
       "alternativas": [
-        { "id": "A", "texto": "Porque mostraba un componente básico pero lo llamaba Data Manager.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La confusión real fue entre widget y feature." },
-        { "id": "B", "texto": "Porque mostraba una funcionalidad completa de negocio, aunque el título decía Widgets.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue precisamente la observación hecha en el chat." },
-        { "id": "C", "texto": "Porque usaba mal la versión del BGADP.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El punto principal no fue la versión." },
-        { "id": "D", "texto": "Porque la carpeta src no aparecía en la imagen.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La confusión era conceptual, no de carpetas." }
+        {
+          "id": "A",
+          "texto": "Que está implementado con Polymer en lugar de Lit, lo que le permite funcionar en múltiples proyectos legacy.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La clasificación Cross Component no depende de la tecnología usada. Un componente cross puede estar escrito con Lit, Polymer o cualquier otra tecnología. La característica definitoria es su alcance de uso: proporciona funcionalidades transversales que no pertenecen a una sola feature."
+        },
+        {
+          "id": "B",
+          "texto": "Que no pertenece a ninguna feature o pantalla específica, sino que atraviesa todo el sistema proporcionando funcionalidades comunes que usan muchas partes de la aplicación.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que los Cross Components se llaman 'cross' porque atraviesan (cross) todo el sistema. No pertenecen a una sola feature o widget, sino que proveen funcionalidades transversales. Ejemplos: autenticación, almacenamiento en caché, manejo de errores."
+        },
+        {
+          "id": "C",
+          "texto": "Que siempre está construido como un DM Component que consume múltiples APIs simultáneamente para centralizar el acceso a datos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los Cross Components no son necesariamente DM Components. Un Cross Component puede ser un componente de manejo de errores (UI), un sistema de autenticación o un gestor de caché. No se definen por consumir múltiples APIs sino por ser transversales al sistema."
+        },
+        {
+          "id": "D",
+          "texto": "Que solo puede instanciarse una vez en toda la aplicación gracias al patrón Singleton.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Aunque algunos Cross Components pueden implementar el patrón Singleton (como el Auth Service), no todos lo hacen. Y la condición de ser 'cross' no implica automáticamente Singleton. Son conceptos relacionados pero distintos."
+        }
       ]
     },
     {
       "id": 20,
-      "pregunta": "¿Cuál de las siguientes carpetas sí apareció en la estructura de la feature template?",
+      "pregunta": "¿Cuál de los siguientes es un ejemplo correcto de Cross Component según la sesión?",
       "alternativas": [
-        { "id": "A", "texto": "elements", "esCorrecta": true, "retroalimentacion": "Correcto. 'elements' fue una de las carpetas principales de la estructura." },
-        { "id": "B", "texto": "database", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa carpeta no apareció en la estructura mostrada." },
-        { "id": "C", "texto": "controllers", "esCorrecta": false, "retroalimentacion": "Incorrecto. No fue parte de la estructura presentada." },
-        { "id": "D", "texto": "repositories", "esCorrecta": false, "retroalimentacion": "Incorrecto. Tampoco se mostró esa carpeta en el ejemplo." }
+        {
+          "id": "A",
+          "texto": "El widget `cards-list-foods`, porque muestra información de múltiples tipos de alimentos en distintas páginas.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `cards-list-foods` es un Widget UI: combina componentes básicos para mostrar una lista de tarjetas. Aunque puede reutilizarse en varias páginas, no es un componente transversal del sistema; es una pieza de interfaz específica."
+        },
+        {
+          "id": "B",
+          "texto": "El componente `entelgy-button`, porque se usa en muchos formularios y pantallas de la aplicación.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `entelgy-button` es un componente básico (Basic Component). Aunque sea muy reutilizable, está en el nivel más bajo de la jerarquía UI. Los Cross Components proporcionan funcionalidades más complejas como autenticación o gestión de errores."
+        },
+        {
+          "id": "C",
+          "texto": "El manejo de errores global, porque proporciona una funcionalidad transversal que necesitan todas las partes del sistema sin pertenecer a ninguna feature específica.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se listaron explícitamente como ejemplos de Cross Components: autenticación, almacenamiento en caché y manejo de errores. El manejo de errores no pertenece a una feature concreta sino que es transversal: cualquier parte del sistema puede necesitar reportar un error."
+        },
+        {
+          "id": "D",
+          "texto": "La feature de transferencias, porque tiene mucha lógica de negocio y múltiples widgets que la hacen usable en varios contextos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La feature de transferencias es un componente de alto nivel de la capa UI que representa una funcionalidad completa del negocio. Pertenece a un dominio específico (transferencias bancarias), no es transversal al sistema."
+        }
       ]
     },
     {
       "id": 21,
-      "pregunta": "¿Para qué sirve la carpeta 'mixins' dentro de la estructura mostrada?",
+      "pregunta": "¿Qué garantiza exactamente el patrón Singleton en una aplicación?",
       "alternativas": [
-        { "id": "A", "texto": "Para guardar únicamente imágenes y assets visuales.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa no fue la función explicada." },
-        { "id": "B", "texto": "Para contener lógica reutilizable compartida por varios componentes o páginas.", "esCorrecta": true, "retroalimentacion": "Correcto. Los mixins se explicaron como piezas reutilizables de lógica." },
-        { "id": "C", "texto": "Para almacenar respuestas de la API en producción.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso se relacionaría más con caché o manejo de datos." },
-        { "id": "D", "texto": "Para definir rutas del backend.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No fue la finalidad descrita para mixins." }
+        {
+          "id": "A",
+          "texto": "Que todos los componentes de la aplicación se rendericen exactamente una sola vez al cargar la página, optimizando el rendimiento.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El patrón Singleton no tiene relación con el número de renderizados de los componentes. Trata sobre instancias de clases JavaScript, no sobre el proceso de renderizado del DOM."
+        },
+        {
+          "id": "B",
+          "texto": "Que solo exista una única instancia de una clase en toda la aplicación y que haya un único punto global para acceder a ella.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se definió el patrón Singleton como el patrón de diseño que garantiza que solo exista una única instancia de una clase en toda la aplicación y proporciona un punto global para acceder a ella. Solo puede existir UN objeto de esa clase."
+        },
+        {
+          "id": "C",
+          "texto": "Que cada clase del sistema herede de una clase padre común para compartir comportamiento base.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Eso describe la herencia de clases (patrón de diseño orientado a objetos), no el Singleton. El Singleton garantiza unicidad de instancia, no jerarquía de herencia."
+        },
+        {
+          "id": "D",
+          "texto": "Que los datos del sistema se guarden en un único archivo JSON centralizado accesible por todos los componentes.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El Singleton no se refiere a archivos JSON sino a instancias de clases JavaScript en tiempo de ejecución. Un archivo JSON centralizado sería un mecanismo de almacenamiento de datos, no el patrón Singleton."
+        }
       ]
     },
     {
       "id": 22,
-      "pregunta": "¿Qué representan normalmente las carpetas 'pages' y 'steps' dentro de una feature?",
+      "pregunta": "¿Qué problema concreto resuelve el patrón Singleton en el contexto de una aplicación bancaria?",
       "alternativas": [
-        { "id": "A", "texto": "Pages son pantallas y steps son subpasos de un flujo dentro de una página.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la interpretación dada en el ejemplo de estructura." },
-        { "id": "B", "texto": "Pages son APIs y steps son bases de datos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No tienen esa función en la estructura mostrada." },
-        { "id": "C", "texto": "Pages son estilos y steps son scripts de build.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Tampoco fue esa la explicación." },
-        { "id": "D", "texto": "Pages y steps son dos nombres distintos para la misma carpeta.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Se explicó que pages y steps cumplen funciones distintas." }
+        {
+          "id": "A",
+          "texto": "Que los componentes básicos como botones e inputs no puedan reutilizarse en más de un formulario a la vez.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los componentes básicos se diseñan precisamente para reutilizarse múltiples veces. El Singleton resuelve el problema opuesto: evitar que algo que debe ser único se duplique."
+        },
+        {
+          "id": "B",
+          "texto": "Que si cada componente creara su propia instancia del gestor de autenticación, habría múltiples copias inconsistentes; Singleton garantiza que todos accedan a la misma instancia compartida.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó con esta lógica: si cada componente creara su propia instancia de un servicio como el Auth Manager o el Cache Manager, habría muchas copias inconsistentes que causarían problemas. El Singleton evita eso garantizando un único objeto compartido."
+        },
+        {
+          "id": "C",
+          "texto": "Que los Data Components no puedan llamar a la API más de una vez por sesión, reduciendo el tráfico de red.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El Singleton no controla cuántas veces se llama a una API. Es un patrón de creación de objetos que garantiza unicidad de instancia. La optimización de llamadas a API sería responsabilidad de mecanismos de caché."
+        },
+        {
+          "id": "D",
+          "texto": "Que los widgets dentro de una feature no puedan comunicarse entre sí sin pasar por el Bridge.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La comunicación entre componentes es gestionada por el sistema de channels, no por el patrón Singleton. El Singleton garantiza unicidad de instancias de clases, no routing de comunicación entre componentes."
+        }
       ]
     },
     {
       "id": 23,
-      "pregunta": "¿Qué es un Cross Component?",
+      "pregunta": "¿Cuál de los siguientes es el mejor caso de uso para aplicar el patrón Singleton?",
       "alternativas": [
-        { "id": "A", "texto": "Un componente global que brinda funcionalidades comunes a múltiples partes del sistema.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la definición central trabajada." },
-        { "id": "B", "texto": "Un input reutilizable como correo o contraseña.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso describe un basic component, no un cross component." },
-        { "id": "C", "texto": "Una feature exclusiva de una sola pantalla.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un cross component no pertenece a una única feature." },
-        { "id": "D", "texto": "Un componente que solo existe para compilar SCSS.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No tiene relación con esa tarea específica." }
+        {
+          "id": "A",
+          "texto": "Un componente `entelgy-button` que debe usarse en todos los formularios de la aplicación.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los botones son componentes UI que necesitan múltiples instancias: hay decenas de botones distintos en una aplicación, cada uno con su propio estado, texto y acción. Un Singleton aquí sería un error porque la misma instancia no puede estar en múltiples lugares del DOM."
+        },
+        {
+          "id": "B",
+          "texto": "Una lista de tarjetas de productos donde cada tarjeta muestra información diferente de alimentos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Una lista de tarjetas necesita múltiples instancias de `food-card`, una por cada alimento. Si hubiera solo una instancia (Singleton), solo podría mostrarse una tarjeta. Las listas requieren justamente múltiples instancias del mismo componente."
+        },
+        {
+          "id": "C",
+          "texto": "Un Auth Service que gestiona el estado de autenticación y el token de sesión del usuario en toda la aplicación.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. El Auth Service es el caso clásico de Singleton: en toda la aplicación debe existir un único gestor de autenticación. Si cada componente creara su propia instancia, habría tokens y estados de sesión inconsistentes. En la sesión se mencionó explícitamente 'Auth Service o Cache Manager' como ejemplos típicos."
+        },
+        {
+          "id": "D",
+          "texto": "Un widget de formulario de login que puede aparecer tanto en la pantalla principal como en un modal de sesión expirada.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Un widget de formulario necesita poder instanciarse en múltiples lugares. Hacerlo Singleton significaría que solo puede existir un formulario de login activo, lo que sería una limitación innecesaria para un componente de interfaz."
+        }
       ]
     },
     {
       "id": 24,
-      "pregunta": "¿Cuál de estos ejemplos sí fue mencionado como Cross Component?",
+      "pregunta": "Si un usuario visita la feature 'Consulta de cuentas' que muestra saldo total, lista de cuentas y tarjetas, ¿cuál es la cadena de dependencias correcta?",
       "alternativas": [
-        { "id": "A", "texto": "Autenticación.", "esCorrecta": true, "retroalimentacion": "Correcto. Autenticación fue uno de los ejemplos explícitos en la diapositiva." },
-        { "id": "B", "texto": "Input password.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso es un componente UI básico." },
-        { "id": "C", "texto": "Cards-list-foods.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ese fue un ejemplo de widget." },
-        { "id": "D", "texto": "Bgadp-books-v3.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso es un Data Component de tipo API Data Provider." }
+        {
+          "id": "A",
+          "texto": "La feature llama directamente a la API del banco sin pasar por BGADP ni BGADM, para simplificar la arquitectura.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Las features pertenecen a la capa UI y no deben comunicarse directamente con APIs. En la sesión se estableció claramente la separación de responsabilidades: la capa UI no maneja la lógica de datos. Eso viola el principio de separación de responsabilidades de la arquitectura."
+        },
+        {
+          "id": "B",
+          "texto": "La API del banco → BGADP consume los datos → BGADM los organiza → la feature (con sus widgets y básicos) los muestra al usuario.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. Este es el flujo correcto de la arquitectura. En la sesión se mostró exactamente que el ejemplo de 'ver cuentas bancarias' (saldo total, lista de cuentas, tarjetas) es una Feature que usa la cadena: API → BGADP → BGADM → UI Components → Usuario."
+        },
+        {
+          "id": "C",
+          "texto": "El BGADM genera los datos de cuentas sin consumir ninguna API y los entrega directamente a los widgets de la feature.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El BGADM no genera datos; los gestiona una vez que los recibe del BGADP, que sí consume la API. Un BGADM que inventa datos sin fuente real causaría inconsistencias graves en una aplicación bancaria."
+        },
+        {
+          "id": "D",
+          "texto": "Los Cross Components autentican al usuario, consumen la API y renderizan toda la feature directamente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los Cross Components como la autenticación sí pueden intervenir (verificar que el usuario tiene sesión activa), pero no consumen la API de cuentas ni renderizan la feature. Cada tipo de componente tiene su responsabilidad específica: los Data Components consumen datos y los UI Components los muestran."
+        }
       ]
     },
     {
       "id": 25,
-      "pregunta": "¿Qué garantiza el patrón Singleton?",
+      "pregunta": "Un desarrollador debe crear los componentes para integrar el servicio de pagos (payments) versión 1 de BBVA. ¿Cuáles son los nombres correctos para el BGADP y el BGADM?",
       "alternativas": [
-        { "id": "A", "texto": "Que una clase tenga múltiples instancias para mayor flexibilidad.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Singleton busca exactamente lo contrario." },
-        { "id": "B", "texto": "Que solo exista una única instancia de una clase y un punto global de acceso a ella.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la definición dada en el chat." },
-        { "id": "C", "texto": "Que toda clase deba heredar de otra para funcionar.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso no corresponde al patrón Singleton." },
-        { "id": "D", "texto": "Que todos los componentes visuales se rendericen una sola vez.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Singleton no trata del renderizado visual." }
-      ]
-    },
-    {
-      "id": 26,
-      "pregunta": "¿Cuál de estos casos fue mencionado como uso típico de Singleton?",
-      "alternativas": [
-        { "id": "A", "texto": "Auth Service o Cache Manager.", "esCorrecta": true, "retroalimentacion": "Correcto. Esos fueron ejemplos dados en la explicación del patrón." },
-        { "id": "B", "texto": "Cada botón de una interfaz.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los botones son múltiples instancias UI, no un caso típico de Singleton." },
-        { "id": "C", "texto": "Cada tarjeta de una lista de productos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Una lista necesita muchas instancias de tarjetas, no una sola." },
-        { "id": "D", "texto": "Cada input de un formulario.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Tampoco corresponde al propósito de Singleton." }
-      ]
-    },
-    {
-      "id": 27,
-      "pregunta": "Según la explicación del chat, ¿qué componentes suelen relacionarse bien con el patrón Singleton?",
-      "alternativas": [
-        { "id": "A", "texto": "Servicios globales como Data Managers o Cross Components.", "esCorrecta": true, "retroalimentacion": "Correcto. Se mencionó que muchos servicios globales pueden funcionar como Singleton." },
-        { "id": "B", "texto": "Solo los estilos SCSS.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El patrón Singleton no se aplica a archivos de estilos de ese modo." },
-        { "id": "C", "texto": "Únicamente botones e íconos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esos son componentes UI reutilizables, no casos clásicos de Singleton." },
-        { "id": "D", "texto": "Todas las páginas y steps obligatoriamente.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No toda página o step debe ser Singleton." }
+        {
+          "id": "A",
+          "texto": "BGADP: `payments-api-v1` / BGADM: `bbva-payments-data`",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `payments-api-v1` no usa el prefijo `bgadp-` requerido para el API Data Provider. Y `bbva-payments-data` no incluye `global` ni el sufijo `api-dm` requeridos para el Data Manager."
+        },
+        {
+          "id": "B",
+          "texto": "BGADP: `bgadp-payments-v1` / BGADM: `bbva-global-payments-api-dm`",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. Aplicando las convenciones de la sesión: BGADP usa `bgadp-[servicio]-[version]` → `bgadp-payments-v1`. BGADM usa `[empresa]-global-[servicio]-api-dm` → `bbva-global-payments-api-dm`. Esto sigue exactamente los patrones mostrados con los ejemplos `bgadp-books-v3` y `entelgy-global-books-api-dm`."
+        },
+        {
+          "id": "C",
+          "texto": "BGADP: `bbva-global-payments-api-dm` / BGADM: `bgadp-payments-v1`",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los nombres están intercambiados. `bbva-global-payments-api-dm` es el formato del BGADM (Data Manager), no del BGADP. Y `bgadp-payments-v1` es el formato del BGADP (API Data Provider). Asignarlos al revés causaría confusión semántica en el equipo."
+        },
+        {
+          "id": "D",
+          "texto": "BGADP: `entelgy-payments-provider-v1` / BGADM: `bbva-payments-manager`",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Ninguno de los dos sigue la convención correcta. El BGADP debe empezar con `bgadp-`, no con el nombre de la empresa. El BGADM debe incluir `global` y terminar en `api-dm`. Estos nombres inventados rompen las naming conventions que garantizan consistencia en el proyecto."
+        }
       ]
     }
   ]
