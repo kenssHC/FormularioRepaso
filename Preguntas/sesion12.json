@@ -1,365 +1,755 @@
 {
-  "titulo": "Repaso UX Data Mapping, DM, fuentes de datos, autonomía y properties",
-  "descripcion": "Banco de preguntas de opción múltiple basado únicamente en la información trabajada en este chat.",
+  "titulo": "Repaso: UX Data Mapping — Leyenda, Fuentes de Datos, DMs, Autonomía y Properties",
+  "descripcion": "Preguntas de opción múltiple basadas en el contenido de la Sesión 12: qué es el UXDM, leyenda de colores, reglas de legibilidad, tipos de datos, control de versiones de DMs, peticiones GET y POST, Local vs Global DM, autonomía de pantallas y uso de properties.",
   "preguntas": [
     {
       "id": 1,
-      "pregunta": "¿Qué es UX Data Mapping (UXDM)?",
+      "pregunta": "¿Qué define correctamente el propósito del UX Data Mapping (UXDM)?",
       "alternativas": [
-        { "id": "A", "texto": "Es el proceso de conectar los datos del sistema con los elementos de la interfaz para mostrar la información correcta en la UI.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la idea principal del chat: UXDM define de dónde vienen los datos, cómo se procesan y en qué parte de la interfaz se muestran." },
-        { "id": "B", "texto": "Es una técnica para diseñar únicamente colores y tipografías de una pantalla.", "esCorrecta": false, "retroalimentacion": "Incorrecto. UXDM no se centra en estilos visuales; se centra en el origen, transformación y uso de los datos dentro de la interfaz." },
-        { "id": "C", "texto": "Es un patrón de pruebas unitarias para validar componentes web.", "esCorrecta": false, "retroalimentacion": "Incorrecto. En el chat no se definió UXDM como técnica de testing, sino como mapeo entre datos y UI." },
-        { "id": "D", "texto": "Es un framework para desarrollar APIs REST.", "esCorrecta": false, "retroalimentacion": "Incorrecto. UXDM no es un framework backend; es una representación de cómo los datos alimentan la experiencia de usuario." }
+        {
+          "id": "A",
+          "texto": "Es un proceso para diseñar la paleta de colores y la tipografía de cada pantalla de la aplicación.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El UXDM no trata de diseño visual. Se centra en el flujo de datos: de dónde viene cada dato, cómo se procesa y en qué elemento de la interfaz se muestra. El diseño visual (colores, tipografía) es responsabilidad de los equipos de UX/diseño."
+        },
+        {
+          "id": "B",
+          "texto": "Es el proceso de definir cómo los datos del sistema se conectan con los elementos de la interfaz para que la información correcta se muestre en el lugar correcto.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se definió el UXDM como el proceso de definir cómo los datos del sistema se conectan con los elementos de la interfaz de usuario (UI) para que la información correcta se muestre en el lugar correcto. Su objetivo es que cualquier desarrollador pueda entender rápidamente de dónde viene cada dato."
+        },
+        {
+          "id": "C",
+          "texto": "Es un framework para construir APIs REST que conectan el frontend con el backend de forma automatizada.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El UXDM no es un framework de backend ni construye APIs. Es una herramienta de documentación y mapeo que muestra qué APIs ya existen y cómo sus datos alimentan la interfaz."
+        },
+        {
+          "id": "D",
+          "texto": "Es una técnica de pruebas unitarias para validar que los componentes renderizan correctamente los datos recibidos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El UXDM no es una técnica de testing. Es un documento de mapeo de datos que se hace durante el análisis y diseño del sistema, antes de que el código de pruebas exista."
+        }
       ]
     },
     {
       "id": 2,
-      "pregunta": "¿Para qué sirve principalmente un UX Data Mapping?",
+      "pregunta": "En la leyenda de colores del UXDM, ¿qué tipo de dato representa el color naranja?",
       "alternativas": [
-        { "id": "A", "texto": "Para definir cómo se compilan los componentes en producción.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Compilar componentes no fue el propósito explicado; UXDM ayuda a entender el flujo y origen de los datos." },
-        { "id": "B", "texto": "Para organizar de dónde viene cada dato, qué componente lo usa y cómo se muestra en la UI.", "esCorrecta": true, "retroalimentacion": "Correcto. Ese fue uno de los usos clave que se mencionó: saber qué dato necesita cada componente y de qué fuente proviene." },
-        { "id": "C", "texto": "Para reemplazar completamente el backend y las APIs.", "esCorrecta": false, "retroalimentacion": "Incorrecto. UXDM documenta y mapea datos, pero no reemplaza APIs ni backend." },
-        { "id": "D", "texto": "Para decidir el sistema operativo donde correrá la aplicación.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso no tiene relación con el objetivo de UXDM en este chat." }
+        {
+          "id": "A",
+          "texto": "Condiciones o reglas del sistema usadas para lógica o validación, como `contactDetailType == 'EMAIL'`.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Las condiciones y reglas del sistema corresponden al color turquesa (palabras reservadas). El naranja tiene una función diferente dentro del UXDM."
+        },
+        {
+          "id": "B",
+          "texto": "Datos temporales usados dentro del mapeo para cálculos, filtros o transformaciones; no siempre aparecen en el código final.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que las propiedades UXDM (color naranja) son datos temporales o aclaratorios dentro del diagrama. Son 'no obligatorias en el código, solo aclaratorias'. Se usan para representar resultados intermedios como el resultado de un filtro complejo antes de pasarlo como property."
+        },
+        {
+          "id": "C",
+          "texto": "Recursos estáticos como textos traducibles, imágenes e íconos provenientes de archivos de traducción o assets.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los recursos estáticos (textos traducibles, imágenes, íconos) corresponden al color celeste (Images & Literals). El naranja se usa para datos temporales propios del mapeo."
+        },
+        {
+          "id": "D",
+          "texto": "Datos que provienen de sistemas externos como AEM Assets o repositorios de imágenes.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los datos de sistemas externos como AEM corresponden al color lila (Datos de otras fuentes). El naranja es para propiedades internas del propio UXDM que sirven como apoyo aclaratorio."
+        }
       ]
     },
     {
       "id": 3,
-      "pregunta": "En la leyenda de colores del UXDM, ¿qué representa 'Texto'?",
+      "pregunta": "¿Cuál es la diferencia entre el color azul (propiedades de widget/feature) y el color celeste (Images & Literals) en la leyenda del UXDM?",
       "alternativas": [
-        { "id": "A", "texto": "Texto normal mostrado en la interfaz que no depende directamente de datos dinámicos.", "esCorrecta": true, "retroalimentacion": "Correcto. Se explicó con el ejemplo 'Field number (last 4 numbers)' y la idea de textos visibles en la UI." },
-        { "id": "B", "texto": "Una condición lógica del sistema como contactDetailType == EMAIL.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso corresponde a palabras reservadas o lógica/condiciones, no a texto común." },
-        { "id": "C", "texto": "La URL de una imagen servida desde AEM.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Las imágenes y literales se manejan en otra categoría de la leyenda." },
-        { "id": "D", "texto": "Una propiedad temporal solo usada para filtros complejos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso se relaciona con propiedades de UXDM, no con texto." }
+        {
+          "id": "A",
+          "texto": "Azul son estilos CSS del Shadow DOM; celeste son las imágenes dentro del componente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Ninguno de los dos colores tiene relación con CSS o Shadow DOM. La leyenda del UXDM clasifica fuentes de datos, no tecnologías de implementación."
+        },
+        {
+          "id": "B",
+          "texto": "Azul son datos dinámicos que el componente recibe como propiedades desde el backend o una API; celeste son recursos estáticos como textos traducibles, imágenes e íconos.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que el azul (propiedades de widget/feature) representa datos dinámicos que vienen del backend o API y que el componente utiliza como entradas. El celeste (Images & Literals) representa recursos estáticos: textos traducibles (multi-language), imágenes e íconos que normalmente vienen de archivos de traducción, CMS o librerías de assets."
+        },
+        {
+          "id": "C",
+          "texto": "Azul son datos de configuración global del proyecto; celeste son datos del usuario obtenidos desde formularios.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El azul son propiedades dinámicas de un componente (datos del backend/API), no configuración global. El celeste son recursos estáticos del sistema, no datos ingresados por el usuario."
+        },
+        {
+          "id": "D",
+          "texto": "No hay diferencia práctica; ambos representan el mismo tipo de dato con distinto color según el diseñador.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Tienen diferencias claras: azul son datos dinámicos de APIs y backend que cambian según el usuario o contexto; celeste son recursos estáticos que generalmente no cambian en tiempo de ejecución."
+        }
       ]
     },
     {
       "id": 4,
-      "pregunta": "En la leyenda de colores, ¿qué representan las 'Palabras reservadas'?",
+      "pregunta": "Según la sesión, ¿por qué se recomienda separar los literales e imágenes estáticas de las respuestas de los DMs en el UXDM?",
       "alternativas": [
-        { "id": "A", "texto": "Recursos estáticos multilenguaje.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso corresponde a literales o imágenes estáticas." },
-        { "id": "B", "texto": "Condiciones o reglas del sistema usadas para lógica o validación.", "esCorrecta": true, "retroalimentacion": "Correcto. Se explicó con el ejemplo contact.contactDetailType == 'EMAIL'." },
-        { "id": "C", "texto": "Datos del usuario obtenidos exclusivamente desde formularios.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Las palabras reservadas no son entradas de formulario, sino expresiones lógicas." },
-        { "id": "D", "texto": "Métodos del navegador para renderizar componentes.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No se habló de eso en la leyenda de colores." }
+        {
+          "id": "A",
+          "texto": "Porque los DMs no pueden devolver texto, solo números y fechas.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los DMs pueden devolver cualquier tipo de dato incluyendo texto. La razón para separarlos no es una limitación técnica sino una buena práctica de arquitectura."
+        },
+        {
+          "id": "B",
+          "texto": "Para evitar mezclar datos dinámicos (APIs) con textos o imágenes estáticas, garantizando que cada dato venga de su fuente correcta y el diagrama sea más claro.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se presentó esta regla explícitamente: 'Saca los literales o imágenes estáticas de las respuestas de los DMs'. Los datos dinámicos vienen de APIs, mientras que los estáticos vienen de archivos de traducción, assets o contenido fijo del frontend. Mezclarlos genera confusión y mala arquitectura."
+        },
+        {
+          "id": "C",
+          "texto": "Porque AEM no acepta datos que provengan de DMs y los rechaza automáticamente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. AEM es un CMS y no filtra datos de DMs. La regla de separar estáticos de dinámicos es una decisión de diseño arquitectónico, no una restricción técnica de AEM."
+        },
+        {
+          "id": "D",
+          "texto": "Porque los DMs solo deben usarse para peticiones POST, mientras que los estáticos se usan con GET.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los DMs se usan con GET, POST, PUT y DELETE. La separación de estáticos no tiene ninguna relación con el método HTTP utilizado."
+        }
       ]
     },
     {
       "id": 5,
-      "pregunta": "¿Qué representan 'Images & Literals' dentro del UXDM?",
+      "pregunta": "¿Cuál de los siguientes elementos de la interfaz correspondería al color turquesa (palabras reservadas) en el UXDM?",
       "alternativas": [
-        { "id": "A", "texto": "Recursos estáticos como imágenes, iconos y textos multi-idioma.", "esCorrecta": true, "retroalimentacion": "Correcto. En el chat se explicó como recursos estáticos y literales traducibles." },
-        { "id": "B", "texto": "Únicamente datos bancarios traídos desde una API de cuentas.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso sería dato dinámico de backend, no imágenes ni literales." },
-        { "id": "C", "texto": "Funciones que transforman arrays usando map().", "esCorrecta": false, "retroalimentacion": "Incorrecto. No se refiere a funciones de JavaScript." },
-        { "id": "D", "texto": "Eventos enviados por canales entre componentes.", "esCorrecta": false, "retroalimentacion": "Incorrecto. En esta categoría no entran eventos ni canales." }
+        {
+          "id": "A",
+          "texto": "El texto 'Enviar a contactos' mostrado como etiqueta estática en la pantalla.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Un texto estático como etiqueta informativa corresponde al color negro (Texto) o celeste (Images & Literals). Las palabras reservadas son expresiones lógicas, no textos visibles."
+        },
+        {
+          "id": "B",
+          "texto": "La imagen del logo de Plin obtenida desde AEM Assets.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Una imagen de AEM corresponde al color lila (Datos de otras fuentes). Las palabras reservadas son condiciones de lógica o validación, no assets visuales."
+        },
+        {
+          "id": "C",
+          "texto": "La condición `contact.contactDetailType == 'EMAIL'` que filtra qué contactos mostrar.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que el color turquesa representa palabras reservadas: condiciones o reglas del sistema usadas para lógica o validación. El ejemplo exacto mostrado fue `where contact.contactDetailType == 'EMAIL'`, que filtra dentro de los datos del cliente solo los contactos de tipo email."
+        },
+        {
+          "id": "D",
+          "texto": "El campo `totalDebtsBalances[].amount` devuelto por la API de cálculo de deudas.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Un campo de respuesta de API como `totalDebtsBalances[].amount` corresponde al color azul (propiedades de widget/feature). Las palabras reservadas son las condiciones lógicas que se aplican para filtrar o validar esos datos."
+        }
       ]
     },
     {
       "id": 6,
-      "pregunta": "¿Qué son las propiedades de widget o feature en UXDM?",
+      "pregunta": "En la tabla de control de versiones de DMs presentada en la sesión, ¿cuáles son las cuatro columnas que la componen?",
       "alternativas": [
-        { "id": "A", "texto": "Datos recibidos por un componente o feature, normalmente provenientes de backend, estado o componente superior.", "esCorrecta": true, "retroalimentacion": "Correcto. Así se explicó: son datos que el widget/feature utiliza como entradas." },
-        { "id": "B", "texto": "Solo estilos CSS internos del Shadow DOM.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Las properties no son únicamente estilos; son valores/entradas que el componente usa." },
-        { "id": "C", "texto": "Archivos PDF adjuntos a la documentación.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No tienen relación con documentación PDF." },
-        { "id": "D", "texto": "Variables exclusivas del backend que jamás llegan al frontend.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Justamente las properties sí terminan siendo usadas por componentes del frontend." }
+        {
+          "id": "A",
+          "texto": "Nombre del endpoint, Método HTTP, Parámetros requeridos y Código de respuesta.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Esa sería la estructura de documentación de una API individual (tipo Swagger), no la tabla de control de versiones de DMs explicada en la sesión."
+        },
+        {
+          "id": "B",
+          "texto": "DM Family, Version, DM y Canonical version.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se presentó la tabla de control de versiones con estas cuatro columnas: DM Family (agrupación general, como `bbva-global-customers-api-dm`), Version (versión mayor: 3.XX, 4.XX), DM (endpoints específicos) y Canonical version (versión oficial en el API Catalog: v1, v2, v3)."
+        },
+        {
+          "id": "C",
+          "texto": "Empresa, País, Dominio y Versión del componente Lit.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Aunque empresa, país y dominio son partes del nombre de un DM global, no son las columnas de la tabla de versiones. La tabla organiza los DMs por familia, versión mayor, DM específico y versión canónica."
+        },
+        {
+          "id": "D",
+          "texto": "BGADP, BGADM, Widget y Feature.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Esas son categorías de la arquitectura de componentes de la sesión anterior, no las columnas de la tabla de versiones de DMs. La tabla se refiere a control de versiones de APIs/Data Models."
+        }
       ]
     },
     {
       "id": 7,
-      "pregunta": "¿Para qué se usan las propiedades de UXDM cuyo uso se dijo que es limitado?",
+      "pregunta": "¿Qué representa la 'Canonical version' en la tabla de control de versiones de DMs?",
       "alternativas": [
-        { "id": "A", "texto": "Para almacenar temporalmente resultados o aclaraciones, por ejemplo el resultado de un filtro complejo.", "esCorrecta": true, "retroalimentacion": "Correcto. Se explicó que son no obligatorias en el código y sirven como apoyo aclaratorio." },
-        { "id": "B", "texto": "Para definir rutas del router principal de la app.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso no fue lo que se explicó sobre propiedades de UXDM." },
-        { "id": "C", "texto": "Para almacenar credenciales secretas de producción.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No se usan para secretos ni configuración sensible." },
-        { "id": "D", "texto": "Para reemplazar los Data Models globales.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Las propiedades de UXDM no reemplazan DMs." }
+        {
+          "id": "A",
+          "texto": "La versión del navegador mínima requerida para consumir correctamente la API.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La canonical version no tiene relación con navegadores. Es una versión del propio endpoint de la API, no del ambiente del cliente."
+        },
+        {
+          "id": "B",
+          "texto": "La versión oficial y estándar publicada del endpoint en el API Catalog, por ejemplo v1, v2 o v3.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que la canonical version es la versión estándar publicada en el catálogo de APIs. Es la versión oficial que el frontend debe usar. Ejemplos: customers API → v3, cards API → v1. El frontend debe apuntar a esa versión canónica."
+        },
+        {
+          "id": "C",
+          "texto": "La versión mayor de la familia del DM que indica si hubo cambios importantes (3.XX, 4.XX).",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Eso describe la columna 'Version' de la tabla (versión mayor como 3.XX o 4.XX). La canonical version es la versión oficial del endpoint específico en el API Catalog (v1, v2, v3)."
+        },
+        {
+          "id": "D",
+          "texto": "La primera versión que se publicó del DM, que nunca cambia para mantener compatibilidad.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La canonical version no es necesariamente la primera ni una inmutable. Es la versión estándar actualmente publicada en el catálogo. Puede evolucionar con el tiempo."
+        }
       ]
     },
     {
       "id": 8,
-      "pregunta": "Cuando en un UXDM aparecen 'Datos de otras fuentes', como AEM Assets, ¿qué significa?",
+      "pregunta": "En el UXDM, al documentar un GET, la sesión indicó que se debe usar el nombre del DM específico, no el de la familia. ¿Qué diferencia hay entre ambos?",
       "alternativas": [
-        { "id": "A", "texto": "Que el dato proviene de un sistema externo o fuente distinta al DM principal, como un CMS o repositorio de imágenes.", "esCorrecta": true, "retroalimentacion": "Correcto. Se explicó con el ejemplo de imágenes desde AEM Assets." },
-        { "id": "B", "texto": "Que el dato fue escrito manualmente por el usuario en tiempo real.", "esCorrecta": false, "retroalimentacion": "Incorrecto. 'Otras fuentes' no significa input del usuario." },
-        { "id": "C", "texto": "Que es un dato interno del Shadow DOM.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No tiene relación con Shadow DOM." },
-        { "id": "D", "texto": "Que es un literal fijo del archivo de traducciones local.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso sería un literal estático, no una fuente externa adicional." }
+        {
+          "id": "A",
+          "texto": "El DM específico tiene un método HTTP definido; el DM Family solo existe en el entorno de desarrollo.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Ambos existen en el mismo entorno. La diferencia no es de métodos HTTP sino de granularidad: la familia agrupa todos los endpoints relacionados con un dominio, y el DM específico identifica uno en concreto."
+        },
+        {
+          "id": "B",
+          "texto": "La DM Family agrupa todos los endpoints de un dominio (como `bbva-global-cards-api-dm`); el DM específico es el endpoint individual que se usa (como `bbva-global-card-api-dm` para una sola tarjeta).",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se vio esta distinción: la DM Family es la agrupación general (ej: `bbva-global-customers-api-dm`), mientras que el DM específico es el componente exacto que se mapea (ej: `bbva-global-card-api-dm` vs `bbva-global-cards-api-dm` para tarjeta individual vs lista). El UXDM debe referenciar el DM específico para mayor precisión."
+        },
+        {
+          "id": "C",
+          "texto": "No hay diferencia real; la distinción es solo de estilo de escritura del equipo.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Hay una diferencia semántica y técnica importante. Usar la familia en lugar del DM específico en el UXDM genera ambigüedad porque la familia puede contener múltiples endpoints con comportamientos distintos."
+        },
+        {
+          "id": "D",
+          "texto": "La DM Family se usa en entornos de prueba y el DM específico solo en producción.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La distinción no es de entornos sino de especificidad. El UXDM documenta el flujo de datos real de la aplicación y siempre debe referenciar el DM específico para que quede claro exactamente qué API se está usando."
+        }
       ]
     },
     {
       "id": 9,
-      "pregunta": "En el ejemplo de 'Tus beneficios', ¿de dónde venían el título, descripción e imagen del beneficio?",
+      "pregunta": "En la petición `getCard(cardId, { expand: 'indicators' })`, ¿cuál es la diferencia entre `cardId` y `expand`?",
       "alternativas": [
-        { "id": "A", "texto": "De AEM, a través de getAemData() y content fragments.", "esCorrecta": true, "retroalimentacion": "Correcto. Se explicó que la promo de Pizza Hut venía del CMS AEM mediante content fragments." },
-        { "id": "B", "texto": "De un archivo CSS del componente.", "esCorrecta": false, "retroalimentacion": "Incorrecto. CSS no provee contenido de negocio como título, descripción o imagen de beneficios." },
-        { "id": "C", "texto": "De un Local DM exclusivo del componente.", "esCorrecta": false, "retroalimentacion": "Incorrecto. En el chat se insistió en usar Global DM/AEM y no Local DM." },
-        { "id": "D", "texto": "De un canal privado de Cells.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los canales no fueron la fuente del contenido mostrado en ese ejemplo." }
+        {
+          "id": "A",
+          "texto": "`cardId` es el body del POST enviado al servidor; `expand` es el nombre del método de la API.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Esta es una petición GET, no POST (el GET no envía body). `cardId` va en la URL como URI param y `expand` va como query param adicional, no es el nombre del método."
+        },
+        {
+          "id": "B",
+          "texto": "`cardId` es un URI param que va dentro de la URL para identificar la tarjeta específica; `expand` es un query param que modifica o amplía la respuesta del endpoint.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó esta distinción: `cardId` es el URI param que identifica el recurso (va en la URL como `/api/cards/{cardId}`). `expand='indicators'` es un query param adicional que modifica la respuesta (va como `/api/cards/123456?expand=indicators`). Los URI params identifican el recurso; los query params modifican cómo se devuelve."
+        },
+        {
+          "id": "C",
+          "texto": "Ambos son query params; la diferencia es que `cardId` es obligatorio y `expand` es opcional.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `cardId` es un URI param (va en la ruta de la URL como `/api/cards/123456`), no un query param. Los query params van después del `?` en la URL. Aunque la opcionalidad puede ser cierta, la clasificación de tipos es lo relevante aquí."
+        },
+        {
+          "id": "D",
+          "texto": "`cardId` es el alias de la tarjeta mostrado en pantalla; `expand` es el filtro que selecciona las imágenes a mostrar.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `cardId` es el identificador del recurso en la URL, no el texto visible. El alias de la tarjeta viene del campo `[].alias` de la respuesta. `expand='indicators'` amplía los datos devueltos, no filtra imágenes."
+        }
       ]
     },
     {
       "id": 10,
-      "pregunta": "¿Qué indica el campo 'priority' en el ejemplo de beneficios desde AEM?",
+      "pregunta": "Según el UXDM de `getCards()`, ¿qué lógica se aplica para mostrar el nombre principal de una tarjeta en la pantalla?",
       "alternativas": [
-        { "id": "A", "texto": "El orden en que deben mostrarse los beneficios.", "esCorrecta": true, "retroalimentacion": "Correcto. Se explicó que priority sirve para ordenar beneficios como 1, 2, 3, etc." },
-        { "id": "B", "texto": "El nivel de seguridad del endpoint.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Priority no define seguridad del API." },
-        { "id": "C", "texto": "La cantidad máxima de imágenes por beneficio.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No se explicó así en el chat." },
-        { "id": "D", "texto": "El idioma del literal multilenguaje.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El idioma se controla por language, no por priority." }
+        {
+          "id": "A",
+          "texto": "Se usa siempre el campo `cardId` porque es el identificador único de la tarjeta en el sistema.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `cardId` es un identificador técnico interno, no un nombre legible para el usuario. La interfaz debe mostrar un nombre comprensible como 'Mastercard black' o 'Mi tarjeta principal'."
+        },
+        {
+          "id": "B",
+          "texto": "Se usa el campo `alias`; si no existe, se usa `product.name` tomando solo los primeros 6 caracteres.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. El UXDM de `getCards()` indica esta lógica: `Field [].alias` → si existe alias, se usa ese nombre personalizado (ej: 'Mi tarjeta principal'). Si no existe: `otherwise Field [].product.name (first 6 characters)`. Solo se toman los primeros 6 caracteres del nombre del producto para ajustarse al espacio en la UI."
+        },
+        {
+          "id": "C",
+          "texto": "Se usa siempre `product.name` completo, ignorando el alias para mantener consistencia.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El alias tiene prioridad sobre `product.name`. Si el usuario configuró un alias para su tarjeta, la interfaz debe mostrarlo respetando la personalización."
+        },
+        {
+          "id": "D",
+          "texto": "Se usa el campo `number` (últimos 4 dígitos) porque es el identificador más reconocible para el usuario.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los últimos 4 dígitos del número (`[].number`) se muestran como información adicional (ej: '•••• 0551'), no como el nombre principal de la tarjeta."
+        }
       ]
     },
     {
       "id": 11,
-      "pregunta": "¿Cuál es una buena práctica para que un UXDM sea más legible?",
+      "pregunta": "En el UXDM de `getCards()`, ¿qué condición se aplica para seleccionar la imagen correcta de la tarjeta?",
       "alternativas": [
-        { "id": "A", "texto": "Cruzar la mayor cantidad de flechas posible para mostrar todas las relaciones juntas.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Justamente se recomendó evitar cruces de flechas porque vuelven el diagrama confuso." },
-        { "id": "B", "texto": "Ordenar los elementos y evitar en lo posible cruzar flechas.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la regla principal de legibilidad mostrada en la diapositiva." },
-        { "id": "C", "texto": "Eliminar los nombres de campos para que el diagrama se vea más limpio.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso quitaría claridad; los campos son parte esencial del UXDM." },
-        { "id": "D", "texto": "Mezclar en un solo bloque datos, imágenes y condiciones sin separación.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La idea es justamente ordenar y diferenciar orígenes y tipos." }
+        {
+          "id": "A",
+          "texto": "Se toma la primera imagen del array `images[]` sin ningún filtro adicional.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. No se toma la primera imagen indiscriminadamente. Se aplica un filtro específico para seleccionar la imagen correcta dentro del array."
+        },
+        {
+          "id": "B",
+          "texto": "Se usa `[].images[].url` donde `[].images[].id == 'cardImage'`, seleccionando la imagen cuyo id sea específicamente 'cardImage'.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. El UXDM especifica: `Field [].images[].url` con la condición `where Field [].images[].id == cardImage`. De todas las imágenes disponibles en el array, se selecciona específicamente la que tiene el id `cardImage`, que es la imagen diseñada para mostrarse en la tarjeta de la UI."
+        },
+        {
+          "id": "C",
+          "texto": "La imagen viene de AEM Assets y no se referencia desde la respuesta del DM.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. En este ejemplo de `getCards()`, la imagen se obtiene directamente del campo `images[]` de la respuesta del DM `bbva-global-cards-api-dm`, no de AEM."
+        },
+        {
+          "id": "D",
+          "texto": "La imagen se selecciona usando el campo `expand='indicators'` del query param.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `expand='indicators'` es un query param que amplía los datos devueltos por la API, no un selector de imágenes. La imagen se selecciona con la condición `images[].id == cardImage`."
+        }
       ]
     },
     {
       "id": 12,
-      "pregunta": "¿Qué se recomendó hacer con los literales o imágenes estáticas respecto a las respuestas de los DMs?",
+      "pregunta": "¿Cuál es la diferencia fundamental entre un GET y un POST en el contexto del UXDM explicado en la sesión?",
       "alternativas": [
-        { "id": "A", "texto": "Mantenerlos dentro de la respuesta del DM para que todo venga junto.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Se recomendó separarlos de las respuestas de los DMs." },
-        { "id": "B", "texto": "Sacarlos de las respuestas de los DMs y tratarlos como literales o assets estáticos.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue una regla explícita del chat." },
-        { "id": "C", "texto": "Convertirlos todos en query params del endpoint.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los query params no sustituyen literales ni assets estáticos." },
-        { "id": "D", "texto": "Mapearlos siempre como propiedades de UXDM temporales.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No se dijo que siempre deban ir como propiedades UXDM." }
+        {
+          "id": "A",
+          "texto": "GET solo se usa para imágenes y recursos estáticos; POST se usa para textos dinámicos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. GET se usa para obtener cualquier tipo de datos del backend (tarjetas, contratos, clientes, etc.), no solo imágenes. POST se usa para enviar datos al servidor para procesamiento, no exclusivamente para textos."
+        },
+        {
+          "id": "B",
+          "texto": "GET obtiene datos del backend sin enviar body; POST envía datos al backend en el body para crear o procesar información.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó esta diferencia: el GET consulta datos y normalmente no envía body (usa URI params y query params). El POST sí envía un body con los datos que el backend necesita para procesar la operación, como simular una oferta o calcular deudas."
+        },
+        {
+          "id": "C",
+          "texto": "GET siempre devuelve un array y POST siempre devuelve un objeto JSON simple.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El tipo de estructura (array vs objeto) no define si es GET o POST. Ambos métodos pueden devolver cualquier estructura JSON dependiendo de la API."
+        },
+        {
+          "id": "D",
+          "texto": "No hay diferencia funcional en el UXDM; solo cambia el color con el que se representa en el diagrama.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Sí hay una diferencia funcional clara: el GET pide datos y el POST los envía para procesamiento. En el UXDM esto impacta qué se documenta: para un POST se deben indicar los URI params, el body de entrada y de dónde provienen esos datos."
+        }
       ]
     },
     {
       "id": 13,
-      "pregunta": "En la pantalla de cuenta de Plin, ¿cuáles de estos eran datos dinámicos provenientes de la API de cuentas?",
+      "pregunta": "En una petición POST en el UXDM, ¿cuándo se usa `Fields` (plural) en lugar de `Field` (singular)?",
       "alternativas": [
-        { "id": "A", "texto": "Saldo, moneda, nombre de cuenta y últimos 4 números.", "esCorrecta": true, "retroalimentacion": "Correcto. Eso fue exactamente lo que se identificó como proveniente del getAccount(accountId)." },
-        { "id": "B", "texto": "Los textos 'Saldo disponible' y 'Enviar a contactos' exclusivamente.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esos se explicaron como literales estáticos o multi-language." },
-        { "id": "C", "texto": "El icono de ayuda y el logo de Plin únicamente.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso no correspondía a los datos dinámicos de cuenta." },
-        { "id": "D", "texto": "Solo el color del botón principal.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El color del botón no era un dato de negocio traído por la API." }
+        {
+          "id": "A",
+          "texto": "`Fields` se usa para datos de AEM y `Field` para datos de APIs REST.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La distinción entre `Field` y `Fields` no tiene relación con la fuente del dato (AEM vs API). Se refiere a cómo se agrupan los campos dentro del body de la petición."
+        },
+        {
+          "id": "B",
+          "texto": "`Fields` (plural) agrupa varios campos relacionados dentro de la misma estructura; `Field` (singular) documenta un campo individual.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó con el ejemplo del POST `postOfferSimulations`: se usa `Fields` cuando se agrupan varios campos de una misma estructura (ej: varios campos dentro de `details<CARDHOLDERSIMULATION>`), y `Field` cuando se documenta un campo específico individual (ej: `Field details<CARDHOLDERSIMULATION>.offerType = 'CARD_HOLDER'`)."
+        },
+        {
+          "id": "C",
+          "texto": "`Fields` se usa para URI params y `Field` para query params.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Ambas notaciones se usan dentro del body de la petición POST, no para diferenciar URI params de query params. Los URI params y query params tienen su propia sección en el UXDM."
+        },
+        {
+          "id": "D",
+          "texto": "No hay diferencia; son sinónimos y cualquiera puede usarse indistintamente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Tienen usos distintos con un significado semántico claro en el UXDM: `Fields` indica una agrupación de campos relacionados y `Field` documenta un campo específico. Usarlos intercambiablemente genera confusión en la documentación."
+        }
       ]
     },
     {
       "id": 14,
-      "pregunta": "¿Qué caracteriza a los 'Datos Estáticos' en el ejemplo de afiliación a Plin?",
+      "pregunta": "En el POST `postOfferSimulations(offerId)`, algunos datos del body provienen de `From GET RESPONSE bbva-global-card-products-api-dm`. ¿Qué indica esto en el UXDM?",
       "alternativas": [
-        { "id": "A", "texto": "Son textos, imágenes y botones informativos que normalmente no dependen de datos dinámicos y suelen venir de literales o assets.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la explicación de la diapositiva 'Datos Estáticos'." },
-        { "id": "B", "texto": "Son únicamente cálculos financieros hechos por el backend.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los datos estáticos no son cálculos financieros." },
-        { "id": "C", "texto": "Son campos de formularios que el usuario escribe a mano.", "esCorrecta": false, "retroalimentacion": "Incorrecto. En ese ejemplo se habló de textos fijos y assets, no de inputs del usuario." },
-        { "id": "D", "texto": "Son valores temporales del Local DM.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No se relacionó con Local DM." }
+        {
+          "id": "A",
+          "texto": "Que el POST no necesita body porque todos los datos ya están en el URI param `offerId`.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El POST sí tiene body. `offerId` es solo el URI param que identifica la oferta. El body del POST contiene campos adicionales que, en parte, provienen de otro GET previo."
+        },
+        {
+          "id": "B",
+          "texto": "Que algunos campos del body del POST se obtienen primero haciendo un GET a `bbva-global-card-products-api-dm` y esos datos se usan como entrada del POST.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que el UXDM debe indicar claramente de dónde provienen los datos del body. En este caso, el flujo es: primero se hace un GET a `card-products` para obtener datos, y luego esos datos se usan como entrada para el body del POST `postOfferSimulations`."
+        },
+        {
+          "id": "C",
+          "texto": "Que el POST reemplaza al GET y no es necesario hacer ambas llamadas.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Son llamadas complementarias, no alternativas. El GET obtiene datos que el POST necesita como entrada. Ambas llamadas ocurren en el flujo real de la aplicación."
+        },
+        {
+          "id": "D",
+          "texto": "Que `bbva-global-card-products-api-dm` es el Local DM que gestiona los datos del POST internamente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El nombre `bbva-global-card-products-api-dm` ya indica que es un DM Global (contiene 'global'). Además, la regla de la sesión es que el UXDM siempre mapea contra DMs globales, nunca locales."
+        }
       ]
     },
     {
       "id": 15,
-      "pregunta": "¿Qué condición hacía que se mostrara la pantalla de afiliación a Plin en el ejemplo?",
+      "pregunta": "La sesión establece la regla: 'El UXDM es siempre GLOBAL, no se mapeará contra BGADMs locales'. ¿Qué consecuencias concretas tiene ignorar esta regla?",
       "alternativas": [
-        { "id": "A", "texto": "Que el HTTP Code fuera 500 y status.id fuera ACTIVE.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa condición no corresponde a lo trabajado." },
-        { "id": "B", "texto": "Que la API getMembership respondiera correctamente y status.id fuera distinto de ACTIVE.", "esCorrecta": true, "retroalimentacion": "Correcto. Se explicó con la condición HTTP Code == 200 y status.id != 'ACTIVE'." },
-        { "id": "C", "texto": "Que el usuario no tuviera conexión a internet.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No fue una regla de negocio de la diapositiva." },
-        { "id": "D", "texto": "Que el CMS AEM estuviera vacío.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La condición mostrada dependía de membership, no de AEM." }
+        {
+          "id": "A",
+          "texto": "Que el componente no podrá usar Shadow DOM ni Lit, ya que los Local DMs son incompatibles con Web Components.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los Local DMs no tienen ninguna incompatibilidad técnica con Shadow DOM o Lit. El problema de usarlos no es tecnológico sino arquitectónico."
+        },
+        {
+          "id": "B",
+          "texto": "Que se generaría duplicación de APIs, inconsistencias de datos, dificultad de mantenimiento e incompatibilidades entre países.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se listaron estos problemas concretos de usar Local DMs en sistemas grandes: duplicación de APIs (cada equipo crea la suya), inconsistencias de datos entre partes del sistema, mantenimiento difícil y incompatibilidad entre países. Las APIs globales existen justamente para evitar estos problemas en arquitecturas bancarias."
+        },
+        {
+          "id": "C",
+          "texto": "Que el UXDM no podría dibujarse en herramientas de diseño como Figma o Miro.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Las herramientas de diagramación no tienen restricciones técnicas sobre qué DMs se documentan. El problema de los Local DMs es de arquitectura de sistemas, no de herramientas de diseño."
+        },
+        {
+          "id": "D",
+          "texto": "Que el endpoint quedaría sin versión canónica en el API Catalog.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La versión canónica es una columna del control de versiones de los DMs y no depende de si son locales o globales. Los problemas de los Local DMs son: duplicación, inconsistencia y difícil mantenimiento."
+        }
       ]
     },
     {
       "id": 16,
-      "pregunta": "¿Qué significa que ciertos textos vengan 'a partir de respuesta de endpoints'?",
+      "pregunta": "Dado el nombre del DM global `bbva-global-customer-api-dm-es`, ¿qué representa cada segmento según la sesión?",
       "alternativas": [
-        { "id": "A", "texto": "Que los textos son configuraciones dinámicas obtenidas desde una API, por ejemplo acciones y títulos según idioma.", "esCorrecta": true, "retroalimentacion": "Correcto. Se explicó con getPublicSettings y actions[].texts.[language].title." },
-        { "id": "B", "texto": "Que los textos siempre están hardcodeados en el HTML.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Justamente la idea es que no estén fijos en el código." },
-        { "id": "C", "texto": "Que los textos provienen del archivo package.json.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No tienen relación con package.json." },
-        { "id": "D", "texto": "Que los textos solo pueden venir del navegador del usuario.", "esCorrecta": false, "retroalimentacion": "Incorrecto. En este caso provienen de endpoints de configuración." }
+        {
+          "id": "A",
+          "texto": "`bbva` = empresa, `global` = API global, `customer` = dominio, `api-dm` = Data Model, `es` = país o región.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se desglosó exactamente este nombre: `bbva` (organización), `global` (indica que es una API global, no local), `customer` (dominio al que pertenece, en este caso clientes), `api-dm` (es un Data Model), `es` (país o región: España). Esta convención de nombres permite identificar de un vistazo el alcance y propietario de cada DM."
+        },
+        {
+          "id": "B",
+          "texto": "`bbva` = versión del framework, `global` = entorno de producción, `customer` = nombre del widget, `api-dm` = método HTTP, `es` = idioma de los textos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Ninguno de esos significados es correcto. `bbva` es la organización, `global` indica que es una API global, `customer` es el dominio de negocio, `api-dm` es el tipo de componente (Data Model), y `es` es el país/región."
+        },
+        {
+          "id": "C",
+          "texto": "El nombre no tiene estructura semántica; es una cadena arbitraria definida por el equipo de backend.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El nombre sigue una convención estricta con significado semántico en cada segmento. Esto es fundamental en arquitecturas empresariales para mantener consistencia y permitir identificar rápidamente qué hace cada DM."
+        },
+        {
+          "id": "D",
+          "texto": "`bbva` = banco, `global` = versión global del BGADP, `customer` = UI component, `api-dm` = versión canónica, `es` = lenguaje TypeScript.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `global` no es una versión del BGADP sino que indica que es una API de alcance global. `customer` es el dominio de negocio, no un UI component. `api-dm` identifica que es un Data Model, no una versión. `es` es país/región, no un lenguaje de programación."
+        }
       ]
     },
     {
       "id": 17,
-      "pregunta": "En el ejemplo de textos desde endpoints, ¿qué representaba actions[].link?",
+      "pregunta": "En el ejemplo de 'Cambiar correo', el UXDM obtiene los contactos del cliente con `getCustomer(customerId)` y aplica el filtro `contact.contactDetailType == 'EMAIL'`. ¿Por qué es necesario ese filtro?",
       "alternativas": [
-        { "id": "A", "texto": "La acción o navegación que se ejecuta cuando el usuario presiona el botón.", "esCorrecta": true, "retroalimentacion": "Correcto. Se explicó como el destino o evento asociado a la acción." },
-        { "id": "B", "texto": "La traducción del título en cuatro idiomas.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso corresponde a actions[].texts.[language].title." },
-        { "id": "C", "texto": "El color del icono del botón.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El link no define color." },
-        { "id": "D", "texto": "La familia del DM del endpoint.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No representa la familia del DM." }
+        {
+          "id": "A",
+          "texto": "Porque la API solo devuelve emails y el filtro verifica que el formato sea válido.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La API `getCustomer` devuelve todos los contactos del cliente, que incluyen diferentes tipos: EMAIL, PHONE, etc. El filtro es necesario precisamente porque no devuelve solo emails."
+        },
+        {
+          "id": "B",
+          "texto": "Porque la respuesta del cliente contiene un array con contactos de múltiples tipos (EMAIL, PHONE, etc.) y el UXDM necesita seleccionar solo los de tipo EMAIL para mostrarlos como opciones de correo.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se mostró un ejemplo de la respuesta: el array `contact[]` contiene objetos con distintos `contactDetailType` (EMAIL, PHONE). Para la pantalla 'Cambiar correo' solo son relevantes los de tipo EMAIL. El filtro `where contact.contactDetailType == 'EMAIL'` extrae únicamente `contact.address` de esos registros."
+        },
+        {
+          "id": "C",
+          "texto": "Porque `customerId` solo es válido para emails y genera un error si el cliente tiene teléfonos registrados.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `customerId` es el identificador del cliente que se pasa como URI param a la API. No tiene ninguna relación con el tipo de contacto devuelto. La API devuelve todos los contactos del cliente sin importar el `customerId`."
+        },
+        {
+          "id": "D",
+          "texto": "Porque la regla del UXDM prohíbe usar datos de teléfonos en componentes de tipo widget.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. No existe tal regla en el UXDM. El filtro se aplica por lógica de negocio: la pantalla 'Cambiar correo' solo debe mostrar las direcciones de correo del cliente, no sus números de teléfono."
+        }
       ]
     },
     {
       "id": 18,
-      "pregunta": "¿Para qué se usa AEM en el contexto explicado en el chat?",
+      "pregunta": "¿Qué significa exactamente el concepto de 'autonomía' de una pantalla o feature en el contexto del UXDM?",
       "alternativas": [
-        { "id": "A", "texto": "Para almacenar y gestionar contenido como promociones, textos, imágenes y banners sin tocar el código.", "esCorrecta": true, "retroalimentacion": "Correcto. Así se explicó AEM como gestor de contenidos o CMS." },
-        { "id": "B", "texto": "Para compilar componentes Web Components en tiempo real.", "esCorrecta": false, "retroalimentacion": "Incorrecto. AEM no se explicó como compilador de componentes." },
-        { "id": "C", "texto": "Para sustituir todas las APIs transaccionales del backend.", "esCorrecta": false, "retroalimentacion": "Incorrecto. AEM no reemplaza APIs de negocio." },
-        { "id": "D", "texto": "Para administrar dependencias NPM del proyecto.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso no es función de AEM." }
+        {
+          "id": "A",
+          "texto": "Que la pantalla no necesita conexión a internet y funciona con datos generados localmente por el Local DM.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La autonomía no significa funcionar sin internet ni usar datos locales inventados. Significa que puede obtener todos sus datos directamente desde sus propias APIs sin depender de que otra pantalla le pase información."
+        },
+        {
+          "id": "B",
+          "texto": "Que la pantalla puede obtener todos los datos que necesita directamente desde sus propias APIs, sin depender de que otro módulo o pantalla le pase información.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se definió que la autonomía significa que un módulo o pantalla puede funcionar por sí mismo. El ejemplo de la pantalla de deudas ilustra esto: todos los datos (deuda total, pago mensual, capacidad de pago, desglose) vienen de una sola API `postCalculateDebts()`, sin depender de otras pantallas."
+        },
+        {
+          "id": "C",
+          "texto": "Que el desarrollador puede modificar el componente sin pedir permiso al equipo de arquitectura.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La autonomía en el contexto del UXDM es un concepto técnico de arquitectura de datos, no un proceso de gobernanza del equipo."
+        },
+        {
+          "id": "D",
+          "texto": "Que el componente no necesita BGADP ni BGADM porque gestiona sus datos directamente con fetch nativo.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La autonomía no implica prescindir de Data Components. Una feature autónoma puede usar su propio BGADP y BGADM; lo que evita es depender de los datos que otras pantallas ya obtuvieron."
+        }
       ]
     },
     {
       "id": 19,
-      "pregunta": "En control de versiones de DMs, ¿qué representa la 'DM Family'?",
+      "pregunta": "La pantalla de deudas muestra: deuda total (21.000 €), pago mensual (500 €), capacidad de pago (1.000 €) y desglose (400 € préstamo + 100 € tarjetas). ¿De cuántas APIs provienen todos esos datos?",
       "alternativas": [
-        { "id": "A", "texto": "La familia o agrupación general del Data Model, por ejemplo bbva-global-customers-api-dm.", "esCorrecta": true, "retroalimentacion": "Correcto. Se explicó como la familia del servicio dentro de la tabla de versionado." },
-        { "id": "B", "texto": "El color oficial del endpoint en Swagger.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No tiene relación con colores." },
-        { "id": "C", "texto": "El nombre de la persona que creó el endpoint.", "esCorrecta": false, "retroalimentacion": "Incorrecto. DM Family no es un autor ni responsable humano." },
-        { "id": "D", "texto": "La ruta exacta del archivo CSS del widget.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No es una ruta de frontend." }
+        {
+          "id": "A",
+          "texto": "De cuatro APIs diferentes: una por cada elemento mostrado en pantalla.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Ese diseño violaría el principio de autonomía. La pantalla sería dependiente de cuatro fuentes distintas, lo que la haría frágil y difícil de mantener."
+        },
+        {
+          "id": "B",
+          "texto": "De una sola API: `bbva-global-calculate-debts-api-dm` mediante `postCalculateDebts()`, que devuelve todos esos campos.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. Este es el ejemplo de autonomía de la sesión: todos los datos de la pantalla de deudas vienen de una sola API. `postCalculateDebts()` devuelve `totalDebtsBalances[]` (deuda total), `monthlyDebtsEffort` (pago mensual), `paymentCapacityAmounts[]` (capacidad de pago) y el desglose por tipo. Esa unicidad de fuente hace la feature autónoma."
+        },
+        {
+          "id": "C",
+          "texto": "De AEM, que gestiona todos los datos financieros del cliente en el CMS.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. AEM es un CMS para contenido como textos, imágenes y banners. Los datos financieros dinámicos como montos de deuda y capacidad de pago provienen de APIs transaccionales del backend, no de un CMS."
+        },
+        {
+          "id": "D",
+          "texto": "Del archivo de literales estáticos `locales-app/es.json`, ya que son datos que no cambian frecuentemente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los montos de deuda (21.000 €, 500 €, etc.) son datos dinámicos del cliente que cambian constantemente. Los archivos de literales solo contienen textos de interfaz estáticos como etiquetas y mensajes."
+        }
       ]
     },
     {
       "id": 20,
-      "pregunta": "¿Qué es la 'Canonical version' de un endpoint según lo trabajado?",
+      "pregunta": "¿Cuáles son los tres campos devueltos por `postCalculateDebts()` que corresponden a deuda total, pago mensual y capacidad de pago respectivamente?",
       "alternativas": [
-        { "id": "A", "texto": "La versión oficial o estándar publicada del endpoint, por ejemplo v1, v2, v3.", "esCorrecta": true, "retroalimentacion": "Correcto. Se explicó como la versión oficial visible en el catálogo/API catalog." },
-        { "id": "B", "texto": "La versión del navegador requerida para consumir la API.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No se refiere a navegadores." },
-        { "id": "C", "texto": "La cantidad de veces que el endpoint puede ejecutarse.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No expresa frecuencia de ejecución." },
-        { "id": "D", "texto": "Una versión temporal del Local DM.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No se relaciona con Local DM." }
+        {
+          "id": "A",
+          "texto": "`totalAmount`, `monthlyPayment` y `maxCapacity`.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Esos nombres no corresponden a los campos reales mostrados en el UXDM de la sesión. Los campos tienen nombres específicos del modelo de datos de la API."
+        },
+        {
+          "id": "B",
+          "texto": "`totalDebtsBalances[].amount`, `monthlyDebtsEffort.amount.amount` y `paymentCapacityAmounts[].amount`.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se mostró este mapeo exacto: `totalDebtsBalances[].amount` + `.currency` para los 21.000 €, `monthlyDebtsEffort.amount.amount` + `.currency` para los 500 € mensuales, y `paymentCapacityAmounts[].amount` + `.currency` para los 1.000 € de capacidad de pago."
+        },
+        {
+          "id": "C",
+          "texto": "`contracts[].amount`, `installmentDate.amount` y `specificAmounts[].amount`.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Esos campos provienen de `getFinancialOverview()` y se refieren a contratos de préstamo (LOAN). Los campos de deuda calculada provienen del POST `postCalculateDebts()`."
+        },
+        {
+          "id": "D",
+          "texto": "`accountsAmount`, `investmentsAmount` y `totalAmount`.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Esos campos son los que se envían como body del POST `postGoalsCalculate()`, no los que devuelve `postCalculateDebts()`. Son entradas de otra API diferente."
+        }
       ]
     },
     {
       "id": 21,
-      "pregunta": "En una petición GET como getCard(cardId, { expand: 'indicators' }), ¿qué es cardId?",
+      "pregunta": "Para calcular las deudas del cliente con `postCalculateDebts()`, el UXDM muestra que primero se deben obtener datos de tres APIs GET. ¿Cuáles son esas tres APIs?",
       "alternativas": [
-        { "id": "A", "texto": "Un URI param que identifica el recurso específico que se quiere consultar.", "esCorrecta": true, "retroalimentacion": "Correcto. Se explicó que cardId va dentro de la URL y señala la tarjeta específica." },
-        { "id": "B", "texto": "Un literal estático multi-language.", "esCorrecta": false, "retroalimentacion": "Incorrecto. cardId no es literal ni traducción." },
-        { "id": "C", "texto": "El body del POST enviado a la API.", "esCorrecta": false, "retroalimentacion": "Incorrecto. En GET no cumple esa función." },
-        { "id": "D", "texto": "La imagen principal de la tarjeta.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La imagen viene de otros campos como images[]." }
+        {
+          "id": "A",
+          "texto": "`bbva-global-financial-overview-api-dm`, `bbva-global-customer-analytics-api-dm` y `bbva-global-card-installments-plans-api-dm`.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se presentó que el POST `postCalculateDebts()` necesita datos de tres fuentes previas: Financial Overview (información financiera general: ingresos, gastos, balance), Customer Analytics (comportamiento financiero y perfil de riesgo) y Cards Installment Plans (planes de pago y cuotas de tarjetas). Todas sirven como entrada para el POST principal."
+        },
+        {
+          "id": "B",
+          "texto": "`bbva-global-cards-api-dm`, `bbva-global-accounts-api-dm` y `bbva-global-customers-api-dm`.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Esos son DMs generales del sistema bancario. Las tres APIs de entrada para `postCalculateDebts()` son específicamente las de resumen financiero, analítica de cliente y planes de cuotas de tarjetas."
+        },
+        {
+          "id": "C",
+          "texto": "`bbva-global-aem-content-fragment-dm`, `bbva-global-public-settings-api-dm` y `bbva-global-offer-simulations-api-dm`.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Esos DMs aparecen en otros ejemplos de la sesión: AEM para contenido de marketing, public-settings para configuración de acciones/textos, y offer-simulations para simular ofertas. No son las entradas del cálculo de deudas."
+        },
+        {
+          "id": "D",
+          "texto": "`bbva-global-card-api-dm`, `bbva-global-goals-calculate-api-dm` y `bbva-global-calculate-debts-api-dm`.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `bbva-global-card-api-dm` es para datos de una tarjeta específica, `bbva-global-goals-calculate-api-dm` es para calcular metas financieras, y `bbva-global-calculate-debts-api-dm` es el propio POST que recibe los datos, no una API de entrada."
+        }
       ]
     },
     {
       "id": 22,
-      "pregunta": "En esa misma petición GET, ¿qué es expand='indicators'?",
+      "pregunta": "En el Step 1.1 'Get customer's contracts', ¿qué API se usa y qué tipo de contratos devuelve?",
       "alternativas": [
-        { "id": "A", "texto": "Un query param que modifica o amplía la respuesta del endpoint.", "esCorrecta": true, "retroalimentacion": "Correcto. Se explicó como parámetro adicional de consulta." },
-        { "id": "B", "texto": "Una propiedad CSS aplicada al componente.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No es un estilo." },
-        { "id": "C", "texto": "Una versión mayor del DM.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No representa versionado." },
-        { "id": "D", "texto": "El alias de la tarjeta mostrado en pantalla.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No es un dato visual del recurso." }
+        {
+          "id": "A",
+          "texto": "`bbva-global-calculate-debts-api-dm` mediante `postCalculateDebts()`, devolviendo montos totales de deuda.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `postCalculateDebts()` es el POST final que calcula la deuda, no el step inicial que obtiene los contratos. El Step 1.1 usa un GET diferente para obtener la información financiera de los contratos del cliente."
+        },
+        {
+          "id": "B",
+          "texto": "`bbva-global-financial-overview-api-dm` mediante `getFinancialOverview()`, devolviendo contratos del cliente como préstamos (LOAN) y tarjetas (CARD).",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se mostró que el Step 1.1 usa `bbva-global-financial-overview-api-dm` con `getFinancialOverview()`. Esta API devuelve el array `contracts[]` donde cada elemento puede ser de tipo LOAN (préstamo), CARD u otros. Es el punto de partida para obtener la información financiera completa del cliente."
+        },
+        {
+          "id": "C",
+          "texto": "`bbva-global-customer-api-dm` mediante `getCustomer(customerId)`, devolviendo datos de contacto y dirección.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `getCustomer(customerId)` obtiene información personal del cliente (contactos, dirección). Para contratos financieros (préstamos, tarjetas) se usa `getFinancialOverview()` de la API de resumen financiero."
+        },
+        {
+          "id": "D",
+          "texto": "`bbva-global-aem-content-fragment-dm` mediante `getAemData()`, devolviendo contenido CMS del contrato.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. AEM gestiona contenido de marketing (textos, imágenes, banners). Los contratos financieros de un cliente (préstamos, cuotas, fechas) son datos transaccionales que vienen de APIs del backend bancario, no de un CMS."
+        }
       ]
     },
     {
       "id": 23,
-      "pregunta": "¿Qué diferencia clave se explicó entre GET y POST en UXDM?",
+      "pregunta": "En los contratos de tipo LOAN de `getFinancialOverview()`, ¿qué filtro se aplica para seleccionar los `specificAmounts`?",
       "alternativas": [
-        { "id": "A", "texto": "GET obtiene datos y normalmente no envía body; POST envía datos al backend en el body para crear o procesar información.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la diferencia principal trabajada en las diapositivas." },
-        { "id": "B", "texto": "GET siempre usa body y POST nunca usa body.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Es prácticamente lo contrario de lo explicado." },
-        { "id": "C", "texto": "GET solo sirve para imágenes y POST solo para textos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No se definieron así." },
-        { "id": "D", "texto": "No existe diferencia funcional, solo cambia el nombre del método.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Sí se explicó una diferencia clara entre consultar y enviar/procesar datos." }
+        {
+          "id": "A",
+          "texto": "`where contact.contactDetailType == 'EMAIL'`, para filtrar solo los préstamos con datos de contacto.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Ese filtro pertenece al ejemplo de 'Cambiar correo' y trabaja con contactos del cliente, no con montos de préstamos."
+        },
+        {
+          "id": "B",
+          "texto": "`where specificAmounts[].id in specificAmountIds`, seleccionando solo los valores cuyo id esté en la lista definida, como `OUTSTANDING_BALANCE` o `TOTAL_DEBT`.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se mostró este filtro: `where specificAmounts[].id in specificAmountIds`. Esto significa que del array de montos específicos del préstamo, solo se seleccionan los que tengan IDs predefinidos como `OUTSTANDING_BALANCE` (saldo pendiente) o `TOTAL_DEBT` (deuda total), descartando otros montos no relevantes."
+        },
+        {
+          "id": "C",
+          "texto": "`where images[].id == 'cardImage'`, para filtrar la imagen asociada al contrato.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Ese filtro se usa para seleccionar la imagen de una tarjeta en el UXDM de `getCards()`. Los préstamos (LOAN) no tienen imágenes; tienen montos, fechas y cuotas."
+        },
+        {
+          "id": "D",
+          "texto": "`where contracts[].type == 'ACTIVE'`, para mostrar solo contratos activos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El filtro de contratos activos fue del ejemplo de Plin (`status.id != 'ACTIVE'`). El filtro de `specificAmounts` en el LOAN usa `specificAmounts[].id in specificAmountIds` para seleccionar montos por su identificador."
+        }
       ]
     },
     {
       "id": 24,
-      "pregunta": "En el ejemplo de POST postOfferSimulations(offerId), ¿qué debía mostrar el UXDM además del método y el DM?",
+      "pregunta": "Cuando el UXDM documenta el uso de properties en un widget o feature, ¿qué tres elementos debe indicar obligatoriamente?",
       "alternativas": [
-        { "id": "A", "texto": "Los URI params, el body de entrada y de dónde provienen los datos que llenan ese body.", "esCorrecta": true, "retroalimentacion": "Correcto. Ese fue exactamente el objetivo de la diapositiva del POST." },
-        { "id": "B", "texto": "Solo el color del botón que dispara el POST.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El foco estaba en request, params y body, no en estilos." },
-        { "id": "C", "texto": "Solo el nombre del diseñador de la pantalla.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso no forma parte del UXDM técnico explicado." },
-        { "id": "D", "texto": "Únicamente la fecha de creación del endpoint.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La fecha de creación no fue un elemento del mapeo." }
+        {
+          "id": "A",
+          "texto": "El nombre del diseñador que creó el mockup, la fecha de aprobación y el canal de Cells que envía los datos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El UXDM es documentación técnica de flujo de datos, no un registro de autoría ni fechas de aprobación. Los canales pueden ser relevantes en la arquitectura, pero no son los tres elementos principales al documentar properties."
+        },
+        {
+          "id": "B",
+          "texto": "Qué API proporciona los datos, qué campo específico se usa y qué condición o filtro se aplica antes de pasarlos como property.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que el UXDM debe indicar para cada property: qué API proporciona los datos (ej: `bbva-global-customer-api-dm` con `getCustomer`), qué campo se usa (ej: `contact.address`) y qué condición aplica (ej: `where contactDetailType == 'EMAIL'`). Sin estos tres elementos, la documentación es incompleta."
+        },
+        {
+          "id": "C",
+          "texto": "El nombre del componente, la versión de Lit que usa y si implementa Shadow DOM abierto o cerrado.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Esos son detalles de implementación del componente, no del mapeo de datos. El UXDM documenta el flujo de datos, no la tecnología de renderizado."
+        },
+        {
+          "id": "D",
+          "texto": "La DM Family, la canonical version y la versión mayor del endpoint.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Esos son los campos de la tabla de control de versiones de DMs. Al documentar el uso de properties en el UXDM lo importante es: qué API, qué campo y qué condición de filtrado."
+        }
       ]
     },
     {
       "id": 25,
-      "pregunta": "¿Qué significa la regla 'El UXDM es siempre GLOBAL, no se mapeará contra BGADMs locales'?",
+      "pregunta": "En el POST `postGoalsCalculate()`, los campos del body como `accountsAmount` e `investmentsAmount` 'vienen de un DM fuera del componente'. ¿Qué significa esto en la arquitectura de la aplicación?",
       "alternativas": [
-        { "id": "A", "texto": "Que el UX Data Mapping debe usar Global DMs y no Local DMs para el mapeo.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue una regla de arquitectura repetida varias veces en el chat." },
-        { "id": "B", "texto": "Que el UXDM debe ignorar todas las APIs y usar solo literales.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No se dijo eso; sí se usan APIs, pero globales." },
-        { "id": "C", "texto": "Que solo se puede trabajar en servidores fuera del país.", "esCorrecta": false, "retroalimentacion": "Incorrecto. 'Global' no se explicó en ese sentido." },
-        { "id": "D", "texto": "Que todo dato debe venir de AEM.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Se trabajaron varias fuentes: APIs globales, AEM, literales, properties, etc." }
-      ]
-    },
-    {
-      "id": 26,
-      "pregunta": "¿Por qué se desaconsejó usar Local DM en el UXDM?",
-      "alternativas": [
-        { "id": "A", "texto": "Porque genera duplicación, inconsistencias y dificulta la estandarización y mantenimiento entre aplicaciones o países.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la razón arquitectónica explicada en el chat." },
-        { "id": "B", "texto": "Porque Local DM no permite devolver campos JSON.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El problema explicado no era que no pudiera devolver JSON." },
-        { "id": "C", "texto": "Porque Local DM obliga a usar TypeScript en lugar de JavaScript.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No se mencionó nada de ese tipo." },
-        { "id": "D", "texto": "Porque solo funciona en aplicaciones móviles nativas.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa no fue la justificación dada." }
-      ]
-    },
-    {
-      "id": 27,
-      "pregunta": "¿Qué significa 'autonomía' en el contexto del UXDM trabajado?",
-      "alternativas": [
-        { "id": "A", "texto": "Que una pantalla o feature pueda funcionar con sus propios datos iniciales y parámetros, minimizando dependencias innecesarias de otras pantallas.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la idea central explicada en las diapositivas de autonomía." },
-        { "id": "B", "texto": "Que cada componente deba ignorar todas las APIs y generar datos aleatorios.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Autonomía no significa inventar datos." },
-        { "id": "C", "texto": "Que cada componente deba tener su propio backend local.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No se propuso eso; se habló de organizar dependencias y fuentes de datos." },
-        { "id": "D", "texto": "Que el usuario pueda editar cualquier campo del UXDM desde la UI.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No fue el significado de autonomía." }
-      ]
-    },
-    {
-      "id": 28,
-      "pregunta": "En el ejemplo de deudas, ¿qué API principal devolvía datos como deuda total, esfuerzo mensual y capacidad de pago?",
-      "alternativas": [
-        { "id": "A", "texto": "bbva-global-calculate-debts-api-dm mediante postCalculateDebts().", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la API central del ejemplo de autonomía para deudas." },
-        { "id": "B", "texto": "bbva-global-customer-api-dm mediante getCustomer().", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa se usó en otros ejemplos, como correos del cliente." },
-        { "id": "C", "texto": "bbva-global-aem-content-fragment-dm mediante getAemData().", "esCorrecta": false, "retroalimentacion": "Incorrecto. AEM se usó para contenido, no para cálculo de deudas." },
-        { "id": "D", "texto": "bbva-global-public-settings-api-dm mediante getPublicSettings().", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa era para configuración dinámica de acciones/textos." }
-      ]
-    },
-    {
-      "id": 29,
-      "pregunta": "Cuando una POST Body Request usa datos que provienen de otras APIs GET, ¿qué debe hacer el UXDM?",
-      "alternativas": [
-        { "id": "A", "texto": "Indicar claramente de dónde se obtienen esos datos y cómo alimentan el body del POST.", "esCorrecta": true, "retroalimentacion": "Correcto. Se dijo textualmente que se debe indicar de dónde se obtienen los datos de la POST Body Request." },
-        { "id": "B", "texto": "Ocultar el origen para que el diagrama quede más corto.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso iría contra la claridad del mapeo." },
-        { "id": "C", "texto": "Mover esos datos a CSS para no mezclarlos con el backend.", "esCorrecta": false, "retroalimentacion": "Incorrecto. CSS no es el lugar para representar esos datos." },
-        { "id": "D", "texto": "Convertir automáticamente todos los GET en literales estáticos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No se planteó nada parecido." }
-      ]
-    },
-    {
-      "id": 30,
-      "pregunta": "En el paso 'Get customer's contracts', ¿qué obtenía getFinancialOverview() dentro de contracts[].detail<LOAN>?",
-      "alternativas": [
-        { "id": "A", "texto": "Fechas e importes del préstamo, como maturityDate, nextInstallmentDate y montos de cuotas.", "esCorrecta": true, "retroalimentacion": "Correcto. Eso fue exactamente lo listado en la diapositiva." },
-        { "id": "B", "texto": "Únicamente imágenes promocionales de AEM.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No se trataba de contenido CMS, sino de contratos financieros." },
-        { "id": "C", "texto": "Solo el idioma del usuario para traducir la pantalla.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ese no era el objetivo de ese GET." },
-        { "id": "D", "texto": "Exclusivamente los estilos visuales del módulo de deuda.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los estilos no vienen de getFinancialOverview()." }
-      ]
-    },
-    {
-      "id": 31,
-      "pregunta": "¿Qué significa 'dónde indicar el uso de properties' en widgets y features?",
-      "alternativas": [
-        { "id": "A", "texto": "Que el UXDM debe mostrar qué API provee el dato, qué campo se usa y qué filtro aplica antes de pasarlo como property al widget o feature.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la explicación central del ejemplo de cambiar correo." },
-        { "id": "B", "texto": "Que las properties solo deben declararse en CSS.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Las properties no se definen así en este contexto." },
-        { "id": "C", "texto": "Que el widget no necesita saber de dónde viene el dato.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Justamente el UXDM documenta ese origen." },
-        { "id": "D", "texto": "Que toda property debe convertirse en Local DM.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso contradice la regla de Global DM." }
-      ]
-    },
-    {
-      "id": 32,
-      "pregunta": "En el ejemplo de 'Cambiar correo', ¿qué filtro se aplicaba para mostrar direcciones válidas?",
-      "alternativas": [
-        { "id": "A", "texto": "contact.contactDetailType == 'EMAIL'", "esCorrecta": true, "retroalimentacion": "Correcto. Ese fue el filtro explícito mostrado en el UXDM." },
-        { "id": "B", "texto": "contact.address == 'PHONE'", "esCorrecta": false, "retroalimentacion": "Incorrecto. No se filtraba por address igual a PHONE, sino por tipo EMAIL." },
-        { "id": "C", "texto": "customerId == 'EMAIL'", "esCorrecta": false, "retroalimentacion": "Incorrecto. customerId era parámetro de la llamada, no filtro de contactos." },
-        { "id": "D", "texto": "status.id != 'ACTIVE'", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa condición pertenecía al ejemplo de afiliación a Plin." }
-      ]
-    },
-    {
-      "id": 33,
-      "pregunta": "¿Qué significa que ciertos datos 'vienen de un DM fuera del componente'?",
-      "alternativas": [
-        { "id": "A", "texto": "Que el componente recibe esos valores desde una página o componente superior, normalmente como properties, y luego los usa en un DM o POST.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la explicación de la diapositiva de postGoalsCalculate()." },
-        { "id": "B", "texto": "Que los datos siempre vienen directamente del usuario por teclado.", "esCorrecta": false, "retroalimentacion": "Incorrecto. En el ejemplo se hablaba de properties informadas por un componente superior." },
-        { "id": "C", "texto": "Que el componente debe ignorar esos datos porque no son suyos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Sí los usa; simplemente no los obtiene directamente." },
-        { "id": "D", "texto": "Que esos datos solo pueden existir en Local DM.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No se dijo eso; se habló de jerarquía de componentes y properties." }
-      ]
-    },
-    {
-      "id": 34,
-      "pregunta": "En el ejemplo de postGoalsCalculate(), ¿qué tipo de valores se pasaban al body desde fuera del componente?",
-      "alternativas": [
-        { "id": "A", "texto": "Valores como accountsAmount, investmentsAmount, totalAmount, multistrategyPortfolioPossession y fundPossession.", "esCorrecta": true, "retroalimentacion": "Correcto. Esos fueron exactamente los fields mostrados." },
-        { "id": "B", "texto": "Solo imágenes de tarjeta y alias del cliente.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esos no fueron los valores del ejemplo de goals." },
-        { "id": "C", "texto": "Únicamente literals estáticos multi-language.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Se trataba de montos y posesiones, no de literales." },
-        { "id": "D", "texto": "Exclusivamente query params del endpoint.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La diapositiva trataba del body alimentado por properties externas." }
-      ]
-    },
-    {
-      "id": 35,
-      "pregunta": "En el ejemplo de tarjetas con Global DM, ¿qué lógica se usaba para mostrar el nombre principal de la tarjeta?",
-      "alternativas": [
-        { "id": "A", "texto": "Usar alias; si no existe, usar product.name (primeros caracteres indicados).", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la lógica mostrada en getCards()." },
-        { "id": "B", "texto": "Usar siempre el cardId recibido por URI param.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El cardId identifica el recurso, no el texto visible principal." },
-        { "id": "C", "texto": "Usar siempre la canonical version del endpoint.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La canonical version no se muestra como nombre de tarjeta." },
-        { "id": "D", "texto": "Usar siempre el nombre del diseñador que creó el widget.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No tiene relación con el mapeo." }
-      ]
-    },
-    {
-      "id": 36,
-      "pregunta": "¿Cuál de las siguientes resume mejor las fuentes de datos trabajadas en este chat?",
-      "alternativas": [
-        { "id": "A", "texto": "Global DMs/APIs, AEM/CMS, endpoints de configuración, literales estáticos/assets y properties desde componentes superiores.", "esCorrecta": true, "retroalimentacion": "Correcto. Ese conjunto resume las fuentes de datos que se explicaron a lo largo de todo el chat." },
-        { "id": "B", "texto": "Solo Local DMs y archivos CSS.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Justamente se desaconsejó Local DM y CSS no fue fuente de datos de negocio." },
-        { "id": "C", "texto": "Solo AEM y canales privados.", "esCorrecta": false, "retroalimentacion": "Incorrecto. AEM fue una fuente, pero no la única." },
-        { "id": "D", "texto": "Solo formularios de usuario y package.json.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso no cubre ni de lejos lo trabajado en el chat." }
+        {
+          "id": "A",
+          "texto": "Que el componente genera esos valores internamente usando cálculos JavaScript sin necesitar ningún dato externo.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Si los valores se generaran internamente, el UXDM no necesitaría documentar su origen externo. La sesión fue explícita: estos datos 'no los obtiene este componente, sino que los recibe desde arriba'."
+        },
+        {
+          "id": "B",
+          "texto": "Que esos valores los obtiene un componente superior en la jerarquía y los pasa a este componente como properties o parámetros; este componente los recibe y los usa en el POST.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que a veces un componente no obtiene datos directamente de una API, sino que los recibe desde un componente superior (página o feature padre) como properties, parámetros o estado compartido. En el UXDM esto se representa indicando que el valor 'se informa desde la página o un componente superior en la jerarquía'."
+        },
+        {
+          "id": "C",
+          "texto": "Que esos valores deben hardcodearse en el archivo `utils/constants.js` de la feature.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Hardcodear montos financieros como `accountsAmount` en un archivo de constantes no tiene sentido porque son datos dinámicos del cliente. Los constantes son valores fijos del sistema, no saldos personales."
+        },
+        {
+          "id": "D",
+          "texto": "Que el componente debe crear su propio Local DM para obtener esos datos directamente sin depender de nadie.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Eso viola la regla de la sesión: 'El UXDM es siempre GLOBAL, no se mapeará contra BGADMs locales'. Además, crear un Local DM redundante duplicaría APIs y generaría inconsistencias. La solución correcta es recibir esos datos desde el componente superior que ya los obtuvo."
+        }
       ]
     }
   ]
