@@ -1,0 +1,758 @@
+{
+  "titulo": "Repaso: Tests Unitarios — Mocha, Chai, Sinon, Karma, AAA, Buenas Prácticas y Coverage",
+  "descripcion": "Preguntas de opción múltiple basadas en el contenido de la Sesión 14: qué es un test unitario, herramientas (Mocha, Chai, Sinon.js, Karma), patrón AAA, estructura de un test de Web Component, suite, buenas prácticas, métodos privados, coverage y aserciones de Chai.",
+  "preguntas": [
+    {
+      "id": 1,
+      "pregunta": "¿Qué verifica específicamente una prueba unitaria?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Que toda la aplicación funciona de extremo a extremo, desde la interfaz hasta la base de datos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Eso describe una prueba E2E (end-to-end). Una prueba unitaria verifica una unidad pequeña e individual de código de forma aislada, sin involucrar otros sistemas ni componentes reales."
+        },
+        {
+          "id": "B",
+          "texto": "Que una unidad pequeña de código (función, método o componente) funciona correctamente de forma aislada.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se definió la prueba unitaria como la que verifica si una unidad pequeña de código funciona correctamente de forma aislada. Su objetivo es comprobar que cada parte del programa hace exactamente lo que debería hacer, sin depender de otras partes del sistema."
+        },
+        {
+          "id": "C",
+          "texto": "Que el diseño visual de los componentes coincide exactamente con el mockup aprobado por el equipo de UX.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Las pruebas unitarias no verifican diseño visual. Se enfocan en el comportamiento del código: si una función devuelve el valor correcto, si un componente emite el evento esperado, etc."
+        },
+        {
+          "id": "D",
+          "texto": "Que la base de datos responde correctamente a todas las consultas del sistema en producción.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Las pruebas unitarias deben ser aisladas: no dependen de bases de datos reales. Si se necesita simular una respuesta de base de datos, se usa un stub o mock (con Sinon.js)."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "pregunta": "¿Cuál de los siguientes NO es un beneficio de los tests unitarios mencionado en la sesión?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Detectar errores de forma temprana durante el desarrollo.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto, porque esta SÍ es un beneficio. En la sesión se listó 'detectar errores temprano' como una de las razones principales para hacer pruebas unitarias."
+        },
+        {
+          "id": "B",
+          "texto": "Garantizar que la aplicación tenga una cobertura de estilos CSS y diseño visual del 100%.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto, porque esta NO es un beneficio de los tests unitarios. Los tests unitarios verifican comportamiento del código (funciones, métodos, componentes), no estilos ni diseño visual. Los beneficios listados en la sesión fueron: detectar errores temprano, asegurar que el código funciona, facilitar mantenimiento y permitir refactorizar sin miedo."
+        },
+        {
+          "id": "C",
+          "texto": "Permitir refactorizar el código sin miedo a romper cosas.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto, porque esta SÍ es un beneficio. En la sesión se destacó que los tests permiten refactorizar con confianza: si un cambio rompe algo que antes funcionaba, los tests fallan y alertan del problema."
+        },
+        {
+          "id": "D",
+          "texto": "Facilitar el mantenimiento del código a lo largo del tiempo.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto, porque esta SÍ es un beneficio. Un buen conjunto de tests unitarios documenta el comportamiento esperado y hace más seguro modificar el código existente sin introducir regresiones."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "pregunta": "¿Qué significa que un test unitario deba ser 'aislado'?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Que solo puede ejecutarse desde la línea de comandos y no puede integrarse con un IDE como VS Code.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El aislamiento no tiene relación con cómo se ejecuta el test. Se refiere a que el test no depende de sistemas externos ni de otros tests para producir su resultado."
+        },
+        {
+          "id": "B",
+          "texto": "Que no depende de bases de datos reales, APIs reales ni de otros tests para funcionar, y puede ejecutarse solo dando siempre el mismo resultado.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que una característica clave del test unitario es ser aislado: no depende de base de datos, APIs ni estado compartido. Cada test debe poder ejecutarse solo y dar el mismo resultado. Por eso se usan mocks, spies o stubs cuando hay dependencias externas."
+        },
+        {
+          "id": "C",
+          "texto": "Que solo prueba un componente a la vez y no puede reutilizar variables entre funciones del mismo archivo de test.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La reutilización de variables o helpers dentro del mismo archivo de test (como un `beforeEach`) es perfectamente válida y una buena práctica. El aislamiento se refiere a no depender de sistemas externos reales."
+        },
+        {
+          "id": "D",
+          "texto": "Que debe ejecutarse en un servidor separado del entorno de desarrollo para no interferir con el código productivo.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El aislamiento del test no requiere un servidor aparte. Los tests unitarios se ejecutan localmente, típicamente con Karma en el navegador. El aislamiento es conceptual: el test no tiene efectos secundarios ni depende de sistemas externos."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "pregunta": "¿Cuál es la diferencia de roles entre Mocha y Chai?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Mocha verifica si los resultados son correctos mediante aserciones; Chai organiza y ejecuta los tests.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los roles están completamente invertidos. Es Mocha el que organiza y ejecuta los tests (sin verificar resultados). Es Chai el que proporciona las aserciones para verificar si el resultado es correcto."
+        },
+        {
+          "id": "B",
+          "texto": "Mocha organiza y ejecuta los tests pero no verifica resultados; Chai proporciona las aserciones para verificar si el resultado es correcto.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que Mocha es el framework que estructura y ejecuta las pruebas (con `describe()` e `it()`), pero no verifica resultados por sí solo. Por eso necesita a Chai, que es la librería de aserciones que permite escribir `expect(resultado).to.equal(5)` para verificar si algo es correcto."
+        },
+        {
+          "id": "C",
+          "texto": "Son la misma herramienta con distinto nombre; se usa una u otra según el sistema operativo del desarrollador.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Son herramientas completamente distintas con roles complementarios. Mocha es un framework de testing y Chai es una librería de aserciones. Se usan juntas porque cada una hace lo que la otra no puede."
+        },
+        {
+          "id": "D",
+          "texto": "Mocha se usa para aplicaciones web y Chai para aplicaciones móviles, siendo incompatibles entre sí.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. No hay esa restricción por tipo de aplicación. Mocha y Chai se usan juntas en el mismo proyecto web. La sesión mostró el flujo completo: Mocha → define las pruebas, Chai → verifica resultados, Sinon → simula funciones, Karma → ejecuta todo en el navegador."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "pregunta": "En Mocha, ¿cuál es el propósito de `describe()` y de `it()`?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "`describe()` ejecuta el test y muestra el resultado; `it()` valida el resultado con aserciones de Chai.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `describe()` no ejecuta el test; lo agrupa temáticamente. `it()` define el test individual pero no es quien valida con aserciones; las aserciones se escriben con Chai dentro del bloque `it()`."
+        },
+        {
+          "id": "B",
+          "texto": "`describe()` agrupa pruebas relacionadas formando una suite; `it()` define cada prueba individual.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que Mocha usa `describe()` para agrupar pruebas (equivalente a una suite) y `it()` para definir cada caso de prueba individual. Ejemplo: `describe('Login', () => { it('debe autenticar usuario', () => {}); })`."
+        },
+        {
+          "id": "C",
+          "texto": "`describe()` simula una función externa con un valor fijo; `it()` mockea un objeto completo con comportamiento esperado.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Simular funciones y mockear objetos es responsabilidad de Sinon.js, no de Mocha. `describe()` e `it()` son simplemente la estructura organizativa de los tests en Mocha."
+        },
+        {
+          "id": "D",
+          "texto": "Ambos hacen exactamente lo mismo; la diferencia es solo una convención de estilo según el equipo.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Tienen roles distintos y no son intercambiables. `describe()` crea un bloque de agrupación que puede contener múltiples `it()`. Los `it()` son los tests individuales que van dentro de los `describe()`."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "pregunta": "¿Cuál es la diferencia entre un Spy y un Stub en Sinon.js?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Un Spy reemplaza la función real por una que devuelve un valor fijo; un Stub solo observa si fue llamada sin modificarla.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los roles están invertidos. El Stub reemplaza la función real; el Spy la observa sin reemplazarla. Un Spy deja que la función original se ejecute, solo registra información sobre la llamada."
+        },
+        {
+          "id": "B",
+          "texto": "Un Spy observa si una función fue llamada, cuántas veces y con qué parámetros, sin reemplazarla; un Stub reemplaza la función real por otra que no se ejecuta.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó: los Spies observan (¿se llamó?, ¿cuántas veces?, ¿con qué parámetros?) sin cambiar el comportamiento. Los Stubs reemplazan la función real: `sinon.stub(api, 'getUser').returns({name: 'Juan'})` → la función real no se ejecuta, devuelve el valor definido."
+        },
+        {
+          "id": "C",
+          "texto": "No hay diferencia práctica; ambos bloquean la ejecución de funciones externas y devuelven valores definidos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Tienen propósitos distintos. El Spy no bloquea la ejecución real; solo registra información. El Stub sí reemplaza la función. Usar uno u otro depende de si necesitas observar o reemplazar el comportamiento."
+        },
+        {
+          "id": "D",
+          "texto": "Un Spy solo funciona para APIs externas y un Stub solo para bases de datos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Ambos pueden usarse con cualquier tipo de dependencia externa: APIs, bases de datos, funciones de tiempo, otras funciones del sistema. No están restringidos por el tipo de dependencia."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "pregunta": "¿Cuál es el rol de Karma en el flujo de testing explicado en la sesión?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Escribe las aserciones que verifican si los resultados de los tests son correctos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Escribir aserciones es el rol de Chai (con `expect`, `should` o `assert`). Karma no escribe ni evalúa aserciones."
+        },
+        {
+          "id": "B",
+          "texto": "Organiza y agrupa los tests en suites para facilitar su ejecución.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Organizar y agrupar tests es el rol de Mocha (con `describe()` e `it()`). Karma actúa en un nivel diferente."
+        },
+        {
+          "id": "C",
+          "texto": "Ejecuta las pruebas en navegadores reales como Chrome, Firefox, Edge y Safari.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se definió Karma como un test runner para navegadores. Su función es ejecutar todo el stack de testing (Mocha + Chai + Sinon) en navegadores reales. El flujo es: Mocha → define las pruebas, Chai → verifica resultados, Sinon → simula funciones, Karma → ejecuta todo en el navegador."
+        },
+        {
+          "id": "D",
+          "texto": "Simula las llamadas a APIs y bases de datos externas para mantener el test aislado.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Simular dependencias externas es el rol de Sinon.js (con spies, stubs y mocks). Karma se enfoca en ejecutar los tests en el entorno del navegador."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "pregunta": "¿Para qué sirve `@open-wc/testing`?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Para formatear el código automáticamente y mantener un estilo consistente en el proyecto.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Formatear código automáticamente es la función de Prettier, que se configura con `@open-wc/prettier-config`. `@open-wc/testing` tiene un propósito diferente relacionado con testing."
+        },
+        {
+          "id": "B",
+          "texto": "Para testear Web Components: incluye utilidades para crear componentes en tests, verificar el DOM y usar Mocha + Chai fácilmente.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que `@open-wc/testing` es una librería específica para testear Web Components, muy usada con Lit. Incluye utilidades que facilitan: crear componentes en el entorno de test, verificar el DOM del componente y usar Mocha + Chai sin configuración adicional compleja."
+        },
+        {
+          "id": "C",
+          "texto": "Para detectar errores de sintaxis, variables no usadas y malas prácticas en el código fuente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Detectar errores de sintaxis y malas prácticas es función de ESLint, que se configura con `@open-wc/eslint-config`. `@open-wc/testing` es para testing, no para análisis estático del código."
+        },
+        {
+          "id": "D",
+          "texto": "Para compilar módulos ES modernos, levantar el servidor de desarrollo y habilitar hot reload.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Esas son las funciones de Vite (compilar módulos, servidor de desarrollo, hot reload). `@open-wc/testing` es exclusivamente una librería de utilidades para tests de Web Components."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "pregunta": "En un reporte de c8, ¿qué indica el resultado `Branches: 70%`?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Que el 70% de los tests pasan exitosamente y el 30% fallan.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El porcentaje de cobertura no indica tests que pasan o fallan. Indica qué porcentaje del código fue ejecutado por los tests. `Branches` específicamente se refiere a las ramas lógicas del código (if/else, ternarios, etc.)."
+        },
+        {
+          "id": "B",
+          "texto": "Que el 70% de las ramas lógicas del código (como if/else) fueron ejecutadas por los tests, y el 30% no fue cubierto.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. La cobertura de 'Branches' indica qué porcentaje de las ramas condicionales del código (if, else, ternarios, switch) fueron ejercitadas por los tests. Un 70% significa que el 30% de las posibles ramas no fueron ejecutadas, lo que puede indicar casos de error no probados."
+        },
+        {
+          "id": "C",
+          "texto": "Que el 70% del tiempo de ejecución de los tests se gasta en ramas condicionales, siendo ineficiente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La cobertura no mide tiempo de ejecución. Mide qué partes del código fueron ejecutadas. En la sesión se mostraron tres métricas: Statements (sentencias), Branches (ramas) y Functions (funciones)."
+        },
+        {
+          "id": "D",
+          "texto": "Que solo 70 de los tests del proyecto tienen aserciones válidas.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El porcentaje no es una cantidad de tests sino una proporción del código cubierto. c8 analiza qué líneas, ramas y funciones del código fuente fueron ejecutadas durante la corrida de tests."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "pregunta": "¿Qué representa cada letra del patrón AAA en la estructura de un test?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Arrange (preparar datos), Act (ejecutar la acción), Assert (validar el resultado).",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se presentó el patrón AAA como la estructura ordenada ideal para un test: Arrange → preparar los datos y condiciones iniciales; Act → ejecutar la función o código que se quiere probar; Assert → validar que el resultado es el esperado con aserciones de Chai."
+        },
+        {
+          "id": "B",
+          "texto": "Async (asíncrono), Await (esperar), Assertion (aserción).",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Aunque `async` y `await` son elementos que pueden aparecer en un test asíncrono, el patrón AAA no tiene relación con ellos. AAA es una metodología de estructura del test: Arrange, Act, Assert."
+        },
+        {
+          "id": "C",
+          "texto": "Analyze (analizar el problema), Apply (aplicar la solución), Audit (auditar el resultado).",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Esas no son las fases del patrón AAA de testing. El patrón AAA es Arrange (preparar), Act (ejecutar) y Assert (validar)."
+        },
+        {
+          "id": "D",
+          "texto": "Atom (componente básico), Architecture (arquitectura del sistema), Abstraction (abstracción del código).",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Esos son conceptos de diseño de software, no del patrón de testing. El patrón AAA es Arrange, Act, Assert: las tres fases de un test bien estructurado."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "pregunta": "En este test: `const a = 2; const b = 3;` → `const resultado = sumar(a, b);` → `expect(resultado).to.equal(5);`, ¿cuál de las tres líneas corresponde a la fase 'Act'?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "`const a = 2; const b = 3;` porque aquí se definen los datos de entrada.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Definir variables con los datos de entrada es la fase Arrange (preparar). El Act es cuando se ejecuta la función que se quiere probar, no cuando se preparan los datos."
+        },
+        {
+          "id": "B",
+          "texto": "`const resultado = sumar(a, b);` porque aquí se ejecuta la función que se quiere probar.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que la fase Act (o 'Lógica para obtener el resultado') es donde se ejecuta la función o código que queremos probar. `sumar(a, b)` es la ejecución de la lógica del programa. El resultado de esa ejecución es lo que luego se valida en la fase Assert."
+        },
+        {
+          "id": "C",
+          "texto": "`expect(resultado).to.equal(5);` porque aquí se ejecuta la verificación del test.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `expect(resultado).to.equal(5)` es la fase Assert (validación). Aquí se compara el resultado obtenido con el valor esperado usando una aserción de Chai. No es el Act."
+        },
+        {
+          "id": "D",
+          "texto": "`describe('Calculadora', ...)` porque es donde se inicia la ejecución del test.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `describe()` es la estructura organizativa de Mocha que agrupa los tests, no una fase del patrón AAA. Las tres fases del patrón (Arrange, Act, Assert) están dentro del bloque `it()`."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "pregunta": "Observando el código de la imagen, ¿qué hace exactamente `oneEvent(el, 'payments-p2p-p2m-...-retry-load')`?",
+      "imagen": "Preguntas/sesion14/images/imagen1.png",
+      "imagenAlt": "Código de un test unitario de Web Component que muestra: test.only con el.error=true, el.loading=false, await elementUpdated(el), const eventPromise = oneEvent(...), const retryLink = el.shadowRoot.querySelector(...), dispatchCustomEvent(...), const event = await eventPromise, expect(event).to.exist",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Dispara inmediatamente el evento en el componente para simular la acción del usuario.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Disparar el evento es lo que hace `dispatchCustomEvent(retryLink, 'notification-message-link-click')` más adelante en el test. `oneEvent()` no dispara nada; crea una promesa que espera a que el evento ocurra."
+        },
+        {
+          "id": "B",
+          "texto": "Crea una promesa que se resuelve cuando el componente emite ese evento, permitiendo esperar su ocurrencia con `await`.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que `oneEvent()` crea una promesa que se resuelve cuando el evento ocurre. Por eso luego se usa `const event = await eventPromise` para esperar que efectivamente se emita. Es la forma de verificar en tests asíncronos que un componente emitió un evento en respuesta a una acción."
+        },
+        {
+          "id": "C",
+          "texto": "Busca un elemento hijo dentro del Shadow DOM del componente que tenga ese nombre.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Buscar elementos dentro del Shadow DOM es lo que hace `el.shadowRoot.querySelector('bbva-notification-message')`. `oneEvent()` trabaja con eventos, no con elementos del DOM."
+        },
+        {
+          "id": "D",
+          "texto": "Verifica que el evento fue emitido exactamente una vez durante la ejecución del test.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Verificar cuántas veces se emitió un evento es algo que haría un Spy de Sinon. `oneEvent()` es una utilidad que permite esperar de forma asíncrona a que un evento específico ocurra, sin contar cuántas veces sucede."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "pregunta": "En el test de la imagen, ¿por qué se usa `el.shadowRoot.querySelector('bbva-notification-message')` en lugar de `document.querySelector('bbva-notification-message')`?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Porque `document.querySelector` solo funciona en entornos Node.js y no está disponible en el navegador.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `document.querySelector` funciona perfectamente en el navegador. El motivo para usar `shadowRoot.querySelector` no es una limitación de `document.querySelector`."
+        },
+        {
+          "id": "B",
+          "texto": "Porque el DOM interno de un Web Component está encapsulado en el Shadow DOM, que no es accesible directamente con `document.querySelector`.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que en Web Components el DOM interno está dentro de `shadowRoot`. El Shadow DOM encapsula la estructura interna del componente, lo que lo hace inaccesible desde `document.querySelector`. Para acceder a elementos internos se necesita `el.shadowRoot.querySelector()`."
+        },
+        {
+          "id": "C",
+          "texto": "Porque `shadowRoot.querySelector` es más rápido para cualquier tipo de búsqueda, incluso fuera del Shadow DOM.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `shadowRoot.querySelector` solo busca dentro del Shadow DOM de ese componente específico. No es una alternativa de rendimiento a `document.querySelector`; tienen ámbitos de búsqueda completamente distintos."
+        },
+        {
+          "id": "D",
+          "texto": "Porque los Web Components sobrescriben el objeto `document` global, haciendo inaccesible el método `querySelector`.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los Web Components no modifican el objeto `document` global. La razón es más simple: el elemento `bbva-notification-message` está dentro del Shadow DOM del componente, y el Shadow DOM es un árbol DOM separado que no es traversable desde `document`."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "pregunta": "En el test de la imagen se usa `test.only(...)`. ¿Qué efecto tiene esto al ejecutar la suite?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Que el test se ejecuta de forma sincrónica aunque el cuerpo de la función use `async/await`.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `test.only` no cambia el comportamiento asíncrono. La palabra `async` en la función del test define que es asíncrono. `test.only` controla qué tests se ejecutan, no cómo se ejecutan."
+        },
+        {
+          "id": "B",
+          "texto": "Que solo ese test se ejecuta cuando corre la suite, ignorando todos los demás tests.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que `test.only` ejecuta únicamente ese test específico, omitiendo los demás. Es útil durante el desarrollo cuando se quiere ejecutar y depurar un solo caso sin esperar a que corran todos los tests de la suite."
+        },
+        {
+          "id": "C",
+          "texto": "Que el test se ejecuta dos veces consecutivas para verificar la consistencia de sus resultados.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `test.only` no ejecuta el test múltiples veces. Lo ejecuta una sola vez pero es el único que se ejecuta en esa corrida."
+        },
+        {
+          "id": "D",
+          "texto": "Que el test muestra más información de debug y el stack trace completo en caso de fallo.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `test.only` no cambia el nivel de verbose del output. Solo filtra qué tests se ejecutan. Para obtener más información de debug se usarían otras herramientas o flags del framework."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "pregunta": "¿Para qué sirve `await elementUpdated(el)` en un test de Web Component?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Para destruir el componente y limpiar el DOM después de que el test termine.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Limpiar el DOM después de los tests es lo que hace `teardown(() => fixtureCleanup())`. `elementUpdated` no destruye nada; espera que el componente se actualice."
+        },
+        {
+          "id": "B",
+          "texto": "Para esperar a que el componente termine de actualizarse en el DOM después de haber cambiado sus propiedades.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que `elementUpdated(el)` espera a que el elemento esté actualizado. En el test de la imagen, después de asignar `el.error = true` y `el.loading = false`, se necesita esperar a que el componente Lit procese esos cambios y actualice su DOM antes de continuar el test."
+        },
+        {
+          "id": "C",
+          "texto": "Para crear una nueva instancia del componente con el estado inicial definido en el setup.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Crear la instancia del componente es lo que hace el `setup()` o el `fixture()`. `elementUpdated` solo espera que un componente ya existente termine de procesar sus cambios de estado."
+        },
+        {
+          "id": "D",
+          "texto": "Para conectar el componente al canal de eventos que se quiere probar en el test.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Conectar al canal de eventos es lo que hace `oneEvent()`. `elementUpdated` es una utilidad de `@open-wc/testing` que espera el ciclo de actualización del componente Lit, equivalente a esperar la próxima microtask del framework."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "pregunta": "¿Qué es un Suite (test suite) en el contexto del testing?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Un archivo de configuración JSON que define los parámetros de ejecución de Karma.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Un archivo de configuración de Karma es un archivo separado (karma.conf.js). Un suite no es un archivo de configuración sino un concepto organizativo de los tests."
+        },
+        {
+          "id": "B",
+          "texto": "Un conjunto o grupo de tests relacionados que se ejecutan juntos para probar una parte del sistema.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se definió que un suite es un conjunto de tests relacionados que se ejecutan juntos. En Mocha se implementa con `describe()`. La idea es agrupar tests que prueban la misma funcionalidad, componente o módulo."
+        },
+        {
+          "id": "C",
+          "texto": "Una función de Sinon que reemplaza el comportamiento real de una dependencia externa.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Reemplazar comportamientos externos es lo que hace un Stub de Sinon. Un suite es una agrupación organizativa de tests, no una función de simulación."
+        },
+        {
+          "id": "D",
+          "texto": "Un reporte automático de cobertura de código generado por c8 al final de la ejecución.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Un reporte de cobertura lo genera c8. Un suite es la agrupación lógica de tests relacionados que se define en el código de testing con `describe()` o `suite()`."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "pregunta": "¿Por qué es una buena práctica que cada test verifique una sola cosa?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Porque Mocha no puede ejecutar más de una aserción de Chai dentro de un bloque `it()`.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Mocha no tiene esa restricción técnica; se pueden poner múltiples aserciones en un `it()`. La razón de probar una sola cosa es de buena práctica, no una limitación del framework."
+        },
+        {
+          "id": "B",
+          "texto": "Porque si el test falla, se sabe exactamente qué comportamiento específico se rompió, sin ambigüedad.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó: si un test verifica múltiples cosas y falla, no sabes rápidamente qué comportamiento exacto se rompió. Con tests de una sola responsabilidad, cuando falla queda claro exactamente qué dejó de funcionar."
+        },
+        {
+          "id": "C",
+          "texto": "Porque tener múltiples aserciones en un test consume demasiada memoria del navegador y lo hace muy lento.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El impacto en memoria de múltiples aserciones es despreciable. La razón es de claridad y mantenibilidad: un test con una sola responsabilidad es más fácil de entender, mantener y depurar cuando falla."
+        },
+        {
+          "id": "D",
+          "texto": "Porque Karma no puede distribuir tests con múltiples aserciones entre distintos navegadores.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Karma no tiene esa limitación. Puede ejecutar tests con cualquier número de aserciones en todos los navegadores configurados."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "pregunta": "¿Por qué normalmente NO se deben probar métodos privados directamente?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Porque los métodos declarados con `#` en JavaScript son técnicamente inaccesibles desde fuera de la clase, haciendo imposible el test.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Aunque es verdad que los campos privados `#` no son accesibles directamente, la razón principal no es técnica. Existen formas de acceder a ellos en tests si fuera necesario. La razón real es conceptual: los tests deben verificar comportamiento visible, no implementación interna."
+        },
+        {
+          "id": "B",
+          "texto": "Porque los tests deben verificar el comportamiento visible del sistema; los detalles de implementación internos pueden cambiar con una refactorización sin que el comportamiento externo cambie.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que los métodos privados son implementación interna. Si cambias cómo está implementado algo internamente pero el resultado visible sigue siendo correcto, el test no debería fallar. Probar métodos privados ata los tests a los detalles de implementación, haciendo el código difícil de refactorizar."
+        },
+        {
+          "id": "C",
+          "texto": "Porque los métodos privados siempre son cubiertos automáticamente cuando se prueban los métodos públicos que los invocan.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Aunque puede ser cierto que un método privado quede cubierto al probar el público, no siempre ocurre. La razón de no probarlos directamente es de diseño: los tests deben validar comportamiento observable, no implementación interna."
+        },
+        {
+          "id": "D",
+          "texto": "Porque Sinon.js no puede crear spies ni stubs sobre métodos privados de una clase.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La limitación técnica de Sinon no es la razón principal. La razón es conceptual y de buena práctica: testear el comportamiento visible (qué hace el código) y no los detalles de implementación (cómo está escrito por dentro)."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "pregunta": "En el reporte de coverage, ¿qué indica el color rojo en el código fuente?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Que esa línea de código tiene un error de sintaxis que impide la compilación.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El color rojo en el reporte de coverage no indica errores de sintaxis. Indica cobertura de tests. Los errores de sintaxis los detecta ESLint o el compilador, no el reporte de coverage."
+        },
+        {
+          "id": "B",
+          "texto": "Que ese código no fue ejecutado por ningún test, es decir, no está cubierto por las pruebas.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se presentó la leyenda de colores del coverage: rojo significa código no cubierto por tests (no se ejecutó durante la corrida de tests). Eso indica que hay partes del código que podrían tener bugs sin detectar porque ningún test las ejercita."
+        },
+        {
+          "id": "C",
+          "texto": "Que esa línea es código generado automáticamente por el framework y no debe testearse.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El color rojo no distingue código generado de código manual. Solo indica que esa línea no fue ejecutada durante los tests, independientemente de su origen."
+        },
+        {
+          "id": "D",
+          "texto": "Que la función es privada y por convención no debe incluirse en el reporte de cobertura.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El reporte de coverage incluye todo el código ejecutado, sea de métodos públicos o privados. El rojo simplemente significa que esa línea no fue alcanzada por ningún test."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "pregunta": "¿Cuándo se usa `to.deep.equal()` en lugar de `to.equal()` en Chai?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "`to.deep.equal()` se usa para valores grandes como strings largos; `to.equal()` para valores pequeños como números.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La diferencia no es el tamaño del valor. `to.equal()` compara referencias o valores primitivos. Para comparar el contenido interno de objetos o arrays, sin importar su tamaño, se necesita `to.deep.equal()`."
+        },
+        {
+          "id": "B",
+          "texto": "`to.deep.equal()` compara objetos o arrays por valor (estructura interna); `to.equal()` compara valores primitivos simples o referencias exactas.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se presentó la tabla de aserciones de Chai: `to.equal()` para comparar valores simples (números, strings, booleans o la misma referencia exacta). `to.deep.equal()` para comparar objetos o arrays mirando su estructura interna, no si son el mismo objeto en memoria."
+        },
+        {
+          "id": "C",
+          "texto": "No hay diferencia práctica; ambos hacen exactamente la misma comparación en cualquier versión de Chai.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Hay una diferencia importante. Con `to.equal()`: `expect({a:1}).to.equal({a:1})` falla porque son dos objetos distintos en memoria. Con `to.deep.equal()`: `expect({a:1}).to.deep.equal({a:1})` pasa porque compara la estructura interna."
+        },
+        {
+          "id": "D",
+          "texto": "`to.deep.equal()` solo funciona junto con Mocha; `to.equal()` puede usarse sin Mocha directamente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Ambas aserciones son de Chai y funcionan de manera independiente de Mocha. Mocha y Chai son herramientas separadas; Chai proporciona aserciones que pueden usarse con cualquier framework de testing."
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "pregunta": "Según la sesión, ¿qué diferencia existe en calidad entre `expect(resultado).to.equal(5)` y `expect(resultado).to.exist`?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "No hay diferencia; ambas aserciones verifican exactamente lo mismo y son intercambiables.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Son aserciones muy distintas. `to.equal(5)` verifica que el valor es exactamente 5. `to.exist` solo verifica que el valor no es null ni undefined. Un resultado de `99` pasaría `to.exist` pero fallaría `to.equal(5)`."
+        },
+        {
+          "id": "B",
+          "texto": "`to.equal(5)` es más específica y clara (verifica el valor exacto); `to.exist` solo verifica que algo no es null ni undefined, siendo una validación más débil.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó esta distinción: `expect(resultado).to.equal(5)` es específica y deja clara la expectativa. `expect(resultado).to.exist` solo verifica que algo existe, lo cual es una validación débil: un resultado incorrecto como `999` también pasaría esa aserción. La regla 10 de buenas prácticas dice: hacer assertions claras."
+        },
+        {
+          "id": "C",
+          "texto": "`to.exist` es la forma recomendada porque es más tolerante a cambios futuros del comportamiento.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La sesión indicó lo contrario: `to.exist` es una validación débil que puede enmascarar bugs. Si el comportamiento cambia y el resultado es incorrecto, `to.exist` seguirá pasando. Las aserciones deben ser específicas para detectar cambios inesperados."
+        },
+        {
+          "id": "D",
+          "texto": "`to.equal(5)` solo funciona para valores numéricos; `to.exist` funciona para cualquier tipo de dato.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `to.equal()` funciona con cualquier tipo de valor (strings, booleans, objetos con la misma referencia). La diferencia es de especificidad, no de tipo de dato soportado."
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "pregunta": "Un test necesita verificar que `calcularTotal(precio, igv)` suma correctamente, pero internamente llama a `obtenerImpuesto()` que hace una petición a una API externa. ¿Qué herramienta de Sinon es la más apropiada?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Un Spy sobre `obtenerImpuesto()` para registrar cuántas veces llama a la API.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Un Spy observa la función sin reemplazarla, por lo que la petición real a la API sí se ejecutaría. Eso violaría el principio de aislamiento del test unitario. Se necesita algo que reemplace completamente la función."
+        },
+        {
+          "id": "B",
+          "texto": "Un Stub sobre `obtenerImpuesto()` para reemplazarla por una función que devuelva un valor fijo sin llamar a la API real.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. El Stub es la herramienta adecuada: reemplaza `obtenerImpuesto()` por una función controlada que devuelve un valor fijo (`sinon.stub(modulo, 'obtenerImpuesto').returns(0.18)`). Así la función real no se ejecuta, el test no depende de la API externa y sigue siendo un test unitario aislado."
+        },
+        {
+          "id": "C",
+          "texto": "Un Mock para simular el objeto completo de la calculadora con todos sus métodos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Un Mock simula un objeto completo con comportamiento esperado. En este caso solo se necesita reemplazar una función específica (`obtenerImpuesto`), no el objeto entero. El Stub es más preciso y menos invasivo para este caso."
+        },
+        {
+          "id": "D",
+          "texto": "Un Sandbox de Sinon para aislar completamente el ambiente de testing del servidor de producción.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Un Sandbox es un contenedor que agrupa múltiples fakes (spies, stubs, mocks) para facilitar su limpieza posterior. No reemplaza funciones por sí solo. Para este caso se necesita un Stub específico sobre la función que llama a la API."
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "pregunta": "¿Qué hace `teardown(() => fixtureCleanup())` en un test de Web Component?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Carga y monta el componente en el DOM antes de que comience cada test.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Cargar y montar el componente es la responsabilidad del `setup()`. El `teardown` opera después del test, no antes."
+        },
+        {
+          "id": "B",
+          "texto": "Realiza la limpieza del DOM eliminando los componentes creados durante los tests.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que `teardown(() => fixtureCleanup())` hace la limpieza antes/después de hacer los tests. `fixtureCleanup()` elimina los componentes que fueron creados con `fixture()` en el DOM, evitando que el estado de un test afecte a los siguientes."
+        },
+        {
+          "id": "C",
+          "texto": "Ejecuta todas las aserciones pendientes y fuerza la validación del resultado al final de la suite.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Las aserciones se ejecutan dentro de cada `it()` al momento de alcanzarse en el código. `teardown` es un hook de ciclo de vida que ejecuta código de limpieza, no de validación."
+        },
+        {
+          "id": "D",
+          "texto": "Crea automáticamente un stub de todas las dependencias externas del componente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Crear stubs es una operación manual con Sinon.js. `teardown` es un hook de limpieza que elimina los fixtures del DOM después de los tests para garantizar que cada test empiece con un estado limpio."
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "pregunta": "¿Para qué sirve `beforeEach` en una suite de tests según las buenas prácticas de la sesión?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Para ejecutar un test específico antes que todos los demás en la suite.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Ejecutar un test específico primero no es la función de `beforeEach`. Si se quiere ejecutar solo un test, se usa `test.only`. `beforeEach` ejecuta código de preparación antes de cada test, no prioriza tests."
+        },
+        {
+          "id": "B",
+          "texto": "Para evitar repetir código de preparación ejecutando el mismo setup antes de cada test individual de la suite.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. La sesión mencionó `beforeEach` como la forma de reorganizar preparación repetida: si muchos tests requieren el mismo setup (crear el componente, configurar stubs, etc.), se puede centralizar en un `beforeEach` para evitar duplicación. Sin exagerar: demasiada abstracción también dificulta la lectura."
+        },
+        {
+          "id": "C",
+          "texto": "Para mockear automáticamente todas las dependencias externas del componente usando Sinon.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `beforeEach` es un hook de Mocha que ejecuta una función antes de cada test. Lo que haga dentro de él (crear mocks, preparar datos, etc.) es responsabilidad del desarrollador. No hace nada automáticamente."
+        },
+        {
+          "id": "D",
+          "texto": "Para verificar que el test anterior pasó correctamente antes de ejecutar el siguiente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los tests deben ser independientes y no verificar el resultado de otros tests. `beforeEach` prepara el estado para el siguiente test, pero no valida el anterior."
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "pregunta": "¿Cuáles son los tres estilos de aserciones que ofrece Chai y qué los diferencia?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "`test`, `verify` y `check`: cada uno compatible con un framework distinto (Mocha, Karma y Sinon respectivamente).",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Esos no son los estilos de Chai. Los tres estilos de aserciones de Chai son `expect`, `should` y `assert`. No están vinculados a frameworks distintos; todos son parte de la misma librería Chai."
+        },
+        {
+          "id": "B",
+          "texto": "`expect`, `should` y `assert`: tres formas distintas de escribir la misma verificación en Chai, con diferente sintaxis pero igual resultado.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se mostraron los tres estilos de Chai: `expect(valor).to.equal(5)`, `valor.should.equal(5)` y `assert.equal(valor, 5)`. Los tres verifican lo mismo con distinta sintaxis. La sesión indicó que por buena práctica se usará `expect`."
+        },
+        {
+          "id": "C",
+          "texto": "`spy`, `stub` y `mock`: tres formas de simular comportamientos externos en los tests.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `spy`, `stub` y `mock` son las tres utilidades de Sinon.js para simular comportamientos. Los estilos de aserciones de Chai son `expect`, `should` y `assert`."
+        },
+        {
+          "id": "D",
+          "texto": "`describe`, `it` y `test.only`: las tres formas de definir un test en Mocha.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `describe`, `it` y `test.only` son elementos de Mocha para estructurar tests, no estilos de aserciones de Chai. Los estilos de aserciones de Chai son `expect`, `should` y `assert`."
+        }
+      ]
+    }
+  ]
+}
