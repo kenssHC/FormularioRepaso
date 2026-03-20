@@ -1,435 +1,755 @@
 {
-  "titulo": "Cuestionario de repaso sobre Cells, entorno de trabajo, Git, GitHub, Bitbucket, Artifactory, Web Components y DM Components",
-  "descripcion": "Banco de preguntas de opción múltiple basado únicamente en la información trabajada en este chat.",
+  "titulo": "Repaso: Cells, Git, GitHub, Bitbucket, Artifactory y DM Components",
+  "descripcion": "Preguntas de opción múltiple basadas en el contenido de la Sesión 8: framework Cells, entorno de trabajo, flujo de Git y sus comandos, GitHub vs Bitbucket, Artifactory, artefactos de software, Web Components visuales y DM Components.",
   "preguntas": [
     {
       "id": 1,
-      "pregunta": "¿Qué es Cells según la información trabajada en este chat?",
+      "pregunta": "¿Qué característica principal hace a Cells adecuado para entornos empresariales como la banca?",
       "alternativas": [
-        { "id": "A", "texto": "Un framework diseñado para construir aplicaciones web escalables basadas en Web Components.", "esCorrecta": true, "retroalimentacion": "Correcto. En este chat se explicó que Cells es un framework orientado a construir aplicaciones web escalables y que está basado en Web Components." },
-        { "id": "B", "texto": "Una base de datos para almacenar cuentas bancarias.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Cells no es una base de datos ni un motor de almacenamiento de información bancaria." },
-        { "id": "C", "texto": "Un lenguaje de programación que reemplaza a JavaScript.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Cells no es un lenguaje de programación; se apoya en tecnologías web como JavaScript, Web Components y Lit." },
-        { "id": "D", "texto": "Un sistema operativo para servidores empresariales.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Cells no es un sistema operativo, sino un framework de desarrollo frontend." }
+        {
+          "id": "A",
+          "texto": "Que cada parte de la aplicación se desarrolla como un componente independiente y reutilizable basado en Web Components, permitiendo construir aplicaciones modulares y escalables.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que Cells es un framework de arquitectura modular donde cada parte de la aplicación se construye como un Web Component independiente. Esto facilita la reutilización en distintos proyectos y el mantenimiento del código a gran escala, lo que lo hace ideal para bancos y grandes empresas."
+        },
+        {
+          "id": "B",
+          "texto": "Que Cells reemplaza completamente a los navegadores web, ejecutándose en su propio motor de renderizado propietario.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Cells no reemplaza a los navegadores; se ejecuta sobre ellos. Es un framework que aprovecha los estándares web nativos del navegador, como Web Components y Shadow DOM, para construir aplicaciones."
+        },
+        {
+          "id": "C",
+          "texto": "Que incluye una base de datos integrada para almacenar transacciones bancarias de forma segura dentro de cada componente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Cells no incluye una base de datos. Es un framework de frontend que construye la interfaz y la lógica de comunicación con servicios. La gestión de datos bancarios ocurre en el backend, no dentro del framework."
+        },
+        {
+          "id": "D",
+          "texto": "Que Cells es el único framework que soporta JavaScript moderno con ES6, mientras que otros frameworks solo aceptan JavaScript antiguo.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Prácticamente todos los frameworks modernos (React, Vue, Angular, Lit) soportan JavaScript moderno con ES6 y versiones superiores. La ventaja de Cells no está en el soporte de JavaScript sino en su arquitectura modular basada en Web Components."
+        }
       ]
     },
     {
       "id": 2,
-      "pregunta": "¿Sobre qué tecnología base se construye Cells?",
+      "pregunta": "¿Por qué los componentes del ecosistema Cells están migrando de Polymer a Lit?",
       "alternativas": [
-        { "id": "A", "texto": "Sobre bases de datos relacionales.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La base de Cells no son las bases de datos, sino los componentes web reutilizables." },
-        { "id": "B", "texto": "Sobre Web Components.", "esCorrecta": true, "retroalimentacion": "Correcto. Se indicó claramente que Cells está basado en Web Components." },
-        { "id": "C", "texto": "Sobre hojas de cálculo compartidas.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No se construye sobre hojas de cálculo ni herramientas de oficina." },
-        { "id": "D", "texto": "Sobre aplicaciones móviles nativas.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El chat se refirió a Cells como framework para aplicaciones web, no para apps móviles nativas." }
+        {
+          "id": "A",
+          "texto": "Porque Polymer dejó de ser compatible con todos los navegadores modernos y produce errores críticos en producción.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Aunque Polymer ha quedado en desuso, la razón principal de la migración no es incompatibilidad total. La sesión destacó que la migración se debe a que Lit es la alternativa moderna y eficiente para crear Web Components, no a una falla catastrófica de Polymer."
+        },
+        {
+          "id": "B",
+          "texto": "Porque Lit es la evolución moderna desarrollada por Google para crear Web Components de forma más eficiente, liviana y con mejor soporte, y la mayoría de componentes están adoptando este estándar.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó el contexto tecnológico: antes muchos proyectos usaban Polymer, pero actualmente la mayoría de componentes están migrando a Lit. Lit es la evolución de Polymer, también del equipo de Google, pero más liviana y alineada con los estándares actuales del navegador."
+        },
+        {
+          "id": "C",
+          "texto": "Porque Lit es un sistema operativo que ejecuta Polymer con mayor velocidad y consumo de memoria optimizado.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Lit no es un sistema operativo; es una librería JavaScript. No ejecuta Polymer; es una alternativa a él para crear Web Components con una API más moderna y eficiente."
+        },
+        {
+          "id": "D",
+          "texto": "Porque el equipo de Google abandonó Polymer y eliminó su repositorio, forzando a todos los proyectos a migrar inmediatamente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Polymer no fue eliminado abruptamente; simplemente quedó sin mantenimiento activo mientras el equipo enfocó sus esfuerzos en Lit. La migración es gradual, no forzada por una eliminación repentina."
+        }
       ]
     },
     {
       "id": 3,
-      "pregunta": "¿Qué tecnología se usaba antes en muchos proyectos y hacia cuál están migrando los componentes en Cells?",
+      "pregunta": "Según el entorno de trabajo de Cells, ¿qué versión mínima de Node.js se recomienda y por qué es importante Node.js en este contexto?",
       "alternativas": [
-        { "id": "A", "texto": "Antes React y ahora Angular.", "esCorrecta": false, "retroalimentacion": "Incorrecto. React y Angular no fueron presentados como la evolución mencionada en este chat." },
-        { "id": "B", "texto": "Antes Polymer y ahora Lit.", "esCorrecta": true, "retroalimentacion": "Correcto. En este chat se explicó que antes se trabajaba bastante con Polymer y que ahora casi todos los componentes están migrando a Lit." },
-        { "id": "C", "texto": "Antes Vue y ahora Svelte.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Vue y Svelte no fueron las tecnologías señaladas en la transición descrita." },
-        { "id": "D", "texto": "Antes Java y ahora Python.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Java y Python no se mencionaron como reemplazo directo en la construcción de componentes Cells." }
+        {
+          "id": "A",
+          "texto": "Node.js 10 LTS, porque es la más estable y compatible con Polymer en proyectos legacy.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. En la sesión se especificó que se recomienda Node.js 18 o superior, no la versión 10. Además, Node.js 10 ya está fuera del soporte oficial y no garantiza compatibilidad con las herramientas modernas del entorno Cells."
+        },
+        {
+          "id": "B",
+          "texto": "Node.js 18 o superior, porque permite ejecutar proyectos frontend, instalar dependencias con npm y correr scripts del proyecto con las herramientas modernas necesarias.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se indicó que se recomienda usar Node versión 18 o superior. Node.js es esencial porque incluye npm (Node Package Manager), permite ejecutar proyectos frontend y correr scripts de desarrollo. Sin él, no se pueden gestionar las dependencias ni ejecutar el proyecto."
+        },
+        {
+          "id": "C",
+          "texto": "Cualquier versión de Node.js funciona igual; la versión específica no tiene impacto en la compatibilidad del entorno Cells.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La versión sí importa. En la sesión se especificó Node 18 o superior porque diferentes versiones de Node.js pueden causar incompatibilidades con las herramientas y dependencias del proyecto, generando errores difíciles de diagnosticar."
+        },
+        {
+          "id": "D",
+          "texto": "Node.js no es necesario en el entorno de Cells porque Lit tiene su propio gestor de paquetes independiente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Node.js es una de las herramientas más importantes del entorno de trabajo de Cells. Lit no tiene un gestor de paquetes propio; depende de npm (incluido con Node.js) para instalar dependencias y correr el proyecto."
+        }
       ]
     },
     {
       "id": 4,
-      "pregunta": "¿En qué tipo de entorno se dijo que se trabaja con Cells en este chat?",
+      "pregunta": "¿Cuál es el problema concreto que puede surgir al instalar Java en un entorno de trabajo con múltiples proyectos?",
       "alternativas": [
-        { "id": "A", "texto": "En entornos empresariales, como banca.", "esCorrecta": true, "retroalimentacion": "Correcto. Se mencionó explícitamente que es el framework con el que trabajarían dentro del banco y que se usa en entornos empresariales." },
-        { "id": "B", "texto": "Solo en videojuegos 3D.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No se habló de videojuegos como ámbito principal de Cells." },
-        { "id": "C", "texto": "Únicamente en aplicaciones de diseño gráfico.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Cells no fue presentado como herramienta exclusiva de diseño gráfico." },
-        { "id": "D", "texto": "Solo en robots industriales.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No se mencionó robótica, sino desarrollo de aplicaciones web empresariales." }
+        {
+          "id": "A",
+          "texto": "Que Java no puede instalarse en Windows porque requiere Linux obligatoriamente para funcionar con Tomcat.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Java puede instalarse en Windows, macOS y Linux. El problema explicado en la sesión no tiene que ver con el sistema operativo sino con los conflictos de versiones entre proyectos."
+        },
+        {
+          "id": "B",
+          "texto": "Que diferentes proyectos pueden requerir distintas versiones de Java; por ejemplo, un proyecto puede requerir Java 18 y otro Java 21 para Tomcat, generando conflictos si solo hay una versión instalada.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó este problema común: si instalas una versión de Java pero el proyecto necesita otra, se producen errores. El ejemplo dado fue que un proyecto puede necesitar Java 18 y otro Java 21 (especialmente cuando se usa Tomcat como servidor). Este es un problema real en entornos empresariales con múltiples proyectos."
+        },
+        {
+          "id": "C",
+          "texto": "Que Java no es compatible con npm, por lo que deben estar instalados en particiones de disco separadas.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Java y npm pueden coexistir sin problemas en el mismo sistema. El problema con Java mencionado en la sesión es exclusivamente de conflictos de versiones entre proyectos que requieren versiones diferentes."
+        },
+        {
+          "id": "D",
+          "texto": "Que Java solo puede usarse con un proyecto a la vez y requiere reinstalación completa cada vez que se cambia de proyecto.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Java puede usarse con múltiples proyectos. La solución al problema de versiones no es reinstalar Java, sino usar herramientas de gestión de versiones que permitan tener múltiples versiones instaladas simultáneamente."
+        }
       ]
     },
     {
       "id": 5,
-      "pregunta": "¿Qué representa el entorno de trabajo de Cells mostrado en la imagen compartida?",
+      "pregunta": "¿Cuál es el orden correcto del flujo de trabajo básico de Git?",
       "alternativas": [
-        { "id": "A", "texto": "Un conjunto de herramientas y configuraciones necesarias para desarrollar con Cells.", "esCorrecta": true, "retroalimentacion": "Correcto. El entorno de trabajo incluye herramientas y configuraciones necesarias para crear, ejecutar, probar y gestionar aplicaciones y componentes Cells." },
-        { "id": "B", "texto": "Una lista de clientes del banco.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No se trataba de una lista de clientes ni de información bancaria operativa." },
-        { "id": "C", "texto": "Un diseño final de interfaz para usuarios.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La imagen mostraba herramientas del entorno de desarrollo, no un diseño visual para usuarios finales." },
-        { "id": "D", "texto": "Un reporte financiero anual.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No era un informe económico, sino una guía técnica de configuración." }
+        {
+          "id": "A",
+          "texto": "Staging Area → Working Directory → Local Repository → Remote Repository",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El Working Directory es siempre el punto de partida: es donde editas los archivos. Solo después de hacer `git add` los cambios pasan al Staging Area, no al revés."
+        },
+        {
+          "id": "B",
+          "texto": "Working Directory → Staging Area → Local Repository → Remote Repository",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó exactamente este flujo: 1) editas en el Working Directory, 2) preparas con `git add` (Staging Area), 3) guardas la versión con `git commit` (Local Repository), 4) subes al servidor con `git push` (Remote Repository)."
+        },
+        {
+          "id": "C",
+          "texto": "Local Repository → Remote Repository → Staging Area → Working Directory",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Este orden invierte el flujo. El proceso comienza en el Working Directory (donde se edita el código) y termina en el Remote Repository (donde se sube el código), no al revés."
+        },
+        {
+          "id": "D",
+          "texto": "Remote Repository → Staging Area → Working Directory → Local Repository",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Este orden no corresponde al flujo básico de Git. El flujo de trabajo va de lo local a lo remoto: Working Directory → Staging Area → Local Repository → Remote Repository."
+        }
       ]
     },
     {
       "id": 6,
-      "pregunta": "¿Cuál de las siguientes opciones sí fue mencionada como parte del entorno de trabajo de Cells?",
+      "pregunta": "¿Cuál es la diferencia entre `git add` y `git commit`?",
       "alternativas": [
-        { "id": "A", "texto": "Installing Node.js.", "esCorrecta": true, "retroalimentacion": "Correcto. En la imagen y explicación del entorno de trabajo se mencionó explícitamente la instalación de Node.js." },
-        { "id": "B", "texto": "Instalación de AutoCAD.", "esCorrecta": false, "retroalimentacion": "Incorrecto. AutoCAD no fue mencionado como herramienta del entorno Cells." },
-        { "id": "C", "texto": "Configuración de Photoshop.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Photoshop no forma parte de las herramientas presentadas en ese flujo técnico." },
-        { "id": "D", "texto": "Instalación de Blender.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Blender no apareció en la lista del entorno de trabajo." }
+        {
+          "id": "A",
+          "texto": "`git add` crea una nueva rama en el repositorio; `git commit` la fusiona con la rama principal.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `git add` no crea ramas; mueve cambios del Working Directory al Staging Area. `git commit` no fusiona ramas; guarda una nueva versión en el Local Repository. Para crear ramas se usa `git branch` o `git checkout -b`, y para fusionarlas `git merge`."
+        },
+        {
+          "id": "B",
+          "texto": "`git add` mueve los cambios seleccionados del Working Directory al Staging Area (preparación); `git commit` toma todo lo del Staging Area y lo guarda como una nueva versión en el Local Repository.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó esta diferencia clave. `git add archivo.js` prepara los cambios específicos que quieres guardar. `git commit -m 'mensaje'` toma esos cambios preparados y los guarda como un punto en el historial del proyecto en el Local Repository."
+        },
+        {
+          "id": "C",
+          "texto": "`git add` sube el código al servidor remoto; `git commit` descarga el código del servidor para trabajar localmente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Ninguno de los dos interactúa con el servidor remoto. `git add` y `git commit` son operaciones locales. Para subir al servidor remoto se usa `git push`, y para descargar `git pull` o `git fetch`."
+        },
+        {
+          "id": "D",
+          "texto": "Ambos hacen exactamente lo mismo; la diferencia es solo que `git add` acepta nombre de archivo y `git commit` actúa sobre todos los archivos modificados.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. No hacen lo mismo. Son pasos distintos y secuenciales: primero `git add` selecciona qué cambios preparar, y luego `git commit` guarda esa preparación como versión permanente en el historial local."
+        }
       ]
     },
     {
       "id": 7,
-      "pregunta": "¿Para qué se usa Node.js dentro del entorno de trabajo explicado?",
+      "pregunta": "¿Cuál es la diferencia entre `git push` y `git pull`?",
       "alternativas": [
-        { "id": "A", "texto": "Para ejecutar herramientas de desarrollo y manejar dependencias del proyecto.", "esCorrecta": true, "retroalimentacion": "Correcto. Node.js sirve para ejecutar herramientas de desarrollo, manejar dependencias y correr scripts." },
-        { "id": "B", "texto": "Para dibujar interfaces en 3D.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Node.js no fue descrito como una herramienta de modelado gráfico." },
-        { "id": "C", "texto": "Para administrar bases de datos Oracle manualmente.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Su función explicada no fue administrar bases de datos Oracle." },
-        { "id": "D", "texto": "Para reemplazar completamente a Git.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Git y Node.js cumplen funciones distintas; uno es control de versiones y el otro entorno de ejecución y herramientas." }
+        {
+          "id": "A",
+          "texto": "`git push` descarga los cambios del servidor remoto y los aplica localmente; `git pull` sube los cambios del repositorio local al remoto.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los roles están invertidos. `git push` es el que SUBE cambios al servidor remoto, y `git pull` es el que DESCARGA y aplica los cambios del remoto. Una forma de recordarlo: push = empujar (subir), pull = jalar (bajar)."
+        },
+        {
+          "id": "B",
+          "texto": "`git push` envía los cambios del Local Repository al Remote Repository; `git pull` descarga los cambios del Remote Repository y los aplica en el Local Repository y Working Directory.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicaron ambos comandos: `git push origin main` sube commits del repositorio local al remoto. `git pull origin main` descarga los cambios del remoto y los integra automáticamente en el repositorio local y el Working Directory."
+        },
+        {
+          "id": "C",
+          "texto": "`git push` y `git pull` hacen lo mismo pero en plataformas diferentes: push es exclusivo de GitHub y pull de Bitbucket.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Ambos comandos funcionan con cualquier repositorio remoto (GitHub, Bitbucket, GitLab, etc.). La diferencia entre ellos no es la plataforma sino la dirección del flujo de datos: push sube, pull baja."
+        },
+        {
+          "id": "D",
+          "texto": "`git push` se usa solo con ramas de desarrollo y `git pull` solo con la rama principal.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Ambos comandos se pueden usar con cualquier rama. `git push origin feature-login` sube la rama `feature-login` al remoto. `git pull origin develop` descarga los cambios de `develop`. No hay restricción por tipo de rama."
+        }
       ]
     },
     {
       "id": 8,
-      "pregunta": "¿Para qué sirve Git dentro del entorno de trabajo?",
+      "pregunta": "¿Por qué usarías `git fetch` en lugar de `git pull` en ciertos casos?",
       "alternativas": [
-        { "id": "A", "texto": "Para control de versiones del código.", "esCorrecta": true, "retroalimentacion": "Correcto. En el chat se definió Git como sistema de control de versiones que permite gestionar cambios en el código." },
-        { "id": "B", "texto": "Para diseñar logos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Git no es una herramienta de diseño gráfico." },
-        { "id": "C", "texto": "Para ejecutar contenedores.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los contenedores se asociaron con Docker, no con Git." },
-        { "id": "D", "texto": "Para compilar exclusivamente Java.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Git no compila Java; administra versiones del código." }
+        {
+          "id": "A",
+          "texto": "Porque `git fetch` es más rápido al no verificar credenciales ni comprimir datos durante la descarga.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La razón para usar `git fetch` no es la velocidad ni las credenciales. La diferencia fundamental es que `git fetch` descarga los cambios pero no los aplica automáticamente, mientras que `git pull` los descarga y aplica de inmediato."
+        },
+        {
+          "id": "B",
+          "texto": "Porque `git fetch` descarga los cambios del repositorio remoto sin aplicarlos automáticamente, lo que permite revisar qué cambió antes de decidir integrarlo al Working Directory.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó esta diferencia clave: `git fetch` descarga pero no integra, dando control para revisar los cambios del equipo antes de incorporarlos. `git pull` hace las dos cosas automáticamente (fetch + merge), lo que puede generar conflictos inesperados si no se revisa antes."
+        },
+        {
+          "id": "C",
+          "texto": "Porque `git fetch` crea automáticamente una nueva rama con todos los cambios descargados para revisión.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `git fetch` no crea ramas automáticamente. Actualiza las referencias remotas en tu repositorio local (como `origin/main`), pero no crea ramas nuevas ni modifica tu Working Directory."
+        },
+        {
+          "id": "D",
+          "texto": "Porque `git fetch` es obligatorio ejecutar antes de cada `git commit` para sincronizar el historial y evitar conflictos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `git fetch` no es obligatorio antes de hacer commit. El commit es una operación local que no depende del estado del repositorio remoto. `git fetch` se usa cuando se quiere revisar cambios remotos sin integrarlos aún."
+        }
       ]
     },
     {
       "id": 9,
-      "pregunta": "¿Qué herramienta del entorno se mencionó como útil para ejecutar aplicaciones en contenedores?",
+      "pregunta": "¿Por qué la Staging Area existe como paso intermedio entre el Working Directory y el Local Repository?",
       "alternativas": [
-        { "id": "A", "texto": "Docker.", "esCorrecta": true, "retroalimentacion": "Correcto. Docker permite ejecutar aplicaciones en contenedores y mantener un entorno consistente." },
-        { "id": "B", "texto": "Bitbucket.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Bitbucket es una plataforma para repositorios Git, no una herramienta de contenedores." },
-        { "id": "C", "texto": "GitHub.", "esCorrecta": false, "retroalimentacion": "Incorrecto. GitHub aloja repositorios, no contenedores en el contexto explicado." },
-        { "id": "D", "texto": "HTML.", "esCorrecta": false, "retroalimentacion": "Incorrecto. HTML es un lenguaje de marcado, no una plataforma de contenedores." }
+        {
+          "id": "A",
+          "texto": "Porque Git requiere comprimir los archivos antes de guardarlos en el Local Repository, y la Staging Area es el espacio de compresión temporal.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La Staging Area no es un espacio de compresión. Su propósito es dar al desarrollador control sobre qué cambios incluir en el próximo commit, no realizar operaciones técnicas de compresión."
+        },
+        {
+          "id": "B",
+          "texto": "Porque permite seleccionar exactamente qué cambios del Working Directory se incluirán en el próximo commit, dando control granular sobre qué se guarda como versión.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que la Staging Area es el área donde decides qué cambios van al próximo commit. Puedes modificar 10 archivos pero hacer `git add` solo a 3 de ellos, creando un commit enfocado. Sin Staging Area, cada commit incluiría todos los archivos modificados sin posibilidad de selección."
+        },
+        {
+          "id": "C",
+          "texto": "Porque el Local Repository no puede recibir cambios directamente del Working Directory por restricciones de seguridad del sistema operativo.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. No existe esa restricción de seguridad del sistema operativo. La Staging Area es un concepto de diseño de Git para dar control al desarrollador, no una restricción técnica del sistema."
+        },
+        {
+          "id": "D",
+          "texto": "Porque la Staging Area es donde Git verifica automáticamente que el código no tiene errores de sintaxis antes de permitir el commit.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Git no verifica errores de sintaxis en la Staging Area. Git no es un compilador ni un linter; solo gestiona versiones de archivos. La verificación de errores es responsabilidad del desarrollador o de herramientas separadas."
+        }
       ]
     },
     {
       "id": 10,
-      "pregunta": "¿Qué herramienta fue explicada como gestor de entornos y paquetes usado especialmente con Python?",
+      "pregunta": "Si ejecutas `git checkout develop`, ¿qué ocurre?",
       "alternativas": [
-        { "id": "A", "texto": "Conda.", "esCorrecta": true, "retroalimentacion": "Correcto. Conda sirve para crear entornos virtuales y manejar dependencias de Python." },
-        { "id": "B", "texto": "Git.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Git es para control de versiones, no para entornos Python." },
-        { "id": "C", "texto": "Lit.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Lit es una librería para crear Web Components." },
-        { "id": "D", "texto": "Cells CLI.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Cells CLI es una herramienta de línea de comandos del framework, no un gestor de entornos Python." }
+        {
+          "id": "A",
+          "texto": "Los cambios del Working Directory se guardan como commit en la rama `develop` automáticamente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `git checkout develop` no crea commits. Solo cambia la rama activa. Si tienes cambios sin commitear en el Working Directory, Git puede avisarte que los guardes antes de cambiar de rama."
+        },
+        {
+          "id": "B",
+          "texto": "Se cambia la rama activa a `develop`, actualizando el Working Directory con los archivos de esa rama para trabajar sobre ella.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que `git checkout` permite cambiar de rama o restaurar archivos. Al ejecutar `git checkout develop`, Git cambia a esa rama y actualiza el Working Directory para reflejar el estado de los archivos en `develop`."
+        },
+        {
+          "id": "C",
+          "texto": "La rama `develop` se sube inmediatamente al repositorio remoto con todos los commits pendientes.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Para subir una rama al remoto se usa `git push origin develop`. `git checkout develop` solo cambia la rama activa localmente, sin afectar el repositorio remoto."
+        },
+        {
+          "id": "D",
+          "texto": "Todos los commits de la rama `develop` se eliminan del historial local para limpiar el repositorio.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `git checkout` no elimina commits. Es un comando seguro que solo cambia la rama activa o restaura archivos. Eliminar commits del historial requiere comandos más específicos como `git reset` o `git rebase`."
+        }
       ]
     },
     {
       "id": 11,
-      "pregunta": "¿Cuál es la función principal de Cells CLI según lo trabajado en este chat?",
+      "pregunta": "Estás en la rama `main` y ejecutas `git merge feature-login`. ¿Qué ocurre?",
       "alternativas": [
-        { "id": "A", "texto": "Interactuar con el framework desde la terminal para crear, ejecutar o gestionar proyectos.", "esCorrecta": true, "retroalimentacion": "Correcto. Cells CLI es una herramienta para trabajar con Cells desde la línea de comandos: crear proyectos, ejecutar aplicaciones y generar componentes." },
-        { "id": "B", "texto": "Diseñar bases de datos visualmente.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No se presentó como herramienta de modelado de bases de datos." },
-        { "id": "C", "texto": "Sustituir a JavaScript en los navegadores.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No reemplaza a JavaScript." },
-        { "id": "D", "texto": "Crear únicamente reportes financieros.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Su uso es técnico y de desarrollo, no de reportes financieros." }
+        {
+          "id": "A",
+          "texto": "Los cambios de `main` se envían hacia la rama `feature-login`, reemplazando todo su contenido.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `git merge` integra los cambios de la rama especificada hacia la rama donde estás actualmente. Si estás en `main` y haces `git merge feature-login`, los cambios de `feature-login` se integran en `main`, no al revés."
+        },
+        {
+          "id": "B",
+          "texto": "Los cambios de la rama `feature-login` se integran en la rama `main`, combinando el trabajo de ambas ramas.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que `git merge` combina cambios de diferentes ramas. Estando en `main`, `git merge feature-login` trae los commits de `feature-login` hacia `main`. Si hay conflictos en archivos que ambas ramas modificaron, Git pedirá resolverlos manualmente."
+        },
+        {
+          "id": "C",
+          "texto": "La rama `feature-login` se elimina del repositorio local y remoto como resultado del merge.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `git merge` no elimina ramas. Después del merge, ambas ramas siguen existiendo. Si se desea eliminar la rama de feature después de integrarla, eso se hace con un comando separado (`git branch -d feature-login`)."
+        },
+        {
+          "id": "D",
+          "texto": "Se clona `feature-login` como un repositorio independiente para no modificar `main`.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `git merge` no crea repositorios nuevos. Es una operación que integra cambios dentro del mismo repositorio. `git clone` es el comando para copiar repositorios."
+        }
       ]
     },
     {
       "id": 12,
-      "pregunta": "¿Qué es Git?",
+      "pregunta": "¿Cuál es la diferencia principal entre GitHub y Bitbucket en un contexto empresarial?",
       "alternativas": [
-        { "id": "A", "texto": "Un sistema de control de versiones que permite guardar, rastrear y gestionar cambios en el código.", "esCorrecta": true, "retroalimentacion": "Correcto. Git fue definido como un sistema de control de versiones para guardar y gestionar cambios en el código." },
-        { "id": "B", "texto": "Un navegador web.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Git no es un navegador." },
-        { "id": "C", "texto": "Una red social para programadores.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Una red social sería más parecido a una plataforma de interacción, no a un sistema de control de versiones." },
-        { "id": "D", "texto": "Un compilador exclusivo de Python.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Git no compila Python ni otros lenguajes; administra versiones." }
+        {
+          "id": "A",
+          "texto": "GitHub y Bitbucket son idénticos; la única diferencia es el nombre y el logo de la plataforma.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Aunque ambos son plataformas para alojar repositorios Git, tienen diferencias importantes. En la sesión se destacó que Bitbucket se integra de forma nativa con el ecosistema Atlassian (Jira, Trello), lo que lo hace muy popular en entornos empresariales."
+        },
+        {
+          "id": "B",
+          "texto": "Bitbucket se integra nativamente con herramientas del ecosistema Atlassian como Jira y Trello, lo que lo hace muy utilizado en entornos corporativos que ya usan esas herramientas de gestión.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que Bitbucket es muy usado en entornos empresariales por su integración con Jira (gestión de proyectos) y Trello (tableros Kanban), ambas herramientas de Atlassian. Esta integración facilita vincular commits y pull requests directamente con tareas del proyecto."
+        },
+        {
+          "id": "C",
+          "texto": "Bitbucket usa un sistema de control de versiones propio más avanzado que Git, que permite más commits por segundo.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Bitbucket también usa Git como sistema de control de versiones, igual que GitHub. No tiene un sistema propio. La diferencia está en su ecosistema de integraciones y el enfoque empresarial de la plataforma."
+        },
+        {
+          "id": "D",
+          "texto": "GitHub solo permite repositorios públicos; Bitbucket solo permite repositorios privados.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Ambas plataformas soportan repositorios públicos y privados. Esa no fue la diferencia mencionada en la sesión. La clave está en las integraciones con el ecosistema de Atlassian que ofrece Bitbucket."
+        }
       ]
     },
     {
       "id": 13,
-      "pregunta": "¿Cuál es el flujo básico de Git mostrado en la imagen?",
+      "pregunta": "¿Qué es un Pull Request y cuál es su propósito en el flujo de trabajo colaborativo?",
       "alternativas": [
-        { "id": "A", "texto": "Working Directory → Staging Area → Local Repository → Remote Repository.", "esCorrecta": true, "retroalimentacion": "Correcto. Ese fue exactamente el flujo explicado al interpretar la imagen de Git." },
-        { "id": "B", "texto": "Remote Repository → Monitor → Browser → Database.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No corresponde al flujo de trabajo de control de versiones con Git." },
-        { "id": "C", "texto": "Input → Output → Compilador → Servidor.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Describe elementos genéricos de programación, no etapas de Git." },
-        { "id": "D", "texto": "Java → HTML → CSS → Git.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Mezcla tecnologías sin relación con el flujo específico de Git." }
+        {
+          "id": "A",
+          "texto": "Un comando de Git que descarga el repositorio completo en formato ZIP al computador local para revisión offline.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Descargar un repositorio en ZIP se hace desde la interfaz web de GitHub o Bitbucket, pero no es un Pull Request. Un Pull Request es un mecanismo de revisión de código, no de descarga."
+        },
+        {
+          "id": "B",
+          "texto": "Una solicitud para que los cambios de una rama sean revisados y aprobados por el equipo antes de integrarse en la rama principal, garantizando calidad de código.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que el Pull Request es una solicitud de revisión e integración de cambios entre ramas. Antes de hacer merge, el equipo puede revisar el código, dejar comentarios y aprobar o rechazar los cambios. Es un mecanismo clave de colaboración en GitHub y Bitbucket."
+        },
+        {
+          "id": "C",
+          "texto": "Una ejecución automática de `git pull` en todos los equipos del equipo de desarrollo simultáneamente cuando se sube nuevo código.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Un Pull Request no ejecuta nada automáticamente en las computadoras del equipo. Es una solicitud de revisión en la plataforma (GitHub o Bitbucket) que requiere acción manual de los revisores."
+        },
+        {
+          "id": "D",
+          "texto": "Un tipo especial de rama que se crea automáticamente al hacer `git push` y que contiene únicamente los cambios nuevos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Un Pull Request no es una rama; es una solicitud creada en la plataforma web (GitHub o Bitbucket) para pedir la revisión de los cambios de una rama antes de integrarlos. Se crea manualmente, no automáticamente al hacer push."
+        }
       ]
     },
     {
       "id": 14,
-      "pregunta": "¿Qué es el Working Directory en Git?",
+      "pregunta": "¿Por qué muchas empresas configuran Artifactory como intermediario para las descargas de paquetes npm?",
       "alternativas": [
-        { "id": "A", "texto": "La carpeta del proyecto en tu computadora donde editas archivos.", "esCorrecta": true, "retroalimentacion": "Correcto. El Working Directory fue explicado como la carpeta local donde creas, modificas o eliminas archivos." },
-        { "id": "B", "texto": "El servidor remoto donde colaboran todos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El servidor remoto corresponde al Remote Repository." },
-        { "id": "C", "texto": "El historial permanente de commits en la nube.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El historial de commits se asocia al repositorio, no al Working Directory." },
-        { "id": "D", "texto": "La configuración interna de Docker.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Docker no define el Working Directory de Git en este contexto." }
+        {
+          "id": "A",
+          "texto": "Porque los paquetes disponibles en npm directamente son siempre versiones beta inestables que no sirven para producción.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. npm tiene paquetes estables perfectamente listos para producción. La razón para usar Artifactory no es la falta de estabilidad de npm, sino el control, la seguridad y la gestión centralizada de dependencias dentro de la empresa."
+        },
+        {
+          "id": "B",
+          "texto": "Porque Artifactory permite controlar qué versiones específicas de paquetes se usan, mejora la seguridad al evitar dependencias externas no autorizadas y garantiza consistencia entre todos los equipos.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que Artifactory actúa como repositorio interno. En lugar de que cada desarrollador descargue libremente de internet, la empresa controla qué paquetes están autorizados, en qué versiones y cuáles pasan los controles de seguridad. Esto es especialmente importante en entornos como banca."
+        },
+        {
+          "id": "C",
+          "texto": "Porque npm no funciona con conexión directa a internet en sistemas empresariales; siempre requiere un proxy como Artifactory para poder descargar.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. npm puede funcionar perfectamente con conexión directa a internet. Usar Artifactory es una decisión organizacional de control y seguridad, no una limitación técnica de npm."
+        },
+        {
+          "id": "D",
+          "texto": "Porque sin Artifactory, `npm install` corrompe el archivo `package-lock.json` en entornos con múltiples desarrolladores.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `npm install` no corrompe `package-lock.json` en entornos multidesarrollador. La razón para usar Artifactory es el control centralizado de dependencias y la seguridad, no prevenir corrupción de archivos."
+        }
       ]
     },
     {
       "id": 15,
-      "pregunta": "¿Para qué sirve la Staging Area?",
+      "pregunta": "¿Cuál de los siguientes describe mejor qué es un artefacto de software?",
       "alternativas": [
-        { "id": "A", "texto": "Para preparar temporalmente los cambios antes de hacer commit.", "esCorrecta": true, "retroalimentacion": "Correcto. La Staging Area es el área temporal donde decides qué cambios se incluirán en el próximo commit." },
-        { "id": "B", "texto": "Para ejecutar la aplicación en producción.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La Staging Area no ejecuta aplicaciones en producción." },
-        { "id": "C", "texto": "Para compilar código Java.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No sirve para compilación de Java." },
-        { "id": "D", "texto": "Para crear contenedores de Docker.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La creación de contenedores no es función de Git." }
+        {
+          "id": "A",
+          "texto": "Únicamente el código fuente sin compilar de un proyecto, guardado en Git.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El código fuente sin compilar es solo una parte. En la sesión se definió que un artefacto es cualquier archivo generado durante el desarrollo de software, incluyendo también librerías compiladas, paquetes npm, imágenes Docker, archivos `.jar` y `.zip`."
+        },
+        {
+          "id": "B",
+          "texto": "Solo los archivos de configuración como `package.json`, `.gitignore` y `package-lock.json` del proyecto.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Esos archivos son parte del proyecto pero no son el concepto de artefacto de software. Los artefactos son los archivos generados o empaquetados durante el proceso de construcción del software, como librerías compiladas o paquetes distribuibles."
+        },
+        {
+          "id": "C",
+          "texto": "Cualquier archivo generado durante el desarrollo de software, como librerías, paquetes npm (`mi-libreria-1.0.0.tgz`), archivos compilados `.jar`, imágenes Docker o archivos `.zip`.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se definió que un artefacto puede ser cualquier archivo generado durante el ciclo de desarrollo. El ejemplo concreto dado fue `mi-libreria-1.0.0.tgz`. Artifactory existe precisamente para almacenar y gestionar estos artefactos de forma centralizada."
+        },
+        {
+          "id": "D",
+          "texto": "Exclusivamente las imágenes PNG, SVG y otros archivos de diseño gráfico del proyecto.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los archivos de diseño gráfico no son el concepto de artefacto de software en este contexto. Los artefactos son archivos técnicos del ciclo de desarrollo: librerías compiladas, paquetes distribuibles, imágenes de contenedor Docker, etc."
+        }
       ]
     },
     {
       "id": 16,
-      "pregunta": "¿Qué hace el comando git add?",
+      "pregunta": "¿Cuál es la función principal de un DM Component en la arquitectura de Cells?",
       "alternativas": [
-        { "id": "A", "texto": "Mueve cambios del Working Directory a la Staging Area.", "esCorrecta": true, "retroalimentacion": "Correcto. git add sirve para pasar cambios desde el área de trabajo al área de preparación." },
-        { "id": "B", "texto": "Envía cambios al repositorio remoto.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Enviar cambios al remoto corresponde a git push." },
-        { "id": "C", "texto": "Elimina el historial de commits.", "esCorrecta": false, "retroalimentacion": "Incorrecto. git add no borra historial." },
-        { "id": "D", "texto": "Crea automáticamente una rama remota.", "esCorrecta": false, "retroalimentacion": "Incorrecto. git add no crea ramas remotas." }
+        {
+          "id": "A",
+          "texto": "Renderizar la interfaz visual que el usuario ve: formularios, botones, inputs y pantallas.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Esa es la función de los Web Components visuales. Un DM Component (Data Manager) no se enfoca en la interfaz; su función principal es consumir APIs, obtener datos y entregarlos a los componentes visuales."
+        },
+        {
+          "id": "B",
+          "texto": "Consumir servicios (APIs) del backend, procesar los datos obtenidos y entregarlos a los Web Components visuales que los necesitan.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que el DM Component es un intermediario entre la UI y el backend. No muestra interfaz directamente, sino que gestiona la comunicación con las APIs y provee datos a los componentes visuales. Es un Web Component técnicamente, pero con un rol de gestión de datos."
+        },
+        {
+          "id": "C",
+          "texto": "Controlar las versiones del código fuente del proyecto mediante commits y ramas de Git.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El control de versiones es responsabilidad de Git. Un DM Component es parte de la arquitectura de la aplicación en Cells y tiene que ver con el consumo de datos en tiempo de ejecución, no con el versionado del código."
+        },
+        {
+          "id": "D",
+          "texto": "Gestionar los estilos CSS encapsulados del Shadow DOM para garantizar consistencia visual.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los estilos son responsabilidad de los Web Components visuales usando Shadow DOM y `static styles`. El DM Component se enfoca en la capa de datos, no en la presentación visual."
+        }
       ]
     },
     {
       "id": 17,
-      "pregunta": "¿Qué hace git commit?",
+      "pregunta": "En la arquitectura de Cells, ¿cuál es la separación de responsabilidades entre Web Component y DM Component?",
       "alternativas": [
-        { "id": "A", "texto": "Guarda los cambios preparados como una nueva versión en el repositorio local.", "esCorrecta": true, "retroalimentacion": "Correcto. git commit toma lo preparado en Staging Area y lo guarda como una nueva versión en el repositorio local." },
-        { "id": "B", "texto": "Descarga cambios del repositorio remoto sin aplicarlos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa descripción corresponde más a git fetch." },
-        { "id": "C", "texto": "Clona un repositorio desde internet.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Clonar corresponde a git clone." },
-        { "id": "D", "texto": "Instala dependencias del proyecto.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Instalar dependencias sería una tarea de npm u otro gestor, no de git commit." }
+        {
+          "id": "A",
+          "texto": "El Web Component maneja la interfaz visual (formularios, botones, pantallas) y el DM Component maneja el acceso a datos y consumo de APIs.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó esta separación de responsabilidades: UI → Web Component, Datos → DM Component. Esta separación reduce el acoplamiento, facilita la reutilización y mejora el mantenimiento de la aplicación."
+        },
+        {
+          "id": "B",
+          "texto": "El Web Component accede directamente a las APIs del backend y el DM Component se encarga de renderizar la interfaz visual.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los roles están invertidos. En Cells, los Web Components son los visuales y los DM Components son los que consumen APIs. Si el Web Component accediera directamente a las APIs, se perdería la ventaja de reutilización que ofrecen los DM Components."
+        },
+        {
+          "id": "C",
+          "texto": "Ambos tienen exactamente las mismas responsabilidades; la diferencia es solo el directorio del proyecto donde se guardan sus archivos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La diferencia no es de ubicación de archivos sino de responsabilidad funcional. Los Web Components son visuales e interactúan con el usuario; los DM Components gestionan datos y se comunican con servicios. Son roles claramente distintos en la arquitectura."
+        },
+        {
+          "id": "D",
+          "texto": "El Web Component solo puede usarse en interfaces móviles y el DM Component solo en aplicaciones de escritorio.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. No existe esa restricción de plataforma. Ambos tipos de componentes pueden usarse en cualquier tipo de aplicación web, sin distinción entre móvil y escritorio."
+        }
       ]
     },
     {
       "id": 18,
-      "pregunta": "¿Qué hace git push?",
+      "pregunta": "¿Cuál es el flujo correcto de interacción en Cells cuando un usuario llena un formulario que necesita datos de una API?",
       "alternativas": [
-        { "id": "A", "texto": "Envía cambios del repositorio local al repositorio remoto.", "esCorrecta": true, "retroalimentacion": "Correcto. git push sube cambios desde el repositorio local al remoto." },
-        { "id": "B", "texto": "Agrega archivos al staging.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso corresponde a git add." },
-        { "id": "C", "texto": "Cambia de rama local.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Cambiar de rama se asocia a git checkout." },
-        { "id": "D", "texto": "Restaura archivos eliminados automáticamente.", "esCorrecta": false, "retroalimentacion": "Incorrecto. git push no restaura archivos automáticamente." }
+        {
+          "id": "A",
+          "texto": "Servicio/API → DM Component → Web Component → Usuario (el dato siempre fluye desde el servidor hacia el usuario sin interacción inicial).",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El flujo comienza con el usuario, no con la API. Es el usuario quien interactúa con el formulario (Web Component) y desencadena la cadena de llamadas hacia el DM Component y luego hacia la API."
+        },
+        {
+          "id": "B",
+          "texto": "Usuario interactúa con el Web Component → Web Component llama al DM Component → DM consume la API → DM devuelve los datos al Web Component → Web Component muestra la información.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se mostró este flujo exacto de 5 pasos. El usuario es el punto de partida al interactuar con la interfaz visual (Web Component). El Web Component delega la obtención de datos al DM Component, que actúa como intermediario con el backend/API."
+        },
+        {
+          "id": "C",
+          "texto": "DM Component → Usuario → Web Component → Servicio/API (el DM inicia siempre la comunicación de forma autónoma).",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los DM Components no actúan de forma autónoma al inicio. Son los Web Components (activados por la interacción del usuario) los que invocan a los DM Components. El DM es reactivo, no proactivo."
+        },
+        {
+          "id": "D",
+          "texto": "Usuario → Git → DM Component → Web Component (cada cambio del usuario genera un commit automático antes de consultar la API).",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Git no participa en el flujo de ejecución de la aplicación. Git es una herramienta de control de versiones del código fuente; no interviene en tiempo de ejecución cuando un usuario interactúa con la interfaz."
+        }
       ]
     },
     {
       "id": 19,
-      "pregunta": "¿Qué diferencia principal se explicó entre git fetch y git pull?",
+      "pregunta": "¿Qué problema concreto resuelven los DM Components en términos de reutilización de código?",
       "alternativas": [
-        { "id": "A", "texto": "git fetch descarga cambios sin aplicarlos automáticamente, mientras git pull descarga y aplica.", "esCorrecta": true, "retroalimentacion": "Correcto. fetch descarga sin integrar automáticamente y pull descarga más aplica cambios." },
-        { "id": "B", "texto": "git fetch sube cambios y git pull borra ramas.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ninguna de esas fue la función explicada para fetch o pull." },
-        { "id": "C", "texto": "git fetch instala dependencias y git pull compila el proyecto.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esas funciones no pertenecen a esos comandos Git." },
-        { "id": "D", "texto": "Ambos hacen exactamente lo mismo según el chat.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Sí se marcó una diferencia entre ambos comandos." }
+        {
+          "id": "A",
+          "texto": "Sin DM Components, cada formulario o pantalla que necesite datos de una API tendría que implementar su propia lógica de llamada, generando código duplicado. Con DM, un solo componente gestiona la API y múltiples formularios lo reutilizan.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó este problema y su solución: si 5 pantallas diferentes necesitan datos de cuentas bancarias, sin DM cada una haría su propia llamada. Con un DM bien construido, todas las pantallas consumen el mismo DM, y si la API cambia, solo hay que actualizar el DM."
+        },
+        {
+          "id": "B",
+          "texto": "Sin DM Components, los estilos CSS no pueden encapsularse correctamente en Shadow DOM, generando conflictos visuales.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La encapsulación de estilos CSS mediante Shadow DOM es independiente de si se usan DM Components o no. El Shadow DOM funciona en cualquier Web Component. Los DM Components resuelven un problema de reutilización de lógica de datos, no de estilos."
+        },
+        {
+          "id": "C",
+          "texto": "Sin DM Components, Git no puede hacer `git push` desde proyectos Cells hacia Bitbucket.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `git push` no tiene ninguna dependencia de los DM Components. El control de versiones con Git funciona independientemente de la arquitectura interna de los componentes."
+        },
+        {
+          "id": "D",
+          "texto": "Sin DM Components, los componentes Lit no pueden registrarse con `customElements.define()` correctamente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El registro con `customElements.define()` es independiente de si el componente es un Web Component visual o un DM Component. Ambos tipos se registran de la misma forma; la diferencia está en su responsabilidad funcional."
+        }
       ]
     },
     {
       "id": 20,
-      "pregunta": "¿Para qué sirve git merge?",
+      "pregunta": "¿Qué ventaja de mantenimiento ofrecen los DM Components según la sesión?",
       "alternativas": [
-        { "id": "A", "texto": "Para combinar cambios de diferentes ramas o versiones.", "esCorrecta": true, "retroalimentacion": "Correcto. git merge combina cambios entre ramas." },
-        { "id": "B", "texto": "Para publicar una página web automáticamente.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Publicar páginas web no fue la función explicada para merge." },
-        { "id": "C", "texto": "Para borrar repositorios remotos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. merge no borra repositorios." },
-        { "id": "D", "texto": "Para crear cuentas de usuario en GitHub.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Crear cuentas no es función de un comando Git." }
+        {
+          "id": "A",
+          "texto": "Si el DM está bien construido y se modifica la forma de obtener datos de la API, ese cambio se refleja automáticamente en todos los componentes visuales que lo usan, sin necesitar modificar cada uno individualmente.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se destacó esta ventaja con la frase: 'Si el DM está bien construido, se puede reutilizar en cualquier proyecto o componente'. Si la API cambia o se mejora la lógica, solo se actualiza el DM y todos los componentes que lo consumen se benefician automáticamente."
+        },
+        {
+          "id": "B",
+          "texto": "El DM actualiza automáticamente el `package.json` cuando se agrega una nueva API al proyecto.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los DM Components son código de la aplicación que se ejecuta en el navegador; no tienen capacidad de modificar archivos de configuración del proyecto como `package.json`. El mantenimiento de dependencias se hace por separado."
+        },
+        {
+          "id": "C",
+          "texto": "Los DM Components eliminan la necesidad de usar Artifactory para gestionar dependencias del proyecto.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Artifactory gestiona dependencias externas (librerías, paquetes), mientras que los DM Components son parte del código de la aplicación. Son conceptos de capas diferentes y no son intercambiables."
+        },
+        {
+          "id": "D",
+          "texto": "Si el DM cambia, Git crea automáticamente una nueva rama para registrar el cambio y notifica al equipo.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Git no crea ramas automáticamente ni notifica cambios en tiempo real. Los cambios en el DM Component se gestionan con el flujo estándar de Git: editar, `git add`, `git commit`, `git push` y Pull Request si se requiere revisión."
+        }
       ]
     },
     {
       "id": 21,
-      "pregunta": "¿Qué hace git checkout según lo trabajado?",
+      "pregunta": "Un desarrollador edita el archivo `app.js`, agrega una nueva función y guarda el archivo. ¿En qué etapa del flujo de Git se encuentra ese cambio?",
       "alternativas": [
-        { "id": "A", "texto": "Permite cambiar de rama o restaurar archivos.", "esCorrecta": true, "retroalimentacion": "Correcto. git checkout permite cambiar de rama o restaurar archivos." },
-        { "id": "B", "texto": "Sube cambios al servidor.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Subir cambios corresponde a git push." },
-        { "id": "C", "texto": "Instala Node.js.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Instalar Node.js no es tarea de checkout." },
-        { "id": "D", "texto": "Gestiona paquetes npm.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La gestión de paquetes corresponde a npm, no a checkout." }
+        {
+          "id": "A",
+          "texto": "Ya está en el Staging Area porque el archivo fue guardado con Ctrl+S.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Guardar un archivo con el editor no lo pasa al Staging Area. El Staging Area de Git es independiente del sistema de archivos del sistema operativo. Para mover el cambio al Staging Area es necesario ejecutar explícitamente `git add app.js`."
+        },
+        {
+          "id": "B",
+          "texto": "En el Working Directory, porque el cambio solo existe en el archivo local y aún no fue preparado con `git add` para incluirse en un commit.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. El Working Directory es donde viven los archivos del proyecto que estás editando. Los cambios en esa carpeta no son rastreados por Git como preparados hasta que se ejecuta `git add`. Git mostraría ese archivo como 'modified' pero no staged si se ejecuta `git status`."
+        },
+        {
+          "id": "C",
+          "texto": "Ya está en el Local Repository porque fue guardado en el disco duro del computador.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Guardar en disco es diferente a hacer commit en Git. El Local Repository de Git solo se actualiza con `git commit`. Un archivo guardado en disco pero sin commit solo está en el Working Directory desde la perspectiva de Git."
+        },
+        {
+          "id": "D",
+          "texto": "Ya está en el Remote Repository porque el sistema operativo sincroniza automáticamente con GitHub.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Git no sincroniza automáticamente con GitHub ni con ningún repositorio remoto. Para subir cambios al remoto es necesario: `git add` → `git commit` → `git push`. Sin ese flujo, el cambio permanece solo en el Working Directory local."
+        }
       ]
     },
     {
       "id": 22,
-      "pregunta": "¿Qué hace git clone?",
+      "pregunta": "¿Para qué sirve Cells CLI en el flujo de trabajo con el framework Cells?",
       "alternativas": [
-        { "id": "A", "texto": "Crea una copia completa de un repositorio remoto en tu computadora.", "esCorrecta": true, "retroalimentacion": "Correcto. git clone copia un repositorio remoto a tu entorno local." },
-        { "id": "B", "texto": "Convierte un archivo en imagen.", "esCorrecta": false, "retroalimentacion": "Incorrecto. git clone no transforma formatos de archivos." },
-        { "id": "C", "texto": "Fusiona ramas sin revisión.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Fusionar ramas corresponde a merge, no a clone." },
-        { "id": "D", "texto": "Instala Docker y Java a la vez.", "esCorrecta": false, "retroalimentacion": "Incorrecto. git clone no instala herramientas del sistema." }
+        {
+          "id": "A",
+          "texto": "Para diseñar visualmente los componentes mediante una interfaz drag and drop desde el navegador.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Cells CLI es una herramienta de línea de comandos (terminal), no una interfaz visual drag and drop. Permite interactuar con el framework desde la terminal para operaciones como crear proyectos y generar componentes."
+        },
+        {
+          "id": "B",
+          "texto": "Para interactuar con el framework Cells desde la línea de comandos: crear proyectos, ejecutar aplicaciones y generar componentes.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que Cells CLI es una herramienta de terminal que permite trabajar con el framework sin tener que configurar todo manualmente. Es similar a otros CLIs de frameworks como Angular CLI o Create React App, pero específica para el ecosistema Cells."
+        },
+        {
+          "id": "C",
+          "texto": "Para gestionar simultáneamente los repositorios de Bitbucket y GitHub, sincronizando cambios entre ambas plataformas.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La gestión de repositorios entre plataformas se hace con Git y sus comandos de remotes, no con Cells CLI. Cells CLI es específica del framework Cells para tareas de desarrollo de la aplicación."
+        },
+        {
+          "id": "D",
+          "texto": "Para compilar el código de los componentes Lit en formato binario optimizado para servidores Tomcat.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Cells CLI no compila a formato binario. Los componentes Lit/Web Components son JavaScript que ejecuta el navegador. Cells CLI facilita la creación y ejecución del proyecto de desarrollo, no compilación para servidores Java."
+        }
       ]
     },
     {
       "id": 23,
-      "pregunta": "¿Qué es GitHub?",
+      "pregunta": "¿Cuál es la diferencia conceptual entre Git (la herramienta) y GitHub (la plataforma)?",
       "alternativas": [
-        { "id": "A", "texto": "Una plataforma en línea para almacenar y gestionar repositorios Git.", "esCorrecta": true, "retroalimentacion": "Correcto. GitHub fue definido como una plataforma web donde se guardan y gestionan repositorios Git para colaborar." },
-        { "id": "B", "texto": "Un editor de imágenes.", "esCorrecta": false, "retroalimentacion": "Incorrecto. GitHub no es un editor de imágenes." },
-        { "id": "C", "texto": "Un lenguaje de programación orientado a objetos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No es un lenguaje de programación." },
-        { "id": "D", "texto": "Una base de datos documental.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No es una base de datos documental." }
+        {
+          "id": "A",
+          "texto": "Git es la plataforma web donde se almacenan los repositorios; GitHub es la herramienta que se instala localmente para controlar versiones.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los roles están invertidos. Git es la herramienta que se instala localmente para controlar versiones del código. GitHub es la plataforma web donde se almacenan los repositorios Git de forma remota."
+        },
+        {
+          "id": "B",
+          "texto": "Git es la herramienta de control de versiones que funciona localmente en tu computadora; GitHub es la plataforma en línea donde se almacenan y comparten repositorios Git.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó esta distinción fundamental: Git existe sin GitHub (puedes usar Git solo localmente), pero GitHub no funciona sin Git (usa Git como sistema de versiones). Git es el motor; GitHub es la plataforma en la nube."
+        },
+        {
+          "id": "C",
+          "texto": "Git y GitHub son exactamente lo mismo; GitHub es simplemente el nombre oficial de Git cuando se usa en entornos empresariales.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Son herramientas diferentes creadas por entidades distintas. Git fue creado por Linus Torvalds y es open source. GitHub fue creado como startup y actualmente es propiedad de Microsoft. Tienen propósitos complementarios pero distintos."
+        },
+        {
+          "id": "D",
+          "texto": "Git solo funciona con proyectos de frontend y GitHub solo funciona con proyectos de backend.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Git y GitHub no tienen restricciones por tipo de proyecto. Pueden usarse con proyectos de frontend, backend, fullstack, documentación, scripts, o cualquier tipo de archivos de texto."
+        }
       ]
     },
     {
       "id": 24,
-      "pregunta": "¿Cuál es la diferencia principal entre Git y GitHub según este chat?",
+      "pregunta": "¿Qué relación tienen Bitbucket, Jira y Trello en el contexto empresarial explicado en la sesión?",
       "alternativas": [
-        { "id": "A", "texto": "Git controla versiones del código y GitHub es una plataforma donde se almacenan repositorios Git.", "esCorrecta": true, "retroalimentacion": "Correcto. Git es la herramienta de control de versiones y GitHub la plataforma en línea que aloja repositorios Git." },
-        { "id": "B", "texto": "GitHub controla versiones y Git es una red social.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Invierte y distorsiona las funciones reales de cada uno." },
-        { "id": "C", "texto": "Git y GitHub son exactamente lo mismo.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Sí se explicó una diferencia clara entre ambos." },
-        { "id": "D", "texto": "Git es para diseño y GitHub para edición de video.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ninguna de esas funciones fue mencionada." }
+        {
+          "id": "A",
+          "texto": "Son tres plataformas de control de versiones que compiten entre sí; las empresas eligen una de las tres según el precio.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Jira y Trello no son plataformas de control de versiones. Jira es una herramienta de gestión de proyectos y seguimiento de issues, y Trello es una herramienta de tableros Kanban. Bitbucket es la plataforma de repositorios Git del mismo ecosistema."
+        },
+        {
+          "id": "B",
+          "texto": "Las tres son herramientas del ecosistema Atlassian que se integran entre sí: Bitbucket gestiona el código, Jira gestiona proyectos/tareas y Trello gestiona tableros, formando un flujo de trabajo corporativo completo.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se mencionó que Bitbucket es muy popular en empresas por su integración con Jira y Trello, ambas de Atlassian. Esta integración permite, por ejemplo, vincular un commit o Pull Request en Bitbucket directamente con una tarea en Jira, creando trazabilidad total del trabajo."
+        },
+        {
+          "id": "C",
+          "texto": "Son la misma herramienta con distintos nombres según el país: Bitbucket en Europa, Jira en América y Trello en Asia.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Son tres herramientas diferentes con propósitos distintos. No tienen distribución geográfica por nombre; las tres son usadas globalmente. Su valor está en cómo se integran entre sí dentro del ecosistema Atlassian."
+        },
+        {
+          "id": "D",
+          "texto": "Bitbucket reemplaza a Git dentro del ecosistema Atlassian, mientras Jira y Trello reemplazan a GitHub.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Bitbucket no reemplaza a Git; lo usa como base. Y Jira/Trello no reemplazan a GitHub; tienen funciones completamente diferentes (gestión de proyectos vs. hosting de código). Son herramientas complementarias, no sustitutos."
+        }
       ]
     },
     {
       "id": 25,
-      "pregunta": "¿Cuál de estas acciones sí se dijo que puedes hacer en GitHub?",
+      "pregunta": "¿Cuál de las siguientes opciones resume mejor la relación entre todas las herramientas del entorno empresarial de Cells?",
       "alternativas": [
-        { "id": "A", "texto": "Guardar código en la nube y colaborar con otros desarrolladores.", "esCorrecta": true, "retroalimentacion": "Correcto. GitHub sirve para almacenar código, colaborar, controlar versiones y gestionar proyectos." },
-        { "id": "B", "texto": "Fabricar hardware.", "esCorrecta": false, "retroalimentacion": "Incorrecto. GitHub no fabrica hardware." },
-        { "id": "C", "texto": "Administrar redes eléctricas.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No es una herramienta de gestión eléctrica." },
-        { "id": "D", "texto": "Procesar pagos bancarios directamente como función principal.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Aunque pueda usarse en proyectos bancarios, su función principal no es procesar pagos." }
-      ]
-    },
-    {
-      "id": 26,
-      "pregunta": "¿Qué es un Pull Request en GitHub según lo explicado?",
-      "alternativas": [
-        { "id": "A", "texto": "Una solicitud para revisar y unir cambios de una rama a otra.", "esCorrecta": true, "retroalimentacion": "Correcto. El Pull Request es una solicitud de revisión e integración de cambios entre ramas." },
-        { "id": "B", "texto": "Un error de conexión con internet.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un Pull Request no es un error de red." },
-        { "id": "C", "texto": "Una forma de eliminar un repositorio.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No elimina repositorios." },
-        { "id": "D", "texto": "Una carpeta temporal del navegador.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No es una carpeta temporal." }
-      ]
-    },
-    {
-      "id": 27,
-      "pregunta": "¿Qué es Bitbucket?",
-      "alternativas": [
-        { "id": "A", "texto": "Una plataforma en línea para almacenar repositorios y trabajar en equipo usando Git.", "esCorrecta": true, "retroalimentacion": "Correcto. Bitbucket, al igual que GitHub, es una plataforma para alojar repositorios Git y colaborar." },
-        { "id": "B", "texto": "Un lenguaje de estilos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No es un lenguaje de estilos como CSS." },
-        { "id": "C", "texto": "Un antivirus.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No es un antivirus." },
-        { "id": "D", "texto": "Una extensión de navegador para videos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No es una extensión de videos." }
-      ]
-    },
-    {
-      "id": 28,
-      "pregunta": "¿Por qué se mencionó que Bitbucket es muy usado en entornos empresariales?",
-      "alternativas": [
-        { "id": "A", "texto": "Porque se integra bien con herramientas de Atlassian, como Jira y Trello.", "esCorrecta": true, "retroalimentacion": "Correcto. Su uso empresarial se justificó por su integración con el ecosistema Atlassian." },
-        { "id": "B", "texto": "Porque reemplaza completamente a Git.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Bitbucket no reemplaza a Git; lo usa como base." },
-        { "id": "C", "texto": "Porque funciona sin internet obligatoriamente.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No se presentó esa como la razón principal." },
-        { "id": "D", "texto": "Porque es un compilador más rápido que JavaScript.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Bitbucket no es un compilador." }
-      ]
-    },
-    {
-      "id": 29,
-      "pregunta": "¿Qué elemento de trabajo colaborativo se mencionó tanto para GitHub como para Bitbucket?",
-      "alternativas": [
-        { "id": "A", "texto": "Pull Request.", "esCorrecta": true, "retroalimentacion": "Correcto. Pull Request fue presentado como mecanismo de revisión e integración de cambios en estas plataformas." },
-        { "id": "B", "texto": "Procesador de texto.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No es una función central de estas plataformas de repositorios." },
-        { "id": "C", "texto": "Tabla dinámica.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No se relaciona con el flujo Git descrito." },
-        { "id": "D", "texto": "Canvas 3D.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No se mencionó ninguna relación con canvas 3D." }
-      ]
-    },
-    {
-      "id": 30,
-      "pregunta": "¿Qué es Artifactory?",
-      "alternativas": [
-        { "id": "A", "texto": "Un repositorio de artefactos para almacenar, gestionar y distribuir dependencias y paquetes de software.", "esCorrecta": true, "retroalimentacion": "Correcto. Artifactory almacena artefactos, dependencias y paquetes usados por los proyectos." },
-        { "id": "B", "texto": "Una herramienta para editar imágenes.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Artifactory no se usa para editar imágenes." },
-        { "id": "C", "texto": "Una red social para desarrolladores.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No es una red social." },
-        { "id": "D", "texto": "Un sistema operativo empresarial.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No es un sistema operativo." }
-      ]
-    },
-    {
-      "id": 31,
-      "pregunta": "¿Qué es un artefacto de software según este chat?",
-      "alternativas": [
-        { "id": "A", "texto": "Cualquier archivo generado durante el desarrollo de software, como librerías, paquetes o archivos compilados.", "esCorrecta": true, "retroalimentacion": "Correcto. Un artefacto puede ser una librería, un paquete npm, un archivo compilado, una imagen Docker, entre otros." },
-        { "id": "B", "texto": "Solo una imagen PNG.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un artefacto no se limita a una imagen PNG." },
-        { "id": "C", "texto": "Exclusivamente un archivo de Word.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No se restringe a archivos de Word." },
-        { "id": "D", "texto": "Únicamente el código fuente sin compilar.", "esCorrecta": false, "retroalimentacion": "Incorrecto. También incluye archivos generados y empaquetados, no solo código fuente." }
-      ]
-    },
-    {
-      "id": 32,
-      "pregunta": "¿Por qué muchas empresas usan Artifactory en lugar de descargar directamente todo desde internet?",
-      "alternativas": [
-        { "id": "A", "texto": "Para controlar versiones, mejorar seguridad y gestionar dependencias internas.", "esCorrecta": true, "retroalimentacion": "Correcto. Artifactory ayuda a controlar qué paquetes se usan, mejora la seguridad y centraliza dependencias internas." },
-        { "id": "B", "texto": "Para reemplazar completamente a HTML.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Artifactory no reemplaza HTML." },
-        { "id": "C", "texto": "Para evitar usar Git.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Git y Artifactory cumplen funciones diferentes." },
-        { "id": "D", "texto": "Para diseñar interfaces gráficas.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Artifactory no es una herramienta de diseño visual." }
-      ]
-    },
-    {
-      "id": 33,
-      "pregunta": "Según el flujo explicado, cuando una empresa usa Artifactory, ¿qué puede pasar al ejecutar npm install?",
-      "alternativas": [
-        { "id": "A", "texto": "Que npm descargue paquetes desde Artifactory como repositorio interno.", "esCorrecta": true, "retroalimentacion": "Correcto. En muchas empresas npm puede conectarse a Artifactory para descargar dependencias autorizadas internamente." },
-        { "id": "B", "texto": "Que se convierta el proyecto en aplicación móvil automáticamente.", "esCorrecta": false, "retroalimentacion": "Incorrecto. npm install no convierte proyectos en apps móviles." },
-        { "id": "C", "texto": "Que Git haga commit automáticamente.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Instalar dependencias no equivale a hacer commit." },
-        { "id": "D", "texto": "Que se borre el package.json.", "esCorrecta": false, "retroalimentacion": "Incorrecto. npm install no tiene como función borrar package.json." }
-      ]
-    },
-    {
-      "id": 34,
-      "pregunta": "¿Qué es un Web Component?",
-      "alternativas": [
-        { "id": "A", "texto": "Un componente reutilizable de interfaz web que encapsula HTML, CSS y JavaScript.", "esCorrecta": true, "retroalimentacion": "Correcto. Un componente reutilizable que reúne estructura, estilos y comportamiento." },
-        { "id": "B", "texto": "Un servidor de bases de datos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un Web Component no es un servidor." },
-        { "id": "C", "texto": "Una cuenta de usuario en GitHub.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No es una cuenta de usuario ni un perfil." },
-        { "id": "D", "texto": "Un archivo exclusivo de backend.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No es un archivo exclusivo de backend, sino un componente de interfaz web." }
-      ]
-    },
-    {
-      "id": 35,
-      "pregunta": "¿Qué permiten crear los Web Components en HTML?",
-      "alternativas": [
-        { "id": "A", "texto": "Nuevas etiquetas HTML personalizadas.", "esCorrecta": true, "retroalimentacion": "Correcto. Los Web Components permiten crear elementos personalizados, como nuevas etiquetas HTML." },
-        { "id": "B", "texto": "Nuevos discos duros virtuales.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No tienen relación con discos duros virtuales." },
-        { "id": "C", "texto": "Nuevos protocolos de internet.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No crean protocolos de red." },
-        { "id": "D", "texto": "Nuevos lenguajes de programación.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No crean lenguajes nuevos." }
-      ]
-    },
-    {
-      "id": 36,
-      "pregunta": "¿Cuál de estas tecnologías fue mencionada como parte de la base de los Web Components?",
-      "alternativas": [
-        { "id": "A", "texto": "Shadow DOM.", "esCorrecta": true, "retroalimentacion": "Correcto. Shadow DOM fue una de las tecnologías listadas como base de los Web Components." },
-        { "id": "B", "texto": "PowerPoint DOM.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No existe como parte del estándar explicado." },
-        { "id": "C", "texto": "Excel Templates.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No fue una tecnología mencionada en la construcción de Web Components." },
-        { "id": "D", "texto": "Photoshop Elements.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No pertenece a ese ecosistema técnico." }
-      ]
-    },
-    {
-      "id": 37,
-      "pregunta": "¿Qué función cumple Shadow DOM según la explicación dada?",
-      "alternativas": [
-        { "id": "A", "texto": "Encapsular estilos y estructura del componente.", "esCorrecta": true, "retroalimentacion": "Correcto. Shadow DOM sirve para encapsular la estructura y los estilos de un componente." },
-        { "id": "B", "texto": "Instalar dependencias npm.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Instalar dependencias es tarea de gestores como npm." },
-        { "id": "C", "texto": "Subir código a Bitbucket.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Subir código a Bitbucket se realiza con Git y la plataforma, no con Shadow DOM." },
-        { "id": "D", "texto": "Compilar proyectos Java.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No compila Java." }
-      ]
-    },
-    {
-      "id": 38,
-      "pregunta": "¿Cuál de estas opciones representa un ejemplo de Web Component personalizado mencionado en el chat?",
-      "alternativas": [
-        { "id": "A", "texto": "<user-card></user-card>", "esCorrecta": true, "retroalimentacion": "Correcto. El ejemplo dado en la explicación de Web Components fue precisamente una etiqueta personalizada como <user-card>." },
-        { "id": "B", "texto": "<database-server></database-server>", "esCorrecta": false, "retroalimentacion": "Incorrecto. No fue el ejemplo usado y además no representa el concepto trabajado." },
-        { "id": "C", "texto": "<git-push-main></git-push-main>", "esCorrecta": false, "retroalimentacion": "Incorrecto. Mezcla nombres de comandos Git con una etiqueta HTML." },
-        { "id": "D", "texto": "<docker-install-now></docker-install-now>", "esCorrecta": false, "retroalimentacion": "Incorrecto. No fue un ejemplo mostrado ni tiene sentido como componente del concepto explicado." }
-      ]
-    },
-    {
-      "id": 39,
-      "pregunta": "¿Qué es un DM Component según este chat?",
-      "alternativas": [
-        { "id": "A", "texto": "Un componente orientado a gestionar y proporcionar datos dentro de una aplicación.", "esCorrecta": true, "retroalimentacion": "Correcto. DM Component es un componente encargado del manejo de datos, lógica y comunicación con APIs o servicios." },
-        { "id": "B", "texto": "Un componente para dibujar íconos solamente.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No se definió como un componente visual solo para íconos." },
-        { "id": "C", "texto": "Una rama de Git.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Una rama de Git es otro concepto distinto." },
-        { "id": "D", "texto": "Una imagen almacenada en Artifactory.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un DM Component no es un archivo o imagen almacenada." }
-      ]
-    },
-    {
-      "id": 40,
-      "pregunta": "¿Cuál es la principal diferencia explicada entre un Web Component y un DM Component?",
-      "alternativas": [
-        { "id": "A", "texto": "El Web Component suele enfocarse en la interfaz y el DM Component en los datos y la lógica.", "esCorrecta": true, "retroalimentacion": "Correcto. Web Component para la parte visual/reutilizable y DM Component para datos, lógica y comunicación." },
-        { "id": "B", "texto": "El Web Component funciona sin HTML y el DM Component sin JavaScript.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa no fue la diferencia explicada." },
-        { "id": "C", "texto": "El DM Component es un sistema operativo y el Web Component una base de datos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ambos conceptos pertenecen al desarrollo de aplicaciones web, no a sistemas operativos o bases de datos." },
-        { "id": "D", "texto": "No hay ninguna diferencia según el chat.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Sí se explicó una diferencia clara." }
-      ]
-    },
-    {
-      "id": 41,
-      "pregunta": "¿Qué tipo de tarea se puso como ejemplo de un DM Component?",
-      "alternativas": [
-        { "id": "A", "texto": "Obtener datos desde una API, por ejemplo cuentas bancarias.", "esCorrecta": true, "retroalimentacion": "Correcto. Un DM Component puede obtener datos de cuentas bancarias desde una API y compartirlos con otros componentes." },
-        { "id": "B", "texto": "Crear ramas en Git automáticamente.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa tarea corresponde al flujo de Git, no al rol de un DM Component." },
-        { "id": "C", "texto": "Diseñar logos en SVG.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Diseñar logos no fue la función descrita." },
-        { "id": "D", "texto": "Configurar Docker Desktop visualmente.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La configuración de Docker no corresponde al concepto de DM Component." }
-      ]
-    },
-    {
-      "id": 42,
-      "pregunta": "Según la relación explicada en el chat, ¿cómo interactúan DM Component y Web Component?",
-      "alternativas": [
-        { "id": "A", "texto": "El DM Component provee datos y el Web Component los muestra al usuario.", "esCorrecta": true, "retroalimentacion": "Correcto. El flujo es API/Backend → DM Component → Web Components (UI), mostrando que uno provee datos y el otro renderiza la información." },
-        { "id": "B", "texto": "El Web Component instala dependencias y el DM Component diseña pantallas.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esas funciones no corresponden a los roles explicados." },
-        { "id": "C", "texto": "Ambos solo sirven para control de versiones.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Control de versiones corresponde a Git, no a estos componentes." },
-        { "id": "D", "texto": "El DM Component reemplaza totalmente al navegador.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un DM Component no reemplaza el navegador." }
-      ]
-    },
-    {
-      "id": 43,
-      "pregunta": "¿Cuál de las siguientes cadenas resume mejor el flujo técnico visto en este chat dentro de un entorno empresarial?",
-      "alternativas": [
-        { "id": "A", "texto": "Cells usa Web Components; el código se gestiona con Git y puede alojarse en GitHub o Bitbucket; las dependencias pueden pasar por Artifactory.", "esCorrecta": true, "retroalimentacion": "Correcto. Integra de forma coherente todo lo trabajado: framework, componentes, control de versiones, plataformas de repositorios y gestión de dependencias." },
-        { "id": "B", "texto": "Git reemplaza a Cells, Bitbucket reemplaza a Web Components y Artifactory reemplaza a HTML.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Mezcla y sustituye conceptos de forma equivocada." },
-        { "id": "C", "texto": "Web Components son servidores y GitHub es un lenguaje de programación.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Redefine mal los conceptos trabajados." },
-        { "id": "D", "texto": "Docker es igual que GitHub y Cells es igual que Python.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Iguala herramientas con funciones completamente distintas." }
+        {
+          "id": "A",
+          "texto": "Git controla las versiones del código; el código se aloja en GitHub o Bitbucket; las dependencias pueden gestionarse a través de Artifactory; y Cells usa Web Components (con DM Components para datos) para construir la aplicación.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. Esta opción integra de forma coherente todo lo trabajado en la sesión: el framework (Cells), la tecnología base (Web Components y DM Components), el control de versiones (Git), las plataformas de repositorios (GitHub/Bitbucket) y la gestión de dependencias empresarial (Artifactory)."
+        },
+        {
+          "id": "B",
+          "texto": "Bitbucket reemplaza a Git, Artifactory reemplaza a npm y Cells reemplaza a todos los navegadores web.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Ninguna de esas afirmaciones es correcta. Bitbucket usa Git (no lo reemplaza). Artifactory complementa a npm (no lo reemplaza en todos los casos). Cells es un framework que se ejecuta en el navegador (no lo reemplaza)."
+        },
+        {
+          "id": "C",
+          "texto": "Los DM Components almacenan el código fuente en Artifactory y los Web Components lo recuperan con `git clone` para renderizar la interfaz.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los DM Components no almacenan código fuente; consumen APIs en tiempo de ejecución. Artifactory almacena artefactos de software (paquetes, librerías), no código fuente. `git clone` copia repositorios, no recupera datos de ejecución."
+        },
+        {
+          "id": "D",
+          "texto": "GitHub y Bitbucket son equivalentes y se pueden usar de forma completamente intercambiable en cualquier proyecto empresarial sin ninguna diferencia.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Aunque ambas cumplen una función similar (alojar repositorios Git), tienen diferencias importantes en integraciones y ecosistemas. En entornos Atlassian, Bitbucket tiene ventajas claras. En proyectos open source, GitHub tiene mayor presencia. La elección depende del contexto."
+        }
       ]
     }
   ]
