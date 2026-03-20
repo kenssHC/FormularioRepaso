@@ -1,205 +1,755 @@
 {
-  "titulo": "Cuestionario de repaso - POO, diseño y conceptos base",
-  "descripcion": "Banco de preguntas de opción múltiple basado en todo lo conversado en este chat sobre Programación Orientada a Objetos, programación secuencial, herencia, polimorfismo, sobrecarga, encapsulamiento, abstracción, constructor, bajo acoplamiento y alta cohesión.",
+  "titulo": "Repaso: POO — Clases, Pilares y Principios de Diseño",
+  "descripcion": "Preguntas de opción múltiple basadas en el contenido de la Sesión 6: POO vs programación secuencial, clase y objeto, constructor, encapsulamiento, herencia, polimorfismo, abstracción, propiedades privadas con #, bajo acoplamiento y alta cohesión.",
   "preguntas": [
     {
       "id": 1,
-      "pregunta": "¿Qué es la Programación Orientada a Objetos (POO)?",
+      "pregunta": "¿Cuál es la ventaja principal de la POO frente a la programación secuencial?",
       "alternativas": [
-        { "id": "A", "texto": "Es un paradigma de programación que organiza el código en objetos con atributos y métodos.", "esCorrecta": true, "retroalimentacion": "Correcto. La POO organiza el software en clases y objetos, donde los objetos contienen datos (atributos) y comportamientos (métodos)." },
-        { "id": "B", "texto": "Es una técnica que solo sirve para diseñar bases de datos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La POO no es una técnica exclusiva para bases de datos." },
-        { "id": "C", "texto": "Es un tipo de lenguaje de marcado parecido a HTML.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La POO no es un lenguaje de marcado ni se parece a HTML en su propósito." },
-        { "id": "D", "texto": "Es una forma de programar exclusivamente con variables globales.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La POO busca organizar el código en objetos, no trabajar solo con variables globales." }
+        {
+          "id": "A",
+          "texto": "La programación secuencial solo soporta datos de tipo texto, mientras que la POO soporta todos los tipos de datos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La programación secuencial no tiene ninguna restricción sobre los tipos de datos que puede manejar. Ambos estilos pueden usar números, strings, booleanos y estructuras de datos complejas."
+        },
+        {
+          "id": "B",
+          "texto": "La POO organiza el código en objetos reutilizables y modulares que modelan entidades del mundo real, facilitando el mantenimiento y la escalabilidad del software.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que la POO permite crear código más organizado, reutilizable y modular al agrupar datos (atributos) y comportamientos (métodos) en objetos. La programación secuencial ejecuta instrucciones en orden pero no ofrece esa organización estructural."
+        },
+        {
+          "id": "C",
+          "texto": "La POO no usa variables ni funciones, lo que hace el código más limpio y seguro automáticamente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La POO sí usa variables (como atributos) y funciones (como métodos). No prescinde de ellas; las organiza dentro de clases y objetos. Decir que no las usa es una descripción incorrecta del paradigma."
+        },
+        {
+          "id": "D",
+          "texto": "La programación secuencial no puede realizar operaciones matemáticas ni lógicas, limitación que la POO sí supera.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La programación secuencial sí puede realizar todo tipo de operaciones matemáticas y lógicas. La diferencia entre ambos estilos es de organización del código, no de capacidad computacional."
+        }
       ]
     },
     {
       "id": 2,
-      "pregunta": "¿Cuál es la diferencia entre una clase y un objeto?",
+      "pregunta": "¿Cuál es la diferencia conceptual entre una clase y un objeto en POO?",
       "alternativas": [
-        { "id": "A", "texto": "La clase es el valor final y el objeto es el molde.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Está invertido: el molde es la clase y el resultado creado es el objeto." },
-        { "id": "B", "texto": "La clase es una plantilla y el objeto es una instancia creada a partir de esa plantilla.", "esCorrecta": true, "retroalimentacion": "Correcto. Una clase define cómo serán los objetos, y el objeto es la instancia real creada a partir de esa definición." },
-        { "id": "C", "texto": "La clase y el objeto significan exactamente lo mismo.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No significan lo mismo: una clase define, un objeto representa una instancia concreta." },
-        { "id": "D", "texto": "El objeto siempre contiene varias clases dentro.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un objeto no contiene varias clases; normalmente es una instancia de una clase." }
+        {
+          "id": "A",
+          "texto": "La clase es el resultado final concreto y el objeto es el molde abstracto que define su forma.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Es exactamente al revés. La clase es el molde o plantilla abstracta que define cómo serán los objetos, y el objeto es la instancia concreta y real creada a partir de ese molde."
+        },
+        {
+          "id": "B",
+          "texto": "La clase es la plantilla o molde que define atributos y métodos; el objeto es la instancia concreta creada a partir de esa plantilla.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se usó la analogía del molde de un muñeco: la clase es el molde, el objeto es el muñeco ya hecho. La clase describe qué datos tendrá y qué acciones podrá realizar, pero no es algo real hasta que se crea un objeto (instancia) a partir de ella."
+        },
+        {
+          "id": "C",
+          "texto": "La clase y el objeto son intercambiables; en la práctica hacen referencia a lo mismo.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. No son intercambiables. Una clase puede existir sin que ningún objeto haya sido creado a partir de ella. Además, de una sola clase se pueden crear múltiples objetos distintos, cada uno con sus propios valores de atributos."
+        },
+        {
+          "id": "D",
+          "texto": "Un objeto puede contener varias clases dentro de él y ejecutarlas simultáneamente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Un objeto no contiene clases dentro. Es una instancia de una clase. Lo que puede ocurrir es que un objeto tenga atributos que a su vez sean instancias de otras clases, pero eso es composición, no que el objeto contenga clases."
+        }
       ]
     },
     {
       "id": 3,
-      "pregunta": "En la analogía del molde de galleta o muñeco, ¿qué representa la clase?",
+      "pregunta": "Dado el siguiente código: `const persona1 = new Persona('Carlos', 25); const persona2 = new Persona('Ana', 30);` ¿qué afirmación es correcta?",
       "alternativas": [
-        { "id": "A", "texto": "El muñeco ya hecho o la galleta lista.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El muñeco ya hecho representa al objeto, no a la clase." },
-        { "id": "B", "texto": "El archivo guardado en disco.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La clase no se definió como un archivo guardado en disco en este tema." },
-        { "id": "C", "texto": "El molde o plantilla.", "esCorrecta": true, "retroalimentacion": "Correcto. La clase actúa como un molde que define la forma o estructura con la que luego se crean los objetos." },
-        { "id": "D", "texto": "La variable que guarda el color.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Una variable puede ser parte de un objeto, pero no representa la clase completa." }
+        {
+          "id": "A",
+          "texto": "`persona1` y `persona2` son la misma instancia porque comparten la clase `Persona` y sus atributos se fusionan.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Compartir la misma clase no significa ser el mismo objeto. Cada llamada a `new Persona(...)` crea una instancia completamente independiente con sus propios valores en memoria. `persona1.nombre` es `'Carlos'` y `persona2.nombre` es `'Ana'`."
+        },
+        {
+          "id": "B",
+          "texto": "Se crean dos objetos distintos e independientes a partir del mismo molde (clase `Persona`), cada uno con sus propios valores de atributos.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se mostró este ejemplo exacto. La clase `Persona` actúa como plantilla, y con `new Persona(...)` se generan instancias únicas. Ambos objetos tienen atributos `nombre` y `edad`, pero con valores diferentes y ubicaciones distintas en memoria."
+        },
+        {
+          "id": "C",
+          "texto": "La segunda llamada `new Persona('Ana', 30)` reemplaza a `persona1` porque JavaScript solo mantiene la última instancia creada de una clase.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. JavaScript no limita la cantidad de instancias de una clase ni reemplaza instancias anteriores. Cada vez que se llama a `new`, se crea un nuevo objeto independiente."
+        },
+        {
+          "id": "D",
+          "texto": "La clase `Persona` deja de estar disponible después de crear `persona2` porque una clase solo puede instanciarse una vez.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Una clase puede instanciarse tantas veces como se necesite. No se consume ni desaparece al crear objetos. En aplicaciones reales es común crear miles de instancias de la misma clase."
+        }
       ]
     },
     {
       "id": 4,
-      "pregunta": "En POO, ¿qué son los atributos?",
+      "pregunta": "¿Cuál es la diferencia conceptual entre un atributo y un método en POO?",
       "alternativas": [
-        { "id": "A", "texto": "Las propiedades o datos que describen a un objeto.", "esCorrecta": true, "retroalimentacion": "Correcto. Los atributos representan el estado o las características de un objeto, por ejemplo nombre, edad, color o velocidad." },
-        { "id": "B", "texto": "Los programas que compilan la clase.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los atributos no son programas compiladores." },
-        { "id": "C", "texto": "Las pantallas del sistema.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los atributos no son pantallas ni interfaces." },
-        { "id": "D", "texto": "Las reglas del navegador.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los atributos pertenecen al objeto, no a reglas del navegador." }
+        {
+          "id": "A",
+          "texto": "Los atributos siempre son privados y los métodos siempre son públicos; eso los distingue.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La visibilidad (público/privado) no es lo que distingue a atributos de métodos. Un atributo puede ser público o privado, y lo mismo aplica a un método. La diferencia es que los atributos representan datos del objeto y los métodos representan acciones."
+        },
+        {
+          "id": "B",
+          "texto": "Un atributo describe el estado o los datos del objeto (qué tiene); un método describe el comportamiento o las acciones que puede realizar (qué hace).",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó con el ejemplo de `Persona`: `nombre` y `edad` son atributos (datos que describen la persona), mientras que `saludar()` y `caminar()` son métodos (acciones que puede realizar la persona)."
+        },
+        {
+          "id": "C",
+          "texto": "Los atributos contienen código ejecutable y los métodos contienen solo valores de datos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Es exactamente al revés. Los métodos son los que contienen código ejecutable (funciones), mientras que los atributos son los que almacenan valores o datos del objeto."
+        },
+        {
+          "id": "D",
+          "texto": "Los métodos solo pueden ser llamados desde dentro de la misma clase y los atributos son siempre accesibles desde afuera.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Tanto los métodos como los atributos pueden ser públicos o privados. El encapsulamiento permite controlar el acceso a ambos. No existe una regla que restrinja los métodos solo a uso interno o que haga todos los atributos accesibles desde fuera."
+        }
       ]
     },
     {
       "id": 5,
-      "pregunta": "En POO, ¿qué son los métodos?",
+      "pregunta": "¿Qué hace exactamente el constructor cuando se ejecuta `const persona1 = new Persona('Ana', 30)`?",
       "alternativas": [
-        { "id": "A", "texto": "Son los nombres de las variables privadas.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un método no es simplemente el nombre de una variable privada." },
-        { "id": "B", "texto": "Son funciones o comportamientos que puede realizar un objeto.", "esCorrecta": true, "retroalimentacion": "Correcto. Los métodos definen las acciones del objeto, por ejemplo saludar(), acelerar() o obtenerDiametro()." },
-        { "id": "C", "texto": "Son los comentarios del código.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un comentario no define comportamiento del objeto." },
-        { "id": "D", "texto": "Son únicamente operaciones matemáticas.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un método puede hacer mucho más que operaciones matemáticas." }
+        {
+          "id": "A",
+          "texto": "Llama automáticamente a todos los métodos de la clase para inicializarlos antes de crear el objeto.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El constructor no llama a todos los métodos de la clase. Su función específica es inicializar los atributos del nuevo objeto con los valores que se pasan como argumentos. Los métodos se ejecutan solo cuando se los llama explícitamente."
+        },
+        {
+          "id": "B",
+          "texto": "Crea una copia de la clase `Persona` con un nuevo nombre `persona1` para diferenciarla de la clase original.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El constructor no copia ni renombra la clase. Crea una instancia (objeto) a partir de ella. La clase `Persona` permanece intacta y disponible para crear más instancias."
+        },
+        {
+          "id": "C",
+          "texto": "Se ejecuta el constructor de `Persona`, que asigna los valores `'Ana'` y `30` a los atributos `nombre` y `edad` del nuevo objeto creado.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que el constructor es el método especial que se ejecuta automáticamente al crear una instancia con `new`. Su función es asignar valores iniciales a los atributos del objeto: `this.nombre = nombre` y `this.edad = edad`."
+        },
+        {
+          "id": "D",
+          "texto": "Verifica si ya existe un objeto con esos mismos valores de atributos y lo reutiliza en lugar de crear uno nuevo.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El constructor no tiene ningún mecanismo de búsqueda o reutilización de instancias. Cada llamada a `new` siempre crea un objeto nuevo e independiente. Si se necesita un patrón de reutilización de instancias, eso se implementaría manualmente (ej. patrón Singleton)."
+        }
       ]
     },
     {
       "id": 6,
-      "pregunta": "¿Qué caracteriza a la programación secuencial?",
+      "pregunta": "En el ejemplo del auto como abstracción, ¿qué ilustra correctamente ese principio?",
       "alternativas": [
-        { "id": "A", "texto": "Que organiza el código en objetos y subclases.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Organizar el código en objetos pertenece a la POO, no a la programación secuencial." },
-        { "id": "B", "texto": "Que ejecuta las instrucciones una tras otra en orden.", "esCorrecta": true, "retroalimentacion": "Correcto. En la programación secuencial las instrucciones se ejecutan paso a paso, desde el inicio hasta el fin." },
-        { "id": "C", "texto": "Que solo se puede usar en POO.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La programación secuencial no depende de la POO." },
-        { "id": "D", "texto": "Que siempre necesita herencia múltiple.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La herencia múltiple no tiene relación con el concepto de ejecución secuencial." }
+        {
+          "id": "A",
+          "texto": "Que el usuario del sistema debe conocer el código fuente del motor para poder invocar correctamente los métodos del auto.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Ese sería el caso contrario de la abstracción. La abstracción busca exactamente que el usuario no necesite saber cómo funciona el motor internamente. Solo necesita conocer la interfaz disponible."
+        },
+        {
+          "id": "B",
+          "texto": "Que el usuario solo necesita conocer las acciones disponibles (`acelerar()`, `frenar()`, `encender()`) sin saber cómo funciona el motor internamente.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que la abstracción muestra solo lo esencial y oculta la complejidad interna. El conductor usa `acelerar()` o `frenar()` sin necesitar entender la mecánica del motor o el sistema de frenos. Eso es abstraer la complejidad."
+        },
+        {
+          "id": "C",
+          "texto": "Que la clase `Auto` no puede instanciarse directamente porque es una clase abstracta en todos los lenguajes orientados a objetos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El ejemplo del auto en la sesión se usa para explicar el concepto de abstracción como principio, no para hablar de clases abstractas en lenguajes específicos. Una clase abstracta es un concepto de implementación distinto al pilar de la abstracción."
+        },
+        {
+          "id": "D",
+          "texto": "Que todas las propiedades del auto son públicas para que el usuario pueda acceder a cualquier parte del sistema libremente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Eso sería lo contrario a la abstracción. Hacer todo público expone los detalles internos. La abstracción busca ocultar la complejidad y mostrar solo la interfaz necesaria para usar el objeto."
+        }
       ]
     },
     {
       "id": 7,
-      "pregunta": "En el algoritmo secuencial del círculo visto en la imagen, ¿qué fórmula se utilizó para mostrar el diámetro?",
+      "pregunta": "En la clase `Cuenta` con `#saldo` y métodos `depositar()` y `verSaldo()`, ¿cuál es el beneficio concreto del encapsulamiento?",
       "alternativas": [
-        { "id": "A", "texto": "diametro = radio / 2", "esCorrecta": false, "retroalimentacion": "Incorrecto. Dividir entre 2 no da el diámetro." },
-        { "id": "B", "texto": "diametro = radio * radio", "esCorrecta": false, "retroalimentacion": "Incorrecto. radio por radio corresponde a otra operación, no al diámetro." },
-        { "id": "C", "texto": "diametro = 2 * radio", "esCorrecta": true, "retroalimentacion": "Correcto. El diámetro de un círculo se obtiene multiplicando el radio por 2." },
-        { "id": "D", "texto": "diametro = 3.14 * radio", "esCorrecta": false, "retroalimentacion": "Incorrecto. 3.14 * radio se relaciona con otras fórmulas, no con la del diámetro." }
+        {
+          "id": "A",
+          "texto": "El saldo solo puede ser leído o modificado a través de los métodos de la clase, impidiendo que código externo cambie el saldo de forma directa y no controlada.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se mostró que `#saldo` es privado, por lo que `cuenta.#saldo = 5000` desde fuera genera un error. La única forma de interactuar con el saldo es mediante `depositar()` o `verSaldo()`, que la clase controla. Esto protege la integridad del dato."
+        },
+        {
+          "id": "B",
+          "texto": "Permite que la clase `Cuenta` herede de múltiples clases simultáneamente gracias a los atributos privados.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los atributos privados no tienen ninguna relación con la herencia múltiple. El encapsulamiento es un pilar independiente que trata del control de acceso a datos, no de la capacidad de heredar de múltiples clases."
+        },
+        {
+          "id": "C",
+          "texto": "Los métodos `depositar()` y `verSaldo()` se ejecutan automáticamente sin necesidad de llamarlos cuando cambia cualquier valor relacionado con el saldo.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. En JavaScript estándar los métodos no se ejecutan automáticamente al cambiar valores. Deben ser llamados explícitamente. Para ese comportamiento reactivo se necesitarían patrones adicionales como Observadores o Proxies."
+        },
+        {
+          "id": "D",
+          "texto": "El atributo `#saldo` es accesible desde cualquier subclase que herede de `Cuenta` gracias al modificador `#`.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Las propiedades privadas con `#` en JavaScript NO son accesibles desde subclases. Solo pueden usarse dentro de la clase que las define. Esto es diferente a lenguajes como Java donde `protected` permite el acceso desde subclases."
+        }
       ]
     },
     {
       "id": 8,
-      "pregunta": "En el ejemplo POO con la clase Circulo, ¿qué atributo tenía la clase?",
+      "pregunta": "¿Qué ocurre si se intenta acceder directamente a `cuenta.#saldo` desde fuera de la clase `Cuenta`?",
       "alternativas": [
-        { "id": "A", "texto": "diametro", "esCorrecta": false, "retroalimentacion": "Incorrecto. diametro se obtenía mediante un método, no era el atributo mostrado." },
-        { "id": "B", "texto": "valor", "esCorrecta": false, "retroalimentacion": "Incorrecto. valor era el parámetro recibido en el constructor, no el atributo principal." },
-        { "id": "C", "texto": "radio", "esCorrecta": true, "retroalimentacion": "Correcto. En la clase Circulo el atributo definido era radio, y se indicó además que era privado y de tipo entero." },
-        { "id": "D", "texto": "miCirculo", "esCorrecta": false, "retroalimentacion": "Incorrecto. miCirculo era el nombre del objeto creado, no el atributo de la clase." }
+        {
+          "id": "A",
+          "texto": "Devuelve `undefined` porque JavaScript trata los atributos privados como propiedades inexistentes cuando se accede desde fuera.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. JavaScript no devuelve `undefined` al acceder a `#saldo` desde fuera; genera un error de sintaxis. Los campos privados con `#` son estrictamente protegidos y su acceso externo es un error, no un acceso fallido silencioso."
+        },
+        {
+          "id": "B",
+          "texto": "Devuelve `0` porque es el valor inicial del atributo y JavaScript lo expone de solo lectura.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. JavaScript no expone propiedades privadas en modo lectura desde fuera de la clase. El acceso a `cuenta.#saldo` fuera de la clase genera un `SyntaxError`, independientemente del valor que tenga la propiedad."
+        },
+        {
+          "id": "C",
+          "texto": "Genera un error porque `#saldo` es una propiedad privada que solo puede accederse y modificarse desde dentro de la clase donde fue definida.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se mostró exactamente este caso: `console.log(cuenta.#saldo)` fuera de la clase genera un error. El prefijo `#` en JavaScript crea verdaderos campos privados que el motor del lenguaje hace inaccesibles desde fuera de la clase."
+        },
+        {
+          "id": "D",
+          "texto": "Funciona igual que cualquier propiedad pública porque el `#` es solo una convención de estilo sin restricciones reales de acceso.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El `#` no es una simple convención; es una sintaxis oficial de JavaScript (ES2022) que enforza la privacidad a nivel del motor. Antes de esto, la convención de usar `_` (guion bajo) sí era solo una convención sin restricción real, pero `#` sí genera errores reales."
+        }
       ]
     },
     {
       "id": 9,
-      "pregunta": "¿Qué método de una clase permite inicializar los valores de un objeto?",
+      "pregunta": "¿Qué permite hacer la palabra clave `extends` en JavaScript?",
       "alternativas": [
-        { "id": "A", "texto": "render", "esCorrecta": false, "retroalimentacion": "Incorrecto. render no es el método general de inicialización en POO." },
-        { "id": "B", "texto": "main", "esCorrecta": false, "retroalimentacion": "Incorrecto. main suele representar el punto de entrada en algunos lenguajes, no la inicialización de atributos de un objeto." },
-        { "id": "C", "texto": "constructor", "esCorrecta": true, "retroalimentacion": "Correcto. El constructor es el método especial que se ejecuta al crear el objeto e inicializa sus atributos." },
-        { "id": "D", "texto": "import", "esCorrecta": false, "retroalimentacion": "Incorrecto. import sirve para importar módulos o recursos, no para inicializar un objeto." }
+        {
+          "id": "A",
+          "texto": "Permite que una clase hija use solo los atributos de la clase padre, sin poder heredar sus métodos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `extends` establece una relación de herencia completa: la subclase hereda tanto los atributos como los métodos de la superclase. En el ejemplo de la sesión, `Perro extends Animal` hereda el método `comer()` de `Animal`."
+        },
+        {
+          "id": "B",
+          "texto": "Permite crear una subclase que hereda tanto los atributos como los métodos de la superclase, pudiendo además definir sus propios atributos y métodos adicionales.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se mostró que `class Perro extends Animal` hace que `Perro` herede el método `comer()` de `Animal` y además pueda tener su propio método `ladrar()`. `extends` establece la relación de herencia completa."
+        },
+        {
+          "id": "C",
+          "texto": "Permite copiar literalmente el código fuente de una clase dentro de otra, sin crear ninguna relación de herencia dinámica.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `extends` no copia código; establece una relación de herencia dinámica. Si se modifica un método en la superclase, la subclase verá ese cambio automáticamente porque la relación es dinámica, no una copia estática."
+        },
+        {
+          "id": "D",
+          "texto": "Permite que dos clases sin relación de herencia compartan el mismo constructor y sus valores iniciales.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Para compartir constructores sin herencia, se necesitarían otros mecanismos como composición o mixins. `extends` específicamente establece una relación de herencia donde la subclase deriva de la superclase."
+        }
       ]
     },
     {
       "id": 10,
-      "pregunta": "En el ejemplo MostrarDiametroPOO, si se crea miCirculo <- NUEVO Circulo(15), ¿qué valor devuelve obtenerDiametro()?",
+      "pregunta": "En el código `class Perro extends Animal { ladrar(){...} }`, ¿qué ocurre al llamar `miPerro.comer()`?",
       "alternativas": [
-        { "id": "A", "texto": "15", "esCorrecta": false, "retroalimentacion": "Incorrecto. 15 es el radio, no el diámetro." },
-        { "id": "B", "texto": "30", "esCorrecta": true, "retroalimentacion": "Correcto. El método obtenerDiametro() retorna 2 * radio, y si radio es 15, entonces el resultado es 30." },
-        { "id": "C", "texto": "7.5", "esCorrecta": false, "retroalimentacion": "Incorrecto. 7.5 sería el resultado de dividir entre 2, no de calcular el diámetro." },
-        { "id": "D", "texto": "225", "esCorrecta": false, "retroalimentacion": "Incorrecto. 225 sería 15 * 15, no 2 * 15." }
+        {
+          "id": "A",
+          "texto": "Genera un `TypeError` porque `comer()` no está definido directamente en la clase `Perro` y JavaScript no lo busca en la superclase.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. JavaScript sí sube por la cadena de prototipos para buscar el método. Si `Perro` no define `comer()` pero `Animal` sí, al llamar `miPerro.comer()` JavaScript lo encuentra en `Animal` y lo ejecuta correctamente."
+        },
+        {
+          "id": "B",
+          "texto": "Llama al método `ladrar()` en su lugar porque es el método propio de `Perro` y tiene prioridad sobre los métodos heredados.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los métodos propios de `Perro` no reemplazan a los métodos heredados con diferente nombre. `ladrar()` y `comer()` son métodos distintos. Solo si `Perro` define su propia versión de `comer()` es cuando se produciría sobreescritura."
+        },
+        {
+          "id": "C",
+          "texto": "Ejecuta el método `comer()` heredado de la clase `Animal`, porque la herencia permite que `Perro` use los métodos definidos en su superclase.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se mostró este ejemplo: `miPerro.comer()` imprime `'El animal come'` porque `Perro` hereda ese método de `Animal`. La herencia permite que una subclase acceda a los métodos definidos en su superclase."
+        },
+        {
+          "id": "D",
+          "texto": "Crea una nueva instancia temporal de `Animal` para ejecutar `comer()` y luego la descarta.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. JavaScript no crea instancias adicionales para ejecutar métodos heredados. La herencia funciona a través de la cadena de prototipos: `miPerro` tiene acceso al método `comer()` de `Animal` directamente."
+        }
       ]
     },
     {
       "id": 11,
-      "pregunta": "¿Cuáles son los cuatro pilares de la POO mencionados en este chat?",
+      "pregunta": "¿Cómo maneja JavaScript la herencia múltiple directa según lo estudiado en la sesión?",
       "alternativas": [
-        { "id": "A", "texto": "Variables, ciclos, arreglos y funciones.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esos son conceptos de programación, pero no los cuatro pilares de la POO." },
-        { "id": "B", "texto": "Compilación, interpretación, enlace y despliegue.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso describe etapas o conceptos distintos al paradigma orientado a objetos." },
-        { "id": "C", "texto": "Encapsulamiento, herencia, polimorfismo y abstracción.", "esCorrecta": true, "retroalimentacion": "Correcto. Esos son los cuatro pilares fundamentales de la Programación Orientada a Objetos que se revisaron." },
-        { "id": "D", "texto": "Clases, objetos, HTML y CSS.", "esCorrecta": false, "retroalimentacion": "Incorrecto. HTML y CSS no forman parte de los pilares de la POO." }
+        {
+          "id": "A",
+          "texto": "JavaScript soporta herencia múltiple directa usando `extends` seguido de una lista de clases separadas por coma.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. JavaScript no soporta esa sintaxis. `class Pato extends Volador, Nadador` no es código válido. Cada clase solo puede extender de una sola clase con `extends`."
+        },
+        {
+          "id": "B",
+          "texto": "JavaScript no soporta herencia múltiple directa, pero puede simularse mediante mixins o interfaces que aportan comportamientos de múltiples fuentes.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se indicó explícitamente esta limitación: lenguajes como JavaScript no soportan herencia múltiple directa. Sin embargo, se puede simular usando mixins (objetos con métodos que se mezclan en una clase) o interfaces para alcanzar un resultado similar."
+        },
+        {
+          "id": "C",
+          "texto": "JavaScript soporta herencia múltiple únicamente cuando las clases padre no tienen constructor definido.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. JavaScript no soporta herencia múltiple directa bajo ninguna condición, independientemente de si las clases padre tienen constructor o no."
+        },
+        {
+          "id": "D",
+          "texto": "JavaScript bloquea completamente cualquier forma de herencia múltiple, incluyendo patrones alternativos como mixins.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. JavaScript no bloquea los patrones alternativos. La herencia múltiple directa con `extends` no está soportada, pero los mixins son una técnica válida y ampliamente usada en JavaScript para compartir comportamientos entre múltiples clases."
+        }
       ]
     },
     {
       "id": 12,
-      "pregunta": "¿Qué significa encapsulamiento?",
+      "pregunta": "¿Cuál es la diferencia entre herencia jerárquica y herencia múltiple?",
       "alternativas": [
-        { "id": "A", "texto": "Permitir que una clase tenga muchos nombres.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Encapsular no significa dar muchos nombres a una clase." },
-        { "id": "B", "texto": "Proteger y agrupar datos y métodos dentro de una clase, controlando el acceso.", "esCorrecta": true, "retroalimentacion": "Correcto. El encapsulamiento busca proteger la información y controlar cómo se accede a los atributos y métodos." },
-        { "id": "C", "texto": "Hacer que todas las clases hereden de todas.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso no describe encapsulamiento, sino una idea equivocada de herencia total." },
-        { "id": "D", "texto": "Escribir todo el sistema en una sola clase.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Meter todo en una sola clase va contra un buen diseño." }
+        {
+          "id": "A",
+          "texto": "En la herencia jerárquica una clase hereda de dos clases padre; en la herencia múltiple una clase padre tiene varios hijos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Las definiciones están intercambiadas. Es al revés: en la jerárquica una superclase tiene múltiples subclases, y en la múltiple una subclase hereda de más de una superclase."
+        },
+        {
+          "id": "B",
+          "texto": "En la herencia jerárquica una superclase tiene varias subclases derivadas (un padre, muchos hijos); en la herencia múltiple una subclase hereda de más de una superclase (un hijo, varios padres).",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se mostró la herencia jerárquica con la estructura donde `Animal` es superclase de `Perro`, `Gato` y `Caballo`. Y la herencia múltiple con `Pato` heredando de `Volador` y `Nadador`. La dirección de la relación es opuesta en cada caso."
+        },
+        {
+          "id": "C",
+          "texto": "Son exactamente lo mismo y los términos se usan de manera intercambiable en todos los lenguajes.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Son conceptos distintos que describen diferentes estructuras de herencia. No son intercambiables ni equivalentes."
+        },
+        {
+          "id": "D",
+          "texto": "La herencia jerárquica se usa solo en lenguajes compilados como Java; la herencia múltiple solo en lenguajes interpretados como Python.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los tipos de herencia son conceptos de diseño orientado a objetos, no restricciones de lenguajes compilados o interpretados. Por ejemplo, Python (interpretado) soporta herencia múltiple directa, mientras que Java (compilado) no."
+        }
       ]
     },
     {
       "id": 13,
-      "pregunta": "¿Qué significa abstracción en POO?",
+      "pregunta": "En el código del ejemplo de la sesión, ¿qué imprime `const carro = new Carro(); carro.mover();`?",
       "alternativas": [
-        { "id": "A", "texto": "Ocultar la complejidad y mostrar solo lo esencial.", "esCorrecta": true, "retroalimentacion": "Correcto. La abstracción consiste en mostrar solo la información importante y ocultar los detalles internos de implementación." },
-        { "id": "B", "texto": "Eliminar todos los atributos de una clase.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Abstraer no significa dejar una clase sin atributos." },
-        { "id": "C", "texto": "Convertir métodos en comentarios.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Comentar métodos no tiene relación con la abstracción." },
-        { "id": "D", "texto": "Duplicar clases para reutilizarlas.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Duplicar clases no es la idea de este pilar." }
+        {
+          "id": "A",
+          "texto": "`El vehículo se mueve`, porque `mover()` está definido en `Vehiculo` y la herencia siempre usa el método de la superclase.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Cuando una subclase define su propia versión de un método que ya existe en la superclase, la versión de la subclase tiene prioridad. `Carro` sobreescribe `mover()`, por lo que se ejecuta su versión, no la de `Vehiculo`."
+        },
+        {
+          "id": "B",
+          "texto": "`El carro se mueve por la carretera`, porque la clase `Carro` sobreescribe el método `mover()` de `Vehiculo` con su propia implementación.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que el polimorfismo permite que cada subclase tenga su propia implementación del mismo método. `Carro` define `mover()` como `'El carro se mueve por la carretera'`, y esa versión sobreescribe (override) la de `Vehiculo`."
+        },
+        {
+          "id": "C",
+          "texto": "Imprime ambas líneas: primero `El vehículo se mueve` (del padre) y luego `El carro se mueve por la carretera` (del hijo).",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Al sobreescribir `mover()` en `Carro`, solo se ejecuta la versión de `Carro`. Para ejecutar también la versión del padre habría que llamar explícitamente a `super.mover()` dentro del método sobreescrito."
+        },
+        {
+          "id": "D",
+          "texto": "Genera un error porque no se puede tener dos métodos con el mismo nombre `mover()` en clases relacionadas por herencia.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Tener un método con el mismo nombre en la superclase y en la subclase es válido y es precisamente el mecanismo del polimorfismo por sobreescritura. No genera ningún error."
+        }
       ]
     },
     {
       "id": 14,
-      "pregunta": "¿Qué significa herencia en POO?",
+      "pregunta": "¿Por qué el polimorfismo con `Vehiculo`, `Carro`, `Barco` y `Avion` es útil en el diseño del software?",
       "alternativas": [
-        { "id": "A", "texto": "Que una clase puede heredar atributos y métodos de otra clase.", "esCorrecta": true, "retroalimentacion": "Correcto. La herencia permite reutilizar código al hacer que una subclase reciba características de una superclase." },
-        { "id": "B", "texto": "Que un objeto no puede usar métodos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La herencia no impide usar métodos; al contrario, puede heredarlos." },
-        { "id": "C", "texto": "Que un método siempre devuelve texto.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El tipo de retorno de un método no define la herencia." },
-        { "id": "D", "texto": "Que todas las variables se vuelven globales.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La herencia no convierte variables en globales." }
+        {
+          "id": "A",
+          "texto": "Porque permite que `Carro`, `Barco` y `Avion` compartan exactamente el mismo código en `mover()`, eliminando la duplicación.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El polimorfismo hace exactamente lo contrario: cada subclase tiene su propia implementación diferente de `mover()`. Si el código fuera idéntico, no habría razón para sobreescribir el método."
+        },
+        {
+          "id": "B",
+          "texto": "Permite llamar al mismo método `mover()` sobre cualquier vehículo y cada uno responderá con su comportamiento específico, sin necesidad de saber de antemano qué tipo de vehículo es.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. Esa es la utilidad central del polimorfismo. Un sistema puede tener una lista de vehículos y llamar `vehiculo.mover()` en cada uno sin saber si es `Carro`, `Barco` o `Avion`. Cada objeto ejecutará su propia implementación correcta."
+        },
+        {
+          "id": "C",
+          "texto": "Obliga a que todas las subclases tengan exactamente el mismo comportamiento en todos sus métodos para garantizar consistencia.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El polimorfismo permite comportamientos DIFERENTES en cada subclase, no iguales. La consistencia está en el nombre del método (misma interfaz), no en su implementación."
+        },
+        {
+          "id": "D",
+          "texto": "Elimina la necesidad de crear la clase base `Vehiculo` porque las subclases son suficientes para modelar el sistema.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La clase base `Vehiculo` es fundamental: define la interfaz común (el método `mover()`) que todas las subclases deben implementar. Sin ella, no existiría la relación de herencia ni el contrato común entre las clases."
+        }
       ]
     },
     {
       "id": 15,
-      "pregunta": "Según la imagen de herencia, ¿qué es la herencia única?",
+      "pregunta": "¿Por qué el término 'polimorfismo' proviene del griego y qué significa?",
       "alternativas": [
-        { "id": "A", "texto": "Cuando una clase hija hereda de una sola clase padre.", "esCorrecta": true, "retroalimentacion": "Correcto. En la herencia única una subclase deriva de una sola superclase." },
-        { "id": "B", "texto": "Cuando una clase no tiene atributos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La cantidad de atributos no define la herencia única." },
-        { "id": "C", "texto": "Cuando varias clases heredan de dos métodos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La definición no trata de heredar de métodos, sino de clases." },
-        { "id": "D", "texto": "Cuando una clase hereda de tres interfaces al mismo tiempo.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso se acercaría más a otro tipo de relación, no a la herencia única." }
+        {
+          "id": "A",
+          "texto": "Viene de 'poly' (múltiple) y 'morfo' (herencia), describiendo que una clase puede heredar de múltiples superclases.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. 'Morfo' no significa herencia; significa 'forma'. El polimorfismo describe que un método puede tener muchas formas de comportarse, no que una clase tenga múltiples herencias."
+        },
+        {
+          "id": "B",
+          "texto": "Viene de 'poly' (muchas) y 'morfo' (formas), describiendo que un mismo método puede tener muchas formas de comportarse dependiendo del objeto que lo use.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó la etimología: 'poly' = muchas, 'morfo' = formas. El concepto refleja exactamente eso: `mover()` tiene una forma en `Carro`, otra en `Barco` y otra en `Avion`. Mismo nombre, muchas formas."
+        },
+        {
+          "id": "C",
+          "texto": "Viene de 'poly' (varios) y 'morfo' (constructores), describiendo que una clase puede tener múltiples constructores con distintos parámetros.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. 'Morfo' no significa constructores. Lo que describes es la sobrecarga de constructores, un concepto diferente. El polimorfismo trata de métodos con el mismo nombre pero distintos comportamientos según la clase."
+        },
+        {
+          "id": "D",
+          "texto": "Viene de 'poly' (dinámico) y 'morfo' (estático), describiendo la diferencia entre métodos que cambian en ejecución y los que son fijos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. 'Poly' significa 'muchas' y 'morfo' significa 'formas'. No están relacionados con los términos dinámico o estático. El polimorfismo describe que un mismo método puede manifestarse de muchas formas diferentes."
+        }
       ]
     },
     {
       "id": 16,
-      "pregunta": "Según lo visto, ¿qué es la herencia jerárquica?",
+      "pregunta": "¿Cuál es la diferencia entre abstracción y encapsulamiento como pilares de la POO?",
       "alternativas": [
-        { "id": "A", "texto": "Cuando una clase hija hereda de varias clases padre.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso describe la herencia múltiple, no la jerárquica." },
-        { "id": "B", "texto": "Cuando una superclase tiene varias subclases derivadas.", "esCorrecta": true, "retroalimentacion": "Correcto. En la herencia jerárquica una misma clase base da origen a varias subclases." },
-        { "id": "C", "texto": "Cuando no existe ninguna relación entre clases.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La herencia jerárquica sí implica relación entre clases." },
-        { "id": "D", "texto": "Cuando una clase solo tiene un constructor.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La cantidad de constructores no define este tipo de herencia." }
+        {
+          "id": "A",
+          "texto": "Son exactamente lo mismo; ambos buscan ocultar información del usuario y proteger los datos del objeto.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Aunque ambos involucran cierto nivel de ocultamiento, tienen propósitos distintos. La abstracción simplifica mostrando solo lo esencial; el encapsulamiento protege datos y controla el acceso a ellos. Uno es sobre la interfaz visible; el otro, sobre la protección interna."
+        },
+        {
+          "id": "B",
+          "texto": "La abstracción muestra solo lo esencial al usuario sin revelar la implementación interna; el encapsulamiento protege los datos y controla cómo se accede a ellos mediante métodos.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicaron como principios distintos. La abstracción es sobre la perspectiva del usuario: ver solo `acelerar()` sin saber cómo funciona el motor. El encapsulamiento es sobre protección de datos: `#saldo` no puede modificarse directamente, solo mediante `depositar()` o `verSaldo()`."
+        },
+        {
+          "id": "C",
+          "texto": "El encapsulamiento es para clases públicas que cualquiera puede usar; la abstracción es para clases privadas que solo usa el sistema internamente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La distinción público/privado no define estos pilares. Tanto la abstracción como el encapsulamiento pueden aplicarse en cualquier clase, sea de uso interno o externo al sistema."
+        },
+        {
+          "id": "D",
+          "texto": "La abstracción elimina atributos innecesarios de la clase; el encapsulamiento convierte todos los atributos en públicos para facilitar el acceso.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La abstracción no elimina atributos; muestra solo lo que el usuario necesita ver. El encapsulamiento no convierte atributos en públicos; al contrario, busca restringir el acceso directo a los datos usando modificadores de acceso como `#` en JavaScript."
+        }
       ]
     },
     {
       "id": 17,
-      "pregunta": "¿Qué expresa el polimorfismo en el ejemplo de Vehiculo, Carro, Barco y Avion?",
+      "pregunta": "¿Cuál de los siguientes pares (pilar → descripción) es INCORRECTO?",
       "alternativas": [
-        { "id": "A", "texto": "Que todas las clases deben tener diferentes nombres de método.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Justamente el polimorfismo permite mantener el mismo nombre de método con comportamientos distintos." },
-        { "id": "B", "texto": "Que el mismo método mover() puede comportarse de forma distinta según la subclase.", "esCorrecta": true, "retroalimentacion": "Correcto. El método mover() existe en varias clases, pero cada una lo implementa de manera diferente." },
-        { "id": "C", "texto": "Que solo una clase puede tener métodos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Muchas clases pueden tener métodos." },
-        { "id": "D", "texto": "Que los objetos no pueden heredar.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El ejemplo de polimorfismo mostrado sí parte de la herencia." }
+        {
+          "id": "A",
+          "texto": "Herencia → Una subclase puede reutilizar atributos y métodos de su superclase.",
+          "esCorrecta": false,
+          "retroalimentacion": "Esta descripción es correcta, no es la respuesta incorrecta. La herencia permite exactamente eso: reutilizar el código de la superclase en la subclase, como `Perro` heredando `comer()` de `Animal`."
+        },
+        {
+          "id": "B",
+          "texto": "Abstracción → Proteger y agrupar los datos internos de una clase, controlando el acceso a ellos mediante métodos.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto, esta es la descripción incorrecta. Lo que se describe aquí es el ENCAPSULAMIENTO, no la abstracción. La abstracción consiste en mostrar solo lo esencial y ocultar la complejidad de implementación. El encapsulamiento es el que protege datos y controla el acceso."
+        },
+        {
+          "id": "C",
+          "texto": "Polimorfismo → Un mismo método puede comportarse diferente según la subclase que lo implementa.",
+          "esCorrecta": false,
+          "retroalimentacion": "Esta descripción es correcta, no es la respuesta incorrecta. El polimorfismo permite exactamente que `mover()` se comporte diferente en `Carro`, `Barco` y `Avion`."
+        },
+        {
+          "id": "D",
+          "texto": "Encapsulamiento → Agrupar y proteger los datos y métodos dentro de una clase, controlando el acceso externo.",
+          "esCorrecta": false,
+          "retroalimentacion": "Esta descripción es correcta, no es la respuesta incorrecta. El encapsulamiento busca exactamente proteger los datos y controlar cómo se accede a ellos, como con el atributo `#saldo` que solo puede usarse a través de métodos."
+        }
       ]
     },
     {
       "id": 18,
-      "pregunta": "¿Qué es la sobrecarga de métodos?",
+      "pregunta": "¿Puede una subclase acceder directamente a una propiedad definida con `#` en su superclase?",
       "alternativas": [
-        { "id": "A", "texto": "Usar un mismo método con distintas versiones según la cantidad o tipo de parámetros.", "esCorrecta": true, "retroalimentacion": "Correcto. La sobrecarga consiste en tener varias versiones de un método en la misma clase, diferenciadas por sus parámetros." },
-        { "id": "B", "texto": "Poner demasiadas líneas dentro de un método hasta que falle.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La sobrecarga no significa saturar el método con demasiadas líneas." },
-        { "id": "C", "texto": "Copiar el mismo método en archivos diferentes.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Copiar métodos no equivale a sobrecargar." },
-        { "id": "D", "texto": "Cambiar el nombre de una clase automáticamente.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Cambiar nombres de clases no es sobrecarga." }
+        {
+          "id": "A",
+          "texto": "Sí, porque al heredar, la subclase obtiene acceso completo a todos los atributos de la superclase, incluyendo los privados.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los campos privados con `#` en JavaScript no se heredan de la misma forma que los públicos. Una subclase puede heredar comportamientos que usen internamente `#campo`, pero no puede acceder directamente a `this.#campo` si ese campo fue declarado en la superclase."
+        },
+        {
+          "id": "B",
+          "texto": "No, las propiedades privadas con `#` solo son accesibles dentro de la clase que las define; la subclase no puede acceder directamente a ellas.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. Los campos privados en JavaScript (`#`) son estrictamente locales a la clase donde se declaran. La subclase puede usar los métodos públicos de la superclase (que sí acceden internamente al campo privado), pero no puede referenciar el campo `#` directamente."
+        },
+        {
+          "id": "C",
+          "texto": "Solo si la subclase usa `super.#propiedad` para acceder al campo privado del padre a través de la cadena de herencia.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `super.#propiedad` no es una sintaxis válida en JavaScript. Los campos privados no son accesibles desde subclases ni siquiera usando `super`. Solo los métodos públicos o protegidos de la superclase pueden exponer indirectamente esos valores."
+        },
+        {
+          "id": "D",
+          "texto": "Solo en modo de solo lectura; la subclase puede leer `#propiedad` pero no modificarla gracias al modificador privado.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. No existe un modo de lectura permitido para campos privados desde fuera de la clase que los define. Cualquier acceso directo a `#propiedad` desde una subclase genera un error, tanto para lectura como para escritura."
+        }
       ]
     },
     {
       "id": 19,
-      "pregunta": "En el ejemplo de la clase Comunicación, ¿qué representa enviarMensaje(String texto, String adjunto)?",
+      "pregunta": "¿Qué nombres reciben las clases en una relación de herencia?",
       "alternativas": [
-        { "id": "A", "texto": "Un envío simple sin contenido.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El envío simple correspondía a enviarMensaje(String texto)." },
-        { "id": "B", "texto": "Un método para eliminar usuarios.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ese método no elimina usuarios." },
-        { "id": "C", "texto": "Un envío con archivo adjunto.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa versión del método recibe texto y adjunto, por lo que representa un mensaje con archivo." },
-        { "id": "D", "texto": "Una herencia jerárquica.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso no describe un tipo de herencia, sino una sobrecarga de método." }
+        {
+          "id": "A",
+          "texto": "La clase que hereda se llama superclase; la clase de la que se hereda se llama subclase.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los nombres están invertidos. La clase que hereda es la subclase (o clase derivada/hija), y la clase de la que se hereda es la superclase (o clase base/padre). En el ejemplo: `Animal` es superclase, `Perro` es subclase."
+        },
+        {
+          "id": "B",
+          "texto": "La clase de la que se hereda se llama superclase (o clase base); la clase que hereda se llama subclase (o clase derivada).",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se definieron estos términos: la superclase (clase base) es la clase principal, como `Animal`, y la subclase (clase derivada) es la que hereda, como `Perro`. También se usan los términos clase padre e hija respectivamente."
+        },
+        {
+          "id": "C",
+          "texto": "Ambas se denominan clases derivadas porque comparten características en común a través de la herencia.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Solo la clase que hereda se llama derivada. La clase de origen tiene su propio nombre: superclase o clase base. Llamar 'derivada' a ambas eliminaría la distinción conceptual entre ellas."
+        },
+        {
+          "id": "D",
+          "texto": "La clase que hereda se llama clase abstracta y la clase de origen se llama clase concreta.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. 'Abstracta' y 'concreta' son términos que describen si una clase puede ser instanciada directamente (concreta) o si solo sirve de base sin instanciación directa (abstracta). No son sinónimos de subclase y superclase."
+        }
       ]
     },
     {
       "id": 20,
-      "pregunta": "¿Qué significa bajo acoplamiento y alta cohesión?",
+      "pregunta": "¿Qué problema concreto genera el alto acoplamiento, según el ejemplo de la clase `Pedido` en la sesión?",
       "alternativas": [
-        { "id": "A", "texto": "Que los módulos dependan mucho entre sí y que una clase haga muchas cosas diferentes.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso describe justo lo contrario: alto acoplamiento y baja cohesión." },
-        { "id": "B", "texto": "Que haya pocas dependencias entre módulos y que cada clase tenga responsabilidades claras y relacionadas.", "esCorrecta": true, "retroalimentacion": "Correcto. Bajo acoplamiento implica pocas dependencias entre componentes, y alta cohesión implica que cada clase tenga funciones relacionadas y bien definidas." },
-        { "id": "C", "texto": "Que todas las clases se unan en una sola para simplificar.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Unir todo en una sola clase empeora el diseño." },
-        { "id": "D", "texto": "Que los atributos siempre sean públicos y los métodos privados.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La visibilidad de atributos y métodos no define por sí sola bajo acoplamiento ni alta cohesión." }
+        {
+          "id": "A",
+          "texto": "Que las clases no pueden tener atributos privados porque están demasiado interconectadas.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El alto acoplamiento no tiene ninguna relación directa con la posibilidad de tener atributos privados. Son conceptos independientes."
+        },
+        {
+          "id": "B",
+          "texto": "Que un cambio en una clase dependiente (como `BaseDatos`) puede romper o forzar cambios en `Pedido`, haciendo el sistema frágil y difícil de mantener.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se mostró que si `Pedido` depende directamente de `BaseDatos`, `Correo` y `SistemaPago`, cualquier cambio en esas clases puede romper `Pedido`. El alto acoplamiento crea fragilidad: cambiar una pieza puede afectar muchas otras."
+        },
+        {
+          "id": "C",
+          "texto": "Que los objetos creados consumen más memoria de la necesaria por las múltiples referencias entre clases.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El alto acoplamiento no necesariamente genera mayor consumo de memoria. El problema principal es la fragilidad en el mantenimiento: si una clase cambia, las clases que dependen directamente de ella pueden quebrarse."
+        },
+        {
+          "id": "D",
+          "texto": "Que el constructor de `Pedido` debe llamar obligatoriamente a los constructores de todas las clases que dependen de él.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El alto acoplamiento no implica llamar constructores en cadena. El problema es la dependencia directa entre clases: cuando `Pedido` necesita conocer los detalles concretos de `BaseDatos` o `SistemaPago`, un cambio en ellas rompe `Pedido`."
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "pregunta": "¿Cómo resuelve el bajo acoplamiento el problema del ejemplo `Pedido` en la sesión?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Eliminando completamente las clases `BaseDatos`, `Correo` y `SistemaPago` para que `Pedido` funcione de forma autónoma.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El bajo acoplamiento no elimina las dependencias; las organiza mejor. Las clases `BaseDatos`, `Correo` y `SistemaPago` siguen existiendo, pero `Pedido` interactúa con ellas a través de interfaces o servicios intermedios, no directamente."
+        },
+        {
+          "id": "B",
+          "texto": "Haciendo que `Pedido` use interfaces o servicios intermedios, de modo que los cambios en `BaseDatos` o `SistemaPago` no afecten directamente a `Pedido`.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se mostró que la solución de bajo acoplamiento es que `Pedido` no dependa directamente de las implementaciones concretas, sino que use capas de abstracción (interfaces o servicios). Si `BaseDatos` cambia, solo el servicio intermedio se actualiza, no `Pedido`."
+        },
+        {
+          "id": "C",
+          "texto": "Copiando el código de `BaseDatos`, `Correo` y `SistemaPago` directamente dentro de `Pedido` para que no necesite importarlos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Eso crearía el problema opuesto: duplicación de código y mayor acoplamiento. Si la implementación de `BaseDatos` cambia, habría que actualizar la copia dentro de `Pedido` también."
+        },
+        {
+          "id": "D",
+          "texto": "Convirtiendo todos los atributos de `Pedido` en privados con `#` para que las otras clases no puedan acceder a él directamente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los atributos privados se relacionan con el encapsulamiento, no directamente con el acoplamiento. El bajo acoplamiento trata de cómo se conectan y dependen las clases entre sí, no de la visibilidad de sus atributos."
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "pregunta": "¿Por qué la clase `Usuario` con métodos `registrarUsuario()`, `enviarCorreo()`, `calcularImpuestos()` y `generarReporte()` tiene baja cohesión?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Porque tiene demasiados atributos privados y ningún método público accesible desde fuera.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El problema de baja cohesión no tiene que ver con la visibilidad de los atributos. Una clase con muchos atributos privados y métodos públicos podría perfectamente tener alta cohesión si todos sus métodos están relacionados con una sola responsabilidad."
+        },
+        {
+          "id": "B",
+          "texto": "Porque sus métodos combinan responsabilidades completamente distintas entre sí: registro de usuario, envío de correo, cálculo de impuestos y generación de reportes no son tareas relacionadas.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se mostró que la baja cohesión ocurre cuando una clase tiene métodos con responsabilidades no relacionadas. La solución fue separar: `Clase Usuario` solo registra, `Clase Correo` envía correos, `Clase Reporte` genera reportes. Cada clase tiene una responsabilidad clara."
+        },
+        {
+          "id": "C",
+          "texto": "Porque el nombre 'Usuario' no describe con precisión todo lo que hace la clase, generando confusión.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Aunque el nombre no ayuda, el problema real de la baja cohesión es que la clase mezcla responsabilidades no relacionadas. Un nombre más descriptivo no resolvería el problema de fondo."
+        },
+        {
+          "id": "D",
+          "texto": "Porque todos sus métodos acceden directamente a la base de datos, generando una dependencia de almacenamiento.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El acceso a base de datos sería un problema de acoplamiento (dependencia directa), no de cohesión. La cohesión trata de si las responsabilidades de la clase están relacionadas entre sí, no de si usan una tecnología específica."
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "pregunta": "¿Qué ocurriría si se define una clase sin un constructor explícito en JavaScript?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "JavaScript genera un error en tiempo de ejecución porque el constructor es obligatorio para poder crear instancias.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El constructor no es obligatorio en JavaScript. Si no se define, el motor usa un constructor vacío por defecto, permitiendo crear instancias con `new ClaseNombre()` aunque no se inicialicen atributos personalizados."
+        },
+        {
+          "id": "B",
+          "texto": "JavaScript utiliza un constructor vacío por defecto, permitiendo crear instancias, aunque sin inicializar atributos con valores personalizados.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que el constructor es el método especial para inicializar atributos. Si no se define, JavaScript asigna uno vacío implícitamente. La instancia se crea sin error, pero sus atributos no tendrán los valores que se pasaron como argumentos."
+        },
+        {
+          "id": "C",
+          "texto": "La clase se convierte automáticamente en abstracta y no puede instanciarse hasta que se agregue un constructor.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. JavaScript no convierte una clase en abstracta por la falta de constructor. Las clases en JavaScript son siempre instanciables a menos que se implementen mecanismos manuales para impedirlo."
+        },
+        {
+          "id": "D",
+          "texto": "Todos los atributos del objeto se inicializan con `null` automáticamente como valor por defecto.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Sin constructor, los atributos simplemente no se inicializan. No se asigna `null` ni ningún otro valor de forma automática a propiedades que no hayan sido declaradas. Acceder a una propiedad no inicializada devuelve `undefined`."
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "pregunta": "¿Cuál de las siguientes estructuras de clases describe correctamente la herencia jerárquica vista en la sesión?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Clase `Pato` hereda de `Volador` y `Nadador` simultáneamente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Eso describe herencia múltiple: una subclase que hereda de dos superclases al mismo tiempo. En la herencia jerárquica es al revés: una superclase de la que heredan múltiples subclases."
+        },
+        {
+          "id": "B",
+          "texto": "Clase `Perro` hereda de `Animal`, que a su vez hereda de otra clase base.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Eso describe herencia en cadena o multinivel, donde hay una secuencia lineal de herencia. La herencia jerárquica se caracteriza por que una sola superclase tiene múltiples subclases directas."
+        },
+        {
+          "id": "C",
+          "texto": "Clase `Animal` es superclase de `Perro`, `Gato` y `Caballo`, donde las tres subclases derivan de la misma clase base.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se mostró exactamente este ejemplo como herencia jerárquica: una superclase (`Animal`) de la que derivan múltiples subclases (`Perro`, `Gato`, `Caballo`). La estructura tiene forma de árbol desde un nodo raíz hacia abajo."
+        },
+        {
+          "id": "D",
+          "texto": "Clase `Perro` hereda de `Animal`, siendo la única subclase que existe en el sistema.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Eso describe herencia única: una sola subclase que hereda de una sola superclase. La herencia jerárquica requiere que la misma superclase tenga varias subclases derivadas."
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "pregunta": "Resumiendo los cuatro pilares: ¿cuál pilar corresponde al principio de 'cada clase debe hacer una sola cosa bien'?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Polimorfismo, porque permite que un mismo método adopte diferentes comportamientos según la clase.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El polimorfismo describe que un método puede tener múltiples comportamientos según la clase que lo implementa. No tiene relación con que una clase deba limitarse a una única responsabilidad."
+        },
+        {
+          "id": "B",
+          "texto": "Herencia, porque permite que las responsabilidades se distribuyan entre superclases y subclases.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La herencia es sobre reutilización de código y relaciones jerárquicas entre clases. La distribución de responsabilidades puede hacerse con herencia, pero el principio de responsabilidad única es parte de la alta cohesión, un principio de diseño."
+        },
+        {
+          "id": "C",
+          "texto": "Es el principio de alta cohesión, que aunque no es uno de los cuatro pilares, complementa la POO indicando que cada clase debe tener responsabilidades claras y relacionadas.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se distinguió que 'cada clase debe hacer una sola cosa bien' es el principio de alta cohesión. No es uno de los cuatro pilares (encapsulamiento, herencia, polimorfismo, abstracción), sino un principio de diseño complementario que trabaja junto con la POO para producir código mantenible."
+        },
+        {
+          "id": "D",
+          "texto": "Abstracción, porque abstraer significa reducir una clase a su mínima expresión con una única responsabilidad.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La abstracción consiste en mostrar solo lo esencial y ocultar la complejidad interna, no en que una clase tenga una sola responsabilidad. Una clase puede ser bien abstraída y aún así tener múltiples responsabilidades relacionadas."
+        }
       ]
     }
   ]
