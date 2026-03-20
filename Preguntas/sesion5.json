@@ -841,6 +841,126 @@
           "retroalimentacion": "Incorrecto. Eso muta el objeto original directamente, lo cual va en contra del principio de inmutabilidad. Primero elimina la propiedad y luego la vuelve a agregar, pero todo en el mismo objeto, sin crear uno nuevo."
         }
       ]
+    },
+    {
+      "id": 29,
+      "pregunta": "En la función `function bar(foo) { return foo && foo*3 || null; }`, ¿qué devuelve `bar(5)` y por qué?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "`null`, porque `||` siempre devuelve el valor de la derecha cuando hay una multiplicación involucrada.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `||` no considera si hay una multiplicación; evalúa si el valor de la izquierda es truthy o falsy. Como `5 && 5*3` da `15` y `15` es truthy, `||` lo devuelve directamente sin llegar al `null`."
+        },
+        {
+          "id": "B",
+          "texto": "`15`, porque `5` es truthy → `&&` evalúa `5*3 = 15` → `15` es truthy → `||` lo devuelve directamente sin llegar a `null`.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se analizó esta función paso a paso. Con `foo = 5`: primero `5 && 5*3` — como `5` es truthy, `&&` evalúa el segundo operando y devuelve `15`; luego `15 || null` — como `15` es truthy, `||` hace short-circuit y devuelve `15` directamente."
+        },
+        {
+          "id": "C",
+          "texto": "`5`, porque el operador `&&` devuelve el primer valor truthy que encuentra, que es `foo = 5`.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Cuando `&&` tiene dos operandos y el primero es truthy, no lo devuelve; continúa evaluando el segundo y devuelve ese. Por eso `5 && 5*3` devuelve `15`, no `5`. El primer operando truthy solo se devuelve si el segundo es falsy."
+        },
+        {
+          "id": "D",
+          "texto": "`true`, porque toda la expresión evalúa a un valor booleano positivo.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `&&` y `||` no convierten el resultado a booleano; devuelven uno de los valores originales de la expresión. En este caso, con `foo = 5`, el resultado es el número `15`, no el booleano `true`."
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "pregunta": "Dado este código: `let d = 'a'; if (!!d) { console.log(!!d); }` y luego `let e; if (!!e) { console.log(!!e); }`. ¿Cuál es la salida de cada bloque?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "El primero imprime `'a'` y el segundo imprime `undefined`.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El operador `!!` convierte cualquier valor a booleano, no devuelve el valor original. `!!'a'` produce `true`, no `'a'`. Y `!!undefined` produce `false`, pero como es falsy, el `if` no se ejecuta y no imprime nada."
+        },
+        {
+          "id": "B",
+          "texto": "El primero imprime `true`; el segundo no imprime nada porque `!!undefined` es `false` y el `if` no se ejecuta.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se analizaron ambos casos. `d = 'a'`: un string no vacío es truthy → `!'a'` = `false` → `!!'a'` = `true`. El `if` se ejecuta e imprime `true`. `e = undefined`: `!undefined` = `true` → `!!undefined` = `false`. El `if` no se ejecuta y no hay salida."
+        },
+        {
+          "id": "C",
+          "texto": "Ambos imprimen `true` porque `!!` siempre devuelve `true` independientemente del valor.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `!!` devuelve el booleano equivalente del valor: `!!` de un truthy da `true`, pero `!!` de un falsy da `false`. `!!undefined` da `false`, por lo que el `if` no se ejecuta."
+        },
+        {
+          "id": "D",
+          "texto": "El primero no imprime nada y el segundo imprime `false`.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `d = 'a'` es truthy, por lo que `!!d` es `true` y el `if` sí se ejecuta imprimiendo `true`. Para el segundo, `!!undefined` es `false`, que es falsy, así que el `if` no se ejecuta y no hay salida."
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "pregunta": "Usando el array de personas del ejercicio de la sesión, ¿qué método y condición usarías para obtener solo las personas de género femenino, mayores de edad y con crédito mayor a 700?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "`personas.find(p => p.genero === 'femenino' && p.edad >= 18 && p.credito > 700)`, porque `find()` busca elementos que cumplan condiciones.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `find()` devuelve solo el PRIMER elemento que cumple la condición (o `undefined` si ninguno cumple). Para obtener TODOS los que la cumplen se necesita `filter()`, que devuelve un nuevo array con todos los elementos que pasan el test."
+        },
+        {
+          "id": "B",
+          "texto": "`personas.filter(p => p.genero === 'femenino' && p.edad >= 18 && p.credito > 700)`, porque `filter()` devuelve un nuevo array con todos los elementos que cumplen las tres condiciones.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se resolvió este ejercicio exactamente así: `filter()` recorre el array y solo incluye los elementos donde la condición devuelve `true`. Las tres condiciones se encadenan con `&&`: género femenino, edad mayor o igual a 18 (mayor de edad), y crédito estrictamente mayor a 700. En el array del ejemplo, solo Ana (25 años, crédito 800) y Laura (28 años, crédito 900) cumplen los tres criterios."
+        },
+        {
+          "id": "C",
+          "texto": "`personas.map(p => p.genero === 'femenino' && p.edad >= 18 && p.credito > 700)`, porque `map()` transforma el array aplicando la condición a cada elemento.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `map()` transforma cada elemento y devuelve un nuevo array de la misma longitud con los resultados. En este caso devolvería un array de booleanos (`true`/`false`), no las personas filtradas. Para filtrar se usa `filter()`."
+        },
+        {
+          "id": "D",
+          "texto": "`personas.reduce((acc, p) => p.genero === 'femenino' && p.edad >= 18 && p.credito > 700 ? acc + p : acc, [])`, porque `reduce()` es el método más versátil.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Aunque `reduce()` puede simular un `filter()`, esa no es su función principal ni la forma idiomática de hacerlo. Para filtrar elementos según una condición, `filter()` es la herramienta correcta y semánticamente clara. En la sesión se usó `filter()` directamente para este ejercicio."
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "pregunta": "En la sesión se mostraron dos formas de sumar una cantidad indeterminada de números con rest parameters. ¿Cuál es la versión moderna con `reduce()`?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "`function sumar(...numeros) { return numeros.filter((a, b) => a + b, 0); }`",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `filter()` se usa para filtrar elementos según una condición booleana, no para acumular valores. La versión moderna que usa `reduce()` acumula la suma con un acumulador inicial de `0`."
+        },
+        {
+          "id": "B",
+          "texto": "`function sumar(...numeros) { return numeros.reduce((total, num) => total + num, 0); }`",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se presentó esta versión moderna como alternativa al bucle `for...of`. `reduce()` recorre el array `numeros` (creado por el rest parameter `...`) acumulando la suma: empieza con `total = 0` y en cada iteración suma el elemento actual `num`. Es la forma funcional e idiomática de sumar arrays en JavaScript moderno."
+        },
+        {
+          "id": "C",
+          "texto": "`function sumar(...numeros) { return numeros.map((a, b) => a + b); }`",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `map()` transforma cada elemento del array y devuelve un nuevo array de la misma longitud. No acumula valores en un solo resultado. Además, en `map()` el segundo parámetro del callback es el índice, no el elemento siguiente."
+        },
+        {
+          "id": "D",
+          "texto": "`function sumar(...numeros) { return numeros.find((total, num) => total + num, 0); }`",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `find()` busca y devuelve el primer elemento que cumple una condición; no acumula valores. La función correcta para reducir un array a un único valor acumulado es `reduce()`, que es exactamente lo que hace en la versión moderna de esta función."
+        }
+      ]
     }
   ]
 }

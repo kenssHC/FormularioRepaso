@@ -751,6 +751,36 @@
           "retroalimentacion": "Incorrecto. La abstracción consiste en mostrar solo lo esencial y ocultar la complejidad interna, no en que una clase tenga una sola responsabilidad. Una clase puede ser bien abstraída y aún así tener múltiples responsabilidades relacionadas."
         }
       ]
+    },
+    {
+      "id": 26,
+      "pregunta": "¿Qué es la herencia única y cómo se representa su estructura?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Es cuando una superclase tiene múltiples subclases derivadas al mismo tiempo; la estructura se representa con un árbol donde el nodo raíz tiene varias ramas.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Eso describe la herencia jerárquica (A con múltiples hijos B, C, D). La herencia única es más simple: una sola clase hija hereda de una sola clase padre, formando una cadena directa A → B."
+        },
+        {
+          "id": "B",
+          "texto": "Es cuando una clase hija hereda de una sola clase padre, representada como A → B, donde A es la superclase y B es la única subclase derivada de A.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se definió la herencia única como la relación más simple: una clase hija (B) hereda de una sola clase padre (A). La estructura A → B indica que B es subclase de A. Ejemplo: `Clase Animal → Clase Perro`, donde `Perro` hereda de `Animal` y es la única subclase directa."
+        },
+        {
+          "id": "C",
+          "texto": "Es cuando una subclase hereda de dos o más clases padre simultáneamente, representada como A + B → C.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Eso es herencia múltiple: una subclase con varios padres. La herencia única es lo contrario: una sola clase padre y una sola clase hija (A → B)."
+        },
+        {
+          "id": "D",
+          "texto": "Es cuando una clase hereda de sí misma en un ciclo recursivo, representada como A → A.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Una clase no puede heredar de sí misma; eso generaría un error en cualquier lenguaje orientado a objetos. La herencia única es la relación lineal entre una superclase y una sola subclase derivada: A → B."
+        }
+      ]
     }
   ]
 }
