@@ -1,185 +1,755 @@
 {
-  "titulo": "Cuestionario de repaso sobre proyectos, arquitectura y conceptos del chat",
-  "descripcion": "Banco de preguntas de opción múltiple basado únicamente en la información trabajada en este chat.",
+  "titulo": "Repaso: Proyectos del Banco, Herramientas del Entorno y Arquitectura de Aplicaciones",
+  "descripcion": "Preguntas de opción múltiple basadas en el contenido de la Sesión 9: proyectos Glomo, Ether, IVR, Gema y Banca por Internet; evolución Bower/Polymer/Lit; locales-app; test E2E; páginas, features y canales; sourcemaps; gobernanza; Android Studio; emuladores y Tomcat.",
   "preguntas": [
     {
       "id": 1,
-      "pregunta": "¿Cuál es el nombre correcto del proyecto principal mencionado en el chat?",
+      "pregunta": "¿Qué característica principal distingue a Glomo de los proyectos más pequeños del banco?",
       "alternativas": [
-        { "id": "A", "texto": "Glombo", "esCorrecta": false, "retroalimentacion": "Incorrecto. Se hizo una corrección explícita en el chat: el nombre correcto no es Glombo, sino Glomo." },
-        { "id": "B", "texto": "Glomo", "esCorrecta": true, "retroalimentacion": "Correcto. El usuario corrigió el nombre y dejó claro que el proyecto correcto se llama Glomo." },
-        { "id": "C", "texto": "Glemo", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ese nombre no fue mencionado como proyecto válido en el chat." },
-        { "id": "D", "texto": "Glama", "esCorrecta": false, "retroalimentacion": "Incorrecto. No corresponde a ninguno de los proyectos explicados." }
+        {
+          "id": "A",
+          "texto": "Es un proyecto temporal creado exclusivamente para pruebas internas y demos con clientes.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Glomo no es temporal ni es un proyecto de demos. En la sesión se describió como uno de los proyectos más grandes y permanentes del banco, con múltiples módulos, aplicaciones en producción y usuarios reales."
+        },
+        {
+          "id": "B",
+          "texto": "Es uno de los proyectos más grandes del banco, con múltiples módulos y aplicaciones que requieren permisos específicos de acceso por tratarse de sistemas de banca.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que Glomo es considerado uno de los ecosistemas o proyectos más grandes del banco. Contiene múltiples módulos, requiere permisos y roles de seguridad para acceder, y los desarrolladores trabajan dentro de él usando frameworks y componentes internos."
+        },
+        {
+          "id": "C",
+          "texto": "Es el único proyecto del banco que no usa Web Components, sino únicamente HTML y CSS tradicional.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Glomo sí usa Web Components; de hecho, la sesión explicó que tiene componentes hechos con Polymer (legacy) y componentes modernos hechos con Lit, ambos basados en estándares de Web Components."
+        },
+        {
+          "id": "D",
+          "texto": "Es un proyecto exclusivo del equipo de diseño UX, sin lógica de programación ni backend asociado.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Glomo no es exclusivo del equipo de diseño. Es un proyecto tecnológico completo donde trabajan desarrolladores usando frameworks, componentes, sistemas de control de versiones y herramientas de desarrollo."
+        }
       ]
     },
     {
       "id": 2,
-      "pregunta": "¿Qué se explicó sobre Ether dentro del ecosistema de proyectos?",
+      "pregunta": "¿Por qué se dice que Ether no es un 'proyecto' en el sentido convencional?",
       "alternativas": [
-        { "id": "A", "texto": "Es un proyecto único y cerrado, sin subtipos ni otros sistemas dentro.", "esCorrecta": false, "retroalimentacion": "Incorrecto. En el chat se explicó que Ether no es un proyecto único, sino un tipo de proyecto o plataforma donde existen otros sistemas." },
-        { "id": "B", "texto": "Es una base de datos usada solo para guardar usuarios.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ether no fue definido como base de datos, sino como un tipo de proyecto o plataforma." },
-        { "id": "C", "texto": "Es un tipo de proyecto o plataforma donde se despliegan otros proyectos, como IVR y algunos simuladores.", "esCorrecta": true, "retroalimentacion": "Correcto. Ether no se trató como un proyecto específico, sino como un entorno donde viven otros proyectos." },
-        { "id": "D", "texto": "Es el nombre antiguo de Gema.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Gema y Ether se presentaron como cosas distintas dentro del ecosistema." }
+        {
+          "id": "A",
+          "texto": "Porque Ether es el nombre en clave que usa el banco para referirse a su instancia privada de Git.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Ether no tiene relación con Git ni con sistemas de control de versiones. En la sesión se explicó que Ether es una plataforma tecnológica donde se ejecutan otros proyectos, no una herramienta de desarrollo."
+        },
+        {
+          "id": "B",
+          "texto": "Porque Ether es una plataforma o entorno de despliegue donde se ejecutan otros proyectos, no una aplicación con interfaz de usuario propia para clientes.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se dejó claro que Ether no es un proyecto específico, sino un tipo de proyecto o plataforma tecnológica. Funciona como entorno de despliegue donde viven y se ejecutan otras aplicaciones y servicios, como los sistemas IVR."
+        },
+        {
+          "id": "C",
+          "texto": "Porque Ether es solo una etapa del ciclo de vida del desarrollo, equivalente a la fase de pruebas antes de producción.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Ether no es una fase del ciclo de vida. Es una plataforma tecnológica real donde se despliegan proyectos como el IVR. No tiene que ver con etapas de testing ni de despliegue en el sentido de fases del proceso."
+        },
+        {
+          "id": "D",
+          "texto": "Porque Ether es una base de datos interna del banco que almacena los datos de todos los sistemas de atención al cliente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Ether no es una base de datos. Es una plataforma que alberga y ejecuta proyectos. La diferencia es importante: no almacena datos pasivamente, sino que ejecuta aplicaciones activamente."
+        }
       ]
     },
     {
       "id": 3,
-      "pregunta": "¿Qué es un IVR según lo trabajado en el chat?",
+      "pregunta": "¿Qué experimenta un usuario cuando interactúa con un sistema IVR?",
       "alternativas": [
-        { "id": "A", "texto": "Un sistema telefónico automatizado que interactúa con el usuario por voz o teclado.", "esCorrecta": true, "retroalimentacion": "Correcto. IVR se explicó como el sistema de atención telefónica automática del tipo 'presione 1, presione 2'." },
-        { "id": "B", "texto": "Un lenguaje de programación usado en Glomo.", "esCorrecta": false, "retroalimentacion": "Incorrecto. IVR no es un lenguaje, sino un sistema de respuesta automática." },
-        { "id": "C", "texto": "Un tipo de base de datos corporativa.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa definición no apareció en el chat." },
-        { "id": "D", "texto": "Un framework moderno que reemplaza a Lit.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Lit y IVR pertenecen a contextos diferentes: Lit es librería de frontend; IVR es sistema de atención automática." }
+        {
+          "id": "A",
+          "texto": "Un formulario web con campos de texto que se despliega en el navegador cuando ingresa al sitio del banco.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Un formulario web es parte de la aplicación Banca por Internet, no de un IVR. El IVR opera por teléfono, no por navegador web."
+        },
+        {
+          "id": "B",
+          "texto": "Un mensaje de voz automatizado que ofrece opciones como 'presione 1 para consultar su saldo, presione 2 para hablar con un asesor', con el que interactúa por voz o teclado del teléfono.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que IVR (Interactive Voice Response) es el sistema de atención telefónica automática. Se da el ejemplo exacto de un banco: el usuario llama y escucha las opciones para presionar teclas. Se usa en contact centers y call centers, y se despliega dentro de la plataforma Ether."
+        },
+        {
+          "id": "C",
+          "texto": "Una notificación push en el celular con un resumen automático de los movimientos de la cuenta.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Las notificaciones push son un mecanismo diferente de comunicación con el cliente. Un IVR es específicamente un sistema telefónico interactivo, no un sistema de notificaciones."
+        },
+        {
+          "id": "D",
+          "texto": "Un chatbot en la página web del banco que responde preguntas frecuentes de forma automatizada.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Un chatbot opera por texto en la web. El IVR opera por voz y teclado telefónico. Ambos son sistemas de atención automatizada, pero por canales completamente distintos."
+        }
       ]
     },
     {
       "id": 4,
-      "pregunta": "¿Cómo se describió a Gema en relación con Glomo y Ether?",
+      "pregunta": "¿Cuál es la relación entre los sistemas IVR y la plataforma Ether?",
       "alternativas": [
-        { "id": "A", "texto": "Es parte del universo Ether y está enfocado solo en llamadas.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Se explicó que Gema no está dentro del universo Ether." },
-        { "id": "B", "texto": "Es un proyecto independiente, como un 'hermanito menor' de Glomo, orientado a empresas.", "esCorrecta": true, "retroalimentacion": "Correcto. Así se presentó: fuera de Ether, relacionado con Glomo y enfocado en empresas." },
-        { "id": "C", "texto": "Es el nuevo nombre de Banca por Internet.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Banca por Internet y Gema fueron tratados como proyectos distintos." },
-        { "id": "D", "texto": "Es un gestor de dependencias anterior a npm.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso corresponde a Bower, no a Gema." }
+        {
+          "id": "A",
+          "texto": "Ether fue creado como reemplazo moderno de los sistemas IVR, eliminando la necesidad de atención telefónica automatizada.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Ether no reemplaza a IVR; es la plataforma donde IVR se despliega. Son complementarios, no competidores. Ether provee el entorno de ejecución y el IVR es uno de los proyectos que vive dentro de ese entorno."
+        },
+        {
+          "id": "B",
+          "texto": "Los sistemas IVR se despliegan dentro de la plataforma Ether y se usan en contact centers o call centers para atención telefónica automatizada.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que Ether funciona como entorno de despliegue, y que los sistemas IVR son un ejemplo concreto de lo que se despliega dentro de Ether. Los IVR se usan en contact centers para gestionar llamadas entrantes de clientes."
+        },
+        {
+          "id": "C",
+          "texto": "IVR y Ether son el mismo sistema referenciado con dos nombres distintos según el equipo que trabaja con él.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Son dos cosas distintas. Ether es la plataforma de despliegue (el contenedor) e IVR es la aplicación que se ejecuta dentro de ella (el contenido). La sesión los presentó con roles claramente diferenciados."
+        },
+        {
+          "id": "D",
+          "texto": "Los sistemas IVR gestionan los permisos de acceso a la plataforma Ether para los desarrolladores del banco.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los sistemas IVR son herramientas de atención al cliente por teléfono, no sistemas de gestión de permisos. La gestión de accesos y permisos en proyectos bancarios se maneja por sistemas de seguridad independientes."
+        }
       ]
     },
     {
       "id": 5,
-      "pregunta": "¿Qué se dijo sobre Banca por Internet?",
+      "pregunta": "¿Cuál es la diferencia en el público objetivo entre Glomo y Gema?",
       "alternativas": [
-        { "id": "A", "texto": "No es un proyecto, solo es un nombre comercial.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El chat dejó claro que Banca por Internet sí es un proyecto." },
-        { "id": "B", "texto": "Es un proyecto del banco que también se maneja y al que acceden los usuarios desde la web.", "esCorrecta": true, "retroalimentacion": "Correcto. Cuando el usuario entra a la página y ve 'Banca por Internet', está entrando a un proyecto." },
-        { "id": "C", "texto": "Es una herramienta solo para desarrolladores internos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Se asoció con el acceso de los clientes por la página web." },
-        { "id": "D", "texto": "Es otro nombre para Ether.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Ether y Banca por Internet son conceptos separados." }
+        {
+          "id": "A",
+          "texto": "Glomo está orientado a los desarrolladores internos del banco y Gema al equipo de diseño UX.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Glomo y Gema no son herramientas para equipos internos del banco; son aplicaciones para clientes. La sesión especificó claramente el tipo de cliente al que sirve cada uno."
+        },
+        {
+          "id": "B",
+          "texto": "Glomo está orientado a clientes en general (personas naturales) y Gema está orientado a empresas (clientes corporativos).",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se presentó esta distinción de público objetivo: Glomo → clientes en general, Gema → empresas. Gema fue descrito como el 'hermano menor' de Glomo, un proyecto independiente que no pertenece al ecosistema Ether y que atiende al segmento corporativo."
+        },
+        {
+          "id": "C",
+          "texto": "Glomo atiende solo a clientes premium con tarjeta de crédito y Gema a clientes con créditos hipotecarios.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La sesión no distinguió por tipo de producto financiero, sino por tipo de cliente: general vs. corporativo. Esa clasificación (premium/hipotecario) no fue parte de la explicación."
+        },
+        {
+          "id": "D",
+          "texto": "Ambos tienen el mismo público objetivo; la diferencia es solo el canal de acceso: Glomo es web y Gema es mobile.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La diferencia no es de canal sino de segmento de cliente. La sesión fue clara: Glomo sirve a clientes en general y Gema a clientes corporativos (empresas). No se mencionó que uno sea exclusivo de web y el otro de móvil."
+        }
       ]
     },
     {
       "id": 6,
-      "pregunta": "¿Qué idea se destacó sobre la cantidad de proyectos en el banco?",
+      "pregunta": "¿Cuál de las siguientes NO es una función típica de Banca por Internet según la sesión?",
       "alternativas": [
-        { "id": "A", "texto": "Solo existen Glomo, Ether y Gema.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Se dijo claramente que hay muchos más proyectos, incluso pequeños simuladores." },
-        { "id": "B", "texto": "Hay muchos proyectos, grandes y pequeños, y ni siquiera todos son conocidos por una sola persona.", "esCorrecta": true, "retroalimentacion": "Correcto. El banco tiene un montón de proyectos y que incluso no todos son conocidos por todos." },
-        { "id": "C", "texto": "Todos los proyectos son públicos y fáciles de conocer.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Se habló de permisos, rotación y documentación interna." },
-        { "id": "D", "texto": "Todos los proyectos son simuladores de préstamos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los simuladores fueron solo un ejemplo de proyectos pequeños." }
+        {
+          "id": "A",
+          "texto": "Consultar saldo y revisar movimientos de cuenta.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto, porque esta sí es una función de Banca por Internet. Consultar saldo y revisar movimientos son dos de las funciones típicas mencionadas en la sesión para este sistema."
+        },
+        {
+          "id": "B",
+          "texto": "Realizar transferencias y pagar servicios.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto, porque esta sí es una función de Banca por Internet. Realizar transferencias y pagar servicios están explícitamente listadas como funciones del sistema en la sesión."
+        },
+        {
+          "id": "C",
+          "texto": "Desplegar y configurar sistemas IVR para la atención telefónica automática del banco.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto, esta NO es una función de Banca por Internet. Los sistemas IVR se despliegan dentro de la plataforma Ether y operan por canal telefónico. Banca por Internet es una aplicación web para operaciones bancarias de clientes, no una herramienta de gestión de sistemas IVR."
+        },
+        {
+          "id": "D",
+          "texto": "Gestionar tarjetas bancarias.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto, porque esta sí es una función de Banca por Internet. La sesión listó 'gestionar tarjetas' como una de las operaciones disponibles para los clientes en este sistema."
+        }
       ]
     },
     {
       "id": 7,
-      "pregunta": "Cuando un desarrollador entra a un proyecto nuevo, ¿qué se recomendó hacer primero?",
+      "pregunta": "¿Cuál era la función de Bower en los proyectos frontend como los componentes legacy de Glomo?",
       "alternativas": [
-        { "id": "A", "texto": "Eliminar la configuración anterior y comenzar desde cero.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso no fue lo recomendado ni es una práctica razonable para onboarding." },
-        { "id": "B", "texto": "Preguntar a alguien del equipo que ya haya pasado por el proyecto o revisar la documentación con ayuda del lead o Scrum.", "esCorrecta": true, "retroalimentacion": "Correcto. Lo primero es apoyarse en el equipo y en la documentación del proyecto." },
-        { "id": "C", "texto": "Cambiar el framework principal del proyecto.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Primero se debe entender el proyecto, no modificar su base tecnológica." },
-        { "id": "D", "texto": "Publicar directamente en producción para ver cómo funciona.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso sería una mala práctica, especialmente en banca." }
+        {
+          "id": "A",
+          "texto": "Compilar el código TypeScript a JavaScript y empaquetar los módulos para el navegador.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Bower no compilaba TypeScript ni empaquetaba módulos. Esa función corresponde a herramientas como webpack, Rollup o Vite. Bower era específicamente un gestor de dependencias frontend."
+        },
+        {
+          "id": "B",
+          "texto": "Descargar y administrar las librerías (dependencias) necesarias para el proyecto frontend, de forma similar a como npm gestiona dependencias hoy.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que Bower era un gestor de dependencias para frontend. Servía para descargar y administrar las librerías del proyecto. Con el tiempo fue reemplazado por npm como herramienta estándar de gestión de dependencias en proyectos web."
+        },
+        {
+          "id": "C",
+          "texto": "Crear la estructura visual y las plantillas HTML de los componentes web de Glomo.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Bower no crea templates HTML ni interfaz visual. Su único rol era gestionar dependencias (librerías externas). La creación de la estructura visual corresponde a la librería de componentes (Polymer o Lit) y al desarrollador."
+        },
+        {
+          "id": "D",
+          "texto": "Gestionar las ramas de Git y coordinar los Pull Requests del equipo de Glomo en Bitbucket.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La gestión de ramas y Pull Requests es responsabilidad de Git y plataformas como Bitbucket o GitHub. Bower era una herramienta completamente independiente enfocada en la gestión de librerías frontend."
+        }
       ]
     },
     {
       "id": 8,
-      "pregunta": "¿Qué es Bower según lo trabajado en el chat?",
+      "pregunta": "¿Qué es Polymer y cuál fue su relevancia en la historia de los Web Components?",
       "alternativas": [
-        { "id": "A", "texto": "Un gestor antiguo de dependencias frontend.", "esCorrecta": true, "retroalimentacion": "Correcto. Bower se explicó como una herramienta antigua para manejar dependencias en frontend." },
-        { "id": "B", "texto": "Un sistema de atención telefónica automática.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso corresponde a IVR." },
-        { "id": "C", "texto": "Un framework actual que reemplaza a Lit.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Bower no es framework de componentes, sino gestor de dependencias." },
-        { "id": "D", "texto": "Una metodología de pruebas end to end.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Bower no pertenece al área de testing." }
+        {
+          "id": "A",
+          "texto": "Un framework completo de Microsoft para crear aplicaciones SPA con gestión de estado integrada.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Polymer no fue creado por Microsoft sino por Google. Además, no era un framework SPA completo con gestión de estado; era una librería específicamente orientada a crear Web Components reutilizables."
+        },
+        {
+          "id": "B",
+          "texto": "Una librería creada por Google que fue una de las primeras herramientas en permitir crear Web Components reutilizables en la web.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que Polymer fue creado por Google y fue una de las primeras herramientas que permitió crear componentes reutilizables basados en los estándares de Web Components. Fue muy usado en proyectos como Glomo antes de que Lit lo reemplazara."
+        },
+        {
+          "id": "C",
+          "texto": "Un gestor de dependencias creado por el equipo de Angular como alternativa más simple a Bower para proyectos empresariales.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Polymer no es un gestor de dependencias; es una librería para crear componentes web. El equipo de Angular no creó Polymer; fue el equipo de Google Chrome. Bower era el gestor de dependencias que se usaba junto a Polymer."
+        },
+        {
+          "id": "D",
+          "texto": "Un servidor de despliegue usado en Ether para ejecutar aplicaciones de atención al cliente basadas en Web Components.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Polymer no es un servidor. Es una librería JavaScript para crear componentes web en el lado del cliente (frontend). Los servidores de despliegue son herramientas diferentes como Tomcat o Docker."
+        }
       ]
     },
     {
       "id": 9,
-      "pregunta": "¿Qué es Polymer en este contexto?",
+      "pregunta": "¿Qué relación existe entre Polymer y Lit en términos de origen y evolución?",
       "alternativas": [
-        { "id": "A", "texto": "Una librería creada por Google para construir Web Components.", "esCorrecta": true, "retroalimentacion": "Correcto. Polymer se explicó como una librería usada antes para crear Web Components." },
-        { "id": "B", "texto": "Una base de datos usada por Gema.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Polymer no se presentó como base de datos." },
-        { "id": "C", "texto": "El reemplazo de Ether en proyectos modernos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Polymer y Ether pertenecen a categorías distintas." },
-        { "id": "D", "texto": "Una técnica para documentación de proyectos.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No fue definido así en ningún momento." }
+        {
+          "id": "A",
+          "texto": "Lit fue creado por el equipo de React en Meta como respuesta a las limitaciones de Polymer para aplicaciones de gran escala.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Lit no fue creado por Meta ni el equipo de React. En la sesión se explicó que Lit fue creado por el mismo equipo de Polymer en Google como una versión mejorada. No tiene relación con React ni con Meta."
+        },
+        {
+          "id": "B",
+          "texto": "Lit fue creado por el mismo equipo de Polymer en Google como evolución mejorada: más ligera, rápida, simple y con mejor integración con los estándares modernos de Web Components.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se destacó esta continuidad: Lit fue creado por el equipo de Polymer de Google, pero mejorado. Las ventajas de Lit son que es más ligero, más rápido, más simple, usa JavaScript moderno y tiene mejor integración con los estándares actuales de Web Components."
+        },
+        {
+          "id": "C",
+          "texto": "Lit es exactamente lo mismo que Polymer internamente; solo cambiaron el nombre para alinearlo con los estándares de la W3C.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Lit no es Polymer renombrado. Son librerías diferentes aunque compartan linaje. Lit fue reescrita con una API más moderna y eficiente, superando a Polymer en rendimiento y simplicidad. Por eso los proyectos migran de uno al otro, lo que requiere reescribir código."
+        },
+        {
+          "id": "D",
+          "texto": "Polymer creó Lit como un plugin de compatibilidad para ejecutar componentes antiguos en navegadores modernos sin necesidad de reescribirlos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Lit no es un plugin de compatibilidad. Es una librería nueva para crear componentes desde cero. La migración de Polymer a Lit implica reescribir los componentes, precisamente porque no son compatibles de forma automática."
+        }
       ]
     },
     {
       "id": 10,
-      "pregunta": "¿Por qué se dijo que en Glomo existen componentes antiguos y actuales?",
+      "pregunta": "Un desarrollador entra a Glomo y encuentra un componente que usa Bower para gestionar sus dependencias. ¿Qué indica esto sobre ese componente?",
       "alternativas": [
-        { "id": "A", "texto": "Porque Glomo se divide entre backend en Java y frontend en PHP.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa división no se mencionó en el chat." },
-        { "id": "B", "texto": "Porque conviven componentes antiguos hechos con Bower/Polymer y componentes más actuales hechos con Lit.", "esCorrecta": true, "retroalimentacion": "Correcto. Glomo tiene legacy y componentes modernos en migración." },
-        { "id": "C", "texto": "Porque algunos componentes usan bases de datos distintas.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La diferencia explicada fue tecnológica, no por base de datos." },
-        { "id": "D", "texto": "Porque todos los componentes antiguos ya fueron eliminados.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Justamente se explicó que siguen existiendo y van migrando poco a poco." }
+        {
+          "id": "A",
+          "texto": "Que fue creado recientemente siguiendo las guías más actuales del proyecto, ya que Bower es el estándar vigente en Glomo.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Bower no es el estándar actual; es la tecnología del pasado (legacy). En la sesión se explicó que los componentes nuevos de Glomo usan Lit y npm, mientras que Bower es la tecnología de los componentes antiguos que aún no han sido migrados."
+        },
+        {
+          "id": "B",
+          "texto": "Que es un componente legacy (antiguo), construido con la tecnología anterior (Bower + Polymer), que aún no ha sido migrado a la tecnología actual (Lit).",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que Glomo es un proyecto grande y antiguo donde coexisten dos tipos de componentes: los legacy hechos con Bower + Polymer, y los modernos hechos con Lit. Encontrar Bower indica que ese componente es legacy y está pendiente de migración."
+        },
+        {
+          "id": "C",
+          "texto": "Que es un componente exclusivo para pruebas E2E que no se despliega en producción.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El uso de Bower no indica que sea un componente de pruebas. Los tests E2E son una categoría diferente de archivos. El uso de Bower simplemente indica que el componente pertenece a la etapa anterior del proyecto, cuando esa era la herramienta estándar."
+        },
+        {
+          "id": "D",
+          "texto": "Que pertenece al ecosistema de Gema y fue importado al proyecto Glomo para reutilizar funcionalidad corporativa.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. No hay evidencia de que Gema use Bower ni de que sus componentes se importen directamente a Glomo. El uso de Bower en un componente de Glomo simplemente refleja la antigüedad del componente dentro del propio proyecto."
+        }
       ]
     },
     {
       "id": 11,
-      "pregunta": "¿Qué significa que los componentes antiguos 'van migrando a Lit'?",
+      "pregunta": "¿Qué implica concretamente 'migrar un componente de Polymer a Lit'?",
       "alternativas": [
-        { "id": "A", "texto": "Que se van eliminando y reescribiendo o adaptando a una tecnología más moderna.", "esCorrecta": true, "retroalimentacion": "Correcto. Migrar se explicó como reescribir o adaptar componentes antiguos hacia Lit." },
-        { "id": "B", "texto": "Que Lit deja de usarse y se vuelve a Bower.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El sentido de la migración es de lo antiguo a lo moderno, no al revés." },
-        { "id": "C", "texto": "Que se convierten automáticamente sin tocar código.", "esCorrecta": false, "retroalimentacion": "Incorrecto. En la práctica migrar implica trabajo de adaptación o reescritura." },
-        { "id": "D", "texto": "Que pasan de frontend a backend.", "esCorrecta": false, "retroalimentacion": "Incorrecto. La migración descrita fue entre tecnologías frontend." }
+        {
+          "id": "A",
+          "texto": "Mover el archivo del componente a una carpeta diferente dentro del proyecto y actualizar la ruta en el `package.json`.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Migrar no es mover archivos. En la sesión se explicó que migrar significa reescribir o adaptar el componente a la nueva tecnología. Si solo se moviera el archivo, el código seguiría siendo Polymer y no funcionaría con Lit."
+        },
+        {
+          "id": "B",
+          "texto": "Reescribir o adaptar el código del componente antiguo usando la API de Lit, reemplazando la sintaxis de Polymer con la de Lit.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que migrar significa reescribir o adaptar. El proceso implica tomar el componente-polymer y transformarlo en componente-lit, usando la nueva API. No es un proceso automático; requiere trabajo de desarrollo porque las dos tecnologías tienen sintaxis y APIs diferentes."
+        },
+        {
+          "id": "C",
+          "texto": "Cambiar el nombre del archivo del componente añadiendo el sufijo '-lit' para que el framework lo reconozca automáticamente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Renombrar un archivo no cambia su tecnología. El código interno del componente seguiría siendo Polymer independientemente del nombre del archivo. La migración requiere modificar el código real del componente."
+        },
+        {
+          "id": "D",
+          "texto": "Instalar un paquete de compatibilidad que traduce automáticamente la sintaxis de Polymer a Lit sin tocar el código fuente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. No existe un paquete de conversión automática de ese tipo. En la sesión se describió la migración como un proceso de reescritura que requiere trabajo de los desarrolladores. Si fuera automático, no sería un proyecto de largo plazo como se describió."
+        }
       ]
     },
     {
       "id": 12,
-      "pregunta": "¿Qué es un test E2E?",
+      "pregunta": "¿Qué contiene la carpeta `locales-app` dentro de un proyecto como Glomo?",
       "alternativas": [
-        { "id": "A", "texto": "Una prueba que verifica una sola función aislada.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso corresponde más a un test unitario." },
-        { "id": "B", "texto": "Una prueba que simula el flujo completo del usuario de extremo a extremo.", "esCorrecta": true, "retroalimentacion": "Correcto. E2E significa End-to-End y prueba todo el flujo real de la aplicación." },
-        { "id": "C", "texto": "Una documentación del proyecto escrita por el Scrum.", "esCorrecta": false, "retroalimentacion": "Incorrecto. E2E pertenece al ámbito de testing, no de documentación." },
-        { "id": "D", "texto": "Un canal privado del sistema.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No tiene relación con canales." }
+        {
+          "id": "A",
+          "texto": "Los archivos de configuración de Git para sincronizar el repositorio local con Bitbucket.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La configuración de Git se almacena en archivos como `.gitconfig` o `.git/config`, no en `locales-app`. La carpeta `locales-app` tiene un propósito completamente distinto relacionado con la internacionalización de la aplicación."
+        },
+        {
+          "id": "B",
+          "texto": "Los archivos de textos traducidos (i18n) para soportar múltiples idiomas en la aplicación, como `es.json` para español, `en.json` para inglés y `pt.json` para portugués.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que `locales-app` guarda los textos traducidos de la aplicación (internacionalización / i18n). 'Locales' significa idiomas o configuraciones regionales. Contiene archivos JSON por idioma donde se definen las cadenas de texto de la interfaz."
+        },
+        {
+          "id": "C",
+          "texto": "Las imágenes, iconos y assets visuales usados en el diseño de las pantallas de la aplicación.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los assets visuales (imágenes, iconos) se almacenan típicamente en carpetas como `assets`, `images` o `static`, no en `locales-app`. La palabra 'locales' hace referencia a idiomas, no a recursos visuales."
+        },
+        {
+          "id": "D",
+          "texto": "Los scripts de tests E2E organizados por cada idioma que soporta la aplicación.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los tests E2E se almacenan en carpetas de pruebas (`e2e`, `test`, `cypress`). `locales-app` contiene archivos de traducción de textos, no scripts de testing."
+        }
       ]
     },
     {
       "id": 13,
-      "pregunta": "¿Cuál es la diferencia principal entre test unitarios y tests E2E?",
+      "pregunta": "¿Qué significa el término 'locales' en el contexto del desarrollo de aplicaciones web?",
       "alternativas": [
-        { "id": "A", "texto": "Los unitarios prueban una parte pequeña del código y los E2E prueban el flujo completo del sistema.", "esCorrecta": true, "retroalimentacion": "Correcto. Esa fue la diferencia central explicada en el chat." },
-        { "id": "B", "texto": "Los unitarios siempre son manuales y los E2E siempre son en papel.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Esa clasificación no fue explicada y no describe correctamente estos tipos de prueba." },
-        { "id": "C", "texto": "Los E2E solo sirven para bases de datos y los unitarios solo para diseño.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No se definieron así." },
-        { "id": "D", "texto": "No hay diferencia real, son lo mismo.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El chat sí distinguió claramente ambos tipos de prueba." }
+        {
+          "id": "A",
+          "texto": "Las variables declaradas con `let` o `const` dentro del alcance de una función, que no son accesibles desde fuera.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. En programación las variables de alcance local existen, pero en el contexto de la sesión 'locales' se refiere a algo diferente. Cuando se habla de `locales-app` o i18n, 'locales' significa configuraciones de idioma o región."
+        },
+        {
+          "id": "B",
+          "texto": "Los idiomas o configuraciones regionales de la aplicación, que determinan en qué idioma se muestran los textos al usuario.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que 'locales = idiomas o configuraciones regionales'. Ejemplos: `es` para español, `en` para inglés, `pt` para portugués. Cada locale tiene su propio archivo JSON con las cadenas de texto traducidas para ese idioma."
+        },
+        {
+          "id": "C",
+          "texto": "Los archivos que solo existen en el entorno local de desarrollo y que Git ignora con `.gitignore`.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los archivos de `locales-app` sí se versionan en Git porque son parte esencial del proyecto (los textos de la interfaz). 'Local' en el sentido de archivos ignorados por Git es un concepto diferente al de 'locales' como idiomas."
+        },
+        {
+          "id": "D",
+          "texto": "Los componentes que solo se renderizan en el entorno de desarrollo local y no en producción.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Eso describe componentes de desarrollo o modo debug, no locales. En el contexto de `locales-app`, 'locales' se refiere exclusivamente a las traducciones de idioma de la aplicación."
+        }
       ]
     },
     {
       "id": 14,
-      "pregunta": "¿Qué es una página dentro de una aplicación como Glomo o Banca por Internet?",
+      "pregunta": "¿Qué diferencia a un test E2E de un test unitario?",
       "alternativas": [
-        { "id": "A", "texto": "Una pantalla completa que el usuario puede ver, como login o transferencias.", "esCorrecta": true, "retroalimentacion": "Correcto. Una página es una vista completa dentro de la aplicación." },
-        { "id": "B", "texto": "Solo un botón reutilizable.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Un botón sería un componente, no una página." },
-        { "id": "C", "texto": "Un tipo de canal privado.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Página y canal son conceptos distintos." },
-        { "id": "D", "texto": "Una prueba automática del sistema.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Página no pertenece al ámbito de testing." }
+        {
+          "id": "A",
+          "texto": "Un test unitario verifica el flujo completo de la aplicación desde el inicio hasta el final; un test E2E solo verifica que una función retorne el valor esperado.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los roles están invertidos. Es el test E2E (End-to-End) el que verifica el flujo completo de la aplicación. El test unitario es el que prueba una función o componente pequeño de forma aislada."
+        },
+        {
+          "id": "B",
+          "texto": "Un test E2E simula el comportamiento real de un usuario verificando toda la aplicación de principio a fin; un test unitario verifica de forma aislada una función o parte pequeña del código.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó esta diferencia central: E2E (End-to-End) significa probar todo el flujo completo del sistema, simulando lo que haría un usuario real. Un test unitario se enfoca en verificar una sola unidad de código (función, componente) de forma aislada, sin depender de otras partes del sistema."
+        },
+        {
+          "id": "C",
+          "texto": "Los tests E2E se ejecutan en el servidor de producción y los tests unitarios solo en el entorno de desarrollo local.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Ambos tipos de tests pueden ejecutarse en distintos entornos. La diferencia no es dónde se ejecutan sino qué verifican: alcance total del flujo de usuario (E2E) vs. verificación aislada de una unidad de código (unitario)."
+        },
+        {
+          "id": "D",
+          "texto": "Los tests unitarios son automáticos y los E2E siempre son manuales, ejecutados por el equipo de QA.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Ambos tipos de tests pueden automatizarse. De hecho, los tests E2E se automatizan con herramientas como Cypress, Playwright o Selenium. La distinción no es automático vs. manual, sino el alcance de lo que se prueba."
+        }
       ]
     },
     {
       "id": 15,
-      "pregunta": "¿Qué es una feature en este contexto?",
+      "pregunta": "¿Cuál de los siguientes sería un ejemplo de test E2E en Banca por Internet?",
       "alternativas": [
-        { "id": "A", "texto": "Una funcionalidad específica dentro de la aplicación.", "esCorrecta": true, "retroalimentacion": "Correcto. Una feature se definió como una característica o funcionalidad concreta del sistema." },
-        { "id": "B", "texto": "Una persona del equipo Scrum.", "esCorrecta": false, "retroalimentacion": "Incorrecto. feature no es un rol." },
-        { "id": "C", "texto": "Un archivo para instalar dependencias con Bower.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso se relacionaría más con configuración, no con funcionalidad." },
-        { "id": "D", "texto": "Un error de producción.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Una feature no es un fallo, sino una capacidad del sistema." }
+        {
+          "id": "A",
+          "texto": "Verificar que la función `calcularComision(monto)` retorna el valor correcto para un monto de 1000 soles.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Eso es un test unitario: prueba una sola función de forma aislada con un dato específico. Un test E2E simula el comportamiento completo de un usuario navegando por la aplicación, no una función individual."
+        },
+        {
+          "id": "B",
+          "texto": "Simular que un usuario ingresa al login, escribe sus credenciales, navega a transferencias, ingresa los datos del destinatario, confirma la operación y verifica que el saldo se actualizó correctamente.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. Eso es un test E2E: simula el flujo completo de un usuario real realizando una operación de principio a fin. Involucra múltiples páginas, componentes e integraciones, verificando que todo el sistema funciona de forma coordinada."
+        },
+        {
+          "id": "C",
+          "texto": "Revisar que el archivo `es.json` dentro de `locales-app` contiene exactamente 150 claves de traducción.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Verificar un archivo de configuración es un tipo de prueba estática o de validación de datos, no un test E2E. Un E2E simula la interacción de un usuario con la interfaz de la aplicación en tiempo de ejecución."
+        },
+        {
+          "id": "D",
+          "texto": "Ejecutar el linter de TypeScript para verificar que no hay errores de tipo en los componentes de la página de transferencias.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El linter de TypeScript verifica la calidad del código en tiempo de desarrollo, no simula el comportamiento de un usuario. Es una herramienta de análisis estático, no un test E2E."
+        }
       ]
     },
     {
       "id": 16,
-      "pregunta": "¿Qué son los canales según lo explicado en el chat?",
+      "pregunta": "¿Cuál es la diferencia entre una página y una feature en la arquitectura de una aplicación bancaria?",
       "alternativas": [
-        { "id": "A", "texto": "Medios de comunicación entre componentes para compartir información.", "esCorrecta": true, "retroalimentacion": "Correcto. Los canales sirven para comunicar componentes desacoplados." },
-        { "id": "B", "texto": "Pantallas principales del sistema.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso corresponde a páginas." },
-        { "id": "C", "texto": "Tipos de usuarios dentro del banco.", "esCorrecta": false, "retroalimentacion": "Incorrecto. No se definieron como perfiles o roles." },
-        { "id": "D", "texto": "Herramientas de diseño visual.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Los canales pertenecen a la comunicación entre componentes." }
+        {
+          "id": "A",
+          "texto": "Una página es la pantalla completa que el usuario ve (como 'Transferencias'); una feature es una funcionalidad específica dentro de esa pantalla (como 'validar cuenta destino').",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que una página es la vista completa (Login, Dashboard, Transferencias, Movimientos) y una feature es una funcionalidad específica. Por ejemplo, dentro de la página de transferencias pueden existir features como 'calcular comisión', 'validar cuenta destino' o 'confirmar transferencia'."
+        },
+        {
+          "id": "B",
+          "texto": "Una página es una funcionalidad específica del sistema y una feature es la pantalla completa visible para el usuario.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los roles están invertidos. La página es la pantalla completa visible para el usuario (el nivel más visible), y la feature es la funcionalidad específica que puede existir dentro de una o varias páginas."
+        },
+        {
+          "id": "C",
+          "texto": "Ambas son lo mismo; 'página' se usa en proyectos con Polymer y 'feature' en proyectos con Lit para describir lo mismo.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. No son lo mismo ni dependen de la tecnología usada. Son niveles de granularidad diferentes en la arquitectura: la página es la vista completa y la feature es una capacidad específica del sistema que puede aparecer en varias páginas."
+        },
+        {
+          "id": "D",
+          "texto": "Una página pertenece exclusivamente al frontend y una feature incluye tanto frontend como backend de la funcionalidad.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Esa distinción no fue la que se explicó en la sesión. Ambas, páginas y features, son conceptos de la arquitectura de la aplicación desde la perspectiva del usuario y del frontend, no una distinción entre capas del sistema."
+        }
       ]
     },
     {
       "id": 17,
-      "pregunta": "¿Qué es la gobernanza en proyectos tecnológicos como los del banco?",
+      "pregunta": "¿Cuál de las siguientes afirmaciones es correcta sobre las features según la sesión?",
       "alternativas": [
-        { "id": "A", "texto": "El conjunto de reglas, procesos y controles que definen cómo se desarrollan y gestionan los proyectos.", "esCorrecta": true, "retroalimentacion": "Correcto. La gobernanza marca estándares, controles y formas de trabajo." },
-        { "id": "B", "texto": "Un canal reservado para componentes privados.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Gobernanza no es un canal." },
-        { "id": "C", "texto": "El nombre del flujo de login del usuario.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso se acerca más a flujo funcional, no a gobernanza." },
-        { "id": "D", "texto": "Una herramienta antigua reemplazada por Lit.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso se relaciona con Bower o Polymer, no con gobernanza." }
+        {
+          "id": "A",
+          "texto": "Una feature solo puede existir dentro de una única página; si aparece en otra página es necesario duplicar su código.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. En la sesión se especificó que una feature puede aparecer en varias páginas. Esa es precisamente una de sus características: su reutilización entre distintas partes de la aplicación sin necesidad de duplicar código."
+        },
+        {
+          "id": "B",
+          "texto": "Una feature representa una funcionalidad específica que puede estar compuesta por varios componentes y puede aparecer en varias páginas de la aplicación.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se listaron exactamente estas características: la feature representa una funcionalidad específica, puede estar compuesta por varios componentes, y puede aparecer en varias páginas. Por ejemplo, la feature 'mostrar resumen de operación' podría aparecer tanto en la página de transferencias como en la de pagos."
+        },
+        {
+          "id": "C",
+          "texto": "Una feature siempre está compuesta por exactamente un componente web, que es el que implementa toda su lógica.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La sesión especificó que una feature puede estar compuesta por varios componentes. Una funcionalidad como 'confirmar transferencia' puede involucrar un componente de formulario, uno de resumen, uno de validación y uno de resultado, todos colaborando en la misma feature."
+        },
+        {
+          "id": "D",
+          "texto": "Las features son exclusivas de proyectos modernos con Lit; en proyectos con Polymer se usan 'módulos' para el mismo propósito.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El concepto de feature es arquitectónico y no está ligado a ninguna tecnología específica. Puede existir en proyectos con Polymer, Lit o cualquier otra tecnología. La sesión no establece esa distinción."
+        }
       ]
     },
     {
       "id": 18,
-      "pregunta": "¿Qué es el flujo de un proyecto?",
+      "pregunta": "¿Por qué se usan canales para comunicar componentes en aplicaciones grandes como Glomo?",
       "alternativas": [
-        { "id": "A", "texto": "La secuencia de pasos que sigue un proyecto desde el requerimiento hasta producción y mantenimiento.", "esCorrecta": true, "retroalimentacion": "Correcto. El flujo del proyecto: idea, análisis, diseño, desarrollo, pruebas, despliegue y mantenimiento." },
-        { "id": "B", "texto": "Solo la forma en que se comunica un componente con otro por canales.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso sería una parte del flujo de datos o comunicación, no del proyecto completo." },
-        { "id": "C", "texto": "El listado de librerías del archivo bower.json.", "esCorrecta": false, "retroalimentacion": "Incorrecto. Eso es configuración de dependencias, no flujo de proyecto." },
-        { "id": "D", "texto": "El nombre de una feature de transferencias.", "esCorrecta": false, "retroalimentacion": "Incorrecto. El flujo es un proceso general del proyecto, no una sola feature." }
+        {
+          "id": "A",
+          "texto": "Porque los canales permiten que los componentes compartan estilos CSS entre sí sin romper el encapsulamiento del Shadow DOM.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los canales no sirven para compartir estilos CSS. Para eso existen otras soluciones como CSS custom properties o partes exportadas del Shadow DOM. Los canales sirven para compartir información (datos) entre componentes que no están directamente conectados en la jerarquía del DOM."
+        },
+        {
+          "id": "B",
+          "texto": "Porque en aplicaciones grandes hay componentes que necesitan comunicarse pero no están en la misma jerarquía del DOM, y los canales permiten compartir información entre ellos sin una conexión directa.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que los canales son medios de comunicación entre componentes. En aplicaciones grandes hay muchos componentes que necesitan compartir información pero a veces no están en la misma jerarquía del DOM, por lo que no pueden comunicarse directamente. Los canales resuelven ese problema."
+        },
+        {
+          "id": "C",
+          "texto": "Porque los canales reemplazan a los DM Components para la comunicación con APIs externas, evitando el uso de fetch o XHR.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los canales no reemplazan a los DM Components ni sirven para comunicarse con APIs externas. Los canales son para la comunicación entre componentes dentro de la aplicación; la comunicación con servicios externos es responsabilidad de los DM Components."
+        },
+        {
+          "id": "D",
+          "texto": "Porque sin canales, los componentes Lit no pueden detectar cambios de estado y no actualizan su interfaz de forma reactiva.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La reactividad de Lit está basada en su sistema de propiedades reactivas (`static properties`), no en canales. Los canales son un mecanismo de comunicación entre componentes separados en la jerarquía, independiente del sistema de reactividad de Lit."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "pregunta": "¿Cuál es el propósito del flag `--sourcemaps` al compilar un proyecto frontend?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Generar una copia de seguridad cifrada del código fuente en Artifactory antes de iniciar el proceso de compilación.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `--sourcemaps` no tiene ninguna relación con Artifactory ni con copias de seguridad. Es una opción de compilación que genera archivos de mapeo para facilitar la depuración del código transformado en el navegador."
+        },
+        {
+          "id": "B",
+          "texto": "Generar archivos `.map` que relacionan el código compilado/minificado con el código fuente original, permitiendo leer y depurar el código original en el navegador aunque esté transformado.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que `--sourcemaps` genera archivos de mapeo que permiten ver el código original durante la depuración aunque el código esté compilado o minificado. Cuando el navegador detecta un error, puede mostrar la línea del código original en lugar del código transformado incomprensible."
+        },
+        {
+          "id": "C",
+          "texto": "Activar el modo estricto de TypeScript que detecta errores de tipo y fallos de compilación antes de generar el bundle.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El modo estricto de TypeScript se configura en `tsconfig.json` con la opción `strict`, no con `--sourcemaps`. Ambas opciones tienen propósitos completamente diferentes."
+        },
+        {
+          "id": "D",
+          "texto": "Instalar automáticamente los source maps de todas las dependencias de `node_modules` para poder depurar librerías externas.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `--sourcemaps` genera los source maps del código propio del proyecto, no instala nada de `node_modules`. Los source maps de dependencias externas vienen con las propias librerías si sus autores los publican."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "pregunta": "¿Qué problema concreto resuelven los sourcemaps durante el desarrollo frontend?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Que el código minificado o compilado es ilegible para depurar; sin sourcemaps el navegador muestra algo como `function a(b,c){return b+c}`, pero con sourcemaps muestra el código original con nombres de variables descriptivos.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó exactamente este problema. El código que ve el navegador después de compilación, bundling y minificación es incomprensible. Los sourcemaps relacionan ese código transformado con el original, permitiendo que el debugger del navegador muestre nombres de funciones, variables y líneas del código fuente original."
+        },
+        {
+          "id": "B",
+          "texto": "Que el navegador no puede ejecutar JavaScript moderno (ES6+) sin que primero pase por un proceso de mapeo que lo convierte en ES5.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La conversión de ES6+ a ES5 es responsabilidad del compilador (como Babel), no de los sourcemaps. Los sourcemaps no transforman el código; solo crean un mapa de referencia entre el código original y el transformado para facilitar la depuración."
+        },
+        {
+          "id": "C",
+          "texto": "Que sin sourcemaps, `npm install` no puede resolver las rutas de los módulos locales durante la instalación de dependencias.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `npm install` no tiene ninguna relación con sourcemaps. Los sourcemaps son archivos generados durante la compilación del código y solo se usan durante la depuración en el navegador, no durante la instalación de dependencias."
+        },
+        {
+          "id": "D",
+          "texto": "Que sin sourcemaps, Git no puede registrar correctamente los cambios en archivos TypeScript compilados en el historial de commits.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Git gestiona versiones de archivos independientemente de si tienen sourcemaps o no. Los sourcemaps son una herramienta de depuración en tiempo de desarrollo, no de control de versiones."
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "pregunta": "¿Qué implica la gobernanza en el desarrollo de proyectos tecnológicos dentro de un banco?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Define las reglas, procesos y controles sobre qué tecnologías pueden usarse, cómo se aprueban cambios, qué estándares de calidad aplican y cómo se gestionan los proyectos, garantizando consistencia y seguridad.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se definió la gobernanza como el conjunto de reglas, procesos y controles que definen cómo se desarrollan, gestionan y mantienen los proyectos dentro de una organización. En entornos bancarios esto es especialmente crítico por los requisitos de seguridad y regulación."
+        },
+        {
+          "id": "B",
+          "texto": "Es el proceso técnico de migrar los componentes Polymer a Lit, siguiendo las guías de estilo del equipo de arquitectura.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La migración de Polymer a Lit es una actividad técnica específica, no la gobernanza. La gobernanza es el marco general de reglas y procesos que aplica a todos los proyectos y actividades, incluyendo pero sin limitarse a las migraciones tecnológicas."
+        },
+        {
+          "id": "C",
+          "texto": "Es el canal especial de comunicación entre componentes reservado para que los líderes técnicos intercambien datos críticos del sistema.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los canales son un mecanismo técnico de comunicación entre componentes web. La gobernanza es un concepto organizacional: el conjunto de reglas y procesos que rigen cómo se trabaja en los proyectos."
+        },
+        {
+          "id": "D",
+          "texto": "Es el nombre del flujo de autenticación multifactor que usa Banca por Internet para verificar la identidad de los usuarios.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La autenticación multifactor es una medida de seguridad técnica de las aplicaciones. La gobernanza es un concepto más amplio y organizacional que define cómo se gestionan todos los aspectos de los proyectos, no solo la autenticación."
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "pregunta": "¿Para qué sirve Android Studio en el contexto del entorno de desarrollo?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Para crear y publicar Web Components con Shadow DOM directamente optimizados para la pantalla de dispositivos Android.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los Web Components son tecnología web estándar que funciona en cualquier navegador moderno, independientemente del sistema operativo. Android Studio es específicamente para desarrollo de aplicaciones nativas de Android, no para Web Components."
+        },
+        {
+          "id": "B",
+          "texto": "Para desarrollar, probar y ejecutar aplicaciones móviles nativas en Android, siendo el IDE oficial de Google para ese propósito.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que Android Studio es el entorno de desarrollo (IDE) oficial para crear aplicaciones para Android. Es el programa que usan los desarrolladores para escribir, probar y ejecutar apps móviles en el ecosistema Android."
+        },
+        {
+          "id": "C",
+          "texto": "Para gestionar los repositorios de Bitbucket desde una interfaz visual en dispositivos móviles Android.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Android Studio es un IDE de desarrollo de aplicaciones, no una interfaz de gestión de repositorios. La gestión de repositorios se hace con Git, GitHub o Bitbucket, no con Android Studio."
+        },
+        {
+          "id": "D",
+          "texto": "Para ejecutar Tomcat en dispositivos Android y hacer pruebas de las APIs del backend bancario desde el celular.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Tomcat es un servidor de aplicaciones Java que se ejecuta en servidores o computadoras de desarrollo, no en dispositivos Android. Android Studio es para crear aplicaciones Android, no para ejecutar servidores Java."
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "pregunta": "¿Qué ventaja principal ofrece un emulador de Android durante el desarrollo de aplicaciones?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Permite ejecutar tests E2E de aplicaciones web Banca por Internet directamente en el navegador Chrome del escritorio.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los tests E2E de una aplicación web se ejecutan en el navegador de la computadora o con herramientas como Cypress, no requieren un emulador de Android. Un emulador de Android simula un dispositivo móvil completo con su sistema operativo."
+        },
+        {
+          "id": "B",
+          "texto": "Permite probar aplicaciones Android en la computadora sin necesitar un dispositivo físico, simulando un celular virtual con pantalla, botones y sistema operativo Android.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que un emulador es un programa que simula otro dispositivo o sistema dentro de tu computadora. El emulador de Android permite tener un celular virtual con pantalla, botones y el sistema operativo Android completo, para probar las aplicaciones durante el desarrollo sin necesitar hardware real."
+        },
+        {
+          "id": "C",
+          "texto": "Permite depurar el código minificado de componentes Lit usando los archivos sourcemap desde un dispositivo móvil.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los sourcemaps se usan en el navegador del dispositivo de desarrollo (computadora) con herramientas de depuración del navegador. El emulador de Android no tiene relación con los sourcemaps de proyectos Lit o frontend web."
+        },
+        {
+          "id": "D",
+          "texto": "Permite subir artefactos compilados de la aplicación directamente a Artifactory sin pasar por el proceso de CI/CD.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El emulador de Android no gestiona artefactos ni tiene conexión con Artifactory. Su función es simular un dispositivo Android para que los desarrolladores puedan probar la aplicación móvil durante el desarrollo."
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "pregunta": "¿Cuál es la función de Apache Tomcat en el entorno de desarrollo del banco?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Gestionar las dependencias de proyectos Java de forma similar a como Artifactory gestiona las dependencias de proyectos Node.js.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Tomcat no gestiona dependencias. Las dependencias Java se gestionan con herramientas como Maven o Gradle. Tomcat es un servidor web que ejecuta aplicaciones Java ya construidas, no un gestor de paquetes."
+        },
+        {
+          "id": "B",
+          "texto": "Servir como servidor web y contenedor de aplicaciones Java, ejecutando aplicaciones web Java para que los usuarios puedan acceder desde el navegador.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que Tomcat (Apache Tomcat) es un servidor web y contenedor de aplicaciones Java. Permite ejecutar aplicaciones web hechas en Java, gestiona las peticiones (requests) y conecta el navegador con el backend. En el banco es relevante porque diferentes proyectos requieren distintas versiones de Java para correr en Tomcat."
+        },
+        {
+          "id": "C",
+          "texto": "Compilar los componentes Polymer a componentes Lit automáticamente durante el proceso de build del proyecto.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Tomcat no compila ni convierte componentes web de un tipo a otro. La migración de Polymer a Lit requiere reescritura manual por parte del desarrollador. Tomcat es un servidor de ejecución, no un compilador de componentes frontend."
+        },
+        {
+          "id": "D",
+          "texto": "Actuar como emulador de dispositivos Android para que el equipo de QA pueda probar las aplicaciones móviles del banco.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Tomcat no emula dispositivos Android. Los emuladores de Android son parte de Android Studio. Tomcat y los emuladores Android son herramientas completamente distintas con propósitos diferentes."
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "pregunta": "Un desarrollador nuevo entra a Glomo y encuentra: componentes con Bower, componentes con Lit, una carpeta `locales-app`, tests E2E y referencias a canales. ¿Qué conclusión correcta puede sacar de este panorama?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "El proyecto está mal estructurado porque mezclar tecnologías antiguas y modernas viola las reglas de gobernanza del banco.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La coexistencia de tecnologías legacy y modernas en un proyecto grande como Glomo es algo normal y esperado durante un proceso de migración gradual. No es una violación de gobernanza; al contrario, la gobernanza puede ser la que define exactamente esa estrategia de migración progresiva."
+        },
+        {
+          "id": "B",
+          "texto": "Glomo es un proyecto grande y maduro en proceso de migración: conserva componentes legacy (Bower/Polymer), incorpora los modernos (Lit), soporta múltiples idiomas (locales-app), tiene cobertura de pruebas de flujo completo (E2E) y usa canales para la comunicación entre componentes.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. Cada elemento que encuentra el desarrollador tiene su explicación: los componentes con Bower son legacy aún no migrados, los de Lit son modernos, `locales-app` indica soporte multiidioma (i18n), los tests E2E garantizan que el flujo del usuario funcione correctamente, y los canales permiten comunicar componentes no directamente conectados en el DOM."
+        },
+        {
+          "id": "C",
+          "texto": "El proyecto nunca fue terminado porque las tecnologías mezcladasindican que fue abandonado a medias por múltiples equipos sin coordinación.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La mezcla de tecnologías no indica abandono. En la sesión se explicó que Glomo es uno de los proyectos más grandes y activos del banco. La coexistencia de Bower/Polymer con Lit es resultado natural de un proyecto grande que fue creado cuando Polymer era el estándar y que está migrando gradualmente."
+        },
+        {
+          "id": "D",
+          "texto": "Bower y Lit son equivalentes en Glomo; simplemente son dos formas distintas de importar las mismas librerías dependiendo de la preferencia del desarrollador.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Bower y Lit no son equivalentes ni intercambiables. Bower es un gestor de dependencias (descarga librerías) y Lit es una librería para crear Web Components. Además, Bower es la tecnología del pasado (legacy) y Lit es la actual; no es una preferencia sino una diferencia generacional en el proyecto."
+        }
       ]
     }
   ]
