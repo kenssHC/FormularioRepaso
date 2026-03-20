@@ -19,6 +19,7 @@ const SESSIONS = [
   { id: 12, file: 'Preguntas/sesion12.json', label: 'Sesión 12' },
   { id: 13, file: 'Preguntas/sesion13.json', label: 'Sesión 13' },
   { id: 14, file: 'Preguntas/sesion14.json', label: 'Sesión 14' },
+  { id: 15, file: 'Preguntas/sesion15.json', label: 'Sesión 15' },
 ];
 
 /* ----------------------------------------------------------

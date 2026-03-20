@@ -1,0 +1,758 @@
+{
+  "titulo": "Repaso: Tests E2E — BDD, Gherkin, Cucumber, Step Definitions y Page Object Model",
+  "descripcion": "Preguntas de opción múltiple basadas en el contenido de la Sesión 15: diferencia entre tests unitarios, de integración y E2E, BDD, Gherkin (Given/When/Then/And), Cucumber, Radish, Step Definitions, archivo .feature, Page Object Model (POM) y buenas prácticas.",
+  "preguntas": [
+    {
+      "id": 1,
+      "pregunta": "¿Cuál es la diferencia fundamental entre un test unitario, un test de integración y un test E2E?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Un test unitario prueba toda la aplicación; el test de integración prueba solo la base de datos; el test E2E prueba solo el frontend.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los alcances están mezclados. En la sesión se definió: test unitario → prueba una sola función o método de forma aislada; test de integración → cómo interactúan varios módulos; test E2E → todo el sistema completo de inicio a fin simulando al usuario."
+        },
+        {
+          "id": "B",
+          "texto": "Un test unitario prueba una sola función de forma aislada; el test de integración prueba cómo interactúan varios módulos; el test E2E prueba todo el sistema completo simulando el comportamiento real de un usuario.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó exactamente esta distinción: el test unitario es la unidad más pequeña (una función o método aislado), el test de integración está en el intermedio probando cómo interactúan módulos entre sí, y el test E2E prueba todo el sistema de principio a fin simulando un usuario real."
+        },
+        {
+          "id": "C",
+          "texto": "Los tres tipos de tests son equivalentes; la diferencia es solo la herramienta que se usa (Mocha, Cucumber o Karma).",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. No son equivalentes; tienen alcances completamente distintos. La herramienta puede variar en cada tipo, pero la diferencia fundamental es qué parte del sistema se está probando."
+        },
+        {
+          "id": "D",
+          "texto": "Un test unitario se ejecuta en producción; el test de integración solo en desarrollo; el test E2E únicamente en staging.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los tipos de test no se distinguen por el entorno donde se ejecutan sino por qué parte del sistema verifican. Los tres pueden ejecutarse en distintos entornos según la estrategia del equipo."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "pregunta": "En la sesión se comparó el test E2E con una 'caja negra' y el test unitario con una 'caja blanca'. ¿Qué significa esa distinción?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Caja negra significa que el test solo funciona de noche; caja blanca que solo funciona de día en entornos con luz.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los términos 'caja negra' y 'caja blanca' son conceptos de testing que no tienen relación con el horario o condiciones físicas de ejecución."
+        },
+        {
+          "id": "B",
+          "texto": "Caja negra (E2E): se prueba el sistema sin conocer su implementación interna, solo verificando entradas y salidas visibles al usuario. Caja blanca (unitario): se conoce la implementación interna y se prueba el código directamente.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó esta metáfora: el test E2E es de 'caja negra' porque simula al usuario que no ve el código interno, solo la interfaz y el resultado. El test unitario es 'caja blanca' porque el desarrollador conoce la función exacta que está probando y accede a su implementación."
+        },
+        {
+          "id": "C",
+          "texto": "Caja negra son tests de rendimiento; caja blanca son tests de seguridad.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Rendimiento y seguridad son dimensiones distintas del testing. Caja negra y caja blanca se refieren a si el tester conoce o no la implementación interna del sistema que está probando."
+        },
+        {
+          "id": "D",
+          "texto": "No hay diferencia real; es solo terminología histórica sin relevancia práctica en el desarrollo moderno.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La distinción sí es relevante: determina el enfoque del test. Caja negra (E2E) no depende de cómo está implementado el sistema; caja blanca (unitario) prueba específicamente la lógica interna."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "pregunta": "¿Qué significa BDD (Behavior Driven Development)?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Es una metodología donde primero se escribe todo el código de producción y luego los tests validan que funcione.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Eso describe el desarrollo tradicional. BDD es lo contrario: primero se define cómo debería comportarse el sistema (escenarios), y luego se desarrolla el código para cumplir esos escenarios."
+        },
+        {
+          "id": "B",
+          "texto": "Es una forma de desarrollo donde se define cómo debería comportarse el sistema, se escriben escenarios de prueba, y luego se desarrolla el código para cumplir esos escenarios.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se definió BDD (Behavior Driven Development — Desarrollo dirigido por comportamiento) con estos tres pasos: 1) definir cómo debería comportarse el sistema, 2) escribir ese comportamiento como escenarios de prueba, 3) desarrollar el código para que cumpla esos escenarios. La idea clave es que programadores, testers y negocio entiendan lo mismo."
+        },
+        {
+          "id": "C",
+          "texto": "Es un framework de JavaScript para crear componentes web reutilizables basados en comportamiento reactivo.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. BDD no es un framework de JavaScript ni está relacionado con componentes web reactivos. Es una metodología de desarrollo de software que define cómo se escribe y estructura el código de testing."
+        },
+        {
+          "id": "D",
+          "texto": "Es sinónimo de TDD (Test Driven Development); ambos términos describen exactamente lo mismo.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. BDD y TDD son metodologías distintas. TDD se enfoca en escribir tests técnicos antes del código. BDD se enfoca en describir el comportamiento del sistema en lenguaje natural para que técnicos y negocio lo entiendan igual."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "pregunta": "¿Cuál es el objetivo principal del BDD en cuanto a la comunicación del equipo?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Que solo los desarrolladores entiendan los tests, manteniendo la complejidad técnica lejos del equipo de negocio.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. BDD busca exactamente lo contrario. Su objetivo es que programadores, testers y negocio entiendan lo mismo usando lenguaje natural (Gherkin). La inclusión del equipo de negocio en la comprensión de los tests es su valor principal."
+        },
+        {
+          "id": "B",
+          "texto": "Que programadores, testers y el equipo de negocio entiendan lo mismo gracias al uso de lenguaje natural para describir el comportamiento.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se destacó que la idea de BDD es que 'programadores, testers y negocio entiendan lo mismo'. Al describir el comportamiento en lenguaje natural (con Gherkin: Given/When/Then), todos los actores del proyecto pueden leer y validar los escenarios sin necesitar conocimientos técnicos profundos."
+        },
+        {
+          "id": "C",
+          "texto": "Que el equipo de QA sea el único responsable de definir los tests, eliminando la participación del equipo de desarrollo.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. BDD promueve la colaboración entre todos los actores: desarrollo, QA y negocio. No asigna responsabilidad exclusiva a ningún rol."
+        },
+        {
+          "id": "D",
+          "texto": "Que los tests se generen automáticamente a partir del código fuente sin intervención humana.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. BDD requiere que los escenarios se escriban manualmente en lenguaje natural. La automatización ocurre después, cuando herramientas como Cucumber ejecutan esos escenarios, pero el proceso de definirlos es colaborativo y humano."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "pregunta": "¿Qué es un Scenario en el contexto de BDD?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Es el archivo de código JavaScript que ejecuta las pruebas del sistema.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El archivo de código que ejecuta las pruebas son los Step Definitions. Un Scenario es una descripción en lenguaje natural de una situación específica del sistema, no código ejecutable."
+        },
+        {
+          "id": "B",
+          "texto": "Es un caso específico que describe una situación del sistema, escrito en lenguaje natural para representar un test.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se definió el Scenario como un caso específico que describe una situación del sistema: básicamente un test descrito en lenguaje natural. Ejemplo: 'Scenario: Login exitoso' describe concretamente qué pasará en esa situación."
+        },
+        {
+          "id": "C",
+          "texto": "Es la herramienta que conecta los pasos de Gherkin con el código que los ejecuta.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La herramienta que conecta Gherkin con el código es Cucumber. Un Scenario es solo la descripción textual de un caso de prueba en lenguaje natural."
+        },
+        {
+          "id": "D",
+          "texto": "Es el entorno de pruebas (staging, QA, producción) donde se ejecutan los tests automatizados.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Un Scenario no es un entorno de ejecución. Es una descripción de comportamiento del sistema escrita en lenguaje natural con la estructura Given/When/Then."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "pregunta": "En la estructura de un escenario BDD, ¿qué representa cada palabra clave: Given, When y Then?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Given = acción del usuario, When = estado inicial del sistema, Then = condición adicional.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los roles están mezclados. Given es el contexto/estado inicial, When es la acción del usuario, y Then es el resultado esperado. And es la condición adicional."
+        },
+        {
+          "id": "B",
+          "texto": "Given = contexto o estado inicial del sistema; When = acción que realiza el usuario; Then = resultado esperado tras la acción.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se definió cada keyword: Given describe el contexto o estado inicial (ej: 'el usuario está en la página de login'), When describe la acción del usuario (ej: 'ingresa su usuario y contraseña'), y Then describe el resultado esperado (ej: 'el sistema debe mostrar el dashboard')."
+        },
+        {
+          "id": "C",
+          "texto": "Given = importar dependencias del test; When = ejecutar la función a probar; Then = hacer el assert con Chai.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Esos son los elementos del patrón AAA en tests unitarios (Arrange, Act, Assert). Given/When/Then son las keywords de Gherkin que describen el comportamiento del sistema en lenguaje natural."
+        },
+        {
+          "id": "D",
+          "texto": "Las tres palabras son sinónimos; se usan indistintamente para estructurar cualquier línea del escenario.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Tienen roles semánticos distintos y no son intercambiables. Usarlas incorrectamente hace que el escenario sea confuso y pierda su valor como documentación legible para el equipo de negocio."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "pregunta": "En el escenario `Given el usuario está en login / When ingresa credenciales / Then ve el dashboard / And aparece el nombre del usuario`, ¿qué significa el `And`?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Es el segundo escenario del archivo; indica que hay una prueba adicional independiente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `And` no inicia un nuevo escenario; es una condición adicional dentro del mismo escenario. Un nuevo escenario comenzaría con `Scenario:`."
+        },
+        {
+          "id": "B",
+          "texto": "Es una condición adicional que extiende el paso anterior (Then en este caso); en el banco se recomienda usar máximo 3 `And` por escenario.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que `And` representa una condición adicional. También se mencionó que según la convención del banco, el `And` debe ir detrás del `When` y se puede usar un máximo de 3 `And` por escenario para mantenerlo claro y conciso."
+        },
+        {
+          "id": "C",
+          "texto": "Es un operador lógico AND de JavaScript que evalúa si dos condiciones son verdaderas simultáneamente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El `And` de Gherkin no es el operador lógico `&&` de JavaScript. Es una palabra clave del lenguaje Gherkin que añade una condición adicional al paso anterior en un escenario BDD."
+        },
+        {
+          "id": "D",
+          "texto": "Es equivalente a `Given`; se usa para repetir el contexto inicial cuando hay múltiples condiciones previas.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Aunque `And` puede extender un `Given` (para múltiples condiciones iniciales), también puede extender `When` o `Then`. No es equivalente a `Given`; su rol depende del paso al que acompaña."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "pregunta": "¿Qué es Gherkin y cuál es su rol dentro del flujo de testing BDD?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Es un framework de JavaScript que ejecuta pruebas automatizadas en el navegador de forma similar a Karma.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Gherkin no es un framework de ejecución. Es un lenguaje de texto para describir escenarios. La ejecución de esas pruebas la hacen otras herramientas como Cucumber, Playwright BDD o Cypress BDD."
+        },
+        {
+          "id": "B",
+          "texto": "Es un lenguaje de escritura de pruebas BDD, sencillo y cercano al inglés natural, que describe comportamientos del sistema pero no ejecuta pruebas por sí mismo.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se definió Gherkin como un lenguaje de escritura de pruebas BDD con características: lenguaje sencillo, parecido al inglés natural, fácil de entender por programadores y negocio. Importante: Gherkin NO ejecuta pruebas; solo describe los escenarios. Las pruebas las ejecutan Cucumber, Playwright BDD o Cypress BDD."
+        },
+        {
+          "id": "C",
+          "texto": "Es la herramienta que conecta los archivos `.feature` con el código JavaScript de los Step Definitions.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Conectar los archivos `.feature` con el código es la función de Cucumber. Gherkin es solo el lenguaje en el que están escritos esos archivos `.feature`."
+        },
+        {
+          "id": "D",
+          "texto": "Es una librería de aserciones similar a Chai, especializada en validar comportamientos de componentes web.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Gherkin no es una librería de aserciones. Es un lenguaje descriptivo de comportamiento. Las aserciones en tests E2E las hacen herramientas como Cypress o Playwright."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "pregunta": "¿Por qué Gherkin necesita de herramientas como Cucumber para ser útil como prueba automatizada?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Porque Gherkin tiene errores de sintaxis frecuentes que Cucumber corrige automáticamente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Cucumber no 'corrige' errores de Gherkin. La razón es más fundamental: Gherkin es un lenguaje descriptivo que no puede ejecutarse por sí mismo."
+        },
+        {
+          "id": "B",
+          "texto": "Porque Gherkin solo describe los escenarios en texto; no ejecuta código. Herramientas como Cucumber leen esos escenarios y los ejecutan como pruebas automatizadas.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que Gherkin no ejecuta pruebas; solo describe los escenarios. Son herramientas como Cucumber, Playwright BDD y Cypress BDD las que leen esos escenarios en Gherkin y los ejecutan como pruebas automáticas."
+        },
+        {
+          "id": "C",
+          "texto": "Porque los archivos `.feature` de Gherkin no pueden leerse sin Cucumber, ya que tienen un formato binario especial.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los archivos `.feature` son archivos de texto plano perfectamente legibles sin ninguna herramienta especial. Esa legibilidad para humanos es precisamente uno de sus valores."
+        },
+        {
+          "id": "D",
+          "texto": "Porque Gherkin solo funciona en entornos Python; para JavaScript se necesita Cucumber que traduce el código.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Gherkin es un lenguaje de texto independiente del lenguaje de programación. Tanto Cucumber (JavaScript/Java/Ruby) como Radish (Python) pueden leer archivos Gherkin. No está restringido a Python."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "pregunta": "¿Cuál es la diferencia entre Gherkin y Cucumber?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Gherkin es la versión moderna de Cucumber; Cucumber fue deprecado y reemplazado por Gherkin.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. No son el mismo producto en versiones distintas. Son herramientas complementarias con roles distintos que coexisten y se usan juntas."
+        },
+        {
+          "id": "B",
+          "texto": "Gherkin es el lenguaje para escribir los escenarios; Cucumber es la herramienta que interpreta y ejecuta esos escenarios como pruebas automatizadas.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se presentó esta tabla: Gherkin → lenguaje para escribir escenarios; Cucumber → herramienta que ejecuta esos escenarios. La relación es: Gherkin describe el comportamiento → Cucumber ejecuta ese comportamiento como prueba."
+        },
+        {
+          "id": "C",
+          "texto": "Son sinónimos; ambos se refieren al mismo framework de BDD con distinto nombre según el país.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Son herramientas diferentes con roles complementarios. Gherkin es el lenguaje (sintaxis Given/When/Then); Cucumber es el framework que interpreta ese lenguaje y lo ejecuta."
+        },
+        {
+          "id": "D",
+          "texto": "Gherkin ejecuta los tests en el navegador; Cucumber escribe los escenarios en lenguaje natural.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los roles están invertidos. Es Cucumber (o el framework BDD elegido) el que ejecuta los tests. Es Gherkin el lenguaje en el que se escriben los escenarios."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "pregunta": "¿Qué son los Step Definitions en Cucumber?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Son los archivos `.feature` donde se escriben los escenarios en lenguaje Gherkin.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los archivos `.feature` contienen los escenarios en Gherkin. Los Step Definitions son archivos de código separados que conectan esos pasos textuales con código ejecutable."
+        },
+        {
+          "id": "B",
+          "texto": "Son el código que implementa y ejecuta cada paso escrito en Gherkin (Given, When, Then, And), conectando el texto del escenario con el código de la prueba.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que el Step Definition une dos partes: el escenario escrito en Gherkin (lenguaje natural) y el código que lo ejecuta. Ejemplo: el paso `Given el usuario está en la página de login` tiene su Step Definition que ejecuta `cy.visit('/login')`."
+        },
+        {
+          "id": "C",
+          "texto": "Son los elementos del DOM (selectores CSS) que identifican los componentes de la UI en los tests.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los selectores del DOM se guardan en las clases del Page Object Model (POM). Los Step Definitions son funciones de código que implementan los pasos de Gherkin."
+        },
+        {
+          "id": "D",
+          "texto": "Son los reportes de cobertura generados por Cucumber al final de la ejecución de los tests.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los reportes de cobertura son generados por herramientas como c8. Los Step Definitions son archivos de código fuente que conectan los pasos de Gherkin con las funciones que los ejecutan."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "pregunta": "¿Cuáles son los dos tipos de archivos principales que usa Cucumber para funcionar?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Archivo `.json` con los datos de prueba y archivo `.css` con los selectores de la UI.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Cucumber usa archivos de texto para los escenarios y archivos de código para la implementación. Un `.json` puede ser un fixture de datos, pero no es el archivo principal de Cucumber, y `.css` no tiene rol en testing."
+        },
+        {
+          "id": "B",
+          "texto": "Archivo `.feature` (donde se escribe el Gherkin con los escenarios) y archivo de Step Definitions (código que conecta el texto con la ejecución).",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se listaron estos dos tipos: 1) Feature file (`.feature`) donde se escribe el Gherkin con los escenarios (ej: `login.feature`); 2) Step Definitions, que son archivos de código JS/TS donde cada paso de Gherkin se conecta con su implementación."
+        },
+        {
+          "id": "C",
+          "texto": "Archivo `.spec.js` con los tests de Mocha y archivo `karma.conf.js` con la configuración del navegador.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los archivos `.spec.js` y `karma.conf.js` pertenecen al stack de testing unitario (Mocha + Karma). Cucumber usa `.feature` (Gherkin) y Step Definitions."
+        },
+        {
+          "id": "D",
+          "texto": "Archivo `package.json` para las dependencias y archivo `index.html` para el entorno de ejecución.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `package.json` e `index.html` son archivos del proyecto, no específicos de Cucumber. Los archivos propios de Cucumber son los `.feature` y los Step Definitions."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "pregunta": "¿Qué es Radish y en qué se diferencia de Cucumber?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Radish es una versión más moderna de Cucumber con soporte nativo para TypeScript y Web Components.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Radish no es una versión de Cucumber. Es una herramienta separada con el mismo propósito pero enfocada en un ecosistema diferente."
+        },
+        {
+          "id": "B",
+          "texto": "Radish es un framework de pruebas BDD similar a Cucumber que también ejecuta escenarios Gherkin, pero está enfocado principalmente en Python en lugar de JavaScript.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que Radish es una herramienta de testing BDD similar a Cucumber: permite escribir pruebas en Gherkin y ejecutarlas como tests automatizados. Su diferencia es que está enfocado principalmente en Python, mientras que Cucumber se usa principalmente en JavaScript, Java y Ruby."
+        },
+        {
+          "id": "C",
+          "texto": "Radish es una librería de aserciones alternativa a Chai, usada específicamente en proyectos con BDD.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Radish no es una librería de aserciones. Es un framework BDD completo, no una herramienta de validación de resultados."
+        },
+        {
+          "id": "D",
+          "texto": "Radish es el nombre del archivo `.feature` cuando se usa con Python; en JavaScript el mismo archivo se llama `.cucumber`.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los archivos `.feature` se llaman igual en cualquier lenguaje de programación. Radish es el nombre del framework BDD para Python, no un tipo de archivo."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "pregunta": "Observando el diagrama de la imagen, ¿cuál es el flujo correcto del testing E2E con BDD?",
+      "imagen": "Preguntas/sesion15/images/imagen1.png",
+      "imagenAlt": "Diagrama del flujo E2E: Gherkins (Given, And, When y el Then) conectado bidireccionalmente con Cucumber, que apunta hacia Steps (Archivos en JS o TS), que define funciones y realiza navegaciones hacia Navigations, que a su vez apunta a Pages",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Pages → Navigations → Steps → Cucumber → Gherkin (el flujo va de las páginas hacia el lenguaje natural).",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El flujo en el diagrama va en la dirección opuesta: primero se describe el comportamiento en Gherkin, luego Cucumber lo conecta con los Steps, que definen las navegaciones hacia las Pages."
+        },
+        {
+          "id": "B",
+          "texto": "Gherkin (Given/When/Then) → Cucumber conecta texto con código → Steps (archivos JS/TS) → definen funciones y navegaciones → Pages (Page Object Model).",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. El diagrama de la sesión muestra exactamente este flujo: los escenarios se escriben en Gherkin, Cucumber actúa como puente entre el texto y el código, los Steps (archivos JS o TS) implementan cada paso y definen funciones y navegaciones, que a su vez usan las Pages del Page Object Model."
+        },
+        {
+          "id": "C",
+          "texto": "Steps → Gherkin → Pages → Cucumber → Navigations (el orden es circular sin un inicio claro).",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. El flujo tiene un inicio claro: Gherkin (descripción en lenguaje natural). Cucumber actúa como conector, los Steps implementan, y las Pages son el destino final donde se encapsula la lógica de cada pantalla."
+        },
+        {
+          "id": "D",
+          "texto": "Cucumber → Steps → Gherkin → Pages → Navigations (Cucumber inicia el proceso).",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Cucumber no inicia el proceso; conecta dos partes ya existentes (el texto Gherkin y el código). El proceso comienza siempre con la descripción del comportamiento en Gherkin."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "pregunta": "¿Qué es el Page Object Model (POM)?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Es un patrón de diseño de UI que define cómo deben verse visualmente las páginas de la aplicación.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. POM no es un patrón de diseño visual. Es un patrón de diseño de testing que organiza el código de pruebas separando las páginas (con sus elementos y acciones) de los tests en sí."
+        },
+        {
+          "id": "B",
+          "texto": "Es un patrón de diseño de testing que crea una clase por cada página de la aplicación, agrupando sus elementos (selectores) y acciones, para hacer los tests más mantenibles y reutilizables.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se definió el POM como el patrón donde cada página se representa como una clase que guarda sus elementos (selectores) y acciones (funciones). Los tests luego solo llaman esas acciones. Su principal ventaja es que hace los tests más mantenibles, reutilizables y fáciles de entender."
+        },
+        {
+          "id": "C",
+          "texto": "Es una herramienta que genera automáticamente los Step Definitions a partir de los archivos `.feature` de Gherkin.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. POM no genera Step Definitions automáticamente. Es un patrón de diseño que organiza el código de los tests. Los Step Definitions se escriben manualmente y pueden usar clases POM para realizar las acciones."
+        },
+        {
+          "id": "D",
+          "texto": "Es el nombre del archivo `.feature` que contiene los escenarios del Page de login.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. POM no es un tipo de archivo. Es un patrón arquitectónico de testing que define cómo organizar el código: una clase por cada página, con sus selectores y acciones encapsuladas."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "pregunta": "¿Por qué usar POM evita repetir código en los tests?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Porque POM genera automáticamente stubs para todas las dependencias externas del test.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. POM no genera stubs. La reducción de código repetido ocurre porque las acciones de la UI se centralizan en una clase: en lugar de repetir `cy.get('#user').type('admin')` en cada test, todos los tests llaman a `loginPage.login('admin', '1234')`."
+        },
+        {
+          "id": "B",
+          "texto": "Porque las acciones de la UI se encapsulan en métodos de la clase Page; todos los tests llaman ese método en lugar de repetir los selectores y acciones en cada test.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se mostró el contraste: sin POM cada test repite `cy.get('#user').type('admin')` y `cy.get('#password').type('1234')`; con POM todos los tests simplemente llaman `loginPage.login('admin', '1234')`. La lógica de interacción está una sola vez en la clase."
+        },
+        {
+          "id": "C",
+          "texto": "Porque POM comprime los tests en un solo archivo reduciendo el número de líneas totales del proyecto.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. POM no comprime archivos ni reduce líneas de forma directa. Su beneficio es de mantenibilidad: si cambia un selector, solo se actualiza en la clase Page, no en todos los tests que lo usan."
+        },
+        {
+          "id": "D",
+          "texto": "Porque POM reemplaza a Cucumber, eliminando la necesidad de Step Definitions.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. POM y los Step Definitions son complementarios, no alternativas. Los Steps pueden usar clases POM para realizar las acciones. POM organiza la interacción con la UI; los Steps conectan el Gherkin con el código."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "pregunta": "En POM, una clase `LoginPage` tiene `this.userInput = '#user'` y `this.passwordInput = '#password'`. ¿Qué representan esas propiedades?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Son los valores de prueba que se ingresan en el formulario de login durante el test.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los valores de prueba serían cosas como `'admin'` o `'password123'`. `'#user'` y `'#password'` son selectores CSS que identifican los elementos del DOM (inputs del formulario)."
+        },
+        {
+          "id": "B",
+          "texto": "Son selectores CSS que identifican los elementos de la UI (inputs del formulario), formando el 'mapa de elementos' de la página.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que dentro de la clase POM se guardan los selectores como `this.userInput = '#user'`. Estos son el 'mapa de elementos': una lista centralizada de todos los elementos de la UI que los tests necesitan interactuar. Si el selector cambia, solo se actualiza en un lugar."
+        },
+        {
+          "id": "C",
+          "texto": "Son variables de entorno que definen las credenciales de la cuenta de prueba en el ambiente de staging.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Las variables de entorno con credenciales se manejan en archivos de configuración o `.env`, no en la clase POM. Las propiedades de la clase POM son selectores del DOM."
+        },
+        {
+          "id": "D",
+          "texto": "Son los Given del escenario Gherkin traducidos a código JavaScript.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los `Given` de Gherkin se traducen en Step Definitions, no en propiedades de la clase POM. Las propiedades son selectores de elementos del DOM que la clase usa para interactuar con la UI."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "pregunta": "¿Qué significa que POM 'abstrae cómo interactuar con la UI'?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Que POM oculta visualmente los elementos de la interfaz al usuario final de la aplicación.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La abstracción de POM es para el código de testing, no para el usuario final. El usuario ve la UI normalmente; es el código del test el que no necesita saber cómo está implementada internamente la interacción."
+        },
+        {
+          "id": "B",
+          "texto": "Que el test no necesita saber cómo funciona la página internamente; solo llama `loginPage.login()` y la clase se encarga de los clicks, inputs y waits.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que POM abstrae la complejidad técnica: el test solo dice `loginPage.login()` y la clase `LoginPage` se encarga internamente de hacer `cy.get('#user').type(user)`, `cy.get('#password').type(pass)`, hacer click en el botón, etc. El test no necesita conocer esos detalles."
+        },
+        {
+          "id": "C",
+          "texto": "Que los tests se escriben sin conocer el lenguaje de programación, usando solo comandos en lenguaje natural.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los tests de POM se escriben en JavaScript/TypeScript. La abstracción no elimina el lenguaje de programación; oculta los detalles de implementación de la interacción con la UI."
+        },
+        {
+          "id": "D",
+          "texto": "Que POM usa Shadow DOM para encapsular los selectores de cada página, haciéndolos inaccesibles desde el exterior.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. POM no usa Shadow DOM. La encapsulación de POM es de lógica de código (una clase por página), no de Shadow DOM. Los selectores están dentro de la clase pero son accesibles para los tests."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "pregunta": "¿Qué significa `class LoginPage extends AbstractPage` en el contexto de testing E2E con POM?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Que `LoginPage` importa la librería `AbstractPage` de npm para usar sus selectores predefinidos.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `extends` es herencia de clases, no una importación de librería. `AbstractPage` es una clase base creada en el proyecto que define funcionalidades comunes para todas las Pages."
+        },
+        {
+          "id": "B",
+          "texto": "Que `LoginPage` hereda funcionalidades comunes de una clase base `AbstractPage`, reutilizando código compartido entre todas las Pages del POM.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó que `class X extends AbstractPage` significa que X hereda funcionalidades comunes de la clase base. Esto aplica el patrón POM: todas las Pages del sistema (LoginPage, DashboardPage, ProductPage) pueden heredar métodos comunes de `AbstractPage` como `open()`, `waitForLoad()`, etc."
+        },
+        {
+          "id": "C",
+          "texto": "Que `LoginPage` es más abstracta que `AbstractPage` y puede contener escenarios Gherkin directamente.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Es al revés: `AbstractPage` es la clase base (más abstracta) y `LoginPage` es la clase concreta (más específica). Los escenarios Gherkin van en archivos `.feature`, no en clases POM."
+        },
+        {
+          "id": "D",
+          "texto": "Que `LoginPage` reemplaza a `AbstractPage` en tiempo de ejecución usando polimorfismo.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `LoginPage` no reemplaza a `AbstractPage`; la extiende. El polimorfismo puede estar involucrado, pero el significado principal es herencia: `LoginPage` obtiene los métodos y propiedades de `AbstractPage` y puede añadir los propios."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "pregunta": "Buena práctica: 'Un Scenario = un flujo concreto de usuario'. ¿Por qué es importante esto?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Porque Cucumber solo puede ejecutar un Scenario por archivo `.feature`, lo que limita técnicamente la cantidad de pruebas.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Cucumber puede ejecutar múltiples Scenarios en el mismo archivo. La restricción es de buena práctica, no técnica: cada escenario debe representar un flujo concreto para que sea claro y útil como documentación."
+        },
+        {
+          "id": "B",
+          "texto": "Porque si un escenario mezcla varios flujos y falla, es difícil saber qué comportamiento específico se rompió; con un flujo por escenario el diagnóstico es inmediato.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se indicó que cada Scenario debe representar una acción real del usuario. Al tener un flujo concreto por escenario, cuando falla queda claro qué comportamiento exacto dejó de funcionar. Además hace el escenario más legible y útil como documentación viva del sistema."
+        },
+        {
+          "id": "C",
+          "texto": "Porque cada escenario crea una clase POM separada, y mezclar flujos generaría conflictos entre clases.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los escenarios no generan clases POM automáticamente. POM y los escenarios Gherkin son capas separadas. La razón de un flujo por escenario es de claridad y facilidad de diagnóstico."
+        },
+        {
+          "id": "D",
+          "texto": "Porque Gherkin solo permite tres keywords (Given, When, Then) y mezclar flujos requeriría más keywords no disponibles.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Técnicamente se pueden encadenar muchos `And` en un escenario (aunque la convención del banco recomienda máximo 3). La restricción de un flujo por escenario es de buena práctica para claridad, no por limitación del lenguaje."
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "pregunta": "¿Qué significa la buena práctica 'No poner lógica de negocio en los steps'?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Que los steps no pueden usar funciones de JavaScript; solo pueden contener comandos Gherkin.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los steps son archivos JavaScript/TypeScript y pueden usar toda la funcionalidad del lenguaje. La restricción es de diseño: los steps deben interactuar y validar, no contener lógica compleja de negocio."
+        },
+        {
+          "id": "B",
+          "texto": "Que los steps solo deben interactuar con la UI y validar resultados; la lógica compleja debe ir en las clases POM o en helpers, no en los steps.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se indicó que los steps deben: interactuar y validar, pero NO contener lógica compleja. Si un step tiene demasiada lógica condicional o cálculos, hace el test difícil de entender y mantener. La lógica debe estar en las clases POM o funciones auxiliares."
+        },
+        {
+          "id": "C",
+          "texto": "Que los pasos de Gherkin nunca pueden describir flujos de negocio como pagos o transferencias bancarias.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Los pasos sí describen flujos de negocio; precisamente ese es su propósito. Lo que no deben hacer es contener la implementación de esa lógica de negocio directamente en el step."
+        },
+        {
+          "id": "D",
+          "texto": "Que el equipo de negocio no puede escribir los Given/When/Then; eso es exclusivo de los desarrolladores.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Una de las ventajas de BDD es que el equipo de negocio puede colaborar escribiendo o revisando los escenarios Gherkin. La buena práctica se refiere al código de los steps, no a quién escribe el Gherkin."
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "pregunta": "¿Para qué sirve `Background` en Gherkin y cuándo se usa?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Es el fondo visual del reporte de testing generado por Cucumber al finalizar la ejecución.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. `Background` es una keyword de Gherkin, no un elemento visual. Es una sección del archivo `.feature` que define pasos comunes que se ejecutan antes de cada escenario del archivo."
+        },
+        {
+          "id": "B",
+          "texto": "Se usa cuando varios escenarios empiezan con el mismo `Given`; `Background` define esos pasos comunes una sola vez, evitando repetirlos en cada escenario.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se explicó: si muchos escenarios empiezan con `Given el usuario está en login`, se puede centralizar en un `Background: Given el usuario está en login`. Así no se repite en cada escenario y el archivo queda más limpio."
+        },
+        {
+          "id": "C",
+          "texto": "Es la sección del archivo `.feature` donde se importan las dependencias de Cucumber y los Step Definitions.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Las dependencias no se importan en el archivo `.feature`. Los imports se hacen en los archivos de Step Definitions. `Background` es una sección de pasos de prueba comunes, no de configuración de dependencias."
+        },
+        {
+          "id": "D",
+          "texto": "Es el equivalente de `beforeEach` de Mocha; se ejecuta en segundo plano sin bloquear los tests principales.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Aunque `Background` tiene una función similar a `beforeEach` (ejecutarse antes de cada escenario), no es 'en segundo plano'. Se ejecuta sincrónicamente antes de cada escenario, no de forma asíncrona ni paralela."
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "pregunta": "Un equipo tiene tres escenarios en el mismo archivo que todos inician con `Given el usuario ha iniciado sesión`. Según las buenas prácticas, ¿cuál es la solución correcta?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Crear tres archivos `.feature` separados, uno por escenario, para no repetir el `Given`.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Separar en archivos solo por este motivo no es la solución. La herramienta de Gherkin para este caso es `Background`, que permite definir el paso compartido una sola vez dentro del mismo archivo."
+        },
+        {
+          "id": "B",
+          "texto": "Usar `Background: Given el usuario ha iniciado sesión` al inicio del archivo, lo que ejecutará ese paso antes de cada uno de los tres escenarios.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. En la sesión se presentó exactamente este caso: si varios escenarios comparten el mismo `Given`, se usa `Background` para definirlo una sola vez. Cucumber lo ejecutará automáticamente antes de cada escenario del archivo."
+        },
+        {
+          "id": "C",
+          "texto": "Convertir el `Given` repetido en un `And` en cada escenario para reducir el número de `Given`.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Cambiar `Given` a `And` no elimina la repetición; el paso seguiría estando en cada escenario. La solución correcta es `Background`."
+        },
+        {
+          "id": "D",
+          "texto": "Eliminar el `Given` de los escenarios y poner la lógica de login directamente en los Step Definitions.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Eso viola la buena práctica de BDD: los escenarios deben ser completos y legibles. Ocultar el contexto inicial en los Steps hace el escenario menos comprensible para el equipo de negocio."
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "pregunta": "La buena práctica dice 'nombrar escenarios por comportamiento, no implementación'. ¿Cuál de los siguientes nombres sigue esa práctica?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "`Scenario: cy.get('#loginBtn').click() y cy.url().should('include', '/dashboard')`",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Ese nombre describe la implementación técnica (código de Cypress), no el comportamiento del usuario. Nadie del equipo de negocio puede entender ese escenario."
+        },
+        {
+          "id": "B",
+          "texto": "`Scenario: El usuario puede iniciar sesión correctamente con credenciales válidas`",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. Este nombre describe el comportamiento del usuario ('iniciar sesión correctamente') sin mencionar detalles técnicos. Cualquier persona del equipo (desarrolladores, testers, negocio) puede entender qué está probando ese escenario."
+        },
+        {
+          "id": "C",
+          "texto": "`Scenario: Test_001_Login_POST_200_OK`",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Ese nombre mezcla terminología técnica (código de status HTTP, método POST) con identificadores de test. No describe el comportamiento del usuario y no es entendible para el equipo de negocio."
+        },
+        {
+          "id": "D",
+          "texto": "`Scenario: loginMethod() returns true when credentials match database`",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Ese nombre describe la implementación interna (nombre del método, comparación con base de datos). Es más propio de un test unitario que de un escenario BDD. Los escenarios E2E deben describir comportamiento del usuario."
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "pregunta": "Si un selector CSS de un botón de login cambia de `#loginBtn` a `#submit-login`, ¿cuántos archivos hay que modificar usando POM versus sin POM, asumiendo que hay 10 tests que usan ese selector?",
+      "alternativas": [
+        {
+          "id": "A",
+          "texto": "Con POM: 10 archivos (uno por test). Sin POM: 1 archivo (la clase Page). Usar POM es más trabajo.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. Es exactamente al revés. Con POM el selector está centralizado en la clase Page, por lo que solo hay que cambiarlo en 1 lugar. Sin POM está repetido en los 10 tests y habría que cambiarlo en los 10."
+        },
+        {
+          "id": "B",
+          "texto": "Con POM: 1 archivo (la clase LoginPage donde está el selector). Sin POM: 10 archivos (cada test que usa ese selector). POM reduce el mantenimiento.",
+          "esCorrecta": true,
+          "retroalimentacion": "Correcto. Esta es la ventaja principal de POM. Al centralizar los selectores en una clase, si cambia el selector solo se actualiza en la clase LoginPage (1 lugar). Sin POM, el mismo selector `cy.get('#loginBtn')` está repetido en los 10 tests y habría que actualizarlos todos, con riesgo de olvidar alguno."
+        },
+        {
+          "id": "C",
+          "texto": "Con POM y sin POM hay que modificar los mismos archivos; no hay diferencia en el mantenimiento de selectores.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. La diferencia en mantenimiento es precisamente el punto más importante de POM. Al centralizar selectores en clases, los cambios en la UI solo requieren modificar un único lugar."
+        },
+        {
+          "id": "D",
+          "texto": "Con POM no es necesario modificar nada; el selector se actualiza automáticamente en todos los tests.",
+          "esCorrecta": false,
+          "retroalimentacion": "Incorrecto. POM no tiene actualización automática de selectores. El desarrollador sigue necesitando actualizar el selector, pero solo en 1 lugar (la clase POM) en lugar de en los 10 tests."
+        }
+      ]
+    }
+  ]
+}
